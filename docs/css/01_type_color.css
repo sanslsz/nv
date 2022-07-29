@@ -83,7 +83,7 @@ html {
     font-size: var(--base-size);
     line-height: 1.5;
     font-family: 'nvsans', georgia, serif;
-    font-family: 'dinp', helvetica, arial, sans-serif;
+/*    font-family: 'dinp', helvetica, arial, sans-serif;*/
 }
 body {
 }

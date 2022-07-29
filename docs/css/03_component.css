@@ -40,7 +40,7 @@
 .cp_cta {
     display: block;
     width: fit-content;
-    padding: var(--space-m) var(--space-m) calc(var(--space-m) * 0.8) calc(var(--space-m) + 24px + 0.5em);
+    padding: var(--space-m) var(--space-m) var(--space-m) calc(var(--space-m) + 24px + 0.5em);
     background-color: var(--nv-green);
     color: var(--nv-16);
     font-weight: 700;
@@ -119,7 +119,7 @@
 .cp_filter_chip {
     font-size: 14px;
     background-color: var(--nv-15-5-f7);
-    padding: 8px 36px 4px 16px;
+    padding: 8px 36px 8px 16px;
     border: 1px solid var(--nv-12-5-cc);
     border-radius: 999px;
     position: relative;
@@ -160,7 +160,7 @@
 .cp_dropdown > label {
     display: block;
     cursor: pointer;
-    padding: 8px 38px 6px 12px;
+    padding: 8px 38px 8px 12px;
     width: max-content;
     background-color: var(--nv-15-5-f7);
     border: 1px solid var(--nv-12-5-cc);
@@ -224,7 +224,7 @@ input:checked ~ .cp_dropdown_pop {
 .cp_dropdown_pop input[type="checkbox"] {
     position: absolute;
     left: 0;
-    transform: translateY(1px);
+    transform: translateY(3px);
     appearance: none;
     width: 14px;
     height: 14px;
@@ -240,7 +240,7 @@ input:checked ~ .cp_dropdown_pop {
     appearance: none;
     border: 1px solid var(--nv-12-5-cc);
     background: url(../assets/icons/dropdown_arrow_66.svg) no-repeat right 8px center, var(--nv-15-5-f7);
-    padding: 6px calc(4px + 14px + 8px) 4px 8px;
+    padding: 6px calc(4px + 14px + 8px) 6px 8px;
     font-size: 14px;
     font-weight: 900;
     line-height: 1;
