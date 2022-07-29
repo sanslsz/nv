@@ -1,0 +1,10 @@
+<svg id="common_share" data-name="common/share" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Vector" d="M14,3a3,3,0,1,1-3-3A3,3,0,0,1,14,3Z" transform="translate(6.25 2.25)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <path id="Vector-2" data-name="Vector" d="M14,12a3,3,0,1,1-3-3A3,3,0,0,1,14,12Z" transform="translate(6.25 6.75)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <path id="Vector-3" data-name="Vector" d="M6,8A3,3,0,1,1,3,5,3,3,0,0,1,6,8Z" transform="translate(2.25 4.75)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <path id="Vector-4" data-name="Vector" d="M13.105,11.97V7.47M10.561,3.06,6.194,5.79m-2.4,4.522,3.948,1.974" transform="translate(4.145 3.78)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <g id="space" fill="none" stroke="#000" stroke-width="1.5" opacity="0">
+    <rect width="24" height="24" stroke="none"/>
+    <rect x="0.75" y="0.75" width="22.5" height="22.5" fill="none"/>
+  </g>
+</svg>

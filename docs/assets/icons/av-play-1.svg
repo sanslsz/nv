@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="av_play" data-name="av/play" transform="translate(0.242 0.088)">
+    <path id="Polygon_15" data-name="Polygon 15" d="M10.7-.871-.5,5.661l11.2,6.532ZM2.466,5.661,9.2,1.731v7.86Z" transform="translate(5.742 6.295)" fill="#404040"/>
+    <g id="space" transform="translate(-0.242 -0.088)" fill="none" stroke="#000" stroke-width="1" opacity="0">
+      <rect width="24" height="24" stroke="none"/>
+      <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+    </g>
+  </g>
+</svg>

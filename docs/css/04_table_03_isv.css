@@ -1,0 +1,256 @@
+:root {
+
+    --table-head-height: 56px;
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+
+        --table-head-height: 60px;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+
+        --table-col-width: 20%;
+        --table-head-height: 64px;
+
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {}
+}
+
+/*=========== base ===========*/
+main {
+    margin-top: 128px;
+    margin-bottom: 128px;
+}
+
+.wrapper > :nth-child(n + 2) {
+    margin-top: 32px;
+}
+
+
+/*=========== table general ===========*/
+
+
+.cp_table_isv {
+    background-color: var(--nv-15-5-f7);
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    /*    table-layout: fixed;*/
+    border: 0;
+    font-size: 14px;
+}
+
+col {
+    width: var(--table-col-width);
+}
+
+col:nth-child(even),
+thead th:nth-child(even) {
+    background-color: var(--nv-15-ee);
+}
+
+
+/* =======table header ===========*/
+thead {
+    height: var(--table-head-height);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 120px;
+    /*    end of scroll */
+}
+
+thead th {
+    padding: 0 var(--cell-lr-m);
+    text-align: left;
+    font-weight: 700;
+    background: linear-gradient(to top, var(--nv-6-5-66) 0px 3px, transparent 3px), var(--nv-15-5-f7);
+}
+
+
+
+/* ======= table body ===========*/
+td {
+    padding: var(--cell-lr-s) var(--cell-lr-m);
+    vertical-align: top;
+}
+
+.vendorrow {
+    background-color: var(--nv-16);
+}
+
+.vendorrow td {
+    padding: 0;
+}
+
+tbody tr:nth-child(n + 3) {
+    border-top: 1px solid var(--nv-6-5-66);
+    /*    with a vendorrow, what used to be 2 now is 3! */
+}
+
+.subrow.subrow {
+    border-top-color: var(--nv-12-5-cc);
+}
+
+.vendorrow + tr td:first-child {
+    padding-top: 0;
+    padding-left: 0;
+}
+
+.appver,
+.driver,
+.certification {
+    position: sticky;
+    top: calc(var(--table-head-height) + var(--cell-lr-s));
+}
+
+td img {
+    position: sticky;
+    top: var(--table-head-height);
+    width: 160px;
+    max-width: 100%;
+}
+
+.appver p:nth-child(n+2) {
+    padding-left: 32px;
+    position: relative;
+    margin-top: var(--space-m);
+}
+
+.appver p:nth-child(n+2)::before {
+    content: "desktop_windows";
+    display: block;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: -5px;
+    left: 0;
+    background-color: var(--sw-16);
+    border-radius: 999px;
+    font-family: "material icons";
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 24px;
+}
+
+.appver p:nth-child(n+2).mob::before {
+    content: "phone_android";
+}
+
+.appver p:nth-child(3)::before {
+    content: "settings";
+}
+
+td li {
+    margin-bottom: var(--space-m);
+}
+
+.transparent.transparent {
+    border: none;
+}
+
+.transparent td {
+    padding: 0;
+    height: 8px;
+    background-color: white;
+}
+
+
+/*=============== responsive ============*/
+/* css custom properties have prolem with "revert" value, use additional media queries to hide and show the left column. Only display "revert" or "table-row" can restore the row. */
+
+.hidecol {
+    /*    display: none;*/
+    /*    visibility: collapse;*/
+}
+
+.hidecell {
+    /*    visibility: collapse;*/
+    /*    display: none;*/
+    /*    display: var(--table-1st-col, block);*/
+    /*    display: var(--table-1st-col, revert);*/
+    /*    display: var(--table-1st-col, table-cell);*/
+    /*    display: revert;*/
+    /*
+    display: initial;
+    display: inherit;
+    display: unset;
+*/
+}
+
+.hidecol,
+.hidecell {
+    display: none;
+}
+
+@media screen and (min-width: 640px) {
+
+    .hidecol,
+    .hidecell {
+        display: revert;
+    }
+
+    .vendorrow {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 639px) {
+
+    .tablescroll {
+        overflow: auto;
+        width: 100%;
+        height: 90vh;
+    }
+
+    .tablescroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    thead th:nth-child(2) {
+        background-color: var(--nv-15-ee);
+        position: sticky;
+        left: 0;
+    }
+
+    tr:not(.subrow, .vendorrow, .transparent) td:not(.hidecell):first-child,
+    .hidecell + td {
+        background-color: var(--nv-15-ee);
+        background-clip: padding-box;
+/*        firefox fix*/
+        position: sticky;
+        left: 0;
+    }
+
+    .vendorrow img {
+        position: sticky;
+        left: 0;
+        width: 120px;
+    }
+
+    col:nth-child(3) {
+        /*                width: 30%;*/
+    }
+
+    .appver p:nth-child(3) {
+        max-width: 120px;
+    }
+}
+
+
+/* footer */
+body > footer {
+    height: 1000px;
+    background-color: var(--sw-4);
+}

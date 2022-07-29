@@ -1,0 +1,23 @@
+
+
+.stickytest :is(li, tr) {
+    height: 300px;
+    background-color: lightblue;
+}
+
+.stickytest p {
+    background-color: red;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+}
+
+.type2 p {
+    position: static;
+}
+
+.type2 .row {
+    position: sticky;
+    top: 0;
+/*    display: block;*/
+}

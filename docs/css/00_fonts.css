@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'dinp';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/DINWebPro.woff) format('woff');
+}
+@font-face {
+  font-family: 'dinp';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/DINWebPro-Ita.woff) format('woff');
+}
+@font-face {
+  font-family: 'dinp';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/DINWebPro-Medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'dinp';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/DINWebPro-MediumIta.woff) format('woff');
+}
+@font-face {
+  font-family: 'dinp';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/DINWebPro-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'dinp';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/DINWebPro-BoldIta.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'nvsans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/NVIDIASans_W_Lt.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'nvsans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/NVIDIASans_W_LtIt.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'nvsans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/NVIDIASans_W_Rg.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'nvsans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/NVIDIASans_W_It.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'nvsans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/NVIDIASans_W_Md.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'nvsans';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/NVIDIASans_W_MdIt.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'nvsans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/NVIDIASans_W_Bd.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'nvsans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/NVIDIASans_W_BdIt.woff2) format('woff2');
+}

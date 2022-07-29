@@ -1,0 +1,100 @@
+:root {
+    --md_filter_search-flex: block;
+    --md_filter_search-margintop: 16px;
+
+    --md_chip_scroll: scroll hidden;
+    --md_chip_container-wrap: nowrap;
+
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+        
+    --md_filter_search-flex: flex;
+    --md_filter_search-margintop: unset;
+    --md_filter_search-direction: row-reverse;
+
+}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+    
+    --md_chip_scroll: revert;
+    --md_chip_container-wrap: wrap;
+
+}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+  
+
+}
+}
+
+/* ======= cta button ===========*/
+
+.md_cta_container {
+    display: flex;
+    justify-content: center;
+    gap: clamp(16px, 6vw, 48px);
+}
+
+/* =========== search ===========*/
+
+.md_filter_search {
+    display: var(--md_filter_search-flex);
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: var(--md_filter_search-direction);
+}
+.md_filter_search li:last-child {
+    margin-top: var(--md_filter_search-margintop);
+}
+
+.md_filter_search.option2 {
+    display: flex;
+    flex-direction: unset;
+}
+.md_filter_search.option2 li:last-child {
+    margin-top: unset;
+}
+/* ========================= chip ========================*/
+.md_chip_scroll {
+overflow: var(--md_chip_scroll);
+/*    dropdown pop not visible because "visible" is set to auto, see MDN */
+}
+.md_chip_scroll::-webkit-scrollbar  {
+    display: none;
+}
+.md_chip_container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: var(--md_chip_container-wrap);
+    align-items: center;
+}
+
+/* ======= pagination ===========*/
+.md_pagination {
+    display: var(--md_filter_search-flex);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;  
+}
+.md_pagination img {
+    display: inline-block;
+    cursor: pointer;
+}
+.md_pagination li {
+    flex: 0 0 fit-content;
+    text-align: center;
+}
+.md_pagination li:last-child {
+    margin-top: var(--md_filter_search-margintop);
+    
+}
+.md_pagination li *:not(:first-child) {
+    margin-left: 24px;
+}

@@ -1,0 +1,114 @@
+:root {
+    --space-xs: 4px;
+    --space-s: 8px;
+    --space-m: 12px;
+    --space-l: 16px;
+    --space-xl: 20px;
+    --space-xxl: 24px;
+    
+    --padding-tb: 32px;
+    --padding-lr: 10px;
+    --padding-section: var(--padding-tb) var(--padding-lr);
+    
+/*    --wrapper: 400px;*/
+    
+    --nv-cta-padding: 12px;
+    --nv-cta-font-size: 14px;
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+    --space-xs: 5px;
+    --space-s: 9px;
+    --space-m: 13px;
+    --space-l: 17px;
+    --space-xl: 22px;
+    --space-xxl: 27px;
+        
+    --padding-lr: 32px;
+        
+    --wrapper: 630px;
+  
+    --nv-cta-padding: 13px;
+    --nv-cta-font-size: 15px;
+}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+    --space-xs: 6px;
+    --space-s: 10px;
+    --space-m: 14px;
+    --space-l: 18px;
+    --space-xl: 24px;
+    --space-xxl: 30px;
+        
+    --padding-tb: 48px;
+    --padding-lr: 48px;
+        
+    --wrapper: 954px;
+    
+    --nv-cta-padding: 14px;
+    --nv-cta-font-size: 16px;
+}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+    --space-xs: 7px;
+    --space-s: 11px;
+    --space-m: 15px;
+    --space-l: 19px;
+    --space-xl: 26px;
+    --space-xxl: 33px;
+        
+    --padding-tb: 64px;
+    --padding-lr: 64px;
+        
+    --wrapper: 1290px;
+     
+    --nv-cta-padding: 8px;
+    --nv-cta-font-size: 18px;
+}
+}
+
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*==========  generic settings  ==========*/
+html {
+    padding: 0;
+    scroll-behavior: smooth;
+}
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+figure {
+    padding: 0;
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.padding {
+    background-color: var(--nv-16);
+    padding: var(--padding-section);
+}
+.wrapper {
+    max-width: var(--wrapper);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+:last-child {
+    margin-bottom: 0;
+}

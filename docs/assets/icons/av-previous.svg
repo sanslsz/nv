@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="av_previous" data-name="av/previous" transform="translate(0.088 0.088)">
+    <path id="Vector" d="M11.2.129V13.193L.008,6.661ZM9.71,10.591V2.731L2.974,6.661Z" transform="translate(6.729 5.295)" fill="#404040"/>
+    <path id="Vector-2" data-name="Vector" d="M.995,13.451H-.5V0H.995Z" transform="translate(6.478 5.231)" fill="#404040"/>
+    <g id="space" transform="translate(-0.088 -0.088)" fill="none" stroke="#000" stroke-width="1" opacity="0">
+      <rect width="24" height="24" stroke="none"/>
+      <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+    </g>
+  </g>
+</svg>

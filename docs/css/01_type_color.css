@@ -1,0 +1,150 @@
+/*==========  color custom properties  ==========*/
+:root { 
+/*    Su Li's Dowry(color swatches) */
+    --sw-0: #000000;
+    --sw-0-5: #080808;
+    --sw-1: #101010;
+    --sw-1-5: #181818;
+    --sw-2: #202020;
+    --sw-2-5: #282828;
+    --sw-3: #303030;
+    --sw-3-5: #383838;
+    --sw-4: #404040;
+    --sw-4-5: #484848;
+    --sw-5: #505050;
+    --sw-5-5: #585858;
+    --sw-6: #606060;
+    --sw-6-5: #686868;
+    --sw-7: #707070;
+    --sw-7-5: #787878;
+    --sw-8: #808080;
+    --sw-8-5: #888888;
+    --sw-9: #909090;
+    --sw-9-5: #989898;
+    --sw-10: #a0a0a0;
+    --sw-10-5: #a8a8a8;
+    --sw-11: #b0b0b0;
+    --sw-11-5: #b8b8b8;
+    --sw-12: #c0c0c0;
+    --sw-12-5: #c8c8c8;
+    --sw-13: #d0d0d0;
+    --sw-13-5: #d8d8d8;
+    --sw-14: #e0e0e0;
+    --sw-14-5: #e8e8e8;
+    --sw-15: #f0f0f0;
+    --sw-15-5: #f8f8f8;
+    --sw-16: #ffffff;
+    --50transparent: #ffffff80;
+    --70transparent: #ffffffbb;
+    --100transparent: #ffffffff;
+    --boxshadow-card: 0px 1px 3px rgba(0, 0, 0, 0.15);
+    
+/*    NVIDIA web library 2.3 */
+--nv-16: #ffffff;
+--nv-15-5-f7: #F7F7F7;
+--nv-15-ee: #EEEEEE;
+--nv-12-5-cc: #CCCCCC;
+--nv-9-5-99: #999999;
+--nv-6-5-66: #666666;
+--nv-1-5-1a: #1A1A1A;
+--nv-1-11: #111111;
+--nv-green: #76B900;
+--nv-0: #000000;
+}
+
+/*==========  text custom properties  ==========*/
+:root {
+    --base-size: 16px;
+    --scale-ratio: 1.2;
+    --fine-print: calc(var(--base-size) / 1.15);
+/*    --h5: calc(var(--base-size) * var(--scale-ratio));*/
+    --h4: var(--base-size);
+    --h3: calc(var(--h4) * var(--scale-ratio));
+    --h2: calc(var(--h3) * var(--scale-ratio));
+    --h1: calc(var(--h2) * var(--scale-ratio));
+}
+
+@media screen and (min-width: 1600px) {
+    :root {
+/*        --base-size: 16px;*/
+    }
+}
+
+@media print {
+    :root {
+        --base-size: 8pt;
+        --scale-ratio: 1.1;
+    }
+}
+
+/*==========  generic block type settings  ==========*/
+html {
+    color: var(--nv-1-5-1a);
+    font-size: var(--base-size);
+    line-height: 1.5;
+    font-family: 'nvsans', georgia, serif;
+    font-family: 'dinp', helvetica, arial, sans-serif;
+}
+body {
+}
+
+h1 {
+    font-size: var(--h1);
+    font-weight: 900;   
+}
+
+h2 {
+    font-size: var(--h2);
+    font-weight: 900; 
+    margin: 0 0 0.5rem;
+}
+
+h3 {
+    font-size: var(--h3);
+    font-weight: bold;
+    margin: 0 0 0.5rem;
+}
+
+h4 {
+    font-size: var(--h4);
+    font-weight: 900; 
+    margin: 0 0 0.5rem;
+}
+
+footer > p {
+/*    keep footer container margin 1em = 16px */
+    font-size: var(--fine-print);
+}
+
+p {
+    margin: 0 0 0.5rem;
+}
+
+th, td {
+    line-height: 1.2;
+}
+
+/*==========  generic inline type settings  ==========*/
+a {
+    text-decoration: none;
+    color: var(--nv-6-5-66);
+    transition: var(--02transition);
+}
+a:link {
+/*    color: var(--sw-8)*/
+}
+a:visited {
+/*    color: var(--sw-12);*/
+}
+a:hover, a:focus {
+    color: var(--nv-0);
+/*    text-decoration: underline;*/
+}
+a:active {
+    color: var(--nv-0);
+}
+
+/*===============*/
+.dropshadow {
+    box-shadow: var(--boxshadow-card);
+}
