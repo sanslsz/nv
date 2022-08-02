@@ -1,0 +1,98 @@
+:root {
+--cp-card-1-padding: 16px;
+--cp-card-1-op2-fig-height: 100px;
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+--cp-card-1-padding: 20px;
+--cp-card-1-op2-fig-height: 60px;
+}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+--cp-card-1-padding: 24px;
+}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+--cp-card-1-padding: 32px;
+}
+}
+
+
+.cp-card-1 {
+    background-color: var(--sw-16);
+    box-shadow: var(--boxshadow-card);
+    max-width: 900px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+.cp-card-1 h3 {
+    font-size: var(--h4);
+}
+.cp-card-1 h4 {
+    font-size: 16px;
+}
+.cp-card-1 p {
+    line-height: inherit;
+}
+
+.cp-card-1 :is(h3, div) {
+    padding: var(--cp-card-1-padding);
+    margin-bottom: 0;
+}
+.cp-card-1 figure {
+    display: flex;
+    gap: var(--space-m);
+}
+.cp-card-1 figure > img {
+    width: 160px;
+    height: 180px;
+    object-fit: cover;
+}
+.cp-card-1 figcaption {
+    padding-right: var(--cp-card-1-padding);
+}
+.cp-card-1 figcaption p:nth-child(2) {
+    font-style: italic;
+    margin-top: 0.75rem;
+}
+.cp-card-1 figcaption p:nth-child(3) {
+    display: flex;
+    grid-gap: var(--space-l);
+    margin-top: 0.75rem;
+}
+
+.cp-card-1.wide {
+    position: relative;
+    padding-left: 160px;
+}
+.cp-card-1.wide figure > img {
+    position: absolute;
+    left: 0;
+    top: 32px;
+}
+.cp-card-1.wide :is(h3, figcaption, div) {
+    padding-left: 16px;
+}
+
+.cp-card-1.wide2 {
+    position: relative;
+/*    padding-right: 192px;*/
+    margin-top: var(--cp-card-1-padding);
+}
+.cp-card-1.wide2 figure >img {
+    position: absolute;
+    right: var(--cp-card-1-padding);
+    top: calc(var(--cp-card-1-padding) * -1);
+}
+.cp-card-1.wide2 figcaption {
+    padding-left: var(--cp-card-1-padding);
+    min-height: var(--cp-card-1-op2-fig-height);
+}
+.cp-card-1.wide2 :is(h3, figcaption) {
+    max-width: calc(100% - 160px - var(--cp-card-1-padding));
+}

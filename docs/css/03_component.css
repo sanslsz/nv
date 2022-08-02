@@ -119,7 +119,7 @@
 .cp_filter_chip {
     font-size: 14px;
     background-color: var(--nv-15-5-f7);
-    padding: 8px 36px 8px 16px;
+    padding: 8px 36px 7px 16px;
     border: 1px solid var(--nv-12-5-cc);
     border-radius: 999px;
     position: relative;
@@ -134,7 +134,7 @@
     position: absolute;
     right: 16px;
     top: 50%;
-    transform: translateY(-48%);
+    transform: translateY(-50%);
     cursor: pointer;
 }
 .cp_filter_chip span {
@@ -235,7 +235,7 @@ input:checked ~ .cp_dropdown_pop {
     background-image: url(../assets/icons/ic_checkbox_active.svg);
 }
 
-/* ========================= dropdown select pagination ========================*/
+/* ========================= pagination dropdown ========================*/
 .cp_select {
     appearance: none;
     border: 1px solid var(--nv-12-5-cc);

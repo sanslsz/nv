@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>02 detail</title>
+    <meta name="description" content="Su Li's experiment">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/03_component_dli.css">
+    <link rel="stylesheet" href="css/04_module_dli.css">
+    <meta name="theme-color" content="#fafafa">
+    <style>
+
+
+        .md-instructor-detail {
+            display: grid;
+            grid-template-columns: var(--md-card-container-grid-3col);
+            grid-gap: var(--md-card-container-grid-3col-gap);
+            align-items: start;
+        }
+
+        .grid-sidebar {
+            grid-column: span 1;
+            position: sticky;
+            top: var(--padding-tb);
+        }
+
+        .grid-sidebar h1 {
+            height: 200px;
+        }
+
+        .grid-sidebar img {
+            width: 80%;
+            max-width: 400px;
+            aspect-ratio: 6 / 8;
+            object-fit: cover;
+        }
+
+        .grid-sidebar li+li {
+            margin-top: var(--space-xl);
+        }
+
+        .grid-main {
+            grid-column: span 2;
+            padding-top: calc(200px + var(--space-xl));
+        }
+
+        .grid-main ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: var(--md-card-container-grid-3col-gap);
+            margin-top: 80px;
+        }
+
+        h2 {
+            margin-top: 120px;
+        }
+
+        body>footer {
+            background: green;
+            height: 700px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="padding">
+        <section class="wrapper md-instructor-detail">
+            <div class="grid-sidebar">
+                <ul>
+                    <li>
+                        <h1>Scarlett Johansson</h1>
+                    </li>
+                    <li><img src="assets/cp_card_Lidia%20Fonseca.jpg"></li>
+                    <li>
+                        <h4>Email</h4>
+                        <p>sjohansson@ucla.edu</p>
+                    </li>
+                    <li>
+                        <h4>LinkedIn</h4>
+                        <a>linknamelasldkfj</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid-main">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</p>
+                <ul>
+                    <li>
+                        <h4>Email</h4>
+                        <p>sjohansson@ucla.edu</p>
+                    </li>
+                    <li>
+                        <h4>Email</h4>
+                        <p>sjohansson@ucla.edu</p>
+                    </li>
+                    <li>
+                        <h4>Email</h4>
+                        <p>sjohansson@ucla.edu</p>
+                    </li>
+                    <li>
+                        <h4>Email</h4>
+                        <p>sjohansson@ucla.edu</p>
+                    </li>
+                    <li>
+                        <h4>Email</h4>
+                        <p>sjohansson@ucla.edu</p>
+                    </li>
+                    <li>
+                        <h4>Email</h4>
+                        <p>sjohansson@ucla.edu</p>
+                    </li>
+                </ul>
+                <h2>Workshops</h2>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</p>
+                <ul>
+                <li class="cp_card_workshop">
+                <img src="assets/cp_card_Ola%20Engkvist.jpg" alt="">
+                <div class=""
+                </li>
+                </ul>
+                <ul></ul>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body></html>

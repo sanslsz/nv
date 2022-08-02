@@ -54,61 +54,95 @@
 
 /*==========  text custom properties  ==========*/
 :root {
-    --base-size: 16px;
-    --scale-ratio: 1.2;
-    --fine-print: calc(var(--base-size) / 1.15);
-/*    --h5: calc(var(--base-size) * var(--scale-ratio));*/
-    --h4: var(--base-size);
-    --h3: calc(var(--h4) * var(--scale-ratio));
-    --h2: calc(var(--h3) * var(--scale-ratio));
-    --h1: calc(var(--h2) * var(--scale-ratio));
+    --base-size: 15px;
+    
+    --h1: 28px;
+    --h2: 24px;
+    --h3: 18px;
+    --h4: 16px;
+    
+    --bodyl: 18;
+    --bodym: var(--base-size);
+    --bodys: 11;
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 640px) {
     :root {
-/*        --base-size: 16px;*/
-    }
+
+    
+}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+    --h1: 36px;
+    --h2: 28px;
+    --h3: 20px;
+    --h4: 18px;
+        
+    --bodyl: 20;
+}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+    --h1: 48px;
+    --h2: 36px;
+    --h3: 24px;
+    --h4: 20px;
+        
+    --bodyl: 22;
+}
 }
 
 @media print {
     :root {
-        --base-size: 8pt;
-        --scale-ratio: 1.1;
+
     }
 }
 
 /*==========  generic block type settings  ==========*/
 html {
-    color: var(--nv-1-5-1a);
+/*    font-family: 'dinp', helvetica, arial, sans-serif;*/
+    font-family: 'nvsans', georgia, serif;
     font-size: var(--base-size);
     line-height: 1.5;
-    font-family: 'nvsans', georgia, serif;
-/*    font-family: 'dinp', helvetica, arial, sans-serif;*/
+    color: var(--nv-1-5-1a);
 }
 body {
+    background-color: var(--sw-14-5);
 }
 
 h1 {
     font-size: var(--h1);
-    font-weight: 900;   
+    font-weight: 700;   
+    line-height: 1.25;
+    margin: 0 0 4rem;
 }
 
 h2 {
     font-size: var(--h2);
-    font-weight: 900; 
-    margin: 0 0 0.5rem;
+    font-weight: 700; 
+    line-height: 1.25;
+    margin: 0 0 4rem;
 }
 
 h3 {
     font-size: var(--h3);
-    font-weight: bold;
-    margin: 0 0 0.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 1rem;
 }
 
 h4 {
     font-size: var(--h4);
-    font-weight: 900; 
-    margin: 0 0 0.5rem;
+    font-weight: 700; 
+    line-height: 1.25;
+    margin: 0 0 0.8rem;
+}
+
+p {
+    margin: 0 0 0.8rem;
 }
 
 footer > p {
@@ -116,12 +150,17 @@ footer > p {
     font-size: var(--fine-print);
 }
 
-p {
-    margin: 0 0 0.5rem;
+.plarge {
+    font-size: var(--bodyl);
+    line-height: 1.75;
 }
-
-th, td {
-    line-height: 1.2;
+.pmedium {
+    font-size: var(--bodym);
+    line-height: 1.67;
+}
+.psmall {
+    font-size: var(--bodys);
+    line-height: 1.4;
 }
 
 /*==========  generic inline type settings  ==========*/
@@ -144,7 +183,11 @@ a:active {
     color: var(--nv-0);
 }
 
-/*===============*/
+.center {
+    text-align: center;
+}
+
+/*=========== effects ==========*/
 .dropshadow {
     box-shadow: var(--boxshadow-card);
 }

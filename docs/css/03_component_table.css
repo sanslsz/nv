@@ -54,4 +54,9 @@
 
 }
 }
-
+body {
+    background-color: var(--nv-16);
+}
+th, td {
+    line-height: 1.2;
+}
