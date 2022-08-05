@@ -69,7 +69,7 @@ main > ul > li {
     main > ul > li:nth-child(4n + 6)::before,
     main > ul > li:nth-child(4n + 7)::before,
     main > ul > li:nth-child(4n + 8)::before {
-        content: 'Desktop';
+        content: 'Desktop 1350+px';
         display: block;
         margin-bottom: 8px;
         font-family: 'Noto Sans Mono', monospace;
@@ -79,11 +79,11 @@ main > ul > li {
     }
 
     main > ul > li:nth-child(4n + 7)::before {
-        content: "Tablet";
+        content: "Laptop 1024-1349px";
     }
 
     main > ul > li:nth-child(4n + 8)::before {
-        content: "Mobile";
+        content: "Mobile 300-1023px";
     }
 }
 
