@@ -1,0 +1,390 @@
+:root {
+    --li-padding: 16px;
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+        --li-padding: 24px;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+        --li-padding: 32px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {
+/*        --li-padding: 48px;*/
+    }
+}
+
+/*==================== general styling ================*/
+main {
+    background-color: var(--sw-14);
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+.class {
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+main > ul > li {
+    padding: var(--li-padding);
+    background: var(--nv-15-5-f7);
+}
+
+
+@media screen and (max-width: 1023px) {
+
+    main > ul > li:first-child,
+    .viewport {
+        display: none;
+    }
+
+    .class {
+        background-color: transparent;
+    }
+
+    .class:not(:nth-of-type(5)) {
+        margin-top: 64px;
+    }
+
+    main > ul > li:nth-child(4n + 7),
+    main > ul > li:nth-child(4n + 8) {
+        border-top: 1px solid var(--nv-12-5-cc);
+    }
+
+    main > ul > li:nth-child(4n + 6)::before,
+    main > ul > li:nth-child(4n + 7)::before,
+    main > ul > li:nth-child(4n + 8)::before {
+        content: 'Desktop';
+        display: block;
+        margin-bottom: 8px;
+        font-family: 'Noto Sans Mono', monospace;
+        font-weight: 700;
+        font-size: 15px;
+        /*        line-height: 1.2;*/
+    }
+
+    main > ul > li:nth-child(4n + 7)::before {
+        content: "Tablet";
+    }
+
+    main > ul > li:nth-child(4n + 8)::before {
+        content: "Mobile";
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    main > ul > li:first-child {
+        visibility: collapse;
+    }
+
+    main > ul {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr 1fr;
+        grid-gap: 1px;
+        background-color: var(--nv-15-5-ee);
+    }
+
+    .viewport {
+        font-family: 'Noto Sans Mono', monospace;
+        font-weight: 700;
+/*        color: var(--nv-6-5-66);*/
+    }
+
+    .viewport::before {
+        content: 'desktop_mac';
+        display: inline-block;
+        height: 48px;
+        width: 48px;
+        margin-right: 24px;
+        border-radius: 999px;
+        font-family: 'material icons';
+        font-size: 24px;
+        line-height: 48px;
+        text-align: center;
+        vertical-align: middle;
+        background-color: white;
+    }
+
+    .viewport:nth-of-type(3)::before {
+        content: 'tablet_android';
+    }
+
+    .viewport:nth-of-type(4)::before {
+        content: 'smartphone';
+    }
+
+    .class {
+        writing-mode: vertical-lr;
+        /*        color: var(--nv-6-5-66);*/
+    }
+
+
+}
+
+@media screen and (min-width: 1350px) {}
+
+
+/*===================== type specs=======================*/
+
+.specs {
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #9d0000;
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 599px;
+}
+
+.specs li {
+    flex: 1 0 200px;
+}
+
+.specs li::before {
+    content: 'Font-size:';
+    margin-right: 4px;
+    font-weight: 700;
+}
+
+.specs li:nth-child(2)::before {
+    content: 'Font-weight:';
+}
+
+.specs li:nth-child(3)::before {
+    content: 'Line-height:';
+}
+
+.specs li:nth-child(4)::before {
+    content: 'Margin:';
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px), screen and (min-width: 2400px) {
+    
+    .specs {
+        max-width: unset;
+    }
+    .specs li {
+        flex: 0 0 auto;
+    }
+    .specs li:nth-child(-n + 3)::after {
+        content: "/";
+        color: var(--nv-9-5-99);
+        margin: 0 12px;    
+    }
+}
+
+
+/*===================== type setiing=======================*/
+.heading {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--nv-0);
+}
+
+.heading::after {
+    content: "Atia non pera vellestiis et et expliqu aturessimus solupta doles eicaepedi arum, odi aliquas is dest explit quasperis ut ma dolo et mo eture.";
+    display: block;
+}
+
+.heading.huge.mob {
+    font-size: 36px;
+}
+
+.heading.huge.tab {
+    font-size: 48px;
+}
+
+.heading.huge.desk {
+    font-size: 60px;
+}
+
+.heading.large.mob {
+    font-size: 28px;
+}
+
+.heading.large.tab {
+    font-size: 36px;
+}
+
+.heading.large.desk {
+    font-size: 48px;
+}
+
+.heading.medium.mob {
+    font-size: 24px;
+}
+
+.heading.medium.tab {
+    font-size: 28px;
+}
+
+.heading.medium.desk {
+    font-size: 36px;
+}
+
+.heading.small.mob {
+    font-size: 20px;
+}
+
+.heading.small.tab {
+    font-size: 24px;
+}
+
+.heading.small.desk {
+    font-size: 28px;
+}
+
+.heading.smaller.mob {
+    font-size: 18px;
+}
+
+.heading.smaller.tab {
+    font-size: 20px;
+}
+
+.heading.smaller.desk {
+    font-size: 24px;
+}
+
+.heading.smallest.mob {
+    font-size: 16px;
+}
+
+.heading.smallest.tab {
+    font-size: 18px;
+}
+
+.heading.smallest.desk {
+    font-size: 20px;
+}
+
+
+.body {
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--nv-1-5-1a);
+}
+
+.body::after {
+    content: "Atia non pera vellestiis et et expliqu aturessimus solupta doles eicaepedi arum, odi aliquas is dest explit quasperis ut ma dolo et mo eture commolore volor re pratias si reperistia dollore perrum eaquodi ctotas quo officimolore nitaectas dolore, offic temoluptas as acea ne ex eaqui offictas magnien iendipsam volore re, tem nitatibus resti doluptas quuntio es apis ea natia aut qui unt vendita tisciis simpossuntem quasperibea natem dolorer natur?";
+    display: block;
+}
+
+
+.body.large.mob {
+    font-size: 18px;
+}
+
+.body.large.tab {
+    font-size: 20px;
+}
+
+.body.large.desk {
+    font-size: 22px;
+}
+
+.body.medium {
+    line-height: 1.667;
+}
+
+.body.medium.mob {
+    font-size: 15px;
+}
+
+.body.medium.tab {
+    font-size: 15px;
+}
+
+.body.medium.desk {
+    font-size: 15px;
+}
+
+.body.small {
+    line-height: 1.4;
+}
+
+.body.small.mob {
+    font-size: 11px;
+}
+
+.body.small.tab {
+    font-size: 11px;
+}
+
+.body.small.desk {
+    font-size: 11px;
+}
+
+
+.cta {
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--nv-16);
+    background-color: var(--nv-green);
+    width: fit-content;
+}
+.cta.large.desk {
+    font-size: 18px;
+    padding: 15px;
+}
+.cta.large.tab {
+    font-size: 16px;
+    padding: 13px;
+}
+.cta.large.mob {
+    font-size: 15px;
+    padding: 12px;
+}
+.cta.medium.desk {
+    font-size: 16px;
+    padding: 13px;
+}
+.cta.medium.tab {
+    font-size: 14px;
+    padding: 12px;
+}
+.cta.medium.mob {
+    font-size: 12px;
+    padding: 10px;
+}
+
+.sitename {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--nv-0);
+}
+
+.sitename::after {
+    content: 'Site name placeholder';
+    display: block;
+}
+
+.sitename.mob {
+    font-size: 20px;
+}
+
+.sitename.tab {
+    font-size: 24px;
+}
+
+.sitename.desk {
+    font-size: 28px;
+}

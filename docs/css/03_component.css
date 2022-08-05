@@ -48,6 +48,9 @@
     position: relative;
     line-height: 1;
 }
+.cp_cta.noicon {
+    padding: var(--space-m);
+}
 
 .cp_cta img {
     margin-right: 8px;
