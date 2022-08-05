@@ -21,7 +21,7 @@
 
 @media screen and (min-width: 2000px) {
     :root {
-/*        --li-padding: 48px;*/
+        /*        --li-padding: 48px;*/
     }
 }
 
@@ -103,7 +103,7 @@ main > ul > li {
     .viewport {
         font-family: 'Noto Sans Mono', monospace;
         font-weight: 700;
-/*        color: var(--nv-6-5-66);*/
+        /*        color: var(--nv-6-5-66);*/
     }
 
     .viewport::before {
@@ -155,17 +155,17 @@ main > ul > li {
 }
 
 .specs li {
-    flex: 1 0 200px;
+    flex: 1 0 180px;
 }
 
 .specs li::before {
-    content: 'Font-size:';
+    content: 'Size:';
     margin-right: 4px;
     font-weight: 700;
 }
 
 .specs li:nth-child(2)::before {
-    content: 'Font-weight:';
+    content: 'Weight:';
 }
 
 .specs li:nth-child(3)::before {
@@ -176,18 +176,37 @@ main > ul > li {
     content: 'Margin:';
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px), screen and (min-width: 2400px) {
-    
+@media screen and (min-width: 440px) and (max-width: 767px),
+screen and (min-width: 1440px) and (max-width: 2399px) {
     .specs {
-        max-width: unset;
+        gap: 24px;
     }
+
     .specs li {
         flex: 0 0 auto;
     }
+
+    .specs li::before {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px),
+screen and (min-width: 2400px) {
+
+    .specs {
+        max-width: unset;
+    }
+
+    .specs li {
+        flex: 0 0 auto;
+    }
+
     .specs li:nth-child(-n + 3)::after {
         content: "/";
         color: var(--nv-9-5-99);
-        margin: 0 12px;    
+        margin: 0 12px;
     }
 }
 
@@ -341,26 +360,32 @@ main > ul > li {
     background-color: var(--nv-green);
     width: fit-content;
 }
+
 .cta.large.desk {
     font-size: 18px;
     padding: 15px;
 }
+
 .cta.large.tab {
     font-size: 16px;
     padding: 13px;
 }
+
 .cta.large.mob {
     font-size: 15px;
     padding: 12px;
 }
+
 .cta.medium.desk {
     font-size: 16px;
     padding: 13px;
 }
+
 .cta.medium.tab {
     font-size: 14px;
     padding: 12px;
 }
+
 .cta.medium.mob {
     font-size: 12px;
     padding: 10px;
