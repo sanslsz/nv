@@ -1,5 +1,6 @@
 :root {
     --li-padding: 16px;
+    --viewport-icon-bg: #ffffff;
 }
 
 @media screen and (min-width: 640px) {
@@ -27,7 +28,7 @@
 
 /*==================== general styling ================*/
 main {
-    background-color: var(--sw-14);
+    background-color: var(--nv-14-dd);
 }
 
 h1 {
@@ -35,7 +36,7 @@ h1 {
 }
 
 .class {
-    font-family: 'Noto Sans Mono', monospace;
+    font-family: 'nomo', monospace;
     font-size: 20px;
     font-weight: 700;
 }
@@ -72,9 +73,10 @@ main > ul > li {
         content: 'Desktop 1350+px';
         display: block;
         margin-bottom: 8px;
-        font-family: 'Noto Sans Mono', monospace;
+        font-family: 'nomo', monospace;
         font-weight: 700;
         font-size: 15px;
+        color: var(--nv-1-5-1a);
         /*        line-height: 1.2;*/
     }
 
@@ -97,13 +99,11 @@ main > ul > li {
         display: grid;
         grid-template-columns: auto 1fr 1fr 1fr;
         grid-gap: 1px;
-        background-color: var(--nv-15-5-ee);
     }
 
     .viewport {
-        font-family: 'Noto Sans Mono', monospace;
+        font-family: 'nomo', monospace;
         font-weight: 700;
-        /*        color: var(--nv-6-5-66);*/
     }
 
     .viewport::before {
@@ -118,7 +118,7 @@ main > ul > li {
         line-height: 48px;
         text-align: center;
         vertical-align: middle;
-        background-color: white;
+        background-color: var(--viewport-icon-bg);
     }
 
     .viewport:nth-of-type(3)::before {
@@ -131,7 +131,6 @@ main > ul > li {
 
     .class {
         writing-mode: vertical-lr;
-        /*        color: var(--nv-6-5-66);*/
     }
 
 
@@ -143,7 +142,7 @@ main > ul > li {
 /*===================== type specs=======================*/
 
 .specs {
-    font-family: 'Noto Sans Mono', monospace;
+    font-family: 'nomo', monospace;
     font-size: 15px;
     font-weight: 500;
     line-height: 1.5;
@@ -175,6 +174,7 @@ main > ul > li {
 .specs li:nth-child(4)::before {
     content: 'Margin:';
 }
+
 .specs li:nth-child(4) {
     display: none;
 }
@@ -213,8 +213,25 @@ screen and (min-width: 2400px) {
     }
 }
 
+/*===================== dark scheme =======================*/
+@media (?prefers-color-scheme: dark) {
+    :root {
+--viewport-icon-bg: var(--nv-6-5-66);
+--viewport-icon-bg: var(--sw-4-5);        
 
-/*===================== type setiing=======================*/
+/*--nv-16: #ffffff;*/
+--nv-15-5-f7: var(--nv-3-33);
+--nv-14-dd: var(--nv-2-22);
+--nv-12-5-cc: var(--nv-1-11);
+/*--nv-9-5-99: #999999;*/
+--nv-1-5-1a: var(--nv-15-ee);
+--nv-0: var(--nv-16);
+    }
+}
+
+
+
+/*===================== type setiing =======================*/
 .heading {
     font-weight: 700;
     line-height: 1.2;

@@ -249,3 +249,10 @@ input:checked ~ .cp_dropdown_pop {
     line-height: 1;
     color: var(--nv-1-5-66);
 }
+
+/* ========================= disclaimer ========================*/
+.cp_disclaimer {
+    font-family: 'nomo', monospace;
+    color: var(--nv-6-5-66);
+    background-color: var(--nv-14-dd);
+}

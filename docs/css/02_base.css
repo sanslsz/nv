@@ -107,6 +107,9 @@ img {
 .padding {
     padding: var(--padding-section);
 }
+.paddingsmall {
+    padding: var(--space-s) var(--padding-lr);
+}
 .wrapper {
     max-width: var(--wrapper);
     margin-left: auto;
