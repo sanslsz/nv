@@ -1,0 +1,48 @@
+:root {
+         
+/*--nv-16: #ffffff;*/
+--nv-15-5-f7: var(--nv-3-33);
+--nv-14-dd: var(--nv-2-22);
+/*--nv-12-5-cc: 3var(--nv-1-11);*/
+/*--nv-9-5-99: #999999;*/
+--nv-1-5-1a: var(--nv-15-ee);
+--nv-0: var(--nv-16);
+    
+--viewport-icon-bg: var(--sw-5);
+}
+
+
+/*==================== general styling ================*/
+
+@media screen and (max-width: 1023px) {
+    main > ul > li:nth-child(4n + 7),
+    main > ul > li:nth-child(4n + 8) {
+        border-top: 1px solid var(--nv-6-5-66);
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    main > ul > li:first-child {
+        visibility: revert;
+        background-color: var(--nv-2-22);
+    }
+
+    main > ul {
+        background-color: var(--nv-6-5-66);
+        background-color: var(--sw-5);
+    }
+    .viewport::before {
+        background-color: var(--viewport-icon-bg);
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px),
+screen and (min-width: 2400px) {
+
+    .specs li:nth-child(-n + 2)::after {
+        color: var(--nv-9-5-99);
+    }
+}
+
