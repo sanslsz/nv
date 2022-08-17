@@ -116,28 +116,28 @@ body {
     background-color: var(--sw-14-5);
 }
 
-h1 {
+h1, .tp_h1 {
     font-size: var(--h1);
     font-weight: 700;   
     line-height: 1.25;
     margin: 0 0 4rem;
 }
 
-h2 {
+h2, .tp_h2 {
     font-size: var(--h2);
     font-weight: 700; 
     line-height: 1.25;
     margin: 0 0 4rem;
 }
 
-h3 {
+h3, .tp_h3 {
     font-size: var(--h3);
     font-weight: 700;
     line-height: 1.25;
     margin: 0 0 1rem;
 }
 
-h4 {
+h4, .tp_h4 {
     font-size: var(--h4);
     font-weight: 700; 
     line-height: 1.25;

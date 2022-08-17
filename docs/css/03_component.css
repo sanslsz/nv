@@ -1,7 +1,7 @@
 :root {
 
-    --nv-cta-padding: 12px;
     --nv-cta-font-size: 14px;
+    --nv-cta-small-font-size: 12px;
 
     --filter-search-width: 100%;
     --filter-search-width-2: clamp(260px, 60vw, 400px);
@@ -12,8 +12,8 @@
 @media screen and (min-width: 640px) {
     :root {
 
-        --nv-cta-padding: 13px;
         --nv-cta-font-size: 15px;
+        --nv-cta-small-font-size: 13px;
 
         --filter-search-width: clamp(300px, 50vw, 400px);
 
@@ -23,16 +23,16 @@
 
 @media screen and (min-width: 1024px) {
     :root {
-        --nv-cta-padding: 14px;
         --nv-cta-font-size: 16px;
+        --nv-cta-small-font-size: 14px;
 
     }
 }
 
 @media screen and (min-width: 1350px) {
     :root {
-        --nv-cta-padding: 15px;
         --nv-cta-font-size: 18px;
+        --nv-cta-small-font-size: 15px;
     }
 }
 
@@ -60,6 +60,18 @@
     transform: translateY(-50%);
 }
 
+.cp_cta_small {
+    display: block;
+    width: fit-content;
+    padding: var(--space-s);
+    background-color: var(--nv-green);
+    color: var(--nv-16);
+    font-weight: 700;
+    font-size: var(--nv-cta-small-font-size);
+    position: relative;
+    line-height: 1;
+}
+}
 /*=================== search ===================*/
 .cp_search {
     position: relative;
