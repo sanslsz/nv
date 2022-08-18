@@ -64,9 +64,9 @@
     --h3: 18px;
     --h4: 16px;
     
-    --bodyl: 18;
+    --bodyl: 18px;
     --bodym: var(--base-size);
-    --bodys: 11;
+    --bodys: 11px;
 }
 
 @media screen and (min-width: 640px) {
@@ -83,7 +83,7 @@
     --h3: 20px;
     --h4: 18px;
         
-    --bodyl: 20;
+    --bodyl: 20px;
 }
 }
 
@@ -94,7 +94,7 @@
     --h3: 24px;
     --h4: 20px;
         
-    --bodyl: 22;
+    --bodyl: 22px;
 }
 }
 
@@ -153,15 +153,15 @@ footer > p {
     font-size: var(--fine-print);
 }
 
-.plarge {
+.tp_p_l {
     font-size: var(--bodyl);
     line-height: 1.75;
 }
-.pmedium {
+.tp_p_m {
     font-size: var(--bodym);
     line-height: 1.67;
 }
-.psmall {
+.tp_p_s {
     font-size: var(--bodys);
     line-height: 1.4;
 }

@@ -41,7 +41,7 @@
 }
 
 body {
-    background-color: var(--sw-3);
+/*    background-color: var(--sw-3);*/
 }
 
 /*========================== global nav  ===========================*/
@@ -92,7 +92,7 @@ body {
 .cp_nav_site {
     color: var(--nv-16);
     background-color: var(--nv-0);
-    padding: 8px var(--padding-lr);
+    padding: var(--space-m) var(--padding-lr);
 }
 .cp_nav_site > ul {
     display: flex;
@@ -109,12 +109,10 @@ body {
     margin-right: auto;
 }
 .sitename ~ li {
-    font-weight: 700;
-    font-size: 15px;
     flex-shrink: 0;
     color: var(--nv-9-5-99);
 }
-.cp_nav_site > ul > li:nth-of-type(n+6):nth-last-of-type(n+3) {
+.cp_nav_site > ul > li:nth-of-type(n+5):nth-last-of-type(n+3) {
     display: var(--nav-display-truncate);
 /*    higher specificity than than other list items css*/
 }
@@ -123,8 +121,22 @@ body {
     color: red;
 }
 */
-.cp_nav_site li:not(.sitename, .ic_ellipsis, .ic_menu) {
+.cp_nav_site  > ul > li:not(.sitename, .ic_ellipsis, .ic_menu) {
     display: var(--nav-display-desk);
+    padding-right: 24px;
+    position: relative;
+    cursor: pointer;
+}
+.cp_nav_site  > ul > li:not(.sitename, .ic_ellipsis, .ic_menu)::after {
+    content: 'arrow_drop_down';
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 
@@ -198,16 +210,17 @@ body {
 
 
 .cp_nav_inpage {
-    background-color: #22222290;
+    background-color: rgba(16, 16, 16, 0.7);
+    backdrop-filter: blur(12px);
     color: var(--nv-16);
     padding-left: var(--padding-lr);
     padding-right: var(--padding-lr);
+    padding: var(--space-s) var(--padding-lr);
 }
 .cp_nav_inpage .main {
     display: flex;
     align-items: center;
     gap: 32px;
-    min-height: 36px;
     white-space: nowrap;
 }
 .cp_nav_inpage .pagename {
@@ -222,15 +235,16 @@ body {
     display: var(--nav-display-desk);
 }
 .cp_nav_inpage .mob {
-    display: none;
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
+/*    display: none;*/
     font-size: var(--h3);
+    max-height: 0px;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
 }
-.cp_nav_inpage .mob li {
-    cursor: pointer;
+.cp_nav_inpage .mob li a {
+    color: var(--nv-16);
 }
-.cp_nav_inpage .mob li:hover {
+.cp_nav_inpage .mob li:hover a {
     color: var(--nv-green);
 }
 .cp_nav_inpage .mob li + li {
@@ -244,14 +258,12 @@ body {
 @media screen and (max-width: 1023px) {
     .cp_nav_inpage .main {
         align-items: flex-start;
-        gap: 8px;
-        padding: var(--space-s) 0;
+        gap: 16px;
     }
     .cp_nav_inpage .pagename {
         cursor: pointer;
         padding-right: 32px;
-/*        padding: var(--space-s) 32px var(--space-s) 0;*/
-        
+        margin-top: calc(var(--space-s) - 4px);
     }
     .cp_nav_inpage .pagename::after {
         content: '';
@@ -261,9 +273,9 @@ body {
         background: url(../assets/dropdown_arrow.svg) center / cover;
 /*        background: red;*/
         position: absolute;
-        top: calc(var(--space-s) + 4px);
+        top: calc(var(--space-s) + 2px);
 /*        top: 50%;*/
-        right: 8px;
+        right: 4px;
         transform: translateY(-50%);
         transition: all 0.2s ease-in-out;
     }
@@ -273,18 +285,39 @@ body {
     #inpage_checkbox:checked + .main .pagename::after {
         background-image: url(../assets/dropdown_arrow_green.svg);
         transform: translateY(-50%) rotate(180deg);
-        transform-origin: center center;
+/*        transform-origin: center center;*/
     }
     
     
 #inpage_checkbox:checked ~ .mob {
     display: block;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xxl);
+    max-height: 600px;
 }
 }
 
+/*========================== page   ===========================*/
 
 .fullnav {
     position: fixed;
     top: 0;
     width: 100%;
+}
+main ul {
+    margin-top: var(--padding-tb);
+    display: grid;
+    grid-gap: var(--space-l) 0px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+main li:nth-child(odd) {
+    padding: var(--space-xl);
+    background-color: var(--nv-16);
+}
+main h2 {
+    margin-bottom: 1rem;
+}
+main img {
+    height: 100%;
+    object-fit: cover;
 }
