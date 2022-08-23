@@ -138,8 +138,13 @@ body {
     right: 0;
     top: 0;
 }
+.cp_nav_site .ic_menu {
+    display: var(--nav-display-mobile);
+    cursor: pointer;
+}
 
 
+/*========================== site nav - drop down  ===========================*/
 .cp_nav_site .ic_ellipsis {
     display: var(--nav-display-ellipsis);
     position: relative;
@@ -197,12 +202,6 @@ body {
 .hovermenu li + .category {
     margin-top: var(--space-xl);
 }
-
-
-.cp_nav_site .ic_menu {
-    display: var(--nav-display-mobile);
-}
-
 
 
 /*========================== inpage nav  ===========================*/
