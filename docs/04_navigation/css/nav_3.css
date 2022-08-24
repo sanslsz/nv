@@ -277,7 +277,7 @@ body {
     align-items: center;
     gap: var(--nav-gap);
     white-space: nowrap;
-    height: var(--cp_nav_inpage-height);
+    min-height: var(--cp_nav_inpage-height);
 }
 .cp_nav_inpage .pagename {
     font-size: var(--cp_nav_inpage-title-fsize);
