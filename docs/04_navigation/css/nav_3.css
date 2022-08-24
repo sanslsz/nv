@@ -1,6 +1,21 @@
 :root {
-    --li-padding: 16px;
-    --viewport-icon-bg: #ffffff;
+    
+    
+    --cp_nav_global-height: 44px;
+    --cp_nav_site-height: 46px;
+    --cp_nav_inpage-height: 36px;
+    
+    --cp_nav_site-title-fsize: 18px;
+    --cp_nav_site-item-fsize: 16px;
+    
+    --cp_nav_inpage-main-padding: 4px;
+    --cp_nav_inpage-title-fsize: 14px;
+    --cp_nav_inpage-item-fsize: 16px;
+/*    the 24px icon space is same as flex gap but list them here in case they change in the future*/
+    --cp_nav_inpage_24pxicon_left: 15px;
+    --cp_nav_inpage_24pxicon_right: 15px;
+    
+    --nav-gap: 15px;
     --nav-display-desk: none;
     --nav-display-ellipsis: none;
     --nav-flex-justify: space-between;
@@ -10,14 +25,34 @@
 
 @media screen and (min-width: 640px) {
     :root {
-        --li-padding: 24px;
-        --content-grid-template: repeat(auto-fill, minmax(400px, 1fr));
-
+        
+    --cp_nav_inpage-height: 54px;
+    
+    --cp_nav_site-title-fsize: 20px;
+    
+    --cp_nav_inpage-main-padding: 11px;
+    --cp_nav_inpage-title-fsize: 16px;
+    --cp_nav_inpage_24pxicon_left: 30px;
+    --cp_nav_inpage_24pxicon_right: 30px;
+        
+    --content-grid-template: repeat(auto-fill, minmax(400px, 1fr));
+        
+    --nav-gap: 30px;
     }
 }
 
 @media screen and (min-width: 1024px) {
     :root {
+    
+    --cp_nav_site-height: 66px;
+    --cp_nav_inpage-height: 70px;
+    
+    --cp_nav_site-title-fsize: 24px;
+    
+    --cp_nav_inpage-title-fsize: 20px;
+    --cp_nav_inpage-item-fsize: 14px;
+        
+        
     --nav-margin-left: 96px;
     --nav-flex: flex;
     --nav-display-desk: block;
@@ -29,7 +64,13 @@
 
 @media screen and (min-width: 1350px) {
     :root {
-        --li-padding: 32px;
+            
+    --cp_nav_site-title-fsize: 28px;
+    
+    --cp_nav_inpage-title-fsize: 24px;
+    --cp_nav_inpage-item-fsize: 16px;
+        
+        
         --nav-display-ellipsis: none;
         --nav-display-truncate: unset;
     }
@@ -53,7 +94,7 @@ body {
 }
 .cp_nav_global > ul {
     display: flex;
-    height: 44px;
+    height: var(--cp_nav_global-height);
     align-items: center;
     justify-content: var(--nav-flex-justify);
     gap: 24px;
@@ -77,6 +118,7 @@ body {
 }
 .cp_nav_global li:not(.ic_menu, .logo, .ic_search) {
     display: var(--nav-display-desk);
+    cursor: pointer;
 }
 .cp_nav_global li:nth-of-type(6) {
     margin-right: auto;
@@ -93,27 +135,27 @@ body {
 .cp_nav_site {
     color: var(--nv-16);
     background-color: var(--nv-0);
-    padding: var(--space-m) var(--padding-lr);
+    padding: 0 var(--padding-lr);
 }
 .cp_nav_site > ul {
     display: flex;
-    gap: 24px;
+    gap: var(--nav-gap);
     align-items: center;
+    height: var(--cp_nav_site-height);
 }
 .sitename {
     font-weight: 700;
-    font-size: var(--h4);
+    font-size: var(--cp_nav_site-title-fsize);
     flex: 0 1 auto;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-right: auto;
 }
 .sitename ~ li {
     flex-shrink: 0;
     color: var(--nv-9-5-99);
 }
-.cp_nav_site > ul > li:nth-of-type(n+5):nth-last-of-type(n+3) {
+.cp_nav_site > ul > li:nth-of-type(n+4):nth-last-of-type(n+3) {
     display: var(--nav-display-truncate);
 /*    higher specificity than than other list items css*/
 }
@@ -142,6 +184,7 @@ body {
 .cp_nav_site .ic_menu {
     display: var(--nav-display-mobile);
     cursor: pointer;
+    margin-left: auto;
 }
 
 
@@ -156,11 +199,10 @@ body {
 /*    vertical alignment */
 }
 .cp_nav_site .ic_ellipsis .hovermenu {
-/*   display: none;*/
     position: absolute;
     z-index: 1;
     top: 12px;
-    right: -48px;
+    right: -80px;
     width: fit-content;
     white-space: nowrap;
     padding: 24px;
@@ -174,7 +216,6 @@ body {
 }
 .cp_nav_site .ic_ellipsis::before {
     content: "";
-    display: block;
     width: 24px;
     height: 24px;
     background-color: var(--nv-15-5-f7);
@@ -186,7 +227,7 @@ body {
 .ic_ellipsis:hover .hovermenu, .ic_ellipsis:hover::before {
     display: revert;
 }
-.ic_ellipsis:hover span, .ic_ellipsis li:not(.category):hover {
+.ic_ellipsis:hover span {
     color: var(--nv-green);
 }
 
@@ -194,11 +235,30 @@ body {
 .hovermenu li {
     cursor: pointer;
 }
+.ic_ellipsis li:not(.category) {
+    padding-left: 16px;
+}
+.ic_ellipsis li:not(.category):hover {
+    color: var(--nv-green);
+}
 .hovermenu li:not(:last-child) {
     margin-bottom: var(--space-xs);
 }
 .hovermenu .category {
-    font-weight: 700;
+    padding-right: 24px;
+    position: relative;
+    width: fit-content;
+}
+.hovermenu .category::after {
+    content: 'arrow_drop_down';
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .hovermenu li + .category {
     margin-top: var(--space-xl);
@@ -207,46 +267,51 @@ body {
 
 /*========================== inpage nav  ===========================*/
 
-
-
 .cp_nav_inpage {
-    background-color: rgba(16, 16, 16, 0.7);
+    background-color: #1a1a1ae6;
     backdrop-filter: blur(12px);
-    color: var(--nv-16);
-    padding: var(--space-s) var(--padding-lr);
+    padding: 0 var(--padding-lr);
 }
 .cp_nav_inpage .main {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: var(--nav-gap);
     white-space: nowrap;
+    height: var(--cp_nav_inpage-height);
 }
 .cp_nav_inpage .pagename {
+    font-size: var(--cp_nav_inpage-title-fsize);
     font-weight: 700;
-    margin: 0;
-    margin-right: auto;
     overflow: hidden;
     text-overflow: ellipsis;
-    position: relative;
+    flex-grow: 1;
+    color: var(--nv-16);
 }
+
 .cp_nav_inpage .main li:not(.cp_cta_small) {
     display: var(--nav-display-desk);
+    color: var(--nv-9-5-99);
+    cursor: pointer;
 }
+
 .cp_nav_inpage .mob {
 /*    display: none;*/
-    font-size: var(--h3);
+    font-weight: 700;
+/*    font-size: 16px;*/
     max-height: 0px;
     transition: all 0.2s ease-in-out;
     overflow: hidden;
 }
+
 .cp_nav_inpage .mob li a {
-    color: var(--nv-16);
+    color: var(--nv-9-5-99);
+    font-size: 14px;
 }
-.cp_nav_inpage .mob li:hover a {
+.cp_nav_inpage .mob li a:hover {
     color: var(--nv-green);
 }
 .cp_nav_inpage .mob li + li {
-    margin-top: var(--space-l);
+    margin-top: 32px;
 }
 
 
@@ -256,42 +321,41 @@ body {
 @media screen and (max-width: 1023px) {
     .cp_nav_inpage .main {
         align-items: flex-start;
-        gap: 16px;
+        gap: var(--nav-gap);
+        padding-top: var(--cp_nav_inpage-main-padding);
     }
     .cp_nav_inpage .pagename {
-        cursor: pointer;
-        padding-right: 32px;
+        padding-right: calc(24px + var(--cp_nav_inpage_24pxicon_left));
+        position: relative;
         margin-top: calc(var(--space-s) - 4px);
     }
     .cp_nav_inpage .pagename::after {
         content: '';
         display: block;
-        width: 13px;
-        height: 8px;
-        background: url(../assets/dropdown_arrow.svg) center / cover;
+        width: 24px;
+        height: 24px;
+        background: url(../assets/chevron_24px.svg) center / cover;
 /*        background: red;*/
         position: absolute;
         top: calc(var(--space-s) + 2px);
 /*        top: 50%;*/
-        right: 4px;
+        right: 0px;
         transform: translateY(-50%);
         transition: all 0.2s ease-in-out;
+        cursor: pointer;
     }
     #inpage_checkbox:checked + .main .pagename {
     white-space: normal;
 }
     #inpage_checkbox:checked + .main .pagename::after {
-        background-image: url(../assets/dropdown_arrow_green.svg);
+        background-image: url(../assets/chevron_24px%20_green.svg);
         transform: translateY(-50%) rotate(180deg);
 /*        transform-origin: center center;*/
     }
-    
-    
-#inpage_checkbox:checked ~ .mob {
-    display: block;
-    margin-top: var(--space-xl);
-    margin-bottom: var(--space-xxl);
-    max-height: 600px;
+    #inpage_checkbox:checked ~ .mob {
+    padding: 48px 0px;
+    max-height: 100vh;
+    height: 98vh;
 }
 }
 
@@ -317,5 +381,6 @@ main h2 {
 }
 main img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }

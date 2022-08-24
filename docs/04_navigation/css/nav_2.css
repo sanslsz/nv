@@ -9,9 +9,12 @@
     --cp_nav_site-item-fsize: 16px;
     
     --cp_nav_inpage-title-fsize: 14px;
-    --cp_nav_inpage-item-fsize: 16px;
+    --cp_nav_inpage-item-fsize: 16px;  
+    /*    the 24px icon space is same as flex gap but list them here in case they change in the future*/
+    --cp_nav_inpage_24pxicon_left: 15px;
+    --cp_nav_inpage_24pxicon_right: 15px;
     
-    --nav-gap: 30px;
+    --nav-gap: 15px;
     --nav-display-desk: none;
     --nav-display-ellipsis: none;
     --nav-flex-justify: space-between;
@@ -27,6 +30,12 @@
     --cp_nav_site-title-fsize: 20px;
     
     --cp_nav_inpage-title-fsize: 16px;
+    --cp_nav_inpage_24pxicon_left: 30px;
+    --cp_nav_inpage_24pxicon_right: 30px;
+        
+    --nav-gap: 30px;
+        
+    --content-grid-template: repeat(auto-fill, minmax(400px, 1fr));
         
 
     }
@@ -109,6 +118,7 @@ body {
 }
 .cp_nav_global li:not(.ic_menu, .logo, .ic_search) {
     display: var(--nav-display-desk);
+    cursor: pointer;
 }
 .cp_nav_global li:nth-of-type(6) {
     margin-right: auto;
@@ -174,6 +184,7 @@ body {
 .cp_nav_site .ic_menu {
     display: var(--nav-display-mobile);
     cursor: pointer;
+    margin-left: auto;
 }
 
 
@@ -284,6 +295,7 @@ body {
 .cp_nav_inpage .main li:not(.cp_cta_small, .pagename) {
     display: var(--nav-display-desk);
     color: var(--nv-9-5-99);
+    cursor: pointer;
 }
 
 
@@ -313,6 +325,7 @@ body {
 }
 .cp_nav_inpage #inpage_slide li a {
     color: var(--nv-9-5-99);
+    font-size: 14px;
 }
 .cp_nav_inpage #inpage_slide li a:hover {
     color: var(--nv-green);
@@ -326,7 +339,7 @@ body {
         gap: 16px;
     }
     .cp_nav_inpage .pagename {
-        padding-right: 32px;
+        padding-right: calc(24px + var(--cp_nav_inpage_24pxicon_left));
         position: relative;
     }
     .cp_nav_inpage .pagename a {
@@ -359,7 +372,7 @@ main ul {
     margin-top: var(--padding-tb);
     display: grid;
     grid-gap: var(--space-l) 0px;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: var(--content-grid-template);
 }
 main li:nth-child(odd) {
     padding: var(--space-xl);
@@ -370,5 +383,6 @@ main h2 {
 }
 main img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
