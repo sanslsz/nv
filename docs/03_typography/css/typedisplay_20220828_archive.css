@@ -201,11 +201,10 @@ section > ul > li:target {
     display: flex;
     flex-wrap: wrap;
     max-width: 599px;
-    gap: 0 32px;
 }
 
 .specs li {
-    flex: 1 0 auto;
+    flex: 1 0 160px;
 }
 
 .specs li::before {
@@ -230,8 +229,8 @@ section > ul > li:target {
     display: none;
 }
 
-@media screen and (min-width: 420px) and (max-width: 639px),
-screen and (min-width: 1440px) and (max-width: 1899px) {
+@media screen and (min-width: 440px) and (max-width: 767px),
+screen and (min-width: 1440px) and (max-width: 2399px) {
     .specs {
         gap: 24px;
     }
@@ -246,12 +245,11 @@ screen and (min-width: 1440px) and (max-width: 1899px) {
 
 }
 
-@media screen and (min-width: 640px) and (max-width: 1023px),
-screen and (min-width: 1900px) {
+@media screen and (min-width: 768px) and (max-width: 1023px),
+screen and (min-width: 2400px) {
 
     .specs {
         max-width: unset;
-        gap: unset;
     }
 
     .specs li {
@@ -261,7 +259,7 @@ screen and (min-width: 1900px) {
     .specs li:nth-child(-n + 2)::after {
         content: "/";
         color: var(--nv-9-5-99);
-        margin: 0 16px;
+        margin: 0 12px;
     }
 }
 
