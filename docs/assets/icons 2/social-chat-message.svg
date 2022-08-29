@@ -1,8 +1,0 @@
-<svg id="social_chat-message" data-name="social/chat-message" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <path id="Vector" d="M16.271,0H0V13.312H3.647l.793,2.96,2.96-2.96h8.87Z" transform="translate(3.698 3.698)" fill="none" stroke="#fff" stroke-width="1.5"/>
-  <path id="Vector-2" data-name="Vector" d="M2.5,3h8.875M2.5,7.437h8.875" transform="translate(4.896 5.135)" fill="none" stroke="#fff" stroke-width="1.5"/>
-  <g id="space" fill="none" stroke="#000" stroke-width="1" opacity="0">
-    <rect width="24" height="24" stroke="none"/>
-    <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
-  </g>
-</svg>

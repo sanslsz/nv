@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <g id="common_close" data-name="common/close" transform="translate(0 -0.25)">
-    <path id="Vector" d="M0,0,9.945,9.945M9.945,0,0,9.945" transform="translate(2.983 2.983)" fill="none" stroke="#666" stroke-width="1"/>
-    <g id="space" transform="translate(0 0.25)" fill="none" stroke="#000" stroke-width="1" opacity="0">
-      <rect width="16" height="16" stroke="none"/>
-      <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
-    </g>
-  </g>
-</svg>

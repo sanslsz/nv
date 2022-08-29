@@ -72,7 +72,6 @@
     line-height: 1;
     cursor: pointer;
 }
-}
 /*=================== search ===================*/
 .cp_search {
     position: relative;
@@ -82,7 +81,7 @@
     text-overflow: ellipsis;
     width: var(--filter-search-width);
     padding: 10px 40px 10px 10px;
-    background: url(../assets/icons/common-magnifying-glass.svg) no-repeat right 10px center, var(--nv-15-5-f7);
+    background: url(../assets/qsc/common-magnifying-glass.svg) no-repeat right 10px center, var(--nv-15-5-f7);
     border: 1px solid var(--nv-12-5-cc);
     font-size: 14px;
     color: var(--nv-1-5-1a);
@@ -146,7 +145,7 @@
     display: block;
     width: 16px;
     height: 16px;
-    background: url(../assets/icons/common-close.svg);
+    background: url(../assets/qsc/common-close.svg);
     position: absolute;
     right: 16px;
     top: 50%;
@@ -187,7 +186,7 @@
     display: block;
     width: 14px;
     height: 8px;
-    background: url(../assets/icons/dropdown_arrow.svg) no-repeat center / contain;
+    background: url(../assets/qsc/dropdown_arrow.svg) no-repeat center / contain;
     position: absolute;
     right: 12px;
     top: 50%;
@@ -198,7 +197,7 @@
     border: 1px solid var(--nv-green);
 }
 .cp_dropdown > input:checked ~ label::after {
-    background-image: url(../assets/icons/dropdown_arrow_green.svg);
+    background-image: url(../assets/qsc/dropdown_arrow_green.svg);
     transform: translateY(-50%) rotate(180deg);
     transform-origin: center center;
 }
@@ -244,18 +243,18 @@ input:checked ~ .cp_dropdown_pop {
     appearance: none;
     width: 14px;
     height: 14px;
-    background: url(../assets/icons/ic_checkbox_inactive.svg) no-repeat center / contain;
+    background: url(../assets/qsc/ic_checkbox_inactive.svg) no-repeat center / contain;
 }
 
 .cp_dropdown_pop input[type="checkbox"]:checked {
-    background-image: url(../assets/icons/ic_checkbox_active.svg);
+    background-image: url(../assets/qsc/ic_checkbox_active.svg);
 }
 
 /* ========================= pagination dropdown ========================*/
 .cp_select {
     appearance: none;
     border: 1px solid var(--nv-12-5-cc);
-    background: url(../assets/icons/dropdown_arrow_66.svg) no-repeat right 8px center, var(--nv-15-5-f7);
+    background: url(../assets/qsc/dropdown_arrow_66.svg) no-repeat right 8px center, var(--nv-15-5-f7);
     padding: 6px calc(4px + 14px + 8px) 6px 8px;
     font-size: 14px;
     font-weight: 900;

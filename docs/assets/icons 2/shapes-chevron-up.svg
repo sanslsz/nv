@@ -1,7 +1,0 @@
-<svg id="shapes_chevron-up" data-name="shapes/chevron-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <path id="Vector_61" data-name="Vector 61" d="M12,6,6,0,0,6" transform="translate(18 15) rotate(180)" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
-  <g id="space" fill="none" stroke="#000" stroke-width="1" opacity="0">
-    <rect width="24" height="24" stroke="none"/>
-    <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
-  </g>
-</svg>

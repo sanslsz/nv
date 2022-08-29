@@ -27,7 +27,7 @@
 }
 
 /*==================== general styling ================*/
-main {
+body {
     background-color: var(--nv-14-dd);
 }
 
@@ -41,35 +41,54 @@ h1 {
     font-weight: 700;
 }
 
-main > ul > li {
+section > ul > li {
     padding: var(--li-padding);
     background: var(--nv-15-5-f7);
 }
 
+section > ul > li:target {
+    outline: 4px solid var(--nv-green);
+    outline-offset: -4px;
+}
+
+.equivalency {
+    font-family: 'nomo', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: -16px 0 24px;
+    color: var(--nv-6-5-66);
+}
+.equivalency a {
+    text-decoration: underline;
+/*    font-weight: 700;*/
+    color: var(--nv-1-5-1a);
+}
 
 @media screen and (max-width: 1023px) {
 
-    main > ul > li:first-child,
+    .class {
+        background-color: transparent;
+        margin-top: 64px;
+    }
+
+    .no-margin {
+        margin: 0;
+    }
+    
+    .web > ul > li:first-child,
     .viewport {
         display: none;
     }
 
-    .class {
-        background-color: transparent;
-    }
-
-    .class:not(:nth-of-type(5)) {
-        margin-top: 64px;
-    }
-
-    main > ul > li:nth-child(4n + 7),
-    main > ul > li:nth-child(4n + 8) {
+    .web > ul > li:nth-child(4n + 7),
+    .web > ul > li:nth-child(4n + 8) {
         border-top: 1px solid var(--nv-12-5-cc);
     }
 
-    main > ul > li:nth-child(4n + 6)::before,
-    main > ul > li:nth-child(4n + 7)::before,
-    main > ul > li:nth-child(4n + 8)::before {
+    .web > ul > li:nth-child(4n + 6)::before,
+    .web > ul > li:nth-child(4n + 7)::before,
+    .web > ul > li:nth-child(4n + 8)::before {
         content: 'Desktop 1350+px';
         display: block;
         margin-bottom: 8px;
@@ -77,29 +96,34 @@ main > ul > li {
         font-weight: 700;
         font-size: 15px;
         color: var(--nv-1-5-1a);
-        /*        line-height: 1.2;*/
+        line-height: 1.2;
     }
 
-    main > ul > li:nth-child(4n + 7)::before {
+    .web > ul > li:nth-child(4n + 7)::before {
         content: "Laptop 1024-1349px";
     }
 
-    main > ul > li:nth-child(4n + 8)::before {
+    .web > ul > li:nth-child(4n + 8)::before {
         content: "Mobile 300-1023px";
+    }
+    
+    .email h1 {
+        margin-top: 80px;
+    }
+    .email > ul > li:not(.viewport, .class)::before {
+        content: 'All viewports';
+        display: block;
+        margin-bottom: 8px;
+        font-family: 'nomo', monospace;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--nv-1-5-1a);
+        line-height: 1.2;
     }
 }
 
 
 @media screen and (min-width: 1024px) {
-    main > ul > li:first-child {
-        visibility: collapse;
-    }
-
-    main > ul {
-        display: grid;
-        grid-template-columns: auto 1fr 1fr 1fr;
-        grid-gap: 1px;
-    }
 
     .viewport {
         font-family: 'nomo', monospace;
@@ -132,6 +156,32 @@ main > ul > li {
     .class {
         writing-mode: vertical-lr;
     }
+    
+    .web > ul > li:first-child {
+        visibility: collapse;
+    }
+
+    .web > ul {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr 1fr;
+        grid-gap: 1px;
+    }
+    
+    .email > ul {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr 1fr;
+        grid-gap: 1px;
+    }
+    
+    .email .viewport {
+        grid-column: 2 / span 1;
+    }
+    .email .viewport::before {
+        content: 'devices';
+    }
+    .email .class {
+        grid-column-start: 1;
+    }
 
 
 }
@@ -144,7 +194,7 @@ main > ul > li {
 .specs {
     font-family: 'nomo', monospace;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.5;
     color: #FF00FF;
     margin-bottom: 24px;
@@ -234,7 +284,7 @@ screen and (min-width: 2400px) {
 /*===================== type setiing =======================*/
 .heading {
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.25;
     color: var(--nv-0);
 }
 
@@ -326,7 +376,6 @@ screen and (min-width: 2400px) {
     content: "Atia non pera vellestiis et et expliqu aturessimus solupta doles eicaepedi arum, odi aliquas is dest explit quasperis ut ma dolo et mo eture commolore volor re pratias si reperistia dollore perrum eaquodi ctotas quo officimolore nitaectas dolore, offic temoluptas as acea ne ex eaqui offictas magnien iendipsam volore re, tem nitatibus resti doluptas quuntio es apis ea natia aut qui unt vendita tisciis simpossuntem quasperibea natem dolorer natur?";
     display: block;
 }
-
 
 .body.large.mob {
     font-size: 18px;
@@ -432,4 +481,59 @@ screen and (min-width: 2400px) {
 
 .sitename.desk {
     font-size: 28px;
+}
+
+
+
+
+.email-heading {
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--nv-0);
+}
+
+.email-heading::after {
+    content: "Atia non pera vellestiis et et expliqu atures simus solupta doles eicaepedi arum, odi aliquas is dest explit quasperis ut ma dolo et mo eture.";
+    display: block;
+}
+
+.email-heading.large {
+    font-size: 36px;
+}
+.email-heading.medium {
+    font-size: 24px;
+}
+.email-heading.section {
+    font-size: 20px;
+}
+
+.email-body {
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--nv-0);
+}
+.email-body::after {
+    content: "Atia non pera vellestiis et et expliqu aturessimus solupta doles eicaepedi arum, odi aliquas is dest explit quasperis ut ma dolo et mo eture commolore volor re pratias si reperistia dollore perrum eaquodi ctotas quo officimolore nitaectas dolore, offic temoluptas as acea ne ex eaqui offictas magnien iendipsam volore re, tem nitatibus resti doluptas quuntio es apis ea natia aut qui unt vendita tisciis simpossuntem quasperibea natem dolorer natur?";
+    display: block;
+}
+.email-body.intro {
+    font-size: 18px;
+}
+.email-body.para {
+    font-size: 14px;
+}
+.email-body.footer {
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.email-link {
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--nv-green);
+    font-size: 16px;
+}
+.email-link::after {
+    content: "Atia non pera vellestiis et et expliqu.";
+    display: block;
 }
