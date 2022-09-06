@@ -1,0 +1,304 @@
+:root {
+    --li-padding: 16px;
+    --viewport-icon-bg: #ffffff;
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+        --li-padding: 24px;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+        --li-padding: 32px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {
+        /*        --li-padding: 48px;*/
+    }
+}
+
+/*==================== general styling ================*/
+body {
+    background-color: var(--nv-14-dd);
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+.class {
+    font-family: 'nomo', monospace;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+section > ul > li {
+    padding: var(--li-padding);
+    background: var(--nv-15-5-f7);
+}
+
+@media screen and (max-width: 1023px) {
+
+    .class {
+        background-color: transparent;
+        margin-top: 64px;
+    }
+
+    .no-margin {
+        margin: 0;
+    }
+    
+    .cta > ul > li:first-child,
+    .viewport {
+        display: none;
+    }
+
+    .cta > ul > li:nth-child(5n + 8),
+    .cta > ul > li:nth-child(5n + 9),
+    .cta > ul > li:nth-child(5n + 10) {
+        border-top: 1px solid var(--nv-12-5-cc);
+    }
+
+    .cta > ul > li:nth-child(5n + 7)::before,
+    .cta > ul > li:nth-child(5n + 8)::before,
+    .cta > ul > li:nth-child(5n + 9)::before,
+    .cta > ul > li:nth-child(5n + 10)::before {
+        content: 'Desktop 1350+px';
+        display: block;
+        margin-bottom: 8px;
+        font-family: 'nomo', monospace;
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--nv-1-5-1a);
+        line-height: 1.2;
+    }
+
+    .cta > ul > li:nth-child(5n + 8)::before {
+        content: "Laptop 1024-1349px";
+    }
+
+    .cta > ul > li:nth-child(5n + 9)::before {
+        content: "Mobile 300-1023px";
+    }
+    .cta > ul > li:nth-child(5n + 10)::before {
+        content: "Email all viewports";
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    .viewport {
+        font-family: 'nomo', monospace;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .viewport::before {
+        content: 'desktop_mac';
+        display: inline-block;
+        height: 48px;
+        width: 48px;
+        margin-right: 24px;
+        border-radius: 999px;
+        font-family: 'material icons';
+        font-size: 24px;
+        line-height: 48px;
+        text-align: center;
+        vertical-align: middle;
+        background-color: var(--viewport-icon-bg);
+    }
+
+    .viewport:nth-of-type(3)::before {
+        content: 'laptop_mac';
+    }
+
+    .viewport:nth-of-type(4)::before {
+        content: 'phone_android';
+    }
+    
+    .viewport:nth-of-type(5)::before {
+        content: 'mail';
+    }
+
+    .class {
+        writing-mode: vertical-lr;
+    }
+    
+    .cta > ul > li:first-child {
+        visibility: collapse;
+    }
+
+    .cta > ul {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr 1fr 1fr;
+        grid-gap: 1px;
+    }
+
+
+}
+
+@media screen and (min-width: 1350px) {}
+
+
+/*===================== cta specs=======================*/
+
+.specs {
+    font-family: 'nomo', monospace;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #FF00FF;
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 599px;
+    gap: 0 32px;
+}
+
+.specs li {
+    flex: 1 0 auto;
+}
+
+.specs li::before {
+    content: 'Size:';
+    margin-right: 4px;
+    font-weight: 700;
+}
+
+.specs li:nth-child(2)::before {
+    content: 'Top bottom:';
+}
+
+.specs li:nth-child(3)::before {
+    content: 'Left right:';
+}
+
+.specs li:nth-child(4)::before {
+    content: 'Margin:';
+}
+
+.specs li:nth-child(4) {
+    display: none;
+}
+
+.cta > ul > li:nth-last-of-type(-n + 9) :is(.topbtm, .leftright) {
+    display: none;
+}
+
+.cta > ul > li:nth-last-of-type(-n + 9) .specs li::after {
+    content: none;
+}
+
+@media screen and (min-width: 420px) and (max-width: 639px),
+screen and (min-width: 1600px) and (max-width: 2039px) {
+    .specs {
+        gap: 24px;
+    }
+
+    .specs li {
+        flex: 0 0 auto;
+    }
+
+    .specs li::before {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px),
+screen and (min-width: 2040px) {
+
+    .specs {
+        max-width: unset;
+        gap: unset;
+    }
+
+    .specs li {
+        flex: 0 0 auto;
+    }
+
+    .specs li:nth-child(-n + 2)::after {
+        content: "/";
+        color: var(--nv-9-5-99);
+        margin: 0 16px;
+    }
+}
+/*======================== CTA ======================*/
+
+.cp_cta_primary {
+    padding: 9px 13px;
+    font-size: 16px;
+}
+:is(.cp_cta_primary, .cp_cta_secondary).laptop {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+:is(.cp_cta_primary, .cp_cta_secondary).mobile {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+:is(.cp_cta_primary, .cp_cta_secondary).email {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.cp_cta_primary.large, .cp_cta_secondary.large {
+    padding: 10px 15px;
+    font-size: 18px;
+}
+:is(.cp_cta_primary.large, .cp_cta_secondary.large).laptop {
+    padding: 9px 13px;
+    font-size: 16px;
+}
+:is(.cp_cta_primary.large, .cp_cta_secondary.large).mobile {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+:is(.cp_cta_primary.large, .cp_cta_secondary.large).email {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.cp_cta_tertiary {
+    padding: 11px 20px 11px 0px;
+    font-size: 16px;
+}
+.cp_cta_tertiary.laptop {
+    padding: 10px 18px 10px 0px;
+    font-size: 14px;
+}
+.cp_cta_tertiary.mobile {
+    padding: 8px 15px 8px 0px;
+    font-size: 12px;
+}
+.cp_cta_tertiary.email {
+    padding: 8px 15px 8px 0px;
+    font-size: 12px;
+}
+
+.cp_cta_tertiary.large {
+    padding: 15px 24px 15px 0px;
+    font-size: 18px;
+}
+.cp_cta_tertiary.large.laptop {
+    padding: 14px 20px 14px 0px;
+    font-size: 16px;
+}
+.cp_cta_tertiary.large.mobile {
+    padding: 12px 18px 12px 0px;
+    font-size: 14px;
+}
+.cp_cta_tertiary.large.email {
+    padding: 12px 18px 12px 0px;
+    font-size: 14px;
+}

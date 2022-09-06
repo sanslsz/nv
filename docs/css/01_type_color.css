@@ -53,6 +53,7 @@
 --nv-1-11: #111111;
 --nv-0: #000000;
 --nv-green: #76B900;
+--nv-annotation: #FF00FF;
 }
 
 /*==========  text custom properties  ==========*/
@@ -127,14 +128,14 @@ h2, .tp_h2 {
     font-size: var(--h2);
     font-weight: 700; 
     line-height: 1.25;
-    margin: 0 0 4rem;
+    margin: 0 0 1em;
 }
 
 h3, .tp_h3 {
     font-size: var(--h3);
     font-weight: 700;
     line-height: 1.25;
-    margin: 0 0 1rem;
+    margin: 0 0 1em;
 }
 
 h4, .tp_h4 {
@@ -156,10 +157,12 @@ footer > p {
 .tp_p_l {
     font-size: var(--bodyl);
     line-height: 1.75;
+    margin: 0 0 1.64em;
 }
 .tp_p_m {
     font-size: var(--bodym);
     line-height: 1.67;
+    margin: 0 0 1rem;
 }
 .tp_p_s {
     font-size: var(--bodys);

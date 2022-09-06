@@ -13,6 +13,8 @@
     --padding-section: var(--padding-tb) var(--padding-lr);
     
 /*    --wrapper: 400px;*/
+    
+    --02transition: all 0.2s ease-in-out;
 
 
 }
