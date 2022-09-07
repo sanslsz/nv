@@ -1,0 +1,91 @@
+:root {
+    --md_cta_container-gap: 16px;
+  
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+        --demo-grid: 1fr 1fr;
+        --2col-padding: var(--space-xl);
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+    --md_cta_container-gap: 18px;
+
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+        
+    --md_cta_container-gap: 20px;
+
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    
+    :root {
+
+    }
+}
+
+/*==================== general styling ================*/
+body {
+    background-color: var(--nv-15-ee);
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+/*=============================demo==========================*/
+.demo > ul {
+    display: grid;
+    grid-gap: calc(var(--space-xxl) * 2) var(--space-xxl);
+    grid-template-columns: var(--demo-grid);
+}
+
+.demo > ul > li:not(.span, .image) {
+    padding: var(--2col-padding) 0px;
+}
+.annotation {
+    display: block;
+    width: fit-content;
+    padding: var(--space-xs) var(--space-s);
+    margin-bottom: var(--space-l);
+    background-color: var(--nv-annotation);
+    font-family: 'nomo', monospace;
+    font-size: 12px; 
+    font-weight: 700;
+    color: var(--nv-16);
+}
+.demo .tp_p_m {
+    margin-bottom: 2em;
+}
+.demo .span {
+    grid-column: 1 / -1;
+}
+.demo .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.md_cta_container2 {
+    display: flex;
+    gap: var(--md_cta_container-gap);
+    flex-wrap: wrap;
+/*    justify-content: flex-end;*/
+}
+.md_cta_container2 > * {
+    flex-shrink: 0;
+}

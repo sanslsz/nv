@@ -1,7 +1,5 @@
 :root {
-    --li-padding: 16px;
-    
-    
+  
     --cp_cta-minw: 10ch;
     
     --cp_cta-padding-tb: 6px;
@@ -23,8 +21,6 @@
 
 @media screen and (min-width: 640px) {
     :root {
-        --li-padding: 24px;
-        --demo-grid: 1fr 1fr;
 
     }
 }
@@ -46,7 +42,6 @@
 
 @media screen and (min-width: 1350px) {
     :root {
-        --li-padding: 32px;
         
     --cp_cta-padding-tb: 9px;
     --cp_cta-padding-lr: 13px;
@@ -74,15 +69,6 @@
     }
 }
 
-/*==================== general styling ================*/
-body {
-    background-color: var(--nv-14-dd);
-}
-
-h1 {
-    margin-bottom: 0;
-}
-
 
 .cp_cta_primary {
     display: block;
@@ -102,7 +88,7 @@ h1 {
 
 
 .cp_cta_secondary {
-    display: inline-block;
+    display: block;
     width: fit-content;
     padding: var(--cp_cta-padding-tb) var(--cp_cta-padding-lr);
     border: 2px solid var(--nv-green);
@@ -123,12 +109,6 @@ h1 {
 .cp_cta_secondary.option2:hover {
     background-color: var(--cp_cta-sec-bg-h);
 }
-
-.cp_cta_secondary + .cp_cta_secondary {
-    margin-left: 15px;
-}
-
-
 .cp_cta_primary.large, .cp_cta_secondary.large {
     padding: var(--cp_cta_large-padding-tb) var(--cp_cta_large-padding-lr);
     font-size: var(--cp_cta_large-fontsize);
@@ -137,7 +117,8 @@ h1 {
 
 .cp_cta_tertiary {
     display: inline-block;
-    padding: var(--space-s) var(--cp_cta-ter-icon) var(--space-s) 0px;
+/*    padding: var(--space-s) var(--cp_cta-ter-icon) var(--space-s) 0px;*/
+    padding-right: var(--cp_cta-ter-icon);
     color: var(--nv-green);
     font-weight: 700;
     font-size: var(--cp_cta-fontsize);
@@ -167,44 +148,6 @@ h1 {
     --cp_cta-ter-icon: var(--cp_cta_large-ter-icon);
     font-size: var(--cp_cta_large-fontsize);
 /*    padding-right: var(--cp_cta_large-ter-icon);*/
-    padding-top: var(--space-m);
-    padding-bottom: var(--space-m);
-}
-.cp_cta_tertiary + .cp_cta_tertiary {
-    margin-left: var(--cp_cta-ter-icon);
-}
-
-/*=============================demo==========================*/
-.demo > ul {
-    display: grid;
-    grid-gap: calc(var(--space-xxl) * 2) var(--space-xxl);
-    grid-template-columns: var(--demo-grid);
-}
-
-.demo > ul > li:not(.span, .image) {
-    padding: var(--space-xl) 0px;
-}
-.annotation {
-    display: block;
-    width: fit-content;
-    padding: var(--space-xs) var(--space-s);
-    margin-bottom: var(--space-l);
-    background-color: var(--nv-annotation);
-    font-family: 'nomo', monospace;
-    font-size: 12px; 
-    font-weight: 700;
-    color: var(--nv-16);
-}
-.demo .tp_p_m {
-    margin-bottom: 2em;
-}
-
-
-.demo .span {
-    grid-column: span 2;
-}
-.demo .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/*    padding-top: var(--space-m);*/
+/*    padding-bottom: var(--space-m);*/
 }
