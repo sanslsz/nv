@@ -1,0 +1,7 @@
+<svg id="common_star" data-name="common/star" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path id="Star_2" data-name="Star 2" d="M6,0,7.854,3.757l4.146.6L9,7.284l.708,4.129L6,9.463l-3.708,1.95L3,7.284,0,4.359l4.146-.6Z" transform="translate(2 2.5)" fill="none" stroke="#76b900" stroke-width="1"/>
+  <g id="space" fill="none" stroke="#000" stroke-width="1" opacity="0">
+    <rect width="16" height="16" stroke="none"/>
+    <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+  </g>
+</svg>

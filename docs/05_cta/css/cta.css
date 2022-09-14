@@ -99,14 +99,14 @@
     line-height: 1.25;
     transition: var(--02transition);
 }
-.cp_cta_secondary:hover {
+.cp_cta_secondary:is(:hover, :focus, :active) {
     color: var(--nv-green);
     background-color: rgba(118, 185, 0, 0.1);
 }
 .cp_cta_secondary.option2 {
     background-color: var(--cp_cta-sec-bg);
 }
-.cp_cta_secondary.option2:hover {
+.cp_cta_secondary.option2:is(:hover, :focus, :active) {
     background-color: var(--cp_cta-sec-bg-h);
 }
 .cp_cta_primary.large, .cp_cta_secondary.large {
@@ -137,10 +137,10 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.cp_cta_tertiary:hover {
+.cp_cta_tertiary:is(:hover, :focus, :active) {
     color: var(--cp_cta-hover);
 }
-.cp_cta_tertiary:hover::after {
+.cp_cta_tertiary:is(:hover, :focus, :active)::after {
     content: '';
     background-image: url(../assets/ic_tertiary_hover_6x10px.svg);
 }

@@ -1,0 +1,243 @@
+
+:root {
+    --padding-top-bottom: 0.6em;
+    --padding-left-right: 0.9em;
+    --padding-em: var(--padding-top-bottom) var(--padding-left-right);
+    --padding-em-ter: var(--padding-top-bottom) var(--icon-size) var(--padding-top-bottom) 0px;
+    
+    --icon-size: 1.5em;
+    --icon-position: calc(1em / 1.5 * 0.9);
+    --icon-padding: 0.9em;
+    --padding-icon: 0.3em;
+}
+
+
+
+/*============== general ==============*/
+.specs li {
+    flex: 1 0 40%;
+}
+
+.specs li::before {
+    content: 'Font:';
+    margin-right: 4px;
+    font-weight: 700;
+}
+
+.specs li:nth-child(2)::before {
+    content: 'Hor:';
+}
+
+.specs li:nth-child(3)::before {
+    content: 'Ver:';
+}
+
+.specs li:nth-child(4)::before {
+    content: 'Icon:';
+}
+
+.specs li:nth-child(4) {
+    display: revert;
+}
+
+@media screen and (min-width: 420px) and (max-width: 639px),
+screen and (min-width: 1600px) and (max-width: 2039px) {
+    .specs {
+        gap: 24px;
+    }
+
+    .specs li {
+        flex: 0 0 auto;
+    }
+
+    .specs li::before {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px),
+screen and (min-width: 2040px) {
+
+    .specs {
+        max-width: unset;
+        gap: unset;
+    }
+
+    .specs li {
+        flex: 0 0 auto;
+    }
+
+    .specs li:nth-child(-n + 3)::after {
+        content: "/";
+        color: var(--nv-9-5-99);
+        margin: 0 16px;
+    }
+}
+
+
+/*===================== cta specs ===================*/
+.cp_cta_primary, .cp_cta_secondary {
+    padding: var(--padding-em);
+    font-size: 16px;
+}
+:is(.cp_cta_primary, .cp_cta_secondary).laptop {
+    padding: var(--padding-em);
+    font-size: 14px;
+}
+:is(.cp_cta_primary, .cp_cta_secondary).mobile {
+    padding: var(--padding-em);
+    font-size: 12px;
+}
+:is(.cp_cta_primary, .cp_cta_secondary).email {
+    padding: var(--padding-em);
+    font-size: 12px;
+}
+
+.cp_cta_primary.large, .cp_cta_secondary.large {
+    padding: var(--padding-em);
+    font-size: 18px;
+}
+:is(.cp_cta_primary.large, .cp_cta_secondary.large).laptop {
+    padding: var(--padding-em);
+    font-size: 16px;
+}
+:is(.cp_cta_primary.large, .cp_cta_secondary.large).mobile {
+    padding: var(--padding-em);
+    font-size: 14px;
+}
+:is(.cp_cta_primary.large, .cp_cta_secondary.large).email {
+    padding: var(--padding-em);
+    font-size: 14px;
+}
+
+.cp_cta_tertiary {
+    padding: var(--padding-em-ter);
+    font-size: 16px;
+}
+.cp_cta_tertiary.laptop {
+    padding: var(--padding-em-ter);
+    font-size: 14px;
+}
+.cp_cta_tertiary.mobile {
+    padding: var(--padding-em-ter);
+    font-size: 12px;
+}
+.cp_cta_tertiary.email {
+    padding: var(--padding-em-ter);
+    font-size: 12px;
+}
+
+.cp_cta_tertiary.large {
+    padding: var(--padding-em-ter);
+    font-size: 18px;
+}
+.cp_cta_tertiary.large.laptop {
+    padding: var(--padding-em-ter);
+    font-size: 16px;
+}
+.cp_cta_tertiary.large.mobile {
+    padding: var(--padding-em-ter);
+    font-size: 14px;
+}
+.cp_cta_tertiary.large.email {
+    padding: var(--padding-em-ter);
+    font-size: 14px;
+}
+
+
+/*================= multiple btn spacing ===============*/
+
+.specs ~ a:nth-of-type(n + 2) {
+    margin-top: 16px;
+}
+
+/*======================= min cha ===============================*/
+
+/*    without / with padding - border-box */
+/*  with font-size=16px, 10ch=96px, 1ch=9.6px=0.6em  */
+/*   with font-size=24px, 10ch=144px, 1ch=14.4px=0.6em */
+
+.minch {
+/*    min-width: 6em;*/
+/*    min-width: 10ch;*/
+    min-width: calc(var(--padding-left-right) + 10ch + var(--padding-left-right));
+    text-align: center;
+}
+.minch:is(.iconleft, .iconright) {
+/*    min-width: calc(var(--icon-size) + var(--icon-padding) + 10ch);*/
+    min-width: calc(var(--padding-left-right) + var(--icon-size) + var(--icon-padding) + 10ch + var(--padding-left-right));
+}
+.testme {
+    line-height: 1;
+    line-height: 1.5;
+}
+
+/*=================icon font / svg =========*/
+
+.iconleft.iconleft.iconleft {
+    position: relative;
+    padding-left: calc(var(--padding-left-right) + var(--icon-size) + var(--icon-padding));
+}
+
+.ic_font {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+/*    font-size: 24px;*/
+  font-size: var(--icon-size);
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+/*  display: inline-block;*/
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+    
+    display: block;
+    position: absolute;
+    left: var(--icon-position);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ic_svg {
+    display: block;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    position: absolute;
+    left: var(--padding-left-right);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cp_cta_primary {
+    line-height: 1;
+/*    icon bleeds into padding */
+}
+
+.cp_cta_tertiary {
+    display: block;
+    width: fit-content;
+}
+
+.cp_cta_tertiary::after {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    background: url(../assets/ic_chevron_green.svg) no-repeat center / cover;
+}
+.cp_cta_tertiary:is(:hover, :focus, :active)::after {
+    content: '';
+    background-image: url(../assets/ic_chevron_darkgreen.svg);
+}
+
+.cp_cta_tertiary.font::after {
+    content: none;
+}
+
+.ic_font.ter {
+    left: unset;
+    right: 0;
+}

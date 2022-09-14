@@ -1,5 +1,7 @@
 :root {
     --md_cta_container-gap: 16px;
+    --img-padding: 180px;
+    --img-gradient: linear-gradient(to top, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0));
   
 }
 
@@ -14,6 +16,9 @@
 @media screen and (min-width: 1024px) {
     :root {
     --md_cta_container-gap: 18px;
+    --img-grid: 1fr 1fr;
+    --img-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0));
+    --img-padding: var(--padding-tb);
 
     }
 }
@@ -88,4 +93,24 @@ h1 {
 }
 .md_cta_container2 > * {
     flex-shrink: 0;
+}
+
+
+
+.bgimg {
+    color: white;
+    background: var(--img-gradient), url(../assets/gfn-lifestyle-photography-2019-10.jpeg) no-repeat center / cover;
+/*    background-image: url(../assets/nv-proviz-kv-me-final-5770x2500.jpeg);*/
+    padding-top: var(--img-padding);
+/*    transition: var(--02transition);*/
+}
+.bgimg .wrapper{
+    display: grid;
+    grid-gap: calc(var(--space-xxl) * 2) var(--space-xxl);
+    grid-template-columns: var(--img-grid);
+}
+
+.bgimg + .bgimg {
+    margin-top: var(--space-xxl);
+    background: var(--img-gradient), url(../assets/Endeavor-Dec2018-244.jpeg) no-repeat center / cover;
 }
