@@ -195,9 +195,7 @@ section > ul > li {
     display: none;
 }
 
-.cta > ul > li:nth-last-of-type(-n + 9) .specs li::after {
-    content: none;
-}
+
 
 @media screen and (min-width: 420px) and (max-width: 639px),
 screen and (min-width: 1600px) and (max-width: 2039px) {
@@ -232,6 +230,9 @@ screen and (min-width: 2040px) {
         color: var(--nv-9-5-99);
         margin: 0 16px;
     }
+    .cta > ul > li:nth-last-of-type(-n + 9) .specs li::after {
+    content: none;
+}
 }
 /*======================== CTA ======================*/
 
