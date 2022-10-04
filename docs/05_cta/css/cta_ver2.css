@@ -4,6 +4,7 @@
     --padding-left-right: 0.9em;
     --padding-em: var(--padding-top-bottom) var(--padding-left-right);
     --padding-em-ter: var(--padding-top-bottom) var(--icon-size) var(--padding-top-bottom) 0px;
+    --padding-em-ter: 0px var(--icon-size) 0px 0px;
     
     --icon-size: 1.5em;
     --icon-position: calc(1em / 1.5 * 0.9);
@@ -238,11 +239,11 @@ screen and (min-width: 2040px) {
 .cp_cta_tertiary::after {
     width: var(--icon-size);
     height: var(--icon-size);
-    background: url(../assets/ic_chevron_green.svg) no-repeat center / cover;
+    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
 }
 .cp_cta_tertiary:is(:hover, :focus, :active)::after {
     content: '';
-    background-image: url(../assets/ic_chevron_darkgreen.svg);
+    background-image: url(../assets/ic_chevron_darkgreen_shape_thick.svg);
 }
 
 .cp_cta_tertiary.font::after {

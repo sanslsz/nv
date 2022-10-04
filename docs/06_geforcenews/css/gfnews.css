@@ -34,6 +34,12 @@
         --l1-intro-clamp: 2;
 
         --l3-title-clamp: 2;
+        
+        --3piece-grid: 1fr 1fr;
+        --3piece-span: span 2;
+        
+        --md_4piece-grid: 1fr 1fr;
+        --md_4piece-large-span: span 2;
 
     }
 }
@@ -50,6 +56,8 @@
 
         --l3-title-clamp: 1;
         --l3-keyword-clamp: 1;
+        
+        --md_4piece-grid: 1fr 1fr 1fr;
 
 
     }
@@ -202,6 +210,10 @@ p {
     }
 }
 
+
+
+
+
 .card-l2 img {
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -324,6 +336,89 @@ p {
     -webkit-line-clamp: var(--l3-intro-clamp);
     overflow: hidden;
 }
+
+
+.md_3piece .wrapper {
+    display: grid;
+    grid-template-columns: var(--3piece-grid);
+    grid-auto-rows: 1fr;
+    grid-gap: var(--space-m);
+}
+.md_3piece figcaption {
+/*    display: none;*/
+}
+.md_3piece .vertical-2 {
+    grid-row: var(--3piece-span);
+}
+.vertical-2 img {
+    width: 100%;
+    height: 100%;
+/*    object-fit: cover;*/
+/*    aspect-ratio: 16 / 9;*/
+}
+.vertical-2 figcaption > *:not(:first-child), .vertical-2 .intro {
+    margin-top: var(--space-s);
+}
+.vertical-2 :is(.date, .keyword) {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.vertical-2 .keyword {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--l2-keyword-clamp);
+    overflow: hidden;
+}
+
+.vertical-2 .keyword li {
+    cursor: pointer;
+    display: inline;
+}
+
+.vertical-2 .keyword li:not(:last-child)::after {
+    content: ',';
+    margin-right: 2px;
+}
+.vertical-2 .keyword li:hover {
+    color: var(--nv-16);
+}
+
+.md_4piece .wrapper {
+    display: grid;
+    grid-template-columns: var(--md_4piece-grid);
+    grid-gap: var(--space-m); 
+}
+.md_4piece .large {
+    grid-column: var(--md_4piece-large-span);
+/*    grid-column: span 2;*/
+}
+.md_4piece figure {
+    position: relative;
+}
+.md_4piece img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+.md_4piece figcaption {
+    max-width: 100%;
+    padding: 0.3em;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.md_4piece figcaption *:not(.credit) {
+    display: none;
+}
+.md_4piece .credit::before {
+    content: '\000A9' ' ';
+/*    margin-right: 0.1em;*/
+}
+
+
 
 /*============= placeholder modules ==============*/
 nav li {
