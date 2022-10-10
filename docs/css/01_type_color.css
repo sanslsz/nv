@@ -53,6 +53,7 @@
 --nv-1-11: #111111;
 --nv-0: #000000;
 --nv-green: #76B900;
+--nv-green-hover: #6AA700;
 --nv-annotation: #FF00FF;
 }
 
@@ -140,7 +141,7 @@ h1, .tp_h1 {
     font-size: var(--tp_h-large);
     font-weight: 700;   
     line-height: 1.25;
-    margin: 0 0 4rem;
+    margin: 0 0 2em;
 }
 
 h2, .tp_h2 {
@@ -161,11 +162,11 @@ h4, .tp_h4 {
     font-size: var(--tp_h-smallest);
     font-weight: 700; 
     line-height: 1.25;
-    margin: 0 0 0.8rem;
+    margin: 0 0 1em;
 }
 
 p {
-    margin: 0 0 0.8rem;
+    margin: 0 0 1em;
 }
 
 footer > p {
@@ -176,7 +177,7 @@ footer > p {
 .tp_h-huge,
 .tp_h-large,
 .tp_h-medium,
-.tp_p-small,
+.tp_h-small,
 .tp_h-smaller,
 .tp_h-smallest {
     font-weight: 700;
@@ -186,21 +187,19 @@ footer > p {
 .tp_h-huge {font-size: var(--tp_h-huge);}
 .tp_h-large {font-size: var(--tp_h-large);}
 .tp_h-medium {font-size: var(--tp_h-medium);}
-.tp_p-small {font-size: var(--tp_h-small);}
+.tp_h-small {font-size: var(--tp_h-small);}
 .tp_h-smaller {font-size: var(--tp_h-smaller);}
 .tp_h-smallest {font-size: var(--tp_h-smallest);}
 
-.tp_p_l {
+.tp_p_l, .tp_p-l {
     font-size: var(--tp_p-l);
     line-height: 1.75;
-    margin: 0 0 1.64em;
 }
-.tp_p_m {
+.tp_p_m, .tp_p-m {
     font-size: var(--tp_p-m);
     line-height: 1.67;
-    margin: 0 0 1rem;
 }
-.tp_p_s {
+.tp_p_s, .tp_p-s {
     font-size: var(--tp_p-s);
     line-height: 1.4;
 }

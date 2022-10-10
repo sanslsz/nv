@@ -73,8 +73,8 @@ h1 {
     font-weight: 700;
     color: var(--nv-16);
 }
-.demo .tp_p_m {
-    margin-bottom: 2em;
+.tp_p_m, .tp_p_l {
+/*    margin-bottom: 2rem;*/
 }
 .demo .span {
     grid-column: 1 / -1;
@@ -90,10 +90,47 @@ h1 {
     gap: var(--md_cta_container-gap);
     flex-wrap: wrap;
 /*    justify-content: flex-end;*/
+    align-items: flex-start;
 }
 .md_cta_container2 > * {
     flex-shrink: 0;
 }
+
+.md_link_container {
+/*
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: var(--space-m) var(--space-m);
+*/
+
+}
+/*
+.md_link_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--space-m) var(--space-m);
+    height: 300px;
+    justify-content: flex-end;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.md_link_container > * {
+    width: 48%;
+}
+*/
+/*    align-items: flex-end;*/
+
+.md_link_container {
+    columns: 200px 2;
+    column-gap: var(--space-l);
+    margin-bottom: 2em;
+}
+.md_link_container > li:not(:first-child) {
+    margin-top: var(--space-m);
+}
+
 
 
 
