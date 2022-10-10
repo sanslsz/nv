@@ -1,4 +1,33 @@
 :root {
+    --sp_em-xs: 0.3em;
+    --sp_em-s: 0.6em;
+    --sp_em-m: 0.9em;
+    --sp_em-l: 1.2em;
+    --sp_em-xl: 1.5em;
+    --sp_em-xxl: 1.8em;
+    
+    --sp_res-rem-xs: 0.25rem;
+    --sp_res-rem-s: 0.5rem;
+    --sp_res-rem-m: 0.75rem;
+    --sp_res-rem-l: 1rem;
+    --sp_res-rem-xl: 1.25rem;
+    --sp_res-rem-xxl: 1.5rem;
+    
+    --sp_res-px-xs: 4px;
+    --sp_res-px-s: 8px;
+    --sp_res-px-m: 12px;
+    --sp_res-px-l: 16px;
+    --sp_res-px-xl: 20px;
+    --sp_res-px-xxl: 24px;
+    
+    --sp_grid-gap: 30px;
+    --sp_res-grid-gap-2col: 16px;
+    --sp_res-grid-gap-3col: 16px;
+    
+    --sp_res-card-padding: 16px;
+
+
+
     --space-xs: 4px;
     --space-s: 8px;
     --space-m: 12px;
@@ -21,6 +50,27 @@
 
 @media screen and (min-width: 640px) {
     :root {
+        
+    --sp_res-rem-xs: 0.5rem;
+    --sp_res-rem-s: 1rem;
+    --sp_res-rem-m: 1.5rem;
+    --sp_res-rem-l: 2rem;
+    --sp_res-rem-xl: 2.5rem;
+    --sp_res-rem-xxl: 3rem;
+    
+    --sp_res-px-xs: 5px;
+    --sp_res-px-s: 9px;
+    --sp_res-px-m: 13px;
+    --sp_res-px-l: 17px;
+    --sp_res-px-xl: 22px;
+    --sp_res-px-xxl: 27px;
+        
+    --sp_res-grid-gap-2col: 24px;
+    --sp_res-grid-gap-3col: 16px;   
+    
+    --sp_res-card-padding: 20px;
+        
+        
     --space-xs: 5px;
     --space-s: 9px;
     --space-m: 13px;
@@ -38,6 +88,26 @@
 
 @media screen and (min-width: 1024px) {
     :root {
+            
+    --sp_res-rem-xs: 0.75rem;
+    --sp_res-rem-s: 1.5rem;
+    --sp_res-rem-m: 2.25rem;
+    --sp_res-rem-l: 3rem;
+    --sp_res-rem-xl: 3.75rem;
+    --sp_res-rem-xxl: 4.5rem;
+    
+    --sp_res-px-xs: 6px;
+    --sp_res-px-s: 10px;
+    --sp_res-px-m: 14px;
+    --sp_res-px-l: 18px;
+    --sp_res-px-xl: 24px;
+    --sp_res-px-xxl: 30px;
+        
+    --sp_res-grid-gap-2col: 32px;
+    --sp_res-grid-gap-3col: 24px;
+        
+    --sp_res-card-padding: 24px;
+        
     --space-xs: 6px;
     --space-s: 10px;
     --space-m: 14px;
@@ -57,6 +127,26 @@
 
 @media screen and (min-width: 1350px) {
     :root {
+            
+    --sp_res-rem-xs: 1rem;
+    --sp_res-rem-s: 2rem;
+    --sp_res-rem-m: 3rem;
+    --sp_res-rem-l: 4rem;
+    --sp_res-rem-xl: 5rem;
+    --sp_res-rem-xxl: 6rem;
+    
+    --sp_res-px-xs: 7px;
+    --sp_res-px-s: 11px;
+    --sp_res-px-m: 15px;
+    --sp_res-px-l: 19px;
+    --sp_res-px-xl: 26px;
+    --sp_res-px-xxl: 33px;
+        
+    --sp_res-grid-gap-2col: 48px;
+    --sp_res-grid-gap-3col: 32px; 
+    
+    --sp_res-card-padding: 32px;
+        
     --space-xs: 7px;
     --space-s: 11px;
     --space-m: 15px;
