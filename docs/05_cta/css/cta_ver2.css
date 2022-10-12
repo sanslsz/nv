@@ -202,7 +202,7 @@
     transition: var(--02transition);
     position: relative;
 }
-.cp_cta_primary2::after {
+.cp_cta_primary2::before {
     content: '';
     display: block;
     width: 100%;
@@ -214,7 +214,7 @@
     transition: var(--02transition);
     z-index: -2;
 }
-.cp_cta_primary2::before {
+.cp_cta_primary2::after {
     content: '';
     display: block;
     width: var(--cp_cta-bar);
@@ -231,9 +231,10 @@
     color: var(--nv-0);
     padding: var(--cp_cta-padding-tb) calc(var(--cp_cta-padding-lr) + var(--cp_cta-bar)) var(--cp_cta-padding-tb) var(--cp_cta-padding-lr);
 }
-.cp_cta_primary2:is(:hover, :focus, :active)::before  {
+.cp_cta_primary2:is(:hover, :focus, :active)::after  {
     content: '';
-    width: calc(100% - var(--cp_cta-bar));
+/*    width: calc(100% - var(--cp_cta-bar));*/
+    width: 100%;
 }
 
 .cp_cta_primary2.option2, .cp_cta_primary2.option2:hover {
@@ -243,12 +244,12 @@
 
 .cp_cta_link {
     display: block;
-/*    if not block element, line-height replies on parent <li> */
+/*    on block leve, line-height set min-height, line-height is also effect by the inline chevron's height */
     color: var(--nv-1-11);
     font-weight: 700;
     font-size: var(--cp_cta-fontsize);
     line-height: 1.25;
-    text-decoration: underline 1px solid transparent;
+    text-decoration: underline 2px solid transparent;
 }
 .cp_cta_link:is(:hover, :focus, :active) {
 /*    color: var(--cp_cta-hover);*/
@@ -275,3 +276,23 @@
     background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
 }
 /*the chevron may wrap to next line by itself, use span tag to avoid it */
+
+.cp_cta_link2 {
+    color: var(--nv-1-11);
+    font-weight: 700;
+    font-size: var(--cp_cta-fontsize);
+    line-height: 1.25;
+/*    line-height: 1.5;*/
+    display: block;
+}
+.cp_cta_link2:hover span {
+    border-bottom: 2px solid var(--nv-green);
+}
+.cp_cta_link2.runt::after {
+    content: '';
+    display: inline-block;
+    width: var(--cp_cta-icon-size);
+    height: 1.2em;
+    vertical-align: text-bottom;
+    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
+}

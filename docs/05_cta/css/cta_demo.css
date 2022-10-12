@@ -8,7 +8,7 @@
 @media screen and (min-width: 640px) {
     :root {
         --demo-grid: 1fr 1fr;
-        --2col-padding: var(--sp_res-px-xl);
+        --2col-padding: var(--sp_px-xl);
 
     }
 }
@@ -55,7 +55,7 @@ h1 {
 /*=============================demo==========================*/
 .demo > ul {
     display: grid;
-    grid-gap: calc(var(--sp_res-px-xxl) * 2) var(--sp_res-px-xxl);
+    grid-gap: calc(var(--sp_px-xxl) * 2) var(--sp_px-xxl);
     grid-template-columns: var(--demo-grid);
 }
 
@@ -65,8 +65,8 @@ h1 {
 .annotation {
     display: block;
     width: fit-content;
-    padding: var(--sp_res-px-xs) var(--sp_res-px-s);
-    margin-bottom: var(--sp_res-px-l);
+    padding: var(--sp_px-xs) var(--sp_px-s);
+    margin-bottom: var(--sp_px-l);
     background-color: var(--nv-annotation);
     font-family: 'nomo', monospace;
     font-size: 12px; 
@@ -100,7 +100,7 @@ h1 {
 /*
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: var(--sp_res-px-m) var(--sp_res-px-m);
+    grid-gap: var(--sp_px-m) var(--sp_px-m);
 */
 
 }
@@ -109,7 +109,7 @@ h1 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: var(--sp_res-px-m) var(--sp_res-px-m);
+    gap: var(--sp_px-m) var(--sp_px-m);
     height: 300px;
     justify-content: flex-end;
     justify-content: flex-start;
@@ -124,11 +124,11 @@ h1 {
 
 .md_link_container {
     columns: 200px 2;
-    column-gap: var(--sp_res-px-l);
+    column-gap: var(--sp_px-l);
     margin-bottom: 2em;
 }
 .md_link_container > li:not(:first-child) {
-    margin-top: var(--sp_res-px-m);
+    margin-top: var(--sp_px-m);
 }
 
 
@@ -143,11 +143,11 @@ h1 {
 }
 .bgimg .wrapper{
     display: grid;
-    grid-gap: calc(var(--sp_res-px-xxl) * 2) var(--sp_res-px-xxl);
+    grid-gap: calc(var(--sp_px-xxl) * 2) var(--sp_px-xxl);
     grid-template-columns: var(--img-grid);
 }
 
 .bgimg + .bgimg {
-    margin-top: var(--sp_res-px-xxl);
+    margin-top: var(--sp_px-xxl);
     background: var(--img-gradient), url(../assets/Endeavor-Dec2018-244.jpeg) no-repeat center / cover;
 }

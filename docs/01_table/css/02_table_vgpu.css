@@ -166,7 +166,7 @@ tr:not(.transparent, .transparentlast) td:nth-child(13)::after {
         background-color: var(--sw-14-5);
     }
 
-    .vendor td:nth-child(2) {
+    .vendor td:nth-child(2), .vendor .emptycell {
         display: none;
     }
 

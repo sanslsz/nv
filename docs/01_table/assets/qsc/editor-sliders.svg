@@ -1,0 +1,9 @@
+<svg id="editor_sliders" data-name="editor/sliders" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Vector" d="M3.5,0H6.438V5.875H3.5Z" transform="translate(4.578 3.672)" fill="none" stroke="#404040" stroke-width="1.5"/>
+  <path id="Vector-2" data-name="Vector" d="M6.5,6H9.438v5.875H6.5Z" transform="translate(5.984 6.484)" fill="none" stroke="#404040" stroke-width="1.5"/>
+  <path id="Vector-3" data-name="Vector" d="M0,2H5.141M8.078,2h9.547M0,10.813H9.547m2.938,0h5.141" transform="translate(2.938 4.609)" fill="none" stroke="#404040" stroke-width="1.5"/>
+  <g id="space" fill="none" stroke="#000" stroke-width="1.5" opacity="0">
+    <rect width="24" height="24" stroke="none"/>
+    <rect x="0.75" y="0.75" width="22.5" height="22.5" fill="none"/>
+  </g>
+</svg>

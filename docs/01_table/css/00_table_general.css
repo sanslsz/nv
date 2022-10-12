@@ -7,12 +7,12 @@
     --cell-lr-xl: 20px;
     --cell-lr-xxl: 24px;
     
-    --cell-tb-xs: var(--space-xs);
-    --cell-tb-s: var(--space-s);
-    --cell-tb-m: var(--space-m);
-    --cell-tb-l: var(--space-l);
-    --cell-tb-xl: var(--space-xl);
-    --cell-tb-xxl: var(--space-xxl);
+    --cell-tb-xs: var(--sp_px-xs);
+    --cell-tb-s: var(--sp_px-s);
+    --cell-tb-m: var(--sp_px-m);
+    --cell-tb-l: var(--sp_px-l);
+    --cell-tb-xl: var(--sp_px-xl);
+    --cell-tb-xxl: var(--sp_px-xxl);
 
 }
 

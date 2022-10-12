@@ -7,9 +7,10 @@
     <meta name="description" content="Su Li's experiment">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/03_component_table.css">
-    <link rel="stylesheet" href="css/04_table_01_qsc.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/00_table_general.css">
+    <link rel="stylesheet" href="css/01_table_qsc.css">
+    <link rel="stylesheet" href="../05_cta/css/cta_ver2.css">
     <meta name="theme-color" content="#fafafa">
 
 </head>
@@ -67,7 +68,9 @@
                             <!--                        removed :target drop because checkboxes are better -->
                             <th scope="col"><a>Server Model/Series</a></th>
                             <th scope="col"><a>NVIDIA GPU</a></th>
-                            <th scope="col"><input type="checkbox" id="menuselectbox" tabindex="-1"><label class="menuselect" for="menuselectbox">GPU Form Factor</label>
+                            <th scope="col">
+                                <input type="checkbox" id="menuselectbox">
+                                <label class="menuselect" for="menuselectbox" tabindex="0">GPU Form Factor</label>
                                 <div class="dropmenu" id="dropdown2">
                                     <label><input type="checkbox" id="random" name="random">Intel Skylake &nbsp; [20]</label>
                                     <label><input type="checkbox" id="random" name="random">Intel Ice Lake &nbsp; [5]</label>
@@ -1245,8 +1248,8 @@
                 </li>
             </ul>
             <ul class="md_cta_container">
-                <li><a class="cp_cta" href="#"><img src="assets/qsc/common-share.svg">Share Result</a></li>
-                <li><a class="cp_cta" href="#"><img src="assets/qsc/social-chat-message.svg">Contat Sale</a></li>
+                <li><a class="cp_cta_primary large iconleft" href="#"><img class="ic_svg" src="assets/qsc/common-share.svg">Share Result</a></li>
+                <li><a class="cp_cta_primary large iconleft" href="#"><img class="ic_svg" src="assets/qsc/social-chat-message.svg">Contat Sale</a></li>
             </ul>
         </div>
     </main>

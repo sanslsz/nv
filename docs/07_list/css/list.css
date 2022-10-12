@@ -1,0 +1,77 @@
+:root {
+
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+
+        
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+      
+
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+
+      
+
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {}
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {}
+}
+
+ol, ul {
+    margin: var(--sp_em-xxl) 0;
+    padding: initial;
+    list-style: revert;
+    padding-left: var(--sp_em-xxl);
+    line-height: 1.4;
+}
+:is(ol, ul) :is(ol, ul) {
+    margin-top: var(--sp_em-xs);
+}
+
+li {
+    list-style: revert;
+}
+li + li {
+    margin-top: var(--sp_em-m);
+}
+:is(ol, ul) :is(ol, ul) li:not(:first-child){
+    margin-top: var(--sp_em-xs);
+}
+
+.cp_ul-bullet {
+    list-style: disc;
+}
+.cp_ul-bullet > li {
+/*    padding-left: 0px;*/
+}
+
+.cp_ol::marker {
+/*    list-style: decimal;*/
+    color: red;
+}
+.cp_ol > li {
+    padding-left: 2px;
+}
+.cp_ol > li::marker {
+/*    color: red;*/
+    font-weight: bold;
+    padding: 20px;
+}
