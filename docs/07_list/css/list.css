@@ -6,14 +6,14 @@
 @media screen and (min-width: 640px) {
     :root {
 
-        
+        --md_listgrid: 1fr 1fr;
 
     }
 }
 
 @media screen and (min-width: 1024px) {
     :root {
-      
+       --md_listgrid: 1fr 1fr 1fr;
 
     }
 }
@@ -21,7 +21,7 @@
 @media screen and (min-width: 1350px) {
     :root {
 
-      
+/*       --md_listgrid: 1fr 1fr 1fr 1fr;*/
 
     }
 }
@@ -35,8 +35,12 @@
     :root {}
 }
 
+/*================= general ========================*/
+* + h3 {
+    margin-top: var(--sp_em-m);
+}
 ol, ul {
-    margin: var(--sp_em-xxl) 0;
+    margin: var(--sp_em-l) 0;
     padding: initial;
     list-style: revert;
     padding-left: var(--sp_em-xxl);
@@ -50,7 +54,7 @@ li {
     list-style: revert;
 }
 li + li {
-    margin-top: var(--sp_em-m);
+    margin-top: var(--sp_em-s);
 }
 :is(ol, ul) :is(ol, ul) li:not(:first-child){
     margin-top: var(--sp_em-xs);
@@ -73,5 +77,72 @@ li + li {
 .cp_ol > li::marker {
 /*    color: red;*/
     font-weight: bold;
-    padding: 20px;
+/*    padding: 20px;*/
+}
+
+.cp_ul-image {
+/*    list-style-image: url(../../css/cp_assets/ic_chevron_dropdown_small_green.svg);*/
+}
+.cp_ul-image > li::marker {
+/*
+    content: ' ';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+*/
+}
+.cp_ul-image {
+    list-style: none;
+}
+.cp_ul-image > li {
+    position: relative;
+}
+.cp_ul-image > li::before {
+    content: '';
+    display: block;
+/*    width: var(--sz_icon-s);*/
+/*    height: var(--sz_icon-s);*/
+    width: calc(1em + 1px);
+    height: calc(1em + 1px);
+    background: url(../../css/cp_assets/ic_chevron_dropdown_small_green.svg) no-repeat center / contain;
+    position: absolute;
+/*    top: 0.2em;*/
+    top: calc(1em * 1.4 / 2 - (1em + 1px) / 2);
+/*    align to the middle like a bullet */
+    left: calc((1em + 1px) * -1 - var(--sp_em-xs));
+    transform: rotate(-90deg);
+}
+
+@counter-style trophy {
+  system: cyclic;
+  symbols: 🏆 🥇 🥈 🥉 🍇 🍉 🍓 🥕 🍰 🍯 "\1F347" ;
+    suffix: " ";
+}
+
+.cp_ul-counter {
+    list-style-type: trophy;
+/*    list-style: circle;*/
+}
+.cp_ul-counter li {
+    padding-left: var(--sp_em-xs);
+}
+
+.cp_ol.md_listgrid {
+    display: grid;
+    grid-template-columns: var(--md_listgrid);
+    grid-gap: var(--sp_rem-s);
+    padding: 0;
+}
+.cp_ol.md_listgrid li {
+    margin: 0 0 0 var(--sp_em-xxl);
+}
+.cp_ol.md_listgrid > li::marker {
+    font-style: italic;
+    color: var(--nv-9-5-99);
+}
+.cp_ol.md_listgrid span {
+    font-weight: 700;
+    display: block;
+    margin-bottom: var(--sp_em-xs);
 }

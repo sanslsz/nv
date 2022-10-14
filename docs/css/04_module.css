@@ -1,6 +1,6 @@
 :root {
     --md_filter_search-flex: block;
-    --md_filter_search-margintop: 16px;
+    --md_filter_search-margintop: var(--sp_px-l);
 
     --md_chip_scroll: scroll hidden;
     --md_chip_container-wrap: nowrap;
@@ -38,8 +38,10 @@
 
 .md_cta_container {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: clamp(16px, 6vw, 48px);
+/*    gap: clamp(16px, 6vw, 48px);*/
+    gap: var(--sp_rem-l);
 }
 
 /* =========== search ===========*/
@@ -50,7 +52,7 @@
     justify-content: space-between;
     flex-direction: var(--md_filter_search-direction);
 }
-.md_filter_search li:last-child {
+.md_filter_search .cp_search_items {
     margin-top: var(--md_filter_search-margintop);
 }
 
@@ -71,7 +73,7 @@ overflow: var(--md_chip_scroll);
 }
 .md_chip_container {
     display: flex;
-    gap: 16px;
+    gap: var(--sp_px-m);
     flex-wrap: var(--md_chip_container-wrap);
     align-items: center;
 }
@@ -81,10 +83,13 @@ overflow: var(--md_chip_scroll);
     display: var(--md_filter_search-flex);
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 16px;  
+    align-items: center;
+    gap: var(--sp_px-xxl);  
 }
 .md_pagination img {
     display: inline-block;
+    vertical-align: middle;
+    vertical-align: bottom;
     cursor: pointer;
 }
 .md_pagination li {
@@ -96,5 +101,5 @@ overflow: var(--md_chip_scroll);
     
 }
 .md_pagination li *:not(:first-child) {
-    margin-left: 24px;
+    margin-left: var(--sp_px-xl);
 }

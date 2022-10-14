@@ -141,32 +141,34 @@ h1, .tp_h1 {
     font-size: var(--tp_h-large);
     font-weight: 700;   
     line-height: 1.25;
-    margin: 0 0 2em;
+    margin: var(--sp_em-xxl) 0;
 }
 
 h2, .tp_h2 {
     font-size: var(--tp_h-medium);
     font-weight: 700; 
     line-height: 1.25;
-    margin: 0 0 1em;
+    margin: var(--sp_em-m) 0;
 }
 
 h3, .tp_h3 {
     font-size: var(--tp_h-smaller);
     font-weight: 700;
     line-height: 1.25;
-    margin: 0 0 1em;
+    margin: var(--sp_em-m) 0;
 }
 
 h4, .tp_h4 {
     font-size: var(--tp_h-smallest);
     font-weight: 700; 
     line-height: 1.25;
-    margin: 0 0 1em;
+    margin: var(--sp_em-m) 0;
 }
-
+:is(h1, h2, h3, h4):first-child {
+    margin-top: 0;
+}
 p {
-    margin: 0 0 1em;
+    margin: 0 0 var(--sp_em-m);
 }
 
 footer > p {

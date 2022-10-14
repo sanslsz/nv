@@ -2,6 +2,10 @@
 
     --nv-cta-font-size: 14px;
     --nv-cta-small-font-size: 12px;
+    
+    --sz_icon-s: 16px;
+    --sz_icon-m: 24px;
+    --sz_icon-l: 32px;
 
     --filter-search-width: 100%;
     --filter-search-width-2: clamp(260px, 60vw, 400px);
@@ -37,51 +41,20 @@
 }
 
 /*=================== CTA ===================*/
-.cp_cta {
-    display: block;
-    width: fit-content;
-    padding: var(--space-m) var(--space-m) var(--space-m) calc(var(--space-m) + 24px + 0.5em);
-    background-color: var(--nv-green);
-    color: var(--nv-16);
-    font-weight: 700;
-    font-size: var(--nv-cta-font-size);
-    position: relative;
-    line-height: 1;
-}
-.cp_cta.noicon {
-    padding: var(--space-m);
-}
 
-.cp_cta img {
-    margin-right: 8px;
-    position: absolute;
-    left: var(--space-m);
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.cp_cta_small {
-    display: block;
-    width: fit-content;
-    padding: var(--space-s);
-    background-color: var(--nv-green);
-    color: var(--nv-16);
-    font-weight: 700;
-    font-size: var(--nv-cta-small-font-size);
-    position: relative;
-    line-height: 1;
-    cursor: pointer;
-}
 /*=================== search ===================*/
+.cp_search_text {
+    font-size: 14px;
+}
 .cp_search {
     position: relative;
 }
-
 .cp_searchinput {
     text-overflow: ellipsis;
     width: var(--filter-search-width);
     padding: 10px 40px 10px 10px;
-    background: url(cp_assets/common-magnifying-glass.svg) no-repeat right 10px center, var(--nv-15-5-f7);
+    padding: var(--sp_em-s) calc(var(--sp_em-s) * 2 + 24px) var(--sp_em-s) var(--sp_em-s);
+    background: url(cp_assets/ic_search.svg) no-repeat right 10px center / var(--sz_icon-m), var(--nv-15-5-f7);
     border: 1px solid var(--nv-12-5-cc);
     font-size: 14px;
     color: var(--nv-1-5-1a);
@@ -97,14 +70,14 @@
 .cp_searchdrop {
     position: absolute;
     width: fit-content;
+    max-width: 100%;
     background-color: var(--nv-16);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    top: calc(100% + 3px);
+    top: calc(100% + 4px);
     left: 0;
     transform: translateY(-6px);
     opacity: 0;
-    transition: all 0.2s ease-in-out;
-    font-weight: 400;
+    transition: var(--02transition);
     font-size: 14px;
     z-index: -5;
 /*    hidden without display: none, or z-index: -1 interferes with content below*/
@@ -115,12 +88,12 @@
     z-index: 10;
 }
 .cp_searchdrop li {
-    padding: var(--space-m);
-    white-space: nowrap;
-    line-height: 1.3;
+    padding: var(--sp_em-m);
+/*    white-space: nowrap;*/
+    line-height: 1.2;
 }
 .cp_searchdrop li:nth-child(n + 2) {
-    border-top: 1px solid var(--nv-12-5-cc);
+    border-top: 1px solid var(--nv-14-dd);
 }
 .cp_searchdrop li:hover {
     background-color: var(--nv-15-5-f7);
@@ -135,6 +108,7 @@
     font-size: 14px;
     background-color: var(--nv-15-5-f7);
     padding: 8px 36px 7px 16px;
+    padding: var(--sp_em-xs) calc(var(--sp_em-xs) + var(--sz_icon-s) + var(--sp_em-m)) var(--sp_em-xs) var(--sp_em-m);
     border: 1px solid var(--nv-12-5-cc);
     border-radius: 999px;
     position: relative;
@@ -143,11 +117,11 @@
 .cp_filter_chip::after {
     content: '';
     display: block;
-    width: 16px;
-    height: 16px;
-    background: url(cp_assets/common-close.svg);
+    width: var(--sz_icon-s);
+    height: var(--sz_icon-s);
+    background: url(cp_assets/ic_close.svg);
     position: absolute;
-    right: 16px;
+    right: calc(var(--sp_em-m) - 2px);
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -157,8 +131,9 @@
     margin-right: 2px;
 }
 .cp_filter_chip_clear {
+    font-size: 14px;
     text-decoration: underline;
-    margin-left: 16px;
+    margin-left: var(--sp_px-m);
     flex: 0 0 fit-content;
     cursor: pointer;
 }
@@ -173,9 +148,11 @@
     display: none;
 }
 .cp_dropdown > label {
+    font-size: 14px;
     display: block;
     cursor: pointer;
-    padding: 8px 38px 8px 12px;
+/*    padding: 8px 38px 8px 12px;*/
+    padding: var(--sp_em-xs) calc(var(--sp_em-xs) + var(--sz_icon-s) + var(--sp_em-s)) var(--sp_em-xs) var(--sp_em-s);
     width: max-content;
     background-color: var(--nv-15-5-f7);
     border: 1px solid var(--nv-12-5-cc);
@@ -184,36 +161,37 @@
 .cp_dropdown > label::after {
     content: '';
     display: block;
-    width: 14px;
-    height: 8px;
-    background: url(cp_assets/dropdown_arrow.svg) no-repeat center / contain;
+    width: var(--sz_icon-s);
+    height: var(--sz_icon-s);
+    background: url(cp_assets/ic_chevron_dropdown_small.svg) no-repeat center / auto;
     position: absolute;
-    right: 12px;
+    right: calc(var(--sp_em-s) - 2px);
     top: 50%;
     transform: translateY(-50%);
-    transition: all 0.2s ease-in-out;
+    transition: var(--02transition);
 }
 .cp_dropdown > input:checked ~ label {
     border: 1px solid var(--nv-green);
 }
 .cp_dropdown > input:checked ~ label::after {
-    background-image: url(cp_assets/dropdown_arrow_green.svg);
+    background-image: url(cp_assets/ic_chevron_dropdown_small_green.svg);
     transform: translateY(-50%) rotate(180deg);
-    transform-origin: center center;
+/*    transform-origin: center center;*/
 }
 
 .cp_dropdown_pop {
+    font-size: 14px;
     position: absolute;
     width: fit-content;
     min-width: 100%;
-    padding: 16px;
+    padding: var(--sp_em-s) var(--sp_em-l);
     background-color: var(--nv-15-5-f7);
     border: 1px solid var(--nv-12-5-cc);
-    top: calc(100% + 8px);
+    top: calc(100% + 4px);
     left: 0;
     transform: translateY(-6px);
     opacity: 0;
-    transition: all 0.2s ease-in-out;
+    transition: var(--02transition);
     font-weight: 400;
     z-index: 2;
 }
@@ -225,10 +203,10 @@ input:checked ~ .cp_dropdown_pop {
 
 .cp_dropdown_pop label {
     display: block;
-    padding: 8px 0;
+    padding: var(--sp_em-s) 0;
     position: relative;
-    padding-left: calc(14px + 8px);
-    line-height: 1.3;
+    padding-left: calc(var(--sz_icon-s) + var(--sp_em-s));
+    line-height: 1.2;
     white-space: nowrap;
 }
 
@@ -239,11 +217,12 @@ input:checked ~ .cp_dropdown_pop {
 .cp_dropdown_pop input[type="checkbox"] {
     position: absolute;
     left: 0;
-    transform: translateY(3px);
+    top: 50%;
+    transform: translateY(-50%);
     appearance: none;
-    width: 14px;
-    height: 14px;
-    background: url(cp_assets/ic_checkbox_inactive.svg) no-repeat center / contain;
+    width: var(--sz_icon-s);
+    height: var(--sz_icon-s);
+    background: url(cp_assets/ic_checkbox_inactive.svg) no-repeat center / auto;
 }
 
 .cp_dropdown_pop input[type="checkbox"]:checked {
@@ -254,14 +233,17 @@ input:checked ~ .cp_dropdown_pop {
 .cp_select {
     appearance: none;
     border: 1px solid var(--nv-12-5-cc);
-    background: url(cp_assets/dropdown_arrow_66.svg) no-repeat right 8px center, var(--nv-15-5-f7);
+    background: url(cp_assets/ic_chevron_dropdown_small.svg) no-repeat right var(--sp_em-xs) center / auto, var(--nv-15-5-f7);
     padding: 6px calc(4px + 14px + 8px) 6px 8px;
+    padding: var(--sp_em-xs) calc(var(--sp_em-s) + var(--sz_icon-s)) var(--sp_em-xs) var(--sp_em-s);
     font-size: 14px;
     font-weight: 900;
     line-height: 1;
     color: var(--nv-1-5-66);
 }
-
+.cp_select_text {
+    font-size: 14px;
+}
 /* ========================= disclaimer ========================*/
 .cp_disclaimer {
     font-family: 'nomo', monospace;
