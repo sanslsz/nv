@@ -6,9 +6,9 @@
     --cp_cta-padding-lr: 10px;
     --cp_cta-fontsize: 12px;
     
-    --cp_cta_large-padding-tb: 8px;
-    --cp_cta_large-padding-lr: 12px;
-    --cp_cta_large-fontsize: 14px;
+    --cp_cta-large-padding-tb: 8px;
+    --cp_cta-large-padding-lr: 12px;
+    --cp_cta-large-fontsize: 14px;
     
     --cp_cta-sec-bg: #ffffff;
     --cp_cta-sec-bg-h: #f1f8e5;
@@ -16,7 +16,7 @@
     --cp_cta-disabled: #999999;
     
     --cp_cta-ter-icon: 15px;
-    --cp_cta_large-ter-icon: 18px;
+    --cp_cta-large-ter-icon: 18px;
 }
 
 @media screen and (min-width: 640px) {
@@ -31,12 +31,12 @@
     --cp_cta-padding-lr: 12px;
     --cp_cta-fontsize: 14px;
     
-    --cp_cta_large-padding-tb: 9px;
-    --cp_cta_large-padding-lr: 13px;
-    --cp_cta_large-fontsize: 16px;
+    --cp_cta-large-padding-tb: 9px;
+    --cp_cta-large-padding-lr: 13px;
+    --cp_cta-large-fontsize: 16px;
         
     --cp_cta-ter-icon: 18px;
-    --cp_cta_large-ter-icon: 20px;
+    --cp_cta-large-ter-icon: 20px;
     }
 }
 
@@ -47,12 +47,12 @@
     --cp_cta-padding-lr: 13px;
     --cp_cta-fontsize: 16px;
     
-    --cp_cta_large-padding-tb: 10px;
-    --cp_cta_large-padding-lr: 15px;
-    --cp_cta_large-fontsize: 18px;
+    --cp_cta-large-padding-tb: 10px;
+    --cp_cta-large-padding-lr: 15px;
+    --cp_cta-large-fontsize: 18px;
         
     --cp_cta-ter-icon: 20px;
-    --cp_cta_large-ter-icon: 24px;
+    --cp_cta-large-ter-icon: 24px;
     }
 }
 
@@ -110,8 +110,8 @@
     background-color: var(--cp_cta-sec-bg-h);
 }
 .cp_cta_primary.large, .cp_cta_secondary.large {
-    padding: var(--cp_cta_large-padding-tb) var(--cp_cta_large-padding-lr);
-    font-size: var(--cp_cta_large-fontsize);
+    padding: var(--cp_cta-large-padding-tb) var(--cp_cta-large-padding-lr);
+    font-size: var(--cp_cta-large-fontsize);
 }
 
 
@@ -145,9 +145,9 @@
     background-image: url(../assets/ic_tertiary_hover_6x10px.svg);
 }
 .cp_cta_tertiary.large {
-    --cp_cta-ter-icon: var(--cp_cta_large-ter-icon);
-    font-size: var(--cp_cta_large-fontsize);
-/*    padding-right: var(--cp_cta_large-ter-icon);*/
+    --cp_cta-ter-icon: var(--cp_cta-large-ter-icon);
+    font-size: var(--cp_cta-large-fontsize);
+/*    padding-right: var(--cp_cta-large-ter-icon);*/
 /*    padding-top: var(--space-m);*/
 /*    padding-bottom: var(--space-m);*/
 }

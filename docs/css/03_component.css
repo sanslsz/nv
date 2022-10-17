@@ -2,10 +2,6 @@
 
     --nv-cta-font-size: 14px;
     --nv-cta-small-font-size: 12px;
-    
-    --sz_icon-s: 16px;
-    --sz_icon-m: 24px;
-    --sz_icon-l: 32px;
 
     --filter-search-width: 100%;
     --filter-search-width-2: clamp(260px, 60vw, 400px);
@@ -52,13 +48,15 @@
 .cp_searchinput {
     text-overflow: ellipsis;
     width: var(--filter-search-width);
-    padding: 10px 40px 10px 10px;
-    padding: var(--sp_em-s) calc(var(--sp_em-s) * 2 + 24px) var(--sp_em-s) var(--sp_em-s);
+/*    padding: 10px 40px 10px 10px;*/
+    padding: var(--sp_em-s) calc(var(--sp_em-s) * 2 + var(--sz_icon-m)) var(--sp_em-s) var(--sp_em-s);
     background: url(cp_assets/ic_search.svg) no-repeat right 10px center / var(--sz_icon-m), var(--nv-15-5-f7);
     border: 1px solid var(--nv-12-5-cc);
     font-size: 14px;
     color: var(--nv-1-5-1a);
+    position: relative;
 }
+/* <input> can't have genreated content with ::befoer/after */
 .option2 .cp_searchinput {
     width: var(--filter-search-width-2);
 }

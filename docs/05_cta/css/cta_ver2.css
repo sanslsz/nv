@@ -1,7 +1,5 @@
 :root {
-  
-    --cp_cta-minw: 10ch;
-    
+   
     --cp_cta-padding-tb: 0.6em;
     --cp_cta-padding-lr: 0.9em;
     --cp_cta-bar: 0.45em;
@@ -12,11 +10,11 @@
     
     --cp_cta-fontsize: 12px;
     --cp_cta-large-fontsize: 14px;
+    --cp_cta-minw: 10ch;
     
     --cp_cta-2nd-hover: 1px;
     
     --cp_cta-hover: #6AA700;
-    --cp_cta-disabled: #999999;
     
     
     
@@ -188,6 +186,20 @@
     right: 0;
 }
 
+.minwidth {
+    min-width: 300px;
+    min-width: calc(var(--cp_cta-padding-lr) * 2 + var(--cp_cta-minw));
+    text-align: center;
+}
+.minwidth > * {
+    --cp_cta-padding-lr: 0px;
+/*    background: pink;*/
+}
+.minwidth :is(.ic_font, .ic_svg) {
+    left: 0;
+}
+
+
 /*====================== new styles=====================*/
 .cp_cta_primary2 {
     display: block;
@@ -258,22 +270,14 @@
 .cp_cta_link .no-break {
     white-space: nowrap;
 }
-.cp_cta_link .no-break::after {
-    content: '';
-    display: inline-block;
-    width: var(--cp_cta-icon-size);
-    height: 1.25em;
-    vertical-align: text-bottom;
-    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;   
-}
-
-.cp_cta_link.runt::after {
+.cp_cta_link .no-break::after, .cp_cta_link.runt::after {
     content: '';
     display: inline-block;
     width: var(--cp_cta-icon-size);
     height: 1.2em;
     vertical-align: text-bottom;
-    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
+/*    height and vertical alignment may cause line-height changes */
+    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;   
 }
 /*the chevron may wrap to next line by itself, use span tag to avoid it */
 
@@ -285,10 +289,13 @@
 /*    line-height: 1.5;*/
     display: block;
 }
-.cp_cta_link2:hover span {
+.cp_cta_link2:hover > span {
     border-bottom: 2px solid var(--nv-green);
 }
-.cp_cta_link2.runt::after {
+.cp_cta_link2 .no-break {
+    white-space: nowrap;
+}
+.cp_cta_link2 .no-break::after, .cp_cta_link2.runt::after {
     content: '';
     display: inline-block;
     width: var(--cp_cta-icon-size);
