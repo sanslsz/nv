@@ -1,6 +1,6 @@
 :root {
 
-    --cp_ul-hor-img: 80px;
+    --cp_ul-multi-img: 80px;
     --flex-basis: max(200px, 45%);
     
     --cp_dl-grid: block;
@@ -359,7 +359,7 @@ dd {
 
 
 
-.cp_ul-hor {
+.cp_ul-multi {
     padding: 0;
     list-style: none;
     display: grid;
@@ -367,40 +367,27 @@ dd {
     grid-gap: var(--sp_px-m);
 }
 
-.cp_ul-hor li {
+.cp_ul-multi li {
     font-size: 13px;
     font-style: italic;
     margin: 0;
-    padding: var(--sp_em-s);
-    padding-left: calc(var(--cp_ul-hor-img) + var(--sp_em-s));
+    padding: var(--sp_em-s) var(--sp_em-s) var(--sp_em-s) calc(var(--cp_ul-multi-img) + var(--sp_em-s));
     background-color: var(--nv-16);
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
-.cp_ul-hor .larger {
-    /*
-    flex-basis: 300px;
-    max-width: 360px;
-*/
-}
-
-.cp_ul-hor .largest {
-    /*    flex-basis: 320px;*/
-    /*    max-width: 400px;*/
-}
-
-.cp_ul-hor li img {
+.cp_ul-multi li img {
     position: absolute;
     left: 0;
     top: 0;
-    width: var(--cp_ul-hor-img);
+    width: var(--cp_ul-multi-img);
     height: 100%;
     object-fit: cover;
 }
 
-.cp_ul-hor li h4 {
-    margin-bottom: 0;
-    font-size: 13px;
+.cp_ul-multi li span {
+    display: block;
+    font-weight: bold;
     font-style: normal;
 }
