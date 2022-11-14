@@ -37,7 +37,7 @@
     --50transparent: #ffffff80;
     --70transparent: #ffffffbb;
     --100transparent: #ffffffff;
-    --boxshadow-card: 0px 1px 3px rgba(0, 0, 0, 0.15);
+    --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.1);
     
 /*    NVIDIA web library 2.3 */
 --nv-16: #ffffff;
@@ -162,7 +162,7 @@ h4, .tp_h4 {
     font-size: var(--tp_h-smallest);
     font-weight: 700; 
     line-height: 1.25;
-    margin: var(--sp_em-m) 0;
+    margin: var(--sp_em-s) 0;
 }
 :is(h1, h2, h3, h4):first-child {
     margin-top: 0;

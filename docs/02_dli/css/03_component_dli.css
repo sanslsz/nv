@@ -1,98 +1,237 @@
 :root {
---cp-card-1-padding: 16px;
---cp-card-1-op2-fig-height: 100px;
+    --cp_card-ins-padding: 16px;
+    --cp_card-ins-op2-fig-height: 100px;
+    --cp_card-ins-imagew: min(40%, 164px);
+    --cp_detail-imagew: min(50%, 400px);
+    
+    
 }
 
 @media screen and (min-width: 640px) {
     :root {
---cp-card-1-padding: 20px;
---cp-card-1-op2-fig-height: 60px;
-}
+        --cp_card-ins-padding: 20px;
+        --cp_card-ins-op2-fig-height: 80px;
+        --cp_detail-imagew: min(80%, 400px);
+
+    }
 }
 
 @media screen and (min-width: 1024px) {
     :root {
---cp-card-1-padding: 24px;
-}
+        --cp_card-ins-padding: 24px;
+        --cp_detail-h2-mh: 100px;
+
+    }
 }
 
 @media screen and (min-width: 1350px) {
     :root {
---cp-card-1-padding: 32px;
-}
+        --cp_card-ins-padding: 32px;
+    }
 }
 
 
-.cp-card-1 {
-    background-color: var(--sw-16);
+.cp_card-ins {
+    background-color: var(--nv-16);
     box-shadow: var(--boxshadow-card);
     max-width: 900px;
-    line-height: 1.2;
+    line-height: 1.4;
     cursor: pointer;
 }
-.cp-card-1 h3 {
-    font-size: var(--h4);
-}
-.cp-card-1 h4 {
-    font-size: 16px;
-}
-.cp-card-1 p {
-    line-height: inherit;
-}
 
-.cp-card-1 :is(h3, div) {
-    padding: var(--cp-card-1-padding);
+.cp_card-ins h3 {
+    padding: var(--cp_card-ins-padding);
     margin-bottom: 0;
 }
-.cp-card-1 figure {
+
+.cp_card-ins figure {
     display: flex;
-    gap: var(--space-m);
+    align-items: flex-start;
 }
-.cp-card-1 figure > img {
-    width: 160px;
-    height: 180px;
+
+.cp_card-ins figure > img {
+    width: var(--cp_card-ins-imagew);
+    aspect-ratio: 8 / 9;
     object-fit: cover;
 }
-.cp-card-1 figcaption {
-    padding-right: var(--cp-card-1-padding);
+
+.cp_card-ins figcaption {
+    padding: 0 var(--cp_card-ins-padding) 0 16px;
+    flex: 1 1 auto;
 }
-.cp-card-1 figcaption p:nth-child(2) {
+
+.cp_card-ins figcaption p:nth-child(2) {
     font-style: italic;
-    margin-top: 0.75rem;
 }
-.cp-card-1 figcaption p:nth-child(3) {
+
+.cp_card-ins figcaption p:nth-child(3) {
     display: flex;
-    grid-gap: var(--space-l);
-    margin-top: 0.75rem;
+    grid-gap: var(--sp_em-l);
 }
 
-.cp-card-1.wide {
-    position: relative;
-    padding-left: 160px;
-}
-.cp-card-1.wide figure > img {
-    position: absolute;
-    left: 0;
-    top: 32px;
-}
-.cp-card-1.wide :is(h3, figcaption, div) {
-    padding-left: 16px;
+.cp_card-ins div {
+    --sp_em-m: var(--sp_em-s);
+    padding: var(--cp_card-ins-padding);
 }
 
-.cp-card-1.wide2 {
+.cp_card-ins div p:first-child {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 500px) {
+
+    .cp_card-ins.wide {
+        position: relative;
+        padding-left: var(--cp_card-ins-imagew);
+    }
+
+    .cp_card-ins.wide figure > img {
+        position: absolute;
+        left: 0;
+        top: var(--cp_card-ins-padding);
+    }
+}
+
+
+.cp_card-ins.imgright {
     position: relative;
-/*    padding-right: 192px;*/
-    margin-top: var(--cp-card-1-padding);
+    margin-top: var(--cp_card-ins-padding);
 }
-.cp-card-1.wide2 figure >img {
+
+.cp_card-ins.imgright figure > img {
     position: absolute;
-    right: var(--cp-card-1-padding);
-    top: calc(var(--cp-card-1-padding) * -1);
+    right: var(--cp_card-ins-padding);
+    top: calc(var(--cp_card-ins-padding) * -1);
 }
-.cp-card-1.wide2 figcaption {
-    padding-left: var(--cp-card-1-padding);
-    min-height: var(--cp-card-1-op2-fig-height);
+
+.cp_card-ins.imgright figcaption {
+    min-height: var(--cp_card-ins-op2-fig-height);
 }
-.cp-card-1.wide2 :is(h3, figcaption) {
-    max-width: calc(100% - 160px - var(--cp-card-1-padding));
+
+.cp_card-ins.imgright :is(h3, figcaption) {
+    max-width: calc(100% - var(--cp_card-ins-imagew) - var(--cp_card-ins-padding));
+}
+
+.cp_card-ins.simple {
+    max-width: 300px;
+}
+.cp_card-ins.simple img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+.cp_card-ins.simple div {
+    padding: calc(var(--cp_card-ins-padding) / 2) var(--cp_card-ins-padding);
+}
+.cp_card-ins.simple h4 {
+    font-size: 16px;
+} 
+.cp_card-ins.simple p:nth-last-of-type(2) {
+    font-size: 13px;
+    color: var(--nv-9-5-99);
+}
+.cp_card-ins.simple p:last-of-type {
+    display: flex;
+    grid-gap: var(--sp_em-l);
+    margin-top: var(--sp_em-m);
+}
+
+
+
+
+
+.cp_card-cou {
+    background-color: var(--nv-16);
+    box-shadow: var(--boxshadow-card);
+    max-width: 900px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+.cp_card-cou img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+.cp_card-cou div {
+    padding: var(--cp_card-ins-padding);
+}
+.cp_card-cou .description {
+    margin: var(--sp_em-s) 0;
+}
+.cp_card-cou span + span::before {
+    content: '|';
+    font-weight: normal;
+    margin: 0 var(--sp_em-m);
+    color: var(--nv-12-5-cc);
+}
+.cp_card-cou .bold {
+    font-weight: bold;
+}
+
+.cp_card-cou.noimg {
+    padding: var(--cp_card-ins-padding);
+}
+.cp_card-cou.noimg span + span::before {
+    margin: 0 var(--sp_em-xs) 0 calc(var(--sp_em-xs) - 2px);
+}
+
+
+.cp_card-cou.promo {
+    background-color: var(--nv-green);
+    color: var(--nv-16);
+}
+
+.cp_card-cou.promo img {
+    aspect-ratio: 4 / 3;
+}
+
+.cp_cta {
+    display: block;
+    width: fit-content;
+    padding: var(--sp_em-s) var(--sp_em-m);
+    font-weight: bold;
+    color: var(--nv-16);
+    background-color: var(--nv-green);
+}
+.cp_card-cou.promo .cp_cta {
+    margin-left: auto;
+    color: var(--nv-green);
+    background-color: var(--nv-16);
+}
+
+
+
+
+.cp_card-cou.promo2 {
+    color: var(--nv-16);
+    background-color: var(--nv-0);
+}
+
+
+
+.cp_card-cou.promo3 {
+    grid-column: 1 / -1;
+    color: var(--nv-16);
+    background-color: var(--nv-0);
+    position: relative;
+}
+.cp_card-cou.promo3 img {
+    position: absolute;
+    right: 0;
+    aspect-ratio: unset;
+    height: 100%;
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 70%);
+}
+.cp_card-cou.promo3 div {
+    position: relative;
+    z-index: 1;
+    padding: calc(var(--cp_card-ins-padding) * 2) 40% calc(var(--cp_card-ins-padding) * 2) var(--cp_card-ins-padding);
+}
+
+
+
+
+
+
+body > footer {
+    background: green;
+    height: 700px;
 }
