@@ -180,6 +180,7 @@ body {
     height: 600px;
     background: var(--nv-1-11);
     overflow: hidden;
+    padding: 4em;
 }
 .sn3 ul {
     width: 50%;
@@ -193,6 +194,7 @@ body {
     position: absolute;
     right: -50%;
     opacity: 0;
+    transform: scale(0.6);
 }
 /*
 .sn3 ul li {
@@ -215,7 +217,7 @@ body {
 .text {
     position: absolute;
     top: 20%;
-    left: 10%;
+    left: 5%;
     color: white;
 }
 
@@ -251,13 +253,13 @@ body {
         
     }
     5%, 95% {
-            right: 0;
+    right: 0;
     opacity: 1;
-    transform: scale(1.2);
+    transform: scale(1);
     }
     100% {
     right: 50%;
     opacity: 0;
-    transform: scale(1);
+    transform: scale(0.6);
     }
 }
