@@ -2,7 +2,7 @@
     --cp_card-ins-padding: 16px;
     --cp_card-ins-op2-fig-height: 100px;
     --cp_card-ins-imagew: min(40%, 164px);
-    --cp_detail-imagew: min(50%, 400px);
+    --cp_detail-imagew: min(50%, 340px);
     
     
 }
@@ -11,7 +11,7 @@
     :root {
         --cp_card-ins-padding: 20px;
         --cp_card-ins-op2-fig-height: 80px;
-        --cp_detail-imagew: min(80%, 400px);
+        --cp_detail-imagew: min(80%, 340px);
 
     }
 }

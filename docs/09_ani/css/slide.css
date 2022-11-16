@@ -1,0 +1,263 @@
+:root {
+--grid-num: 4;
+--grid-gap: 30px;
+
+    
+}
+
+@media screen and (min-width: 360px) {
+    :root {
+
+    }
+
+}
+
+
+@media screen and (min-width: 640px) {
+    :root {
+
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+
+
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+
+
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {}
+}
+
+
+@keyframes fadeinout {
+    0% {
+            opacity: 0;
+    }
+    4%, 6% {
+            opacity: 1;
+    }
+    10% {
+            opacity: 0;
+    }
+}
+
+@keyframes slide {
+    0%, 100% {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: var(--nv-1-11);
+}
+
+.slidecontainer {
+    position: relative;
+}
+.slidecontainer li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+}
+
+.slidecontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fadebox {
+    background-color: black;
+    opacity: 0;
+    animation-name: fadeinout;
+    animation-delay: 3.8s;
+    animation-duration: 4s;
+    animation-fill-mode: none;
+    animation-iteration-count: 5;
+    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
+}
+.slidecontainer li:not(:last-child) {
+    opacity: 0;
+    animation-name: slide;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;  
+/*    animation-play-state: paused;*/
+}
+.slidecontainer li:nth-child(1) {
+    animation-delay: 0s;
+}
+.slidecontainer li:nth-child(2) {
+    animation-delay: 4s;
+}
+.slidecontainer li:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.slidecontainer li:nth-child(4) {
+    animation-delay: 12s;
+}
+.slidecontainer li:nth-child(5) {
+    animation-delay: 16s;
+}
+.slidecontainer li:nth-child(6) {
+    animation-delay: 20s;
+}
+.slidecontainer:hover li {
+    animation-play-state: paused;
+}
+
+.slidecontainer2 {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+.slidecontainer2 ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+.slidecontainer2 li {
+    width: 100%;
+    height: 500px;
+    flex: 0 0 auto;
+}
+.slidecontainer2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slidecontainer2 ul {
+    animation-name: scroll;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.slidecontainer2:hover ul {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0%, 16% {
+        left: 0;
+    }
+    18%, 32% {
+        left: -100%;
+    }
+     34%, 48% {
+        left: -200%;
+    }
+     50%, 64%{
+        left: -300%;
+    }
+     66%, 80% {
+        left: -400%;
+    }
+     82%, 96% {
+        left: -500%;
+    }
+    98%, 100% {
+        left: -600%;
+    }
+}
+
+.sn3 {
+    height: 600px;
+    background: var(--nv-1-11);
+    overflow: hidden;
+}
+.sn3 ul {
+    width: 50%;
+    height: 100%;
+    margin-left: auto;
+    position: relative;
+}
+.sn3 ul li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: -50%;
+    opacity: 0;
+}
+/*
+.sn3 ul li {
+    right: 0;
+    opacity: 1;
+    transform: scale(1.2);
+}
+.sn3 ul li {
+    left: -50%;
+    opacity: 0.5;
+    transform: scale(1);
+}
+*/
+.sn3 ul img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.text {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: white;
+}
+
+.sn3 ul li {
+    animation-name: slide3;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+.sn3 ul li:nth-child(2) {
+    animation-delay: 4s;
+}
+.sn3 ul li:nth-child(3) {
+    animation-delay: 8s;
+}
+.sn3 ul li:nth-child(4) {
+    animation-delay: 12s;
+}
+.sn3 ul li:nth-child(5) {
+    animation-delay: 16s;
+}
+.sn3 ul li:nth-child(6) {
+    animation-delay: 20s;
+}
+.sn3 ul li:nth-child(7) {
+    animation-delay: 24s;
+}
+.sn3 ul li:nth-child(8) {
+    animation-delay: 28s;
+}
+@keyframes slide3 {
+    0% {
+        
+    }
+    5%, 95% {
+            right: 0;
+    opacity: 1;
+    transform: scale(1.2);
+    }
+    100% {
+    right: 50%;
+    opacity: 0;
+    transform: scale(1);
+    }
+}
