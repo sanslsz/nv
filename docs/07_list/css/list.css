@@ -259,6 +259,11 @@ dd {
 }
 
 
+.p-large {
+    font-size: var(--tp_p-l);
+}
+
+
 
 .cp_ol.md_listcolumn {
     font-size: 12px;
