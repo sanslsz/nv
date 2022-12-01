@@ -1,0 +1,12 @@
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs><style>
+        .dot {opacity:.1;}
+        .dot {fill:#000000;}
+        
+        @media (prefers-color-scheme: dark) {
+      .dot {
+        fill: #ffffff;
+      }
+        
+        </style></defs>
+    <circle class="dot" cx="8" cy="8" r="1"/></svg>

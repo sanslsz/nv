@@ -205,7 +205,9 @@ footer > p {
     font-size: var(--tp_p-s);
     line-height: 1.4;
 }
-
+.tp_bold {
+    font-weight: bold;
+}
 /*==========  generic inline type settings  ==========*/
 a {
     text-decoration: none;

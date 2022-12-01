@@ -28,7 +28,7 @@
     --sp_grid-gap-2col: 16px;
     --sp_grid-gap-3col: 16px;
     
-    --sp_card-padding: 16px;
+/*    --sp_card-padding: 16px;*/
 
     --space-xs: 4px;
     --space-s: 8px;
@@ -76,7 +76,7 @@
     --sp_grid-gap-2col: 24px;
     --sp_grid-gap-3col: 16px;   
     
-    --sp_card-padding: 20px;
+/*    --sp_card-padding: 20px;*/
         
         
     --space-xs: 5px;
@@ -87,7 +87,7 @@
     --space-xxl: 27px;
     
     --padding-tb: 48px;
-    --padding-lr: 32px;
+/*    --padding-lr: 32px;*/
         
     --wrapper: 630px;
 
@@ -114,7 +114,7 @@
     --sp_grid-gap-2col: 32px;
     --sp_grid-gap-3col: 24px;
         
-    --sp_card-padding: 24px;
+/*    --sp_card-padding: 24px;*/
         
     --space-xs: 6px;
     --space-s: 10px;
@@ -126,7 +126,7 @@
     --margin-m: 3rem;    
         
     --padding-tb: 64px;
-    --padding-lr: 64px;
+/*    --padding-lr: 64px;*/
         
     --wrapper: 954px;
 
@@ -153,7 +153,7 @@
     --sp_grid-gap-2col: 48px;
     --sp_grid-gap-3col: 32px; 
     
-    --sp_card-padding: 32px;
+/*    --sp_card-padding: 32px;*/
         
     --space-xs: 7px;
     --space-s: 11px;
@@ -165,7 +165,7 @@
     --margin-m: 4rem;
         
     --padding-tb: 96px;
-    --padding-lr: 96px;
+/*    --padding-lr: 96px;*/
         
     --wrapper: 1290px;
 

@@ -1,0 +1,546 @@
+:root {
+    --cp_card-minw: min(80vw, 240px);
+    --cp_card-maxw: 800px;
+    --cp_card-padding: 16px;
+    --cp_card-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    --cp_card-shadowh1: 0px 6px 8px rgba(0, 0, 0, 0.1);
+    --cp_card-shadowh2: 0px 6px 30px rgba(0, 0, 0, 0.15);
+    --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    --cp_card-glassbg: rgba(255, 255, 255, 0.8);
+    --cp_card-glassgradient: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0% 2%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0) 35% 70%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0) 100%);
+    /*    --cp_card-glassgradient: linear-gradient(to bottom right, rgba(118, 185, 0, 0) 0% 2%, rgba(118, 185, 0, 0.8) 15%, rgba(118, 185, 0, 0) 35% 70%, rgba(118, 185, 0, 0.4) 85%, rgba(118, 185, 0, 0) 100%);*/
+    --white: #ffffff;
+    --swap-layout: block;
+    --swap-asepct: 16 / 9;
+    
+
+}
+.whitesection {
+    --cp_card-glassbg: rgba(247, 247, 247, 0.8);
+     --nv-16: var(--nv-15-5-f7);
+}
+
+
+@media screen and (min-width: 640px) {
+    :root {
+        --cp_card-padding: 20px;
+        --4col: repeat(2, 1fr);
+        --2col: repeat(2, 1fr);
+         --align-lines-p: 7;
+        --align-lines-h4: 3;
+        --align-lines-lead: 2;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --cp_card-padding: 24px;
+        --4col: repeat(3, 1fr);
+        --align-lines-lead: 3;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+
+        --cp_card-padding: 32px;
+        /*--4col: repeat(4, 1fr);*/
+        --swap-layout: flex;
+        --swap-asepct: unset;
+        --swap-imgw: 33%;
+         --align-lines-p: 5;
+        --align-lines-lead: 2;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        --cp_card-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+        --cp_card-shadowh1: 0px 6px 8px rgba(0, 0, 0, 0.5);
+        --cp_card-shadowh2: 0px 6px 30px rgba(0, 0, 0, 0.75);
+        --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.5);
+        --cp_card-glassbg: rgba(34, 34, 34, 0.8);
+        --cp_card-glassgradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 0% 2%, rgba(255, 255, 255, 0.6) 15%, rgba(255, 255, 255, 0) 35% 70%, rgba(255, 255, 255, 0.3) 85%, rgba(255, 255, 255, 0) 100%);
+
+        --nv-16: #222222;
+        --nv-15-5-f7: #1A1A1A;
+        --nv-15-ee: #111111;
+        --nv-14-dd: #000000;
+
+        --nv-12-5-cc: #333333;
+
+        --nv-9-5-99: #666666;
+
+        --nv-3-33: #CCCCCC;
+        --nv-2-22: #DDDDDD;
+        --nv-1-5-1a: #EEEEEE;
+        --nv-1-11: #F7F7F7;
+        --nv-0: #FFFFFF;
+        --white: #000000;
+    }
+
+    .nodarkscheme {
+        --nv-16: #ffffff;
+        --nv-0: #000000;
+    }
+    .whitesection {
+    --cp_card-glassbg: rgba(34, 34, 34, 0.8);
+     --nv-16: #222222;
+}
+}
+
+body {
+    background-color: var(--nv-15-ee);
+}
+
+body > *:nth-child(even) {
+    background-color: var(--nv-15-5-f7);
+}
+
+.imagebg {
+    background: url(../assets/nv-proviz-kv-me-final-5770x2500.jpeg) fixed no-repeat center / cover;
+    background-image: url(../assets/Endeavor-NVIDIA-HQ-10.jpeg);
+    background-image: url(../assets/Endeavor-Dec2018-244.jpeg);
+    background-image: url(../assets/2021-nvidia-corporate-key-visual-16x9-dark-4k.jpeg);
+    background-image: url(../assets/nvidia-kv-light-blog-header-no-copy-1260x680.jpeg);
+    background-image: url(../assets/isaac-nova-orin-blog-1280x680.jpeg);
+}
+
+.whitesection {
+    background-color: var(--white);
+}
+
+/*===============layout =============*/
+section > ul {
+    display: grid;
+    grid-template-columns: var(--4col);
+    grid-gap: var(--cp_card-padding);
+    align-items: start;
+}
+
+.imagebg > ul {
+    display: block;
+    columns: 200px 3;
+    column-gap: var(--cp_card-padding);
+}
+
+.imagebg > ul > li {
+    break-inside: avoid;
+    margin-bottom: var(--cp_card-padding);
+}
+section:nth-of-type(5) > ul {
+    grid-template-columns: var(--2col);
+    align-items: normal;
+}
+section > h4 {
+    margin: var(--sp_em-xxxl) 0 var(--sp_em-l);
+}
+/*================cp_card base ===================*/
+
+.cp_card_base {
+    min-width: var(--cp_card-minw);
+    max-width: var(--cp_card-maxw);
+    cursor: pointer;
+}
+
+.cp_card_base img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.cardpadding {
+    padding: var(--cp_card-padding);
+}
+
+.cp_card_base > div > *:not(:last-child) {
+    margin-bottom: var(--sp_px-m);
+}
+
+.internalalign > h4 {
+    min-height: calc(1.25em * var(--align-lines-h4));
+}
+.internalalign > p {
+    min-height: calc(1.5em * var(--align-lines-p));
+}
+section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
+    min-height: calc(1.5em * var(--align-lines-lead));
+    box-sizing: content-box;
+}
+/*===================== card visual styling ===================*/
+
+.bg {
+    background-color: var(--nv-16);
+}
+
+.bgpattern {
+    background: url(../assets/pattern_dot.svg) repeat, var(--nv-16);
+}
+
+.shadow {
+    box-shadow: var(--cp_card-shadow);
+}
+
+.border {
+    border: 1px var(--nv-12-5-cc) solid;
+}
+
+.borderpadding {
+    padding: calc(var(--cp_card-padding) / 2);
+}
+
+.tinted {
+    /*  cascade, before background-clip  */
+    background: linear-gradient(to bottom right, rgba(0, 255, 49, 0.05), rgba(255, 235, 0, 0.05) 30% 70%, rgba(0, 157, 255, 0.1)), var(--cp_card-glassbg);
+}
+
+.glass {
+    background-color: var(--cp_card-glassbg);
+    background-clip: padding-box;
+    border: 1px solid green;
+    border-image: var(--cp_card-glassgradient) 1 / 1px;
+}
+
+.frosted {
+    backdrop-filter: blur(20px);
+}
+
+.frostedshadow {
+    position: relative;
+}
+.frostedshadow .frosted {
+    position: relative;
+    z-index: 1;
+}
+
+.frostedshadow::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(0, 0, 0, 0.05);
+    filter: blur(1px);
+}
+
+.clearshadow {
+    position: relative;
+}
+.clearshadow .glass {
+    position: relative;
+    z-index: 1;
+}
+.clearshadow::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: 1px rgba(0, 0, 0, 0.08) solid;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(0, 0, 0, 0.008);
+}
+
+.overlay .glass {
+    margin: calc(var(--cp_card-padding) * -2) var(--cp_card-padding) 0;
+}
+
+.rule {
+    border-bottom: 1px solid var(--nv-12-5-cc);
+}
+
+.glass .rule {
+    border-bottom: 1px solid var(--nv-9-5-99);
+}
+
+@media (prefers-color-scheme: light) { 
+
+.imagebg:last-of-type .glass {
+    background-color: var(--nv-16);
+    background-clip: padding-box;
+    border: 1px solid transparent;
+    border-image: unset;
+}
+}
+
+
+
+
+.test {
+    height: 500px;
+    border: 1px solid green;
+    background: linear-gradient(to bottom right, red, yellow);
+    /*    background: red;*/
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 0% 25%, rgba(255, 255, 255, 0.6) 25% 50%);
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 0% 5%, rgba(0, 255, 255, 1) 5% 20%, rgba(255, 255, 255, 1) 20% 40%, yellow 40% 60%, blue 60% 80%, green 80% 100%);
+}
+
+/*================= card internal layout swap ===================*/
+.hori {
+    display: flex;
+    /*    align-items: flex-start;*/
+    align-items: stretch;
+    /*    align-items: flex-end;*/
+}
+
+.hori.gap {
+    gap: calc(var(--cp_card-padding) / 2);
+}
+
+.hori img {
+    aspect-ratio: unset;
+}
+
+.hori .one {
+    flex: 0 0 33%;
+    width: 33%;
+}
+
+.hori .two {
+    flex: 1 1 auto;
+}
+.swap_layout {
+    display: var(--swap-layout);
+}
+.swap_layout > img {
+    flex: 0 1 33%;
+    width: var(--swap-imgw);
+    aspect-ratio: var(--swap-aspect);
+}
+.swap_layout > div {
+    flex: 1 0 66%;
+}
+
+/*================= interaction ===================*/
+.hover {
+    /*    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15), var(--cp_card-shadow);*/
+    transition: var(--02transition);
+    transition-duration: 0.4s;
+    transition-property: transform, box-shadow;
+}
+
+.hover:is(:hover, :focus-within, :focus) {
+    box-shadow: var(--cp_card-shadowh2), var(--cp_card-shadowh1);
+    transform: translateY(-2px);
+}
+
+.glasshover :is(.frosted),
+.frostedshadow.glasshover::after {
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+    transition-property: transform, filter;
+}
+
+.glasshover:hover .frosted {
+    transform: translateY(-2px);
+}
+
+.frostedshadow.glasshover:hover::after {
+    filter: blur(2px) opacity(70%);
+}
+
+/*================= additiona components ===================*/
+
+.cp_texthighlight {
+    background-color: var(--)
+}
+
+.md_groupimg {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp_em-xs);
+}
+
+.md_groupimg img {
+    width: 45%;
+    flex: 1 1 auto;
+}
+
+.md_chipcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--sp_em-xs);
+}
+
+.cp_chip {
+    display: block;
+    padding: var(--sp_em-xs) var(--sp_em-m);
+    margin: 0;
+    font-size: 14px;
+    background-color: var(--nv-15-5-f7);
+    border-radius: 999px;
+}
+
+.glass .cp_chip {
+    background-color: var(--cp_card-glassbg);
+}
+
+
+.cp_ul-customimage {
+    line-height: 1.4;
+    list-style: none;
+    padding-left: var(--sp_em-xxxxl);
+}
+
+.cp_ul-customimage li {
+    position: relative;
+}
+
+
+.cp_ul-customimage li + li {
+    margin-top: var(--sp_em-l);
+}
+
+.ic_font {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+
+    display: block;
+    position: absolute;
+    left: calc(-1em - var(--sp_em-s));
+    top: calc(15px * 1.4 / 2);
+    transform: translateY(-50%);
+}
+
+.person .hori {
+    align-items: flex-end;
+    padding: 0 var(--cp_card-padding);
+    margin-top: -12%;
+}
+
+.person .hori img {
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    border: 4px solid currentcolor;
+    border-radius: 1em;
+}
+
+
+
+
+.expansion {
+    border-top: 1px solid var(--nv-9-5-99);
+    padding: calc(var(--cp_card-padding) / 2) var(--cp_card-padding);
+}
+
+.expansion input {
+    display: none;
+}
+
+.expansion label:nth-child(2) {
+    display: block;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+}
+
+.expansion label::after {
+    content: 'expand_more';
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--02transition);
+}
+
+.expansion ul {
+    font-size: 13px;
+    max-height: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px var(--sp_em-xxxxl);
+    transition: var(--02transition);
+}
+
+.expansion input:checked ~ ul {
+    max-height: 120px;
+}
+
+.expansion input:checked ~ label::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.contact li {
+    padding-left: var(--sp_em-xxl);
+    position: relative;
+    margin-top: var(--sp_em-m);
+}
+
+.contact span {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 9.75px;
+    transform: translateY(-50%);
+}
+
+.cp_ul-chev {
+    padding-left: var(--sp_em-xxxl);
+    line-height: 1.4;
+}
+
+.cp_ul-chev > li {
+    position: relative;
+}
+
+.cp_ul-chev > li::before {
+    content: '';
+    display: block;
+    width: calc(1em + 1px);
+    height: calc(1em + 1px);
+    background: url(../assets/ic_chevron_dropdown_small_black.svg) no-repeat center / contain;
+    position: absolute;
+    top: calc(1em * 1.4 / 2 - (1em + 1px) / 2);
+    /*    align to the middle like a bullet */
+    left: calc((1em + 1px) * -1 - var(--sp_em-xs));
+    transform: rotate(-90deg);
+}
+
+.cp_ul-chev li + li {
+    margin-top: var(--sp_em-s);
+}
