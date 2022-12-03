@@ -1,5 +1,5 @@
 :root {
-    --cp_card-minw: min(80vw, 240px);
+    --cp_card-minw: min(80vw, 290px);
     --cp_card-maxw: 800px;
     --cp_card-padding: 16px;
     --cp_card-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
@@ -185,6 +185,7 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 
 .border {
     border: 1px var(--nv-12-5-cc) solid;
+    transition: var(--02transition);
 }
 
 .borderpadding {
@@ -267,6 +268,9 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
     border: 1px solid transparent;
     border-image: unset;
 }
+.imagebg:last-of-type   .glass .cp_chip {
+    background-color: var(--nv-15-5-f7);
+}
 }
 
 
@@ -344,6 +348,58 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 .frostedshadow.glasshover:hover::after {
     filter: blur(2px) opacity(70%);
 }
+
+.border:hover {
+    border-color: var(--nv-9-5-99);
+}
+
+/*================= scrolling ===================*/
+
+@media screen and (any-hover: none) and (max-width: 1023px) {
+    :root {
+        --cp_card-minw: min(80vw, 300px);
+    }
+    body > section:first-child > h3 {
+/*        padding-left: var(--padding-lr);*/
+    }
+   body > section:first-child > ul {
+    display: flex;
+    max-width: unset;
+    overflow: scroll;
+    scroll-snap-type: x;
+    margin: 0 -10px;
+}
+    body > section:first-child > ul li {
+     scroll-snap-align: start;   
+    }
+    
+    body > section:first-child > ul::before, body > section:first-child > ul::after {
+        content: '';
+        display: block;
+/*        width: calc((100vw - var(--wrapper)) / 2 - var(--cp_card-padding));*/
+        width: calc((100vw - var(--wrapper)) / 2);
+        height: 60px;
+/*        background-color: red;*/
+        flex: 0 0 auto;
+        margin-right: calc(var(--cp_card-padding) * -1);
+        scroll-snap-align: start; 
+    } 
+    
+    
+    body > section:first-child > ul::after {
+        margin-left: calc(var(--cp_card-padding) * -1);
+        margin-right: unset;
+    }
+}
+@media screen and (any-hover: none) and (max-width: 639px) {
+     body > section:first-child > ul::before, body > section:first-child > ul::after {
+        content: '';
+         display: block;
+         width: var(--padding-lr);
+    
+    }
+}
+
 
 /*================= additiona components ===================*/
 
