@@ -262,13 +262,14 @@
     font-size: var(--cp_cta-fontsize);
     line-height: 1.25;
     text-decoration: underline 2px solid transparent;
+    text-underline-offset: 0.1em;
 }
 .cp_cta_link:is(:hover, :focus, :active) {
-/*    color: var(--cp_cta-hover);*/
     text-decoration-color: var(--nv-green);
 }
 .cp_cta_link .no-break {
     white-space: nowrap;
+/*    padding-right: 1em;*/
 }
 .cp_cta_link .no-break::after, .cp_cta_link.runt::after {
     content: '';

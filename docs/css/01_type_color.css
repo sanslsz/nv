@@ -37,7 +37,6 @@
     --50transparent: #ffffff80;
     --70transparent: #ffffffbb;
     --100transparent: #ffffffff;
-    --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.1);
     
 /*    NVIDIA web library 2.3 */
 --nv-16: #ffffff;
@@ -55,6 +54,9 @@
 --nv-green: #76B900;
 --nv-green-hover: #6AA700;
 --nv-annotation: #FF00FF;
+    
+--boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    
 }
 
 /*==========  text custom properties  ==========*/

@@ -1,0 +1,86 @@
+:root {
+  
+
+}
+
+
+
+@media screen and (min-width: 640px) {
+    :root {
+
+    }
+    #alignelements {
+        --align-lines-p: 9;
+        --align-lines-cta: 2;
+}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+       
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+
+    }
+     #alignelements {
+        --align-lines-p: 7;
+}
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        
+    }
+
+}
+
+
+
+#alignelements li p {
+    min-height: calc(1.5em * var(--align-lines-p));
+}
+#alignelements li a {
+    min-height: calc(1.25em * var(--align-lines-cta));
+}
+
+
+
+.cp_cta_tertiary {
+    padding: 0;
+    width: unset;
+}
+.cp_cta_tertiary.chevron::after {
+    content: none;
+}
+.nobreak {
+    white-space: nowrap;
+}
+.nobreak::after {
+    content: "navigate_next";
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.4em;
+    line-height: 0;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    width: unset;
+    height: unset;
+    display: inline;
+    display: inline-block;
+    background: unset;
+    position: static;
+    transform: translateY(0.25em);
+}
+

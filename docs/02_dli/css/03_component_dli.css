@@ -1,6 +1,6 @@
 :root {
     --cp_card-ins-padding: 16px;
-    --cp_card-ins-op2-fig-height: 100px;
+    --cp_card-ins-op2-figcap-height: 100px;
     --cp_card-ins-imagew: min(40%, 164px);
     --cp_detail-imagew: min(50%, 340px);
     
@@ -10,7 +10,7 @@
 @media screen and (min-width: 640px) {
     :root {
         --cp_card-ins-padding: 20px;
-        --cp_card-ins-op2-fig-height: 80px;
+        --cp_card-ins-op2-figcap-height: 80px;
         --cp_detail-imagew: min(80%, 340px);
 
     }
@@ -56,7 +56,7 @@
 }
 
 .cp_card-ins figcaption {
-    padding: 0 var(--cp_card-ins-padding) 0 16px;
+    padding: 0 var(--cp_card-ins-padding) 0 calc(var(--cp_card-ins-padding) / 2);
     flex: 1 1 auto;
 }
 
@@ -70,13 +70,18 @@
 }
 
 .cp_card-ins div {
-    --sp_em-m: var(--sp_em-s);
     padding: var(--cp_card-ins-padding);
+}
+
+.cp_card-ins div > *:not(:last-child) {
+    margin-bottom: var(--sp_em-s);
 }
 
 .cp_card-ins div p:first-child {
     font-weight: bold;
 }
+
+/*============= variant wide =============*/
 
 @media screen and (min-width: 500px) {
 
@@ -90,8 +95,14 @@
         left: 0;
         top: var(--cp_card-ins-padding);
     }
+    .cp_card-ins.wide figcaption {
+        padding-left: var(--cp_card-ins-padding);
+    }
 }
 
+
+
+/*============= variant right image =============*/
 
 .cp_card-ins.imgright {
     position: relative;
@@ -105,12 +116,15 @@
 }
 
 .cp_card-ins.imgright figcaption {
-    min-height: var(--cp_card-ins-op2-fig-height);
+    min-height: var(--cp_card-ins-op2-figcap-height);
+    padding-left: var(--cp_card-ins-padding);
 }
 
 .cp_card-ins.imgright :is(h3, figcaption) {
     max-width: calc(100% - var(--cp_card-ins-imagew) - var(--cp_card-ins-padding));
 }
+
+/*============= simple card =============*/
 
 .cp_card-ins.simple {
     max-width: 300px;
@@ -136,7 +150,7 @@
 }
 
 
-
+/*============= Course card =============*/
 
 
 .cp_card-cou {
@@ -153,26 +167,26 @@
 .cp_card-cou div {
     padding: var(--cp_card-ins-padding);
 }
-.cp_card-cou .description {
-    margin: var(--sp_em-s) 0;
+.cp_card-cou div > *:not(:last-child) {
+    margin-bottom: var(--sp_px-m);
 }
-.cp_card-cou span + span::before {
+
+.infobits span + span::before {
     content: '|';
     font-weight: normal;
     margin: 0 var(--sp_em-m);
     color: var(--nv-12-5-cc);
 }
-.cp_card-cou .bold {
-    font-weight: bold;
-}
 
-.cp_card-cou.noimg {
-    padding: var(--cp_card-ins-padding);
-}
+
+
 .cp_card-cou.noimg span + span::before {
     margin: 0 var(--sp_em-xs) 0 calc(var(--sp_em-xs) - 2px);
 }
 
+
+
+/*============= promo card =============*/
 
 .cp_card-cou.promo {
     background-color: var(--nv-green);
@@ -224,14 +238,4 @@
     position: relative;
     z-index: 1;
     padding: calc(var(--cp_card-ins-padding) * 2) 40% calc(var(--cp_card-ins-padding) * 2) var(--cp_card-ins-padding);
-}
-
-
-
-
-
-
-body > footer {
-    background: green;
-    height: 700px;
 }
