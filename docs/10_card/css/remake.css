@@ -1,5 +1,9 @@
 :root {
-  
+  --cp_card-homelargew: calc(100vw - 90px);
+    --cp_card-h3-size: 18px;
+    --hideblock: block;
+    --hidegrid: none;
+    --scroll_spaceholder: var(--padding-lr);
 
 }
 
@@ -7,8 +11,12 @@
 
 @media screen and (min-width: 640px) {
     :root {
-
+--cp_card-homelargew: 380px;
+--scroll_spaceholder: calc((100vw - var(--wrapper) - 16px) / 2);
     }
+    
+    
+    
     #alignelements {
         --align-lines-p: 9;
         --align-lines-cta: 2;
@@ -17,12 +25,16 @@
 
 @media screen and (min-width: 1024px) {
     :root {
-       
+       --cp_card-homelargew: 400px;
+        --cp_card-h3-size: 20px;
+        --hideblock: none;
+        --hidegrid: block;
     }
 }
 
 @media screen and (min-width: 1350px) {
     :root {
+    --cp_card-homelargew: 420px;
 
     }
      #alignelements {
@@ -48,7 +60,6 @@
 #alignelements li a {
     min-height: calc(1.25em * var(--align-lines-cta));
 }
-
 
 
 .cp_cta_tertiary {
@@ -84,3 +95,115 @@
     transform: translateY(0.25em);
 }
 
+
+
+/*================= screen edge scrolling for card all viwports & devices ===================*/
+
+        .md_scroll-edge {
+        display: flex;
+        max-width: unset;
+        overflow-x: scroll;
+        scroll-snap-type: x;
+        scroll-padding-left: var(--scroll_spaceholder);
+        margin: 0 -10px;
+        padding-bottom: 6px;
+    }
+.md_scroll-edge::-webkit-scrollbar {
+    display: none;
+}
+
+    .md_scroll-edge > li {
+        scroll-snap-align: start;
+    }
+
+    .md_scroll-edge::before,
+    .md_scroll-edge::after {
+        content: '';
+        display: block;
+/*        width: var(--padding-lr);*/
+        width: var(--scroll_spaceholder);
+        height: 60px;
+/*        background-color: red;*/
+        flex: 0 0 auto;
+        margin-right: calc(var(--cp_card-padding) * -1);
+        scroll-snap-align: start;
+    }
+
+
+    .md_scroll-edge::after {
+        margin-left: calc(var(--cp_card-padding) * -1);
+        margin-right: unset;
+    }
+
+/*
+@media screen and (min-width: 640px) {
+    .md_scroll-edge::before,
+    .md_scroll-edge::after {
+        content: '';
+        display: block;
+        width: calc((100vw - var(--wrapper) - 16px) / 2);
+    }
+}
+*/
+
+/*================= home page scroll styles ===================*/
+
+.homecardsmall {
+    --cp_card-padding: 16px;
+    align-items: normal;
+}
+
+.homecardsmall .cp_card_base {
+    flex: 0 0 min(80vw, 300px);
+    cursor: pointer;
+}
+.homecardsmall .cardpadding > *:not(:last-child) {
+    margin-bottom: 8px;
+}
+.homecardsmall h4 {
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.introblock {
+    display: var(--hideblock);
+    margin-bottom: var(--sp_em-xxxxl);
+}
+.introgrid {
+    display: var(--hidegrid);
+}
+
+
+.homecardlarge {
+    align-items: normal;
+}
+.homecardlarge :where(.cp_card_base, .introgrid) {
+    flex: 0 0 var(--cp_card-homelargew);
+    cursor: pointer;
+}
+.homecardlarge h3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-top: 0;
+    font-size: var(--cp_card-h3-size);
+}
+.homecardlarge P:last-child {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+
+.nolink:hover {
+    color: var(--nv-green);
+}
+
+.hyperlink {
+    color: var(--nv-green);
+}
+.hyperlink:is(:hover, :focus) {
+    color: var(--nv-green-hover);
+}
