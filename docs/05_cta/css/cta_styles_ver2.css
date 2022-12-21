@@ -1,0 +1,350 @@
+:root {
+   
+    --cp_cta-padding-tb: 0.6em;
+    --cp_cta-padding-lr: 0.9em;
+    --cp_cta-bar: 0.45em;
+    
+    --cp_cta-icon-size: 1.5em;
+    --cp_cta-icon-padding: 0.45em;
+    --cp_cta-icon-position: calc(1em / 1.5 * 0.9);
+    
+    --cp_cta-fontsize: 12px;
+    --cp_cta-large-fontsize: 14px;
+    --cp_cta-minw: 10ch;
+    
+    --cp_cta-2nd-hover: 1px;
+    
+    
+    
+    
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+
+    --cp_cta-fontsize: 14px;
+    --cp_cta-large-fontsize: 16px;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+        
+    --cp_cta-fontsize: 16px;
+    --cp_cta-large-fontsize: 18px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {
+    }
+}
+
+/*=================== cta container styles ========================*/
+
+.cp_cta_primary {
+    display: block;
+    width: fit-content;
+    padding: var(--cp_cta-padding-tb) var(--cp_cta-padding-lr);
+    background-color: var(--nv-green);
+    color: var(--nv-16);
+    font-weight: 700;
+    font-size: var(--cp_cta-fontsize);
+    line-height: 1.25;
+    white-space: nowrap;
+    transition: var(--02transition);
+}
+.cp_cta_primary:is(:hover, :focus, :active) {
+    color: var(--nv-16);
+    background-color: var(--nv-green-hover);
+}
+
+
+.cp_cta_secondary {
+    display: block;
+    width: fit-content;
+    padding: var(--cp_cta-padding-tb) var(--cp_cta-padding-lr);
+    border: 2px solid var(--nv-green);
+    background-color: transparent;
+    color: var(--nv-green);
+    font-weight: 700;
+    font-size: var(--cp_cta-fontsize);
+    line-height: 1.25;
+    white-space: nowrap;
+    transition: var(--02transition);
+}
+.cp_cta_secondary:is(:hover, :focus, :active) {
+    color: var(--nv-green-hover);
+    background-color: rgba(118, 185, 0, 0.2);
+/*    padding: calc(var(--cp_cta-padding-tb) - var(--cp_cta-2nd-hover)) calc(var(--cp_cta-padding-lr) - var(--cp_cta-2nd-hover));*/
+/*    border-width: calc(2px + var(--cp_cta-2nd-hover));*/
+/* border-width causes layout shift and performance problems, use box-shadow instead */
+    box-shadow: 0px 0px 0px var(--cp_cta-2nd-hover) var(--nv-green);   
+}
+
+/*
+.cp_cta_secondary.iconleft:is(:hover, :focus, :active) {
+    padding-left: calc(var(--cp_cta-padding-lr) + var(--cp_cta-icon-size) + var(--cp_cta-icon-padding) - var(--cp_cta-2nd-hover));
+}
+.cp_cta_secondary.iconleft:is(:hover, :focus, :active) .ic_font  {
+    left: calc(1em / 1.5 * 0.9 - var(--cp_cta-2nd-hover));
+}
+*/
+
+.cp_cta_secondary.large {
+  --cp_cta-2nd-hover: 2px;
+}
+
+
+.cp_cta_tertiary {
+    display: block;
+    width: fit-content;
+    padding-right: var(--cp_cta-icon-size);
+    color: var(--nv-green);
+    font-weight: 700;
+    font-size: var(--cp_cta-fontsize);
+    line-height: 1.25;
+    white-space: nowrap;
+    position: relative;
+    transition: var(--02transition); 
+    overflow: hidden;
+}
+.cp_cta_tertiary:is(:hover, :focus, :active) {
+    color: var(--nv-green-hover);
+}
+.cp_cta_tertiary.chevron::after {
+    content: '';
+    display: block;
+    width: var(--cp_cta-icon-size);
+    height: var(--cp_cta-icon-size);
+    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cp_cta_tertiary.chevron:is(:hover, :focus, :active)::after {
+    content: '';
+    background-image: url(../assets/ic_chevron_darkgreen_shape_thick.svg);
+}
+
+.large.large {
+    font-size: var(--cp_cta-large-fontsize);
+}
+
+.cp_cta_tertiary_wrap {
+    display: block;
+    color: var(--nv-green);
+    font-weight: 700;
+    font-size: var(--cp_cta-fontsize);
+    line-height: 1.25;
+    overflow: hidden;
+}
+.cp_cta_tertiary_wrap:is(:hover, :focus, :active) {
+    color: var(--nv-green-hover);
+}
+.cp_cta_tertiary_wrap .no-break {
+    white-space: nowrap;
+    padding-right: var(--cp_cta-icon-size);
+    position: relative;
+}
+.cp_cta_tertiary_wrap .no-break::after {
+    content: ' ';
+    display: block;
+    width: var(--cp_cta-icon-size);
+    height: var(--cp_cta-icon-size);
+    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cp_cta_tertiary_wrap:is(:hover, :focus, :active) .no-break::after {
+    content: '';
+    background-image: url(../assets/ic_chevron_darkgreen_shape_thick.svg);
+}
+
+
+
+/*=================== cta icon ========================*/
+
+.iconleft {
+    position: relative;
+    padding-left: calc(var(--cp_cta-padding-lr) + var(--cp_cta-icon-size) + var(--cp_cta-icon-padding));
+}
+
+.ic_font, .ic_font_chevron {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--cp_cta-icon-size);
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+    
+    display: block;
+    position: absolute;
+    left: var(--cp_cta-icon-position);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--02transition);
+/*    transiition for border increase, padding decrease positioning*/
+}
+.ic_svg {
+    display: block;
+    width: var(---cp_cta-icon-size);
+    height: var(--cp_cta-icon-size);
+    position: absolute;
+    left: var(--cp_cta-padding-lr);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cp_cta_tertiary.iconleft {
+    padding-left: calc(var(--cp_cta-icon-size) + var(--cp_cta-icon-padding))
+}
+.cp_cta_tertiary :is(.ic_font, .ic_svg) {
+    left: 0;
+}
+.ic_font_chevron {
+    left: unset;
+    right: 0;
+}
+
+
+
+/*====================== new styles=====================*/
+.minwidth {
+    min-width: 300px;
+    min-width: calc(var(--cp_cta-padding-lr) * 2 + var(--cp_cta-minw));
+    text-align: center;
+}
+.minwidth > * {
+    --cp_cta-padding-lr: 0px;
+/*    background: pink;*/
+}
+.minwidth :is(.ic_font, .ic_svg) {
+    left: 0;
+}
+
+
+.cp_cta_primary2 {
+    display: block;
+    width: fit-content;
+    padding: var(--cp_cta-padding-tb) var(--cp_cta-padding-lr) var(--cp_cta-padding-tb) calc(var(--cp_cta-padding-lr) + var(--cp_cta-bar));
+/*    background-color: var(--nv-green);*/
+    color: var(--nv-16);
+    font-weight: 700;
+    font-size: var(--cp_cta-fontsize);
+    line-height: 1.25;
+    white-space: nowrap;
+    transition: var(--02transition);
+    position: relative;
+}
+.cp_cta_primary2::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--nv-3-33);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--02transition);
+    z-index: -2;
+}
+.cp_cta_primary2::after {
+    content: '';
+    display: block;
+    width: var(--cp_cta-bar);
+    height: 100%;
+    background-color: var(--nv-green);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--02transition);
+    z-index: -1;
+}
+.cp_cta_primary2:is(:hover, :focus, :active) {
+/*    color: var(--nv-16);*/
+    color: var(--nv-0);
+    padding: var(--cp_cta-padding-tb) calc(var(--cp_cta-padding-lr) + var(--cp_cta-bar)) var(--cp_cta-padding-tb) var(--cp_cta-padding-lr);
+}
+.cp_cta_primary2:is(:hover, :focus, :active)::after  {
+    content: '';
+/*    width: calc(100% - var(--cp_cta-bar));*/
+    width: 100%;
+}
+
+.cp_cta_primary2.option2, .cp_cta_primary2.option2:hover {
+    padding: var(--cp_cta-padding-tb) calc(var(--cp_cta-padding-tb) + var(--cp_cta-bar));
+}
+
+
+.cp_cta_link {
+    display: block;
+/*    on block leve, line-height set min-height, line-height is also effect by the inline chevron's height */
+    color: var(--nv-1-11);
+    font-weight: 700;
+    font-size: var(--cp_cta-fontsize);
+    line-height: 1.25;
+    text-decoration: underline 2px solid transparent;
+    text-underline-offset: 0.2em;
+}
+.cp_cta_link:is(:hover, :focus, :active) {
+    text-decoration-color: var(--nv-green);
+}
+.cp_cta_link .no-break {
+    white-space: nowrap;
+    padding-right: var(--cp_cta-icon-size);
+    position: relative;
+}
+.cp_cta_link .no-break::after {
+    content: ' ';
+    display: inline-block;
+    width: var(--cp_cta-icon-size);
+    height: var(--cp_cta-icon-size);
+    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cp_cta_link.runt::after {
+     content: '';
+    display: inline-block;
+    width: var(--cp_cta-icon-size);
+    height: 1.2em;
+    vertical-align: text-bottom;
+    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;   
+}
+
+
+/*
+.cp_cta_link .no-break {
+    white-space: nowrap;
+}
+.cp_cta_link .no-break::after, .cp_cta_link.runt::after {
+    content: '';
+    display: inline-block;
+    width: var(--cp_cta-icon-size);
+    height: 1.2em;
+    vertical-align: text-bottom;
+    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;   
+}
+*/
+/*    height and vertical alignment may cause line-height changes */
+
+/*the chevron may wrap to next line by itself, use span tag to avoid it */
+

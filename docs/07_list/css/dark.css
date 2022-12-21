@@ -1,0 +1,72 @@
+:root {
+
+--nv-dark-16: #ffffff;
+--nv-dark-15-5-f7: #F7F7F7;
+--nv-dark-15-ee: #EEEEEE;
+--nv-dark-14-dd: #dddddd;
+--nv-dark-12-5-cc: #CCCCCC;
+--nv-dark-9-5-99: #999999;
+--nv-dark-6-5-66: #666666;
+--nv-dark-3-33: #333333;
+--nv-dark-2-22: #222222;
+--nv-dark-1-5-1a: #1A1A1A;
+--nv-dark-1-11: #111111;
+--nv-dark-0: #000000;
+    
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        
+        --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.5);
+        
+        --nv-16: var(--nv-dark-2-22);
+        --nv-15-5-f7: var(--nv-dark-1-5-1a);
+        --nv-15-ee: var(--nv-dark-1-11);
+        --nv-14-dd: var(--nv-dark-0);
+        --nv-12-5-cc: var(--nv-dark-3-33);
+        --nv-9-5-99: var(--nv-dark-6-5-66);
+        --nv-6-5-66: var(--nv-dark-9-5-99);
+        --nv-3-33: var(--nv-dark-12-5-cc);
+        --nv-2-22: var(--nv-dark-14-dd);
+        --nv-1-5-1a: var(--nv-dark-15-ee);
+        --nv-1-11: var(--nv-dark-15-5-f7);
+        --nv-0: var(--nv-dark-16);
+    }
+}
+
+@media screen and (min-width: 360px) {
+
+
+}
+
+
+@media screen and (min-width: 640px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+ 
+}
+
+@media screen and (min-width: 1350px) {
+   
+}
+
+@media screen and (min-width: 2000px) {
+   
+}
+
+
+body {
+    background-color: var(--nv-15-ee);
+}
+body > section:nth-child(even) {
+    background-color: var(--nv-15-5-f7);
+}
+
+.cp_ul-chev > li::before {
+    background-image: url(../../css/cp_assets/ic_listbullet%20_dark.svg)
+
+}

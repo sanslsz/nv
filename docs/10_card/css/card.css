@@ -129,7 +129,7 @@ section > ul {
     display: grid;
     grid-template-columns: var(--3col);
     grid-gap: var(--cp_card-padding);
-    align-items: start;
+/*    align-items: start;*/
 }
 
 .imagebg > ul {
@@ -145,7 +145,6 @@ section > ul {
 
 .col-2 > ul {
     grid-template-columns: var(--2col);
-    align-items: normal;
 }
 
 section > h3 {
@@ -162,6 +161,10 @@ section > h4 {
     min-width: var(--cp_card-minw);
     max-width: var(--cp_card-maxw);
 /*    cursor: pointer;*/
+}
+
+.cp_card_base:not(.glass) :is(p:not(.tp_bold), .cardpadding):first-child {
+    display: none;
 }
 
 .cp_card_base img {
@@ -372,7 +375,6 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 /*================= card internal layout swap ===================*/
 .hori {
     display: flex;
-    align-items: stretch;
 }
 
 .hori.gap {
@@ -420,6 +422,7 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
         overflow: scroll;
         scroll-snap-type: x;
         margin: 0 -10px;
+        scroll-padding-left: calc((100vw - var(--wrapper)) / 2);
     }
 
     body > section:first-child > ul li {
@@ -448,6 +451,9 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 
 @media screen and (any-hover: none) and (max-width: 639px) {
 
+     body > section:first-child > ul {
+        scroll-padding-left: var(--padding-lr);
+    }
     body > section:first-child > ul::before,
     body > section:first-child > ul::after {
         content: '';

@@ -85,7 +85,7 @@ h1 {
     object-fit: cover;
 }
 
-.md_cta_container2 {
+.md_cta_container2, .md_cta_container3 {
     display: flex;
     gap: var(--md_cta_container-gap);
     flex-wrap: wrap;
@@ -94,6 +94,11 @@ h1 {
 }
 .md_cta_container2 > * {
     flex-shrink: 0;
+}
+
+.md_cta_container3 > * {
+    margin-top: var(--md_cta_container-gap);
+    flex: 1 1 min(60%, 300px);
 }
 
 .md_link_container {

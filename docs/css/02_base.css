@@ -23,6 +23,8 @@
     --sp_px-l: 16px;
     --sp_px-xl: 20px;
     --sp_px-xxl: 24px;
+    --sp_px-xxxl: 28px;
+    --sp_px-xxxxl: 32px;
     
     --sp_grid-gap: 30px;
     --sp_grid-gap-2col: 16px;
@@ -72,6 +74,8 @@
     --sp_px-l: 17px;
     --sp_px-xl: 22px;
     --sp_px-xxl: 27px;
+    --sp_px-xxxl: 32px;
+    --sp_px-xxxxl: 38px;
         
     --sp_grid-gap-2col: 24px;
     --sp_grid-gap-3col: 16px;   
@@ -110,6 +114,8 @@
     --sp_px-l: 18px;
     --sp_px-xl: 24px;
     --sp_px-xxl: 30px;
+    --sp_px-xxxl: 36px;
+    --sp_px-xxxxl: 44px;
         
     --sp_grid-gap-2col: 32px;
     --sp_grid-gap-3col: 24px;
@@ -148,7 +154,9 @@
     --sp_px-m: 15px;
     --sp_px-l: 19px;
     --sp_px-xl: 26px;
-    --sp_px-xxl: 33px;
+    --sp_px-xxl: 33px;    
+    --sp_px-xxxl: 40px;
+    --sp_px-xxxxl: 50px;
         
     --sp_grid-gap-2col: 48px;
     --sp_grid-gap-3col: 32px; 

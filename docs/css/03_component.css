@@ -248,3 +248,11 @@ input:checked ~ .cp_dropdown_pop {
     color: var(--nv-6-5-66);
     background-color: var(--nv-14-dd);
 }
+
+/* ========================= links ========================*/
+.cp_link {
+    color: var(--nv-green);
+}
+.cp_link:is(:hover, :focus, :focus-within) {
+    color: var(--nv-green-hover);
+}

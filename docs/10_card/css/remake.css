@@ -62,23 +62,29 @@
 }
 
 
-.cp_cta_tertiary {
+/*
+.cp_cta_3rd_wrap {
     padding: 0;
     width: unset;
+    overflow: hidden;
 }
-.cp_cta_tertiary.chevron::after {
-    content: none;
-}
+
 .nobreak {
     white-space: nowrap;
 }
-.nobreak::after {
+*/
+.no-break-custom {
+    white-space: nowrap;
+    padding-right: var(--cp_cta-icon-size);
+    position: relative;
+}
+.no-break-custom::after {
     content: "navigate_next";
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.4em;
-    line-height: 0;
+    font-size: var(--cp_cta-icon-size);
+    line-height: 1;
     letter-spacing: normal;
     text-transform: none;
     white-space: nowrap;
@@ -86,13 +92,12 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
-    width: unset;
-    height: unset;
-    display: inline;
-    display: inline-block;
-    background: unset;
-    position: static;
-    transform: translateY(0.25em);
+    
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
 }
 
 
@@ -150,7 +155,6 @@
 
 .homecardsmall {
     --cp_card-padding: 16px;
-    align-items: normal;
 }
 
 .homecardsmall .cp_card_base {
@@ -174,9 +178,6 @@
 }
 
 
-.homecardlarge {
-    align-items: normal;
-}
 .homecardlarge :where(.cp_card_base, .introgrid) {
     flex: 0 0 var(--cp_card-homelargew);
     cursor: pointer;
