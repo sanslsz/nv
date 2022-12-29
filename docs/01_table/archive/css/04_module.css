@@ -2,12 +2,8 @@
     --md_filter_search-flex: block;
     --md_filter_search-margintop: var(--sp_px-l);
 
-    --md_chip_scroll-overflow: scroll hidden;
-    --md_chip_scroll-maxw: unset;
-    --md_chip_scroll-margin: calc(var(--padding-lr) * -1);
-    
+    --md_chip_scroll: scroll hidden;
     --md_chip_container-wrap: nowrap;
-    --md_chip_container-spaceholder: var(--padding-lr);
 
 
 }
@@ -18,8 +14,6 @@
     --md_filter_search-flex: flex;
     --md_filter_search-margintop: unset;
     --md_filter_search-direction: row-reverse;
-        
-    --md_chip_container-spaceholder: max(var(--padding-lr), calc((100vw - var(--wrapper) - 16px) / 2));
 
 }
 }
@@ -27,12 +21,8 @@
 @media screen and (min-width: 1024px) {
     :root {
     
-    --md_chip_scroll-overflow: revert;
-    --md_chip_scroll-maxw: var(--wrapper);
-    --md_chip_scroll-margin: auto;    
-        
+    --md_chip_scroll: revert;
     --md_chip_container-wrap: wrap;
-    --md_chip_container-spaceholder: unset;    
 
 }
 }
@@ -58,7 +48,6 @@
 
 .md_filter_search {
     display: var(--md_filter_search-flex);
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     flex-direction: var(--md_filter_search-direction);
@@ -75,43 +64,18 @@
     margin-top: unset;
 }
 /* ========================= chip ========================*/
+.md_chip_scroll {
+overflow: var(--md_chip_scroll);
+/*    dropdown pop not visible because "visible" is set to auto, see MDN */
+}
+.md_chip_scroll::-webkit-scrollbar  {
+    display: none;
+}
 .md_chip_container {
     display: flex;
     gap: var(--sp_px-m);
     flex-wrap: var(--md_chip_container-wrap);
     align-items: center;
-}
-
-@media screen and (max-width: 1023px) {
-/*    the customer properties are already placed in the media quries, but since scroll is only needed for mobile devices, they are placed again in a max-width media query here*/
-    
-.md_chip_scroll {
-    overflow: var(--md_chip_scroll-overflow);
-/*    dropdown pop not visible because "visible" is set to auto, see MDN */
-    max-width: var(--md_chip_scroll-maxw);
-    margin-right: var(--md_chip_scroll-margin);
-    margin-left: var(--md_chip_scroll-margin);
-    scrollbar-width: none;
-}
-.md_chip_scroll::-webkit-scrollbar  {
-    display: none;
-}
-
-.md_chip_container::before, .md_chip_container::after {
-    content: '';
-        display: block;
-        width: var(--md_chip_container-spaceholder);
-    /*    height causes align problems for the chips that are shorter */
-        height: 10px;
-/*        background-color: red;*/
-        flex: 0 0 auto;
-}
-.md_chip_container::before {
-    margin-right: calc(var(--sp_px-m) * -1);
-}
-.md_chip_container::after {
-    margin-left: calc(var(--sp_px-m) * -1);
-}
 }
 
 /* ======= pagination ===========*/

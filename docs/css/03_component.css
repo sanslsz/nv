@@ -3,8 +3,9 @@
     --nv-cta-font-size: 14px;
     --nv-cta-small-font-size: 12px;
 
+    --filter-search-text-margin: var(--sp_px-s);
     --filter-search-width: 100%;
-    --filter-search-width-2: clamp(260px, 60vw, 400px);
+    --filter-search-width-2: clamp(240px, 60vw, 400px);
 
 
 }
@@ -15,6 +16,7 @@
         --nv-cta-font-size: 15px;
         --nv-cta-small-font-size: 13px;
 
+        --filter-search-text-margin: unset;
         --filter-search-width: clamp(300px, 50vw, 400px);
 
 
@@ -41,6 +43,10 @@
 /*=================== search ===================*/
 .cp_search_text {
     font-size: 14px;
+    margin-top: var(--filter-search-text-margin);
+}
+.cp_search_icon {
+    flex: 0 0 auto;
 }
 .cp_search {
     position: relative;
@@ -48,7 +54,6 @@
 .cp_searchinput {
     text-overflow: ellipsis;
     width: var(--filter-search-width);
-/*    padding: 10px 40px 10px 10px;*/
     padding: var(--sp_em-s) calc(var(--sp_em-s) * 2 + var(--sz_icon-m)) var(--sp_em-s) var(--sp_em-s);
     background: url(cp_assets/ic_search.svg) no-repeat right 10px center / var(--sz_icon-m), var(--nv-15-5-f7);
     border: 1px solid var(--nv-12-5-cc);
@@ -110,7 +115,8 @@
     border: 1px solid var(--nv-12-5-cc);
     border-radius: 999px;
     position: relative;
-    flex: 0 0 fit-content;
+/*    white-space: nowrap;*/
+    flex: 0 0 max-content;
 }
 .cp_filter_chip::after {
     content: '';
@@ -149,7 +155,6 @@
     font-size: 14px;
     display: block;
     cursor: pointer;
-/*    padding: 8px 38px 8px 12px;*/
     padding: var(--sp_em-xs) calc(var(--sp_em-xs) + var(--sz_icon-s) + var(--sp_em-s)) var(--sp_em-xs) var(--sp_em-s);
     width: max-content;
     background-color: var(--nv-15-5-f7);
@@ -191,7 +196,7 @@
     opacity: 0;
     transition: var(--02transition);
     font-weight: 400;
-    z-index: 2;
+    z-index: 3;
 }
 input:checked ~ .cp_dropdown_pop {
     opacity: 100;

@@ -1,0 +1,62 @@
+:root {
+
+    --cell-lr-xs: 6px;
+    --cell-lr-s: 8px;
+    --cell-lr-m: 12px;
+    --cell-lr-l: 16px;
+    --cell-lr-xl: 20px;
+    --cell-lr-xxl: 24px;
+    
+    --cell-tb-xs: var(--sp_px-xs);
+    --cell-tb-s: var(--sp_px-s);
+    --cell-tb-m: var(--sp_px-m);
+    --cell-tb-l: var(--sp_px-l);
+    --cell-tb-xl: var(--sp_px-xl);
+    --cell-tb-xxl: var(--sp_px-xxl);
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+        
+    --cell-lr-xs: 8px;
+    --cell-lr-s: 11px;
+    --cell-lr-m: 16px;
+    --cell-lr-l: 22px;
+    --cell-lr-xl: 28px;
+    --cell-lr-xxl: 34px;
+
+}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+
+    --cell-lr-xs: 10px;
+    --cell-lr-s: 14px;
+    --cell-lr-m: 20px;
+    --cell-lr-l: 28px;
+    --cell-lr-xl: 36px;
+    --cell-lr-xxl: 44px;
+
+}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+  
+    --cell-lr-xs: 12px;
+    --cell-lr-s: 17px;
+    --cell-lr-m: 24px;
+    --cell-lr-l: 34px;
+    --cell-lr-xl: 44px;
+    --cell-lr-xxl: 54px;
+
+}
+}
+body {
+    background-color: var(--nv-16);
+}
+th, td {
+    line-height: 1.2;
+}

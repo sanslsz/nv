@@ -182,12 +182,13 @@ section > h4 {
 }
 
 .cp_card_base > div > *:not(:last-child) {
-/*    margin-bottom: calc(var(--cp_card-padding) / 2);*/
     margin-bottom: var(--sp_px-m);
-/*    margin-bottom: var(--sp_px-l);*/
 }
 .margin-padding.margin-padding  > *:not(:last-child) {
     margin-bottom: var(--cp_card-padding);
+}
+.cp_card_promo_base > div > *:not(:last-child) {
+    margin-bottom: var(--sp_px-m);
 }
 
 .internalalign > h4 {
@@ -315,6 +316,23 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 }
 
 
+.cp_card_promo_base {
+    color: var(--nv-16);
+    background-color: var(--nv-0);
+    position: relative;
+}
+.cp_card_promo_base img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0% 20%, rgba(0,0,0,0) 60%);
+}
+.cp_card_promo_base div {
+    width: 80%;
+    position: relative;
+    z-index: 1;
+}
 
 
 .test {

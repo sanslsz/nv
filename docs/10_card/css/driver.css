@@ -1,0 +1,87 @@
+:root {
+
+
+}
+
+
+
+@media screen and (min-width: 640px) {
+    :root {
+
+    }
+    
+}
+   
+@media screen and (min-width: 1024px) {
+    :root {
+      
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+   
+    }
+     
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        
+    }
+
+}
+.no-break-custom {
+    white-space: nowrap;
+    padding-right: var(--cp_cta-icon-size);
+    position: relative;
+}
+.no-break-custom::after {
+    content: "navigate_next";
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: var(--cp_cta-icon-size);
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.cp_card_base > *:not(:last-child) {
+    margin-bottom: var(--sp_px-m);
+}
+
+.cp_card_base img {
+    aspect-ratio: unset;
+    width: 96px;
+}
+section:nth-child(2) .cp_card_promo_base {
+    margin-bottom: calc(var(--sp_px-xxxxl) * 2);
+}
+.cp_card_promo_base .cardpadding {
+    width: 70%;
+}
+.promo_flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp_px-xl);
+}
+
+.tp_p-s {
+    margin-bottom: var(--sp_em-xs);
+}
+

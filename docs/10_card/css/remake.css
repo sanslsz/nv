@@ -12,7 +12,7 @@
 @media screen and (min-width: 640px) {
     :root {
 --cp_card-homelargew: 380px;
---scroll_spaceholder: calc((100vw - var(--wrapper) - 16px) / 2);
+--scroll_spaceholder: max(var(--padding-lr), calc((100vw - var(--wrapper) - 16px) / 2));
     }
     
     
@@ -108,9 +108,10 @@
         display: flex;
         max-width: unset;
         overflow-x: scroll;
+        gap: var(--cp_card-padding);
         scroll-snap-type: x;
         scroll-padding-left: var(--scroll_spaceholder);
-        margin: 0 -10px;
+        margin: 0 calc(var(--padding-lr) * -1);
         padding-bottom: 6px;
     }
 .md_scroll-edge::-webkit-scrollbar {
@@ -200,11 +201,4 @@
 
 .nolink:hover {
     color: var(--nv-green);
-}
-
-.hyperlink {
-    color: var(--nv-green);
-}
-.hyperlink:is(:hover, :focus) {
-    color: var(--nv-green-hover);
 }
