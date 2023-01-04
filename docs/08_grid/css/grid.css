@@ -62,7 +62,6 @@ p, ul {
 }
 
 .gridcontainer {
-    display: grid;
     display: none;
     grid-gap: var(--grid-gap);
 }
@@ -71,7 +70,7 @@ p, ul {
     grid-template-columns: repeat(var(--grid-num), 1fr);
     grid-gap: var(--grid-gap);
 }
-.gridcontainer li {
+.gridcontainer li:not(.description) {
     color: var(--nv-annotation);
     border: 1px dashed var(--nv-annotation);
     background-color: rgba(255, 0, 255, 0.05);

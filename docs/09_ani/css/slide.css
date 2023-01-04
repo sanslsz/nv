@@ -227,6 +227,9 @@ body {
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
 }
+.sn3:is(:hover, :focus, :focus-within) ul li {
+    animation-play-state: paused;
+}
 .sn3 ul li:nth-child(2) {
     animation-delay: 4s;
 }

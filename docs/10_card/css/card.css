@@ -17,6 +17,8 @@
     
     --swap-layout: block;
     --swap-asepct: 16 / 9;
+    
+    --grid-gap-ver: calc(var(--cp_card-padding) * 2);
 
 
 }
@@ -37,6 +39,8 @@
         --align-lines-p: 7;
         --align-lines-h4: 3;
         --align-lines-lead: 2;
+        
+        --grid-gap-ver: 30px;
     }
 }
 
@@ -128,7 +132,7 @@ body > *:nth-child(even) {
 section > ul {
     display: grid;
     grid-template-columns: var(--3col);
-    grid-gap: var(--cp_card-padding);
+    grid-gap: var(--grid-gap-ver) 30px;
 /*    align-items: start;*/
 }
 
@@ -434,25 +438,26 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 /*        --cp_card-minw: min(80vw, 300px);*/
     }
 
-    body > section:first-child > ul {
+    .md_scroll {
         display: flex;
         max-width: unset;
         overflow: scroll;
         scroll-snap-type: x;
         margin: 0 -10px;
-        scroll-padding-left: calc((100vw - var(--wrapper)) / 2);
+        scroll-padding-left: max(var(--padding-lr), calc((100vw - var(--wrapper)) / 2));
     }
 
-    body > section:first-child > ul li {
+    .md_scroll li {
         scroll-snap-align: start;
         flex: 0 0 min(80vw, 300px);
     }
 
-    body > section:first-child > ul::before,
-    body > section:first-child > ul::after {
+    .md_scroll::before,
+    .md_scroll::after {
         content: '';
         display: block;
         width: calc((100vw - var(--wrapper)) / 2);
+        width:  max(var(--padding-lr), calc((100vw - var(--wrapper)) / 2));
         height: 60px;
         /*        background-color: red;*/
         flex: 0 0 auto;
@@ -461,7 +466,7 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
     }
 
 
-    body > section:first-child > ul::after {
+    .md_scroll::after {
         margin-left: calc(var(--cp_card-padding) * -1);
         margin-right: unset;
     }
@@ -469,11 +474,11 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 
 @media screen and (any-hover: none) and (max-width: 639px) {
 
-     body > section:first-child > ul {
+     .md_scroll {
         scroll-padding-left: var(--padding-lr);
     }
-    body > section:first-child > ul::before,
-    body > section:first-child > ul::after {
+    .md_scroll::before,
+    .md_scroll::after {
         content: '';
         display: block;
         width: var(--padding-lr);
