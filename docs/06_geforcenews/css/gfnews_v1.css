@@ -1,10 +1,5 @@
 :root {
 
-/*    --news-l1-gap: var(--sp_px-xxl);*/
-/*    --news-l2-gap: var(--sp_px-xxl);*/
-    --card-l3-gap: var(--sp_px-l);
-/*    --card-l3-img-margin: var(--sp_px-l);*/
-
     --l1-title-clamp: 2;
     --l1-title-clamp-hover: calc(var(--l1-title-clamp) + 1);
     --l1-intro-clamp: 2;
@@ -22,12 +17,8 @@
 @media screen and (min-width: 640px) {
     :root {
 
-        --news-l1-gap: 24px;
         --news-l2-grid: 1fr 1fr;
-        --news-l2-gap: 20px;
         --card-l3-grid: 1fr 1fr 1fr;
-        --card-l3-gap: 20px;
-        --card-l3-img-margin: 0px;
         --card-l3-caption-span: span 2;
 
         --l1-title-clamp: 2;
@@ -47,10 +38,7 @@
 @media screen and (min-width: 1024px) {
     :root {
         --news-l1-grid: 1fr 1fr;
-        --news-l1-gap: 32px;
         --news-l2-grid: 1fr 1fr 1fr;
-        --news-l2-gap: 24px;
-        --card-l3-gap: 24px;
 
         --l1-intro-clamp: 3;
 
@@ -65,11 +53,6 @@
 
 @media screen and (min-width: 1350px) {
     :root {
-
-        --news-l1-gap: 48px;
-        --news-l2-gap: 32px;
-        --card-l3-gap: 32px;
-
 
         --l2-title-clamp: 2;
 
@@ -89,13 +72,7 @@
 }
 
 /*==================== general styling ================*/
-body {
-    background-color: var(--nv-1-11);
-    color: var(--nv-16);
-}
-main .padding:not(:last-child) {
-    padding-bottom: 0;
-}
+
 
 h2 {
     margin: 0 0 calc(var(--padding-tb) / 2);
@@ -126,7 +103,7 @@ p {
 .card-l3 {
     display: grid;
     grid-template-columns: var(--card-l3-grid);
-    grid-gap: var(--card-l3-gap); 
+    grid-gap: var(--sp_px-m) var(--sp_grid-gap); 
 }
 
 .md_3piece .wrapper {
@@ -188,16 +165,6 @@ p {
     margin-top: var(--sp_px-m);
 }
 
-/*
-.intro::before {
-    content: "";
-    display: block;
-    background-color: red;
-    height: var(--sp_px-m);
-    width: var(--sp_px-m);
-}
-*/
-
 .card-l1 .cp_cta_tertiary {
     margin-top: var(--sp_px-m);
 }
@@ -242,7 +209,7 @@ p {
 .card-l2 :is(.date, .keyword) {
     font-size: 14px;
     font-weight: 700;
-    color: var(--nv-9-5-99);
+/*    color: var(--nv-9-5-99);*/
 }
 .card-l2 .tp_h-smallest {
     display: -webkit-box;
@@ -276,7 +243,7 @@ p {
 }
 
 .card-l2 .keyword li:hover {
-    color: var(--nv-16);
+/*    color: var(--nv-16);*/
 }
 
 .card-l2 .intro {
@@ -295,7 +262,6 @@ p {
 .card-l3 img {
     aspect-ratio: 16 / 9;
     object-fit: cover;
-/*    margin-bottom: var(--card-l3-img-margin);*/
 }
 
 .card-l3 figcaption > *:not(:first-child) {
@@ -305,7 +271,7 @@ p {
 .card-l3 :is(.date, .keyword) {
     font-size: 14px;
     font-weight: 700;
-    color: var(--nv-9-5-99);
+/*    color: var(--nv-9-5-99);*/
 }
 .card-l3 .tp_h-smallest {
     display: -webkit-box;
@@ -315,11 +281,6 @@ p {
 }
 
 .card-l3 .keyword {
-/*
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 var(--sp_px-xs);
-*/
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: var(--l3-keyword-clamp);
@@ -337,7 +298,7 @@ p {
 }
 
 .card-l3 .keyword li:hover {
-    color: var(--nv-16);
+/*    color: var(--nv-16);*/
 }
 
 .card-l3 .intro {
@@ -347,22 +308,15 @@ p {
     overflow: hidden;
 }
 
-
-
-.md_3piece figcaption {
-/*    display: none;*/
-}
 .md_3piece .vertical-2 {
     grid-row: var(--3piece-span);
 }
 .vertical-2 img {
     width: 100%;
     height: 100%;
-/*    object-fit: cover;*/
-/*    aspect-ratio: 16 / 9;*/
 }
-.vertical-2 figcaption > *:not(:first-child), .vertical-2 .intro {
-    margin-top: var(--sp_px-s);
+.vertical-2 figcaption > *:not(:first-child), .vertical-2 :is(.intro, .cp_cta_tertiary) {
+    margin-top: var(--sp_px-m);
 }
 .vertical-2 :is(.date, .keyword) {
     font-size: 14px;
@@ -386,12 +340,12 @@ p {
     margin-right: 2px;
 }
 .vertical-2 .keyword li:hover {
-    color: var(--nv-16);
+/*    color: var(--nv-16);*/
 }
 
 
 
-.md_4piece .large {
+.md_4piece .span {
     grid-column: var(--md_4piece-large-span);
 /*    grid-column: span 2;*/
 }
@@ -427,16 +381,16 @@ nav li {
     padding: 0 var(--padding-lr);
 }
 nav li:first-child {
-    background-color: var(--nv-16);
-    color: var(--nv-1-5-1a);
+    background-color: #ffffff;
+    color: #1a1a1a;
     height: 44px;
 }
 nav li:first-child div {
     line-height: 44px;
 }
 nav li:nth-child(2) {
-    background-color: var(--nv-1-5-1a);
-    color: var(--nv-16);
+    background-color: #1a1a1a;
+    color: #ffffff;
     height: 66px;
 }
 nav li:nth-child(2) div {
@@ -444,10 +398,10 @@ nav li:nth-child(2) div {
 }
 
 footer section:first-child {
-    background-color: var(--nv-1-5-1a);
-    color: var(--nv-16);
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 footer section:nth-child(2) {
-    background-color: var(--nv-16);
-    color: var(--nv-1-5-1a);
+/*    background-color: #ffffff;*/
+/*    color: #1a1a1a;*/
 }

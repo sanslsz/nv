@@ -3,16 +3,38 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Geforce News page type styling</title>
+    <title>Geforce News page redesign 1st version</title>
     <meta name="description" content="DLI instructor's directory card">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../05_cta/css/cta_styles_ver2.css">
-    <link rel="stylesheet" href="css/gfnews.css">
+    <link rel="stylesheet" href="css/gfnews_v1.css">
     <meta name="theme-color" content="#fafafa">
     <style>
-
+body {
+    background-color: var(--nv-1-11);
+    color: var(--nv-16);
+}
+main .padding:not(:last-child) {
+    padding-bottom: 0;
+}       
+.card-l2 :is(.date, .keyword) {
+    color: var(--nv-9-5-99);
+}       
+.card-l2 .keyword li:hover {
+    color: var(--nv-16);
+}
+.card-l3 :is(.date, .keyword) {
+    color: var(--nv-9-5-99);
+}
+.card-l3 .keyword li:hover {
+    color: var(--nv-16);
+}        
+.vertical-2 .keyword li:hover {
+    color: var(--nv-16);
+}        
+        
     </style>
 
 </head>
@@ -33,7 +55,7 @@
                     <figcaption>
                         <p class="tp_h-smaller">GeForce RTX bethesda softworks bundle available now includes Ghostwire Tokyo Doom Eternal and the Doom eternal year one pass</p>
                         <div class="hide">
-                            <p class="intro">Buy a particIpating ge force rtx gpu desktop or laptop and you ll receive digital copies of each game all of which are enhanced with spectacular ray traced effects and performance accelerating NVIDIA DLSS technology</p>
+                            <p class="intro tp_p-m">Buy a particIpating ge force rtx gpu desktop or laptop and you ll receive digital copies of each game all of which are enhanced with spectacular ray traced effects and performance accelerating NVIDIA DLSS technology</p>
                             <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         </div>
                     </figcaption>
@@ -43,7 +65,7 @@
                     <figcaption>
                         <p class="tp_h-smaller">Marvel's Spider-Man remastered out now on pc with NVIDIA DLSS, DLAA, ray tracing &amp; more</p>
                         <div class="hide">
-                            <p class="intro">Download the Marvel’s Spider-Man Remastered Game Ready Driver to experience this critically acclaimed game with #RTXON!</p>
+                            <p class="intro tp_p-m">Download the Marvel’s Spider-Man Remastered Game Ready Driver to experience this critically acclaimed game with #RTXON!</p>
                             <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         </div>
                     </figcaption>
@@ -67,7 +89,7 @@
                             <li>GeForce RTX GPUs</li>
                             <li>NVIDIA Reflex</li>
                         </ul>
-                        <p class="intro">In other NVIDIA Reflex news: enter our new giveaway for a chance to win a VALORANT PC or a GeForce RTX 3080 Ti; two new NVIDIA Reflex G-SYNC ULTIMATE gaming monitors are out now; 3 new NVIDIA Reflex mice are now available; Warhammer 40,000: Darktide will launch with NVIDIA Reflex.</p>
+                        <p class="intro tp_p-m">In other NVIDIA Reflex news: enter our new giveaway for a chance to win a VALORANT PC or a GeForce RTX 3080 Ti; two new NVIDIA Reflex G-SYNC ULTIMATE gaming monitors are out now; 3 new NVIDIA Reflex mice are now available; Warhammer 40,000: Darktide will launch with NVIDIA Reflex.</p>
                         <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                     </figcaption>
 
@@ -90,7 +112,7 @@
                             <li>test what whever</li>
 
                         </ul>
-                        <p class="intro">Get the definitive #RTXON experience in Marvel’s Spider-Man Remastered on PC, and get Game Ready for the launch of Madden NFL 23 and the SUPER PEOPLE beta.</p>
+                        <p class="intro tp_p-m">Get the definitive #RTXON experience in Marvel’s Spider-Man Remastered on PC, and get Game Ready for the launch of Madden NFL 23 and the SUPER PEOPLE beta.</p>
                         <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                     </figcaption>
 
@@ -108,7 +130,7 @@
                             <li>NVIDIA RTX</li>
                             <li>Ray Tracing</li>
                         </ul>
-                        <p class="intro">New NVIDIA DLSS games launching this month include Loopmancer and Hell Pie.</p>
+                        <p class="intro tp_p-m">New NVIDIA DLSS games launching this month include Loopmancer and Hell Pie.</p>
                         <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                     </figcaption>
                 </figure>
@@ -131,7 +153,7 @@
                             <li>GeForce RTX</li>
                             <li>Ray Tracing</li>
                         </ul>
-                        <p class="intro">New update launching alongside the Jurassic World Evolution 2: Dominion Biosyn Expansion introduces Ray-Traced Ambient Occlusion effects. On a GeForce RTX GPU, desktop or laptop, you can enjoy the critically-acclaimed game at the highest detail levels, resolutions and frame rates. And further accelerate performance by up to 75% with NVIDIA.</p>
+                        <p class="intro tp_p-m">New update launching alongside the Jurassic World Evolution 2: Dominion Biosyn Expansion introduces Ray-Traced Ambient Occlusion effects. On a GeForce RTX GPU, desktop or laptop, you can enjoy the critically-acclaimed game at the highest detail levels, resolutions and frame rates. And further accelerate performance by up to 75% with NVIDIA.</p>
                         <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                     </figcaption>
                 </figure>
@@ -149,7 +171,7 @@
                             <li>NVIDIA DLSS</li>
                             <li>Ray Tracing</li>
                         </ul>
-                        <p class="intro">In other NVIDIA Reflex news: enter our new giveaway for a chance to win a VALORANT PC or a GeForce RTX 3080 Ti; two new NVIDIA Reflex G-SYNC ULTIMATE gaming monitors are out now; 3 new NVIDIA Reflex mice are now available; Warhammer 40,000: Darktide will launch with NVIDIA Reflex.</p>
+                        <p class="intro tp_p-m">In other NVIDIA Reflex news: enter our new giveaway for a chance to win a VALORANT PC or a GeForce RTX 3080 Ti; two new NVIDIA Reflex G-SYNC ULTIMATE gaming monitors are out now; 3 new NVIDIA Reflex mice are now available; Warhammer 40,000: Darktide will launch with NVIDIA Reflex.</p>
                         <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                     </figcaption>
                 </figure>
@@ -164,7 +186,7 @@
                             <li>NVIDIA DLSS</li>
                             <li>Ray Tracing</li>
                         </ul>
-                        <p class="intro">Download the Marvel’s Spider-Man Remastered Game Ready Driver to experience this critically acclaimed game with #RTXON!</p>
+                        <p class="intro tp_p-m">Download the Marvel’s Spider-Man Remastered Game Ready Driver to experience this critically acclaimed game with #RTXON!</p>
                         <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                     </figcaption>
                 </figure>
@@ -183,7 +205,7 @@
                             <li>GeForce RTX</li>
                             <li>Ray Tracing</li>
                         </ul>
-                        <p class="intro">Buy a participating GeForce RTX GPU, desktop or laptop and you’ll receive digital copies of each game, all of which are enhanced with spectacular ray-traced effects and performance-accelerating NVIDIA DLSS technology.</p>
+                        <p class="intro tp_p-m">Buy a participating GeForce RTX GPU, desktop or laptop and you’ll receive digital copies of each game, all of which are enhanced with spectacular ray-traced effects and performance-accelerating NVIDIA DLSS technology.</p>
                         <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                     </figcaption>
                 </figure>
@@ -197,7 +219,7 @@
                     <figcaption>
                         <p class="tp_h-smaller">GeForce RTX bethesda softworks bundle available now includes Ghostwire Tokyo Doom Eternal and the Doom eternal year one pass</p>
                         <div class="hide">
-                            <p class="intro">Buy a particIpating ge force rtx gpu desktop or laptop and you ll receive digital copies of each game all of which are enhanced with spectacular ray traced effects and performance accelerating NVIDIA DLSS technology</p>
+                            <p class="intro tp_p-m">Buy a particIpating ge force rtx gpu desktop or laptop and you ll receive digital copies of each game all of which are enhanced with spectacular ray traced effects and performance accelerating NVIDIA DLSS technology</p>
                             <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         </div>
                     </figcaption>
@@ -206,7 +228,7 @@
                     <img src="assets/Endeavor-NVIDIA-HQ-10.jpeg" alt="image">
                     <figcaption>
                         <p class="date">September 08, 2022</p>
-                        <h3 class="tp_h-smallest">Jurassic World Evolution 2 ray tracing update out now accelerate performance by up to 75 with NVIDIA DLSS</h3>
+                        <h3 class="tp_h-smaller">Jurassic World Evolution 2 ray tracing update out now accelerate performance by up to 75 with NVIDIA DLSS</h3>
                         <div class="hide">
                         <ul class="keyword">
                             <li>Featured Stories</li>
@@ -216,7 +238,7 @@
                             <li>GeForce RTX</li>
                             <li>Ray Tracing</li>
                         </ul>
-                        <p class="intro">New update launching alongside the Jurassic World Evolution 2: Dominion Biosyn Expansion introduces Ray-Traced Ambient Occlusion effects. On a GeForce RTX GPU, desktop or laptop, you can enjoy the critically-acclaimed game at the highest detail levels, resolutions and frame rates. And further accelerate performance by up to 75% with NVIDIA.</p>
+                        <p class="intro tp_p-m">New update launching alongside the Jurassic World Evolution 2: Dominion Biosyn Expansion introduces Ray-Traced Ambient Occlusion effects. On a GeForce RTX GPU, desktop or laptop, you can enjoy the critically-acclaimed game at the highest detail levels, resolutions and frame rates. And further accelerate performance by up to 75% with NVIDIA.</p>
                         <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         </div>
                     </figcaption>
@@ -226,7 +248,7 @@
                     <figcaption>
                         <p class="tp_h-smaller">Marvel's Spider-Man remastered out now on pc with NVIDIA DLSS, DLAA, ray tracing &amp; more</p>
                         <div class="hide">
-                            <p class="intro">Download the Marvel’s Spider-Man Remastered Game Ready Driver to experience this critically acclaimed game with #RTXON!</p>
+                            <p class="intro tp_p-m">Download the Marvel’s Spider-Man Remastered Game Ready Driver to experience this critically acclaimed game with #RTXON!</p>
                             <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         </div>
                     </figcaption>
@@ -237,75 +259,27 @@
             <section class="md_4piece padding">
             <h2 class="tp_h-small wrapper">4 pieces module</h2>
             <div class="wrapper">
-                <figure class="large">
+                <figure class="span">
                     <img src="assets/Endeavor-Dec2018-232.jpeg" alt="image">
                     <figcaption>
-                        <p class="date">September 08, 2022</p>
-                        <h3 class="tp_h-smallest">Jurassic World Evolution 2 ray tracing update out now accelerate performance by up to 75 with NVIDIA DLSS</h3>
-                        <ul class="keyword">
-                            <li>Featured Stories</li>
-                            <li>Events </li>
-                            <li>GeForce RTX GPUs</li>
-                            <li>NVIDIA DLSS</li>
-                            <li>GeForce RTX</li>
-                            <li>Ray Tracing</li>
-                        </ul>
-                        <p class="intro">New update launching alongside the Jurassic World Evolution 2: Dominion Biosyn Expansion introduces Ray-Traced Ambient Occlusion effects. On a GeForce RTX GPU, desktop or laptop, you can enjoy the critically-acclaimed game at the highest detail levels, resolutions and frame rates. And further accelerate performance by up to 75% with NVIDIA.</p>
-                        <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         <p class="credit">Sony Pictures Entertainment</p>
                     </figcaption>
                 </figure>
                 <figure class="small">
                     <img src="assets/ov-gallery-kv-new.jpg" alt="image">
                     <figcaption>
-                        <p class="date">September 08, 2022</p>
-                        <h3 class="tp_h-smallest">Jurassic World Evolution 2 ray tracing update out now accelerate performance by up to 75 with NVIDIA DLSS</h3>
-                        <ul class="keyword">
-                            <li>Featured Stories</li>
-                            <li>Events </li>
-                            <li>GeForce RTX GPUs</li>
-                            <li>NVIDIA DLSS</li>
-                            <li>GeForce RTX</li>
-                            <li>Ray Tracing</li>
-                        </ul>
-                        <p class="intro">New update launching alongside the Jurassic World Evolution 2: Dominion Biosyn Expansion introduces Ray-Traced Ambient Occlusion effects. On a GeForce RTX GPU, desktop or laptop, you can enjoy the critically-acclaimed game at the highest detail levels, resolutions and frame rates. And further accelerate performance by up to 75% with NVIDIA.</p>
-                        <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         <p class="credit">Blizzard Entertainment, Inc</p>
                     </figcaption>
                 </figure>
                 <figure class="small">
                     <img src="assets/nv-proviz-kv-me-final-5770x2500.jpeg" alt="image">
                     <figcaption>
-                        <p class="date">September 08, 2022</p>
-                        <h3 class="tp_h-smallest">Jurassic World Evolution 2 ray tracing update out now accelerate performance by up to 75 with NVIDIA DLSS</h3>
-                        <ul class="keyword">
-                            <li>Featured Stories</li>
-                            <li>Events </li>
-                            <li>GeForce RTX GPUs</li>
-                            <li>NVIDIA DLSS</li>
-                            <li>GeForce RTX</li>
-                            <li>Ray Tracing</li>
-                        </ul>
-                        <p class="intro">New update launching alongside the Jurassic World Evolution 2: Dominion Biosyn Expansion introduces Ray-Traced Ambient Occlusion effects. On a GeForce RTX GPU, desktop or laptop, you can enjoy the critically-acclaimed game at the highest detail levels, resolutions and frame rates. And further accelerate performance by up to 75% with NVIDIA.</p>
-                        <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         <p class="credit">Burger King</p>
                     </figcaption>
                 </figure>
-                <figure class="large">
+                <figure class="span">
                     <img src="assets/convai-riva-tokkio-closeup.jpg" alt="image">
                     <figcaption>
-                        <p class="date">September 08, 2022</p>
-                        <h3 class="tp_h-smallest">Jurassic World Evolution 2 ray tracing update out now accelerate performance by up to 75 with NVIDIA DLSS</h3>
-                        <ul class="keyword">
-                            <li>Featured Stories</li>
-                            <li>Events </li>
-                            <li>GeForce RTX GPUs</li>
-                            <li>NVIDIA DLSS</li>
-                            <li>GeForce RTX</li>
-                            <li>Ray Tracing</li>
-                        </ul>
-                        <p class="intro">New update launching alongside the Jurassic World Evolution 2: Dominion Biosyn Expansion introduces Ray-Traced Ambient Occlusion effects. On a GeForce RTX GPU, desktop or laptop, you can enjoy the critically-acclaimed game at the highest detail levels, resolutions and frame rates. And further accelerate performance by up to 75% with NVIDIA.</p>
-                        <a class="cp_cta_tertiary large chevron" href="#">Read more</a>
                         <p class="credit">Esquire.com</p>
                     </figcaption>
                 </figure>

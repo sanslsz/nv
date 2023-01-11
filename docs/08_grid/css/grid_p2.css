@@ -101,7 +101,7 @@
 }
 .res_padding {
     padding: var(--res_padding-section);
-    padding: 64px var(--res_padding-lr);
+/*    padding: 64px var(--res_padding-lr);*/
 }
 .res_wrapper {
     max-width: var(--res_wrapper);
