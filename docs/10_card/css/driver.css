@@ -61,16 +61,15 @@
     transform: translateY(-50%);
 }
 
-.cp_card_promo_base .cardpadding {
-    width: 70%;
-}
+
+
 
 .option1 .cp_card_promo_base {
     cursor: pointer;
 }
 
-.option2 .cp_card_promo_base {
-    margin-bottom: calc(var(--sp_px-xxxl) * 2);
+.option2 h3:not(:first-child) {
+    margin-top: calc(var(--sp_px-xxxl) * 2);
 }
 
 .promo_flex {
@@ -83,6 +82,7 @@
     margin-bottom: var(--sp_em-xs);
 }
 
+
 .cp_card_base > *:not(:last-child) {
     margin-bottom: var(--sp_px-m);
 }
@@ -92,4 +92,18 @@
     width: 96px;
 }
 
-
+.horizontal {
+    display: flex;
+    align-items: start;
+    gap: var(--sp_px-m);
+}
+.horizontal img {
+    width: 64px;
+    flex: 0 0 auto;
+}
+.horizontal div {
+    flex: 1 1 auto;
+}
+.horizontal div > *:not(:last-child) {
+    margin-bottom: var(--sp_px-s);
+}

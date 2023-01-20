@@ -1,18 +1,18 @@
 :root {
-  --cp_card-homelargew: calc(100vw - 90px);
+    --cp_card-homelargew: calc(100vw - 90px);
     --cp_card-h3-size: 18px;
     --hideblock: block;
     --hidegrid: none;
     --scroll_spaceholder: var(--padding-lr);
-
+    --grid-gap-ver: 30px
 }
 
 
 
 @media screen and (min-width: 640px) {
     :root {
---cp_card-homelargew: 380px;
---scroll_spaceholder: max(var(--padding-lr), calc((100vw - var(--wrapper) - 16px) / 2));
+        --cp_card-homelargew: 380px;
+        --scroll_spaceholder: max(var(--padding-lr), calc((100vw - var(--wrapper) - 16px) / 2));
     }
     
     
@@ -100,7 +100,13 @@
     transform: translateY(-50%);
 }
 
+.margin-padding-s > *:not(:last-child) {
+    margin-bottom: var(--sp_px-xl);
+}
 
+.col-2 .cardpadding {
+/*    padding: var(--cp_card-padding-l);*/
+}
 
 /*================= screen edge scrolling for card all viwports & devices ===================*/
 
@@ -108,7 +114,7 @@
         display: flex;
         max-width: unset;
         overflow-x: scroll;
-        gap: var(--cp_card-padding);
+        gap: 30px;
         scroll-snap-type: x;
         scroll-padding-left: var(--scroll_spaceholder);
         margin: 0 calc(var(--padding-lr) * -1);

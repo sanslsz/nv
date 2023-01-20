@@ -12,7 +12,7 @@
     --cp_cta-large-fontsize: 18px;
     --cp_cta-minw: 10ch;
     
-    --cp_cta-2nd-hover: 1px;
+    --cp_cta-primalt-hover: 1px;
     
     
     
@@ -29,15 +29,15 @@
     :root {
 
     --cp_cta-fontsize: 16px;
-    --cp_cta-large-fontsize: 20px;
+    --cp_cta-large-fontsize: 19px;
     }
 }
 
 @media screen and (min-width: 1350px) {
     :root {
         
-    --cp_cta-fontsize: 18px;
-    --cp_cta-large-fontsize: 22px;
+    --cp_cta-fontsize: 17px;
+    --cp_cta-large-fontsize: 20px;
     }
 }
 
@@ -48,7 +48,7 @@
 
 /*=================== cta container styles ========================*/
 
-.cp_cta_primary {
+.cp_cta_prim {
     display: block;
     width: fit-content;
     padding: var(--cp_cta-padding-tb) var(--cp_cta-padding-lr);
@@ -60,13 +60,13 @@
     white-space: nowrap;
     transition: var(--02transition);
 }
-.cp_cta_primary:is(:hover, :focus, :active) {
+.cp_cta_prim:is(:hover, :focus, :active) {
     color: var(--nv-16);
     background-color: var(--nv-green);
 }
 
 
-.cp_cta_secondary {
+.cp_cta_primalt {
     display: block;
     width: fit-content;
     padding: var(--cp_cta-padding-tb) var(--cp_cta-padding-lr);
@@ -79,36 +79,23 @@
     white-space: nowrap;
     transition: var(--02transition);
 }
-.cp_cta_secondary:is(:hover, :focus, :active) {
+.cp_cta_primalt:is(:hover, :focus, :active) {
     color: var(--nv-green);
     background-color: var(--nv-16);
-/*    padding: calc(var(--cp_cta-padding-tb) - var(--cp_cta-2nd-hover)) calc(var(--cp_cta-padding-lr) - var(--cp_cta-2nd-hover));*/
-/*    border-width: calc(2px + var(--cp_cta-2nd-hover));*/
-/* border-width causes layout shift and performance problems, use box-shadow instead */
-    box-shadow: 0px 0px 0px var(--cp_cta-2nd-hover) var(--nv-green);   
+    box-shadow: 0px 0px 0px var(--cp_cta-primalt-hover) var(--nv-green);   
 }
-
-/*
-.cp_cta_secondary.iconleft:is(:hover, :focus, :active) {
-    padding-left: calc(var(--cp_cta-padding-lr) + var(--cp_cta-icon-size) + var(--cp_cta-icon-padding) - var(--cp_cta-2nd-hover));
-}
-.cp_cta_secondary.iconleft:is(:hover, :focus, :active) .ic_font  {
-    left: calc(1em / 1.5 * 0.9 - var(--cp_cta-2nd-hover));
-}
-*/
-
-.cp_cta_secondary.large {
-  --cp_cta-2nd-hover: 2px;
+.cp_cta_primalt.large {
+  --cp_cta-primalt-hover: 2px;
 }
 
 
-.cp_cta_tertiary {
+.cp_cta_sec {
     display: block;
     width: fit-content;
     padding-right: var(--cp_cta-icon-size);
     padding-bottom: 2px;
     color: var(--nv-0);
-    text-decoration: 2px currentcolor underline;
+/*    text-decoration: 2px currentcolor underline;*/
     text-underline-offset: 0.2em;
     font-weight: 700;
     font-size: var(--cp_cta-fontsize);
@@ -118,10 +105,10 @@
     transition: var(--02transition); 
     overflow: hidden;
 }
-.cp_cta_tertiary:is(:hover, :focus, :active) {
+.cp_cta_sec:is(:hover, :focus, :active) {
     color: var(--nv-green);
 }
-.cp_cta_tertiary.chevron::after {
+.cp_cta_sec.chevron::after {
     content: '';
     display: block;
     width: var(--cp_cta-icon-size);
@@ -137,27 +124,27 @@
     font-size: var(--cp_cta-large-fontsize);
 }
 
-.cp_cta_tertiary_wrap {
+.cp_cta_sec_wrap {
     display: block;
     color: var(--nv-0);
-    text-decoration: 2px currentcolor underline;
+/*    text-decoration: 2px currentcolor underline;*/
     text-underline-offset: 0.2em;
     font-weight: 700;
     font-size: var(--cp_cta-fontsize);
     line-height: 1.25;
     overflow: hidden;
 }
-.cp_cta_tertiary_wrap:is(:hover, :focus, :active) {
+.cp_cta_sec_wrap:is(:hover, :focus, :active) {
     color: var(--nv-green);
 }
-.cp_cta_tertiary_wrap .no-break {
+.cp_cta_sec_wrap .no-break {
     white-space: nowrap;
     padding-right: var(--cp_cta-icon-size);
     position: relative;
 }
-.cp_cta_tertiary_wrap .no-break::after {
+.cp_cta_sec_wrap .no-break::after {
     content: ' ';
-    display: inline-block;
+    display: block;
     width: var(--cp_cta-icon-size);
     height: var(--cp_cta-icon-size);
     background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
@@ -206,10 +193,10 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.cp_cta_tertiary.iconleft {
+.cp_cta_sec.iconleft {
     padding-left: calc(var(--cp_cta-icon-size) + var(--cp_cta-icon-padding))
 }
-.cp_cta_tertiary :is(.ic_font, .ic_svg) {
+.cp_cta_sec :is(.ic_font, .ic_svg) {
     left: 0;
 }
 .ic_font_chevron {
@@ -219,10 +206,17 @@
 }
 
 
-.cp_link {
+.cp_textlink {
     color: unset;
     text-decoration: 2px var(--nv-green) underline;
-    text-underline-offset: 0.2em;
+    text-underline-offset: 0.3em;
+    background-color: transparent;
+    box-shadow: 0 0 0 5px transparent; 
+}
+.cp_textlink:is(:hover, :focus, :active) {
+    background-color: var(--nv-14-dd);
+    color: var(--nv-1-5-1a);
+    box-shadow: 0 0 0 0.3em var(--nv-14-dd);
 }
 
 
@@ -243,7 +237,7 @@
 }
 
 
-.cp_cta_primary2 {
+.cp_cta_prim2 {
     display: block;
     width: fit-content;
     padding: var(--cp_cta-padding-tb) var(--cp_cta-padding-lr) var(--cp_cta-padding-tb) calc(var(--cp_cta-padding-lr) + var(--cp_cta-bar));
@@ -256,7 +250,7 @@
     transition: var(--02transition);
     position: relative;
 }
-.cp_cta_primary2::before {
+.cp_cta_prim2::before {
     content: '';
     display: block;
     width: 100%;
@@ -268,7 +262,7 @@
     transition: var(--02transition);
     z-index: -2;
 }
-.cp_cta_primary2::after {
+.cp_cta_prim2::after {
     content: '';
     display: block;
     width: var(--cp_cta-bar);
@@ -280,18 +274,18 @@
     transition: var(--02transition);
     z-index: -1;
 }
-.cp_cta_primary2:is(:hover, :focus, :active) {
+.cp_cta_prim2:is(:hover, :focus, :active) {
 /*    color: var(--nv-16);*/
     color: var(--nv-0);
     padding: var(--cp_cta-padding-tb) calc(var(--cp_cta-padding-lr) + var(--cp_cta-bar)) var(--cp_cta-padding-tb) var(--cp_cta-padding-lr);
 }
-.cp_cta_primary2:is(:hover, :focus, :active)::after  {
+.cp_cta_prim2:is(:hover, :focus, :active)::after  {
     content: '';
 /*    width: calc(100% - var(--cp_cta-bar));*/
     width: 100%;
 }
 
-.cp_cta_primary2.option2, .cp_cta_primary2.option2:hover {
+.cp_cta_prim2.option2, .cp_cta_prim2.option2:hover {
     padding: var(--cp_cta-padding-tb) calc(var(--cp_cta-padding-tb) + var(--cp_cta-bar));
 }
 
@@ -307,7 +301,8 @@
     text-underline-offset: 0.2em;
 }
 .cp_cta_link:is(:hover, :focus, :active) {
-    text-decoration-color: var(--nv-green);
+/*    text-decoration-color: var(--nv-green);*/
+    color: var(--nv-green);
 }
 .cp_cta_link .no-break {
     white-space: nowrap;
@@ -316,7 +311,7 @@
 }
 .cp_cta_link .no-break::after {
     content: ' ';
-    display: inline-block;
+    display: block;
     width: var(--cp_cta-icon-size);
     height: var(--cp_cta-icon-size);
     background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;
@@ -326,14 +321,6 @@
     transform: translateY(-50%);
 }
 
-.cp_cta_link.runt::after {
-     content: '';
-    display: inline-block;
-    width: var(--cp_cta-icon-size);
-    height: 1.2em;
-    vertical-align: text-bottom;
-    background: url(../assets/ic_chevron_green_shape_thick.svg) no-repeat center / cover;   
-}
 
 
 /*

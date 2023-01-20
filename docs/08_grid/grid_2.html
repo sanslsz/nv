@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Respnsive Grid Part Two</title>
+    <title>Respnsive Grid Part II</title>
     <!--    <meta name="description" content="">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/grid_p2.css">
+    <link rel="stylesheet" href="css/grid_p2_specs.css">
+    <link rel="stylesheet" href="css/grid_p2_design.css">
     
-    <meta name="themeor" content="#fafafa">
+    <meta name="theme-color" content="#fafafa">
     <style>
 
     </style>
@@ -20,9 +20,23 @@
 </head>
 
 <body>
-    <section class="res_padding">
+    <section class="res_padding section_intro">
+    <h1 class="res_wrapper">Responsive Grid Part Two</h1>
+        <div class="toc">
+        <p>Table of contents</p>
+    <ul>
+        <li><a href="#">Space: columns and gaps</a>A preview of viewports, columns, and gutters</li>  
+        <li><a href="#tab_1">Tabular grid</a>Fixed column number under breakpoints</li> 
+        <li><a href="#">Tabular grid</a>Minimum column size that scales up</li> 
+        <li><a href="#">One direction grid - multi row</a>Auto adjusts columns based on fixed width. </li>
+        <li><a href="#">One direction grid - multi row</a>Fixed column number under breakpoints</li>
+        <li><a href="#">One direction grid - multi row</a>Uneven space distribution</li>
+    </ul>
+        </div>
+    </section>
+    <section class="res_padding section_specs">
         <div class="res_wrapper">
-            <h1>Responsive Grid Part Two</h1>
+            <h2>Space: columns and gaps</h2>
             <section class="gridcontainer res_desktop-l">
                 <p><span class="material-icons">desktop_mac</span>Desktop large: 1600px+</p>
                 <ul class="col-1">
@@ -297,7 +311,272 @@
                     <li>69-98px</li>
                 </ul>
             </section>
-
         </div>
     </section>
-</body></html>
+     <section class="res_padding section_structure">
+        <div class="res_wrapper">
+            <h2>Structure & arrangement</h2>
+            <section id="tab_1">
+                <p><span class="material-icons">grid_on</span>Tabular grid. Fixed column number under breakpoints.</p>
+                <p class="description">Fixed columns # under viewports: 2 / 3 / 4 / 6, M vertical & horizontal gutters, viewport space evenly divided among the columns.</p>
+                <ul class="res_grid_vp itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                </ul>
+            </section>
+             <section>
+                <p><span class="material-icons">grid_on</span>Tabular grid. Minimum column size that scales up.</p>                    <p class="description">Auto add columns: minimum 240px, M vertical & horizontal gutters, viewport space evenly divided among the columns.</p>
+
+                <ul class="res_grid_space itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                </ul>
+            </section>
+            <section>
+                <p><span class="material-icons">table_rows</span>One direction grid - multi row. Auto adjusts column number based on fixed column width.</p>                    <p class="description">Auto add columns: 240px fixed, M vertical & horizontal gutters, center aligned.</p>
+
+                <ul class="res_flex_fixed pixel itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                </ul>
+            </section>
+             <section>
+                <p><span class="material-icons">table_rows</span>One direction grid - multi row. Fixed column number under breakpoints.</p>                    <p class="description">Auto add columns: fixed width under viewports(33% / 25% / 20% / 15% / 12% / 10%), M vertical & horizontal gutters, center aligned.</p>
+
+                <ul class="res_flex_fixed percentage itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                </ul>
+            </section>
+             <section>
+                <p><span class="material-icons">table_rows</span>One direction grid - multi row. Uneven space distribution.</p>                    <p class="description">Auto add columns: fixed width under viewports(33% / 25% / 20% / 15% / 12% / 10%), M vertical & horizontal gutters, center aligned, uneven free space distribution.</p>
+
+                <ul class="res_flex_fixed percentage grow itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                </ul>
+            </section>
+             <section>
+                <p><span class="material-icons">notes</span>One direction grid - multi row. Inline flow items that wrap to the next line.</p>                    <p class="description" style="flex-basis: 100%;">Item content width, S vertical & horizontal gutters, left aligned.</p>
+
+                <ul class="res_flex_variable itemcontainer">
+                    <li>1</li>
+                    <li style="flex-basis: 200px;">2</li>
+                    <li style="flex-basis: 100px;">3</li>
+                    <li style="flex-basis: 30px;">4</li>
+                    <li style="flex-basis: 200px">5</li>
+                    <li style="flex-basis: 100px">6</li>
+                    <li style="flex-basis: 200px">7</li>
+                    <li style="flex-basis: 30px">8</li>
+                    <li style="flex-basis: 180px">9</li>
+                    <li style="flex-basis: 140px">10</li>
+                    <li style="flex-basis: 220px">11</li>
+                    <li style="flex-basis: 80px">12</li>
+                </ul>
+            </section>
+             <section>
+                <p><span class="material-icons">notes</span>One direction grid - Single row.</p>                    <p class="description" style="flex-basis: 100%;">Item content width, S horizontal gutters, space between two groups.</p>
+                <ul class="res_flex_variable itemcontainer">
+                    <li style="flex-basis: min(10vw, 120px); margin-right: auto;">1</li>
+                    <li style="flex-basis: min(5vw, 50px);">2</li>
+                    <li style="flex-basis: min(20vw, 200px);">3</li>
+                    <li style="flex-basis: min(8vw, 80px);">4</li>
+                </ul>
+            </section>
+             <section>
+                <p><span class="material-icons">view_column</span>One direction grid - multi column. Vertical masonry arrangement.</p>
+                 <p class="description">Auto add columns: minimum 320px, L vertical & S horizontal gutters, viewport space evenly divided among the columns, item height varies.</p>
+                <ul class="res_col itemcontainer">
+                    <li style="--item-padding: 50px">1</li>
+                    <li style="--item-padding: 80px">2</li>
+                    <li style="--item-padding: 30px">3</li>
+                    <li style="--item-padding: 50px">4</li>
+                    <li style="--item-padding: 90px">5</li>
+                    <li style="--item-padding: 30px">6</li>
+                    <li style="--item-padding: 90px">7</li>
+                    <li style="--item-padding: 120px">8</li>
+                    <li style="--item-padding: 50px">9</li>
+                    <li style="--item-padding: 20px">10</li>
+                    <li style="--item-padding: 60px">11</li>
+                </ul>
+            </section>
+             <section>
+                <p><span class="material-icons">dashboard</span>Modular grid. Vertical masonry arrangement.</p>
+                <p class="description">Fixed height</p>
+                <ul class="res_modular_1 itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+<!--
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+-->
+                </ul>
+            </section>
+            <section>
+                <p><span class="material-icons">dashboard</span>Modular grid. Complex composition 1.</p>
+                <p class="description">Fixed height</p>
+                <ul class="res_modular_2 itemcontainer">
+                    <li style="grid-column: span 2; grid-row: span 7;">1</li>
+                    <li class="square">2</li>
+                    <li style="grid-row: span 4;">3</li>
+                    <li style="grid-row: span 4;">4</li>
+                    <li class="square">5</li>
+                </ul>
+            </section>
+                        <section>
+                <p><span class="material-icons">dashboard</span>Modular grid. Complex composition 2.</p>
+                <p class="description">Fixed height</p>
+                <ul class="res_modular_3 itemcontainer">
+                    <li style="grid-column: 1 / -1;">1</li>
+                    <li style="grid-row: span 2;">2</li>
+                    <li style="grid-column: span var(--modular_3-span);">3</li>
+                    <li>4</li>
+                    <li style="grid-row: span var(--modular_3-span);">5</li>
+                    <li style="grid-column: span 2;">6</li>
+                </ul>
+            </section>
+            <section>
+                <p><span class="material-icons">dashboard</span>Modular grid. Complex composition 3.</p>
+                <p class="description">Fixed height</p>
+                <ul class="res_modular_4 itemcontainer">
+                    <li class="rowspan">1</li>
+                    <li class="colspan">2</li>
+                    <li>3</li>
+                    <li class="rowspan hide1">4</li>
+                    <li class="hide2">5</li>
+                    <li  class="colspan">6</li>
+                </ul>
+            </section>
+         </div>
+    </section>
+     <section class="section_scroll">
+         <div class="res_padding">
+            <h2 class="res_wrapper">overflow & scroll</h2>
+             <p class="res_wrapper divider"><span class="material-icons">view_carousel</span>One direction grid - single row scroll. Carousel.</p>
+            <p class="res_wrapper description">Item # determines the column #, fixed width: min(80vw, 300px), S horizontal gutter, horizontal scroll / snap.</p>
+            <ul class="res_scroll itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                </ul>
+             
+            <p class="res_wrapper divider"><span class="material-icons">view_carousel</span>Tabular grid - multi row scroll. Carousel.</p>
+            <p class="res_wrapper description">
+Item # determines the column #, fixed width: min(80vw, 300px), XXS horizontal gutter, M vertical gutter, horizontal scroll / snap.</p>
+             <div class="res_scroll_flowcontainer">
+            <ul class="res_scroll_items itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                </ul>
+            </div>
+             
+             
+             <p class="res_wrapper divider"><span class="material-icons">view_carousel</span>Tabular grid - multi row scroll. Carousel.</p>
+            <p class="res_wrapper description">Item # determines the column #, fixed width: min(80vw, 300px), XXS horizontal gutter, M vertical gutter, horizontal scroll / snap.</p>
+            <ul class="res_scroll_2 itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                </ul>
+         </div>
+    </section>
+</body>
+</html>
