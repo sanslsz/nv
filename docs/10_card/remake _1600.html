@@ -12,19 +12,73 @@
     <link rel="stylesheet" href="../05_cta/css/cta_styles_ver2.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/remake.css">
+    <link rel="stylesheet" href="../08_grid/css/grid_p2_specs.css">
     <meta name="themeor" content="#fafafa">
     <meta name="color-scheme" content="light dark">
     <style>
+        :root {
+                --scroll-spaceholder:  max(var(--res_padding-lr), calc((100vw - var(--res_wrapper) - 16px) / 2));
+    
+    --scroll-item-width: min(80vw, 300px);
+        }
+        .col-2 .cardpadding {
+    padding: var(--cp_card-padding-l);
+}
+        section > ul {
+            grid-gap: var(--res_gutter-m);
+        }
+        .res_gutter-xl {
+            grid-gap: var(--res_gutter-xl);
+        }
+        .section_scroll.section_scroll li {
+    width: var(--scroll-item-width);
+    scroll-snap-align: start;
+}
+        .res_scroll {
+    display: flex;
+    overflow-x: scroll;
+    gap: var(--cp_card-padding);
+    scroll-snap-type: x;
+    scroll-padding-left: var(--scroll-spaceholder);
+    margin: 0 calc(var(--res_padding-lr) * -1);
+}
 
+.res_scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.res_scroll > li {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+}
+
+.res_scroll::before,
+.res_scroll::after {
+    content: '';
+    display: block;
+    width: var(--scroll-spaceholder);
+    height: 60px;
+    background-color: red;
+    flex: 0 0 auto;
+    margin-right: calc(var(--cp_card-padding) * -1);
+/*    scroll-snap-align: start;*/
+}
+
+
+.res_scroll::after {
+    margin-left: calc(var(--cp_card-padding) * -1);
+    margin-right: unset;
+}
+        
     </style>
 
 </head>
 
 <body>
     <!--    first section GTX -->
-    <section class="padding" id="alignelements">
-        <h3 class="wrapper">GeForce RTX 30 Series Laptops</h3>
-        <ul class="wrapper">
+    <section class="res_padding" id="alignelements">
+        <h3 class="res_wrapper">GeForce RTX 30 Series Laptops</h3>
+        <ul class="res_wrapper">
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/laptop_1.jpg" alt="description">
                 <div class="cardpadding">
@@ -75,9 +129,9 @@
             </li>
         </ul>
     </section>
-    <section class="padding">
-        <h3 class="wrapper">GPU Cloud Computing Solutions</h3>
-        <ul class="wrapper">
+    <section class="res_padding">
+        <h3 class="res_wrapper">GPU Cloud Computing Solutions</h3>
+        <ul class="res_wrapper">
             <li class="cp_card_base margin-padding">
                 <img src="assets/remake/cloud_1.jpg" alt="description">
                 <h4>AWS: Netflix</h4>
@@ -98,9 +152,9 @@
             </li>
         </ul>
     </section>
-    <section class="padding">
-        <h3 class="wrapper">GeForce RTX | Ultimate Ray Tracing & AI</h3>
-        <ul class="wrapper">
+    <section class="res_padding">
+        <h3 class="res_wrapper">GeForce RTX | Ultimate Ray Tracing & AI</h3>
+        <ul class="res_wrapper" style="grid-row-gap: var(--res_gutter-l);">
             <li class="cp_card_base margin-padding-s">
                 <img src="assets/remake/rtx_b_1.jpg" alt="description">
                 <h4>WRC Generations - The FIA WRC Official Game</h4>
@@ -153,9 +207,9 @@
             </li>
         </ul>
     </section>
-    <section class="padding">
-        <h3 class="wrapper">DGX Systems Built for the Unique Demands of AI</h3>
-        <ul class="wrapper">
+    <section class="res_padding">
+        <h3 class="res_wrapper">DGX Systems Built for the Unique Demands of AI</h3>
+        <ul class="res_wrapper">
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/data_1.jpg" alt="description">
                 <div class="cardpadding">
@@ -185,9 +239,9 @@
             </li>
         </ul>
     </section>
-    <section class="padding">
-        <h3 class="wrapper">Homepage small card scroll</h3>
-        <ul class="wrapper md_scroll-edge homecardsmall">
+    <section class="res_padding">
+        <h3 class="res_wrapper">Homepage small card scroll</h3>
+        <ul class="res_scroll homecardsmall">
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/home_small_1.jpg" alt="description">
                 <div class="cardpadding">
@@ -248,15 +302,15 @@
             </li>
         </ul>
     </section>
-    <section class="padding">
-        <h3 class="wrapper">Homepage large card scroll</h3>
+    <section class="res_padding">
+        <h3 class="res_wrapper">Homepage large card scroll</h3>
         <div class="introblock wrapper">
         <p class="tp_p-l">
         NVIDIA RTX™ and NVIDIA Omniverse™ deliver the performance to help professionals, creators, developers, and students worldwide enhance creative workflows and build, operate, and connect metaverse applications.
         </p>
          <a class="cp_cta_tertiary_wrap" href="#"><span class="no-break-custom">Learn More</span></a>
         </div>
-        <ul class="wrapper md_scroll-edge homecardlarge">
+        <ul class="res_scroll homecardlarge">
             <li class="introgrid">
         <p class="tp_p-l">
        NVIDIA RTX™ and NVIDIA Omniverse™ deliver the performance to help professionals, creators, developers, and students worldwide enhance creative workflows and build, operate, and connect metaverse applications.
@@ -329,9 +383,9 @@
             </li>
         </ul>
     </section>
-      <section class="padding col-2">
-        <h3 class="wrapper">AI Data Science Solutions For Every Industry</h3>
-        <ul class="wrapper">
+      <section class="res_padding col-2">
+        <h3 class="res_wrapper">AI Data Science Solutions For Every Industry</h3>
+        <ul class="res_wrapper res_gutter-xl">
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/ai_1.jpg" alt="description">
                 <div class="cardpadding">
@@ -350,9 +404,9 @@
             </li>
           </ul>
     </section>
-     <section class="padding col-2">
-        <h3 class="wrapper">GeForce RTX | Ultimate Ray Tracing & AI</h3>
-        <ul class="wrapper">
+     <section class="res_padding col-2">
+        <h3 class="res_wrapper">GeForce RTX | Ultimate Ray Tracing & AI</h3>
+        <ul class="res_wrapper res_gutter-xl">
             <li class="cp_card_base margin-padding-s">
                 <img src="assets/remake/rtx_a_6.jpg" alt="description">
                     <h3>Portal With RTX</h3>
@@ -392,10 +446,10 @@ Explore the massive open world of The Witcher as a mercenary monster slayer, Ger
             </li>
           </ul>
     </section>
-     <section class="padding">
-        <h3 class="wrapper">Interaction: hover, tab,  transition FX and linking</h3>
-         <h4 class="wrapper">Cards with background</h4>
-        <ul class="wrapper">
+     <section class="res_padding">
+        <h3 class="res_wrapper">Interaction: hover, tab,  transition FX and linking</h3>
+         <h4 class="res_wrapper">Cards with background</h4>
+        <ul class="res_wrapper">
 <!--      No link or CTA, no focus, no cursor change, transition fx disabled      -->
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/data_1.jpg" alt="description">
@@ -446,8 +500,8 @@ Explore the massive open world of The Witcher as a mercenary monster slayer, Ger
                 </div>
             </li>
         </ul>
-         <h4 class="wrapper">Cards without background</h4>
-         <ul class="wrapper">
+         <h4 class="res_wrapper">Cards without background</h4>
+         <ul class="res_wrapper">
              <li class="cp_card_base">
              <div>
                 <img src="assets/remake/data_1.jpg" alt="description">

@@ -94,6 +94,16 @@ main {
 .cp_modal > ul:nth-of-type(2) li+li {
     margin-top: var(--sp_px-s);
 }
+
+@media screen and (max-height: 880px) {
+    .cp_modal {
+    max-height: 100vh;
+    overflow-y: scroll;
+    }
+    .cp_modal::-webkit-scrollbar {
+    display: none;
+}
+}
 /*=============== components ===============*/
 label {
     display: block;

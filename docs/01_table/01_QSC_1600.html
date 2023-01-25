@@ -1,0 +1,1271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>01_QSC</title>
+    <meta name="description" content="Su Li's experiment">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/00_table_general.css">
+    <link rel="stylesheet" href="css/01_table_qsc.css">
+    <link rel="stylesheet" href="../05_cta/css/cta_styles_ver2.css">
+    <link rel="stylesheet" href="../08_grid/css/grid_p2_specs.css">
+    <meta name="theme-color" content="#fafafa">
+    <style>
+        :root {
+            --md_chip_container-spaceholder: max(var(--padding-lr), calc((100vw - var(--wrapper) - 16px) / 2));
+            --padding-lr: var(--res_padding-lr);
+            --wrapper: var(--res_wrapper);
+        }
+        .md_chip_scroll {
+            max-width: var(--md_chip_scroll-maxw);
+    margin-right: var(--md_chip_scroll-margin);
+    margin-left: var(--md_chip_scroll-margin);
+}
+    main.res_padding > :nth-child(n + 2) {
+    margin-top: 32px;
+}
+    </style>
+
+</head>
+
+<body>
+    <aside class="paddingsmall cp_disclaimer">
+    <div class="res_wrapper center">
+    This prototype is for design exploration, not meant for production use.     
+    </div>
+    </aside>
+    <main class="res_padding">
+            <ul class="res_wrapper md_filter_search">
+                <li class="cp_search">
+                    <input class="cp_searchinput" type="search" placeholder="Quick filter">
+                    <ul class="cp_searchdrop">
+                        <li><span>Processor Type:</span> Intel Skylake &nbsp; [20]</li>
+                        <li><span>Processor Type:</span> Intel Ice Lake &nbsp; [5]</li>
+                        <li><span>Processor Type:</span> Intel Scascade Lake &nbsp; [12]</li>
+                        <li><span>Processor Type:</span> Intel Coffee Lake &nbsp; [6]</li>
+                    </ul>
+                </li>
+                <li class="cp_search_text">51-100 of 1287 items</li>
+            </ul>
+            <div class="res_wrapper md_chip_scroll">
+                <ul class="md_chip_container">
+                    <li class="cp_filter_chip"><span>System Builder:</span> Aetina</li>
+                    <li class="cp_filter_chip"><span>ServerModel:</span> IPC-7130</li>
+                    <li class="cp_filter_chip"><span>NVIDIA GPU:</span> A30</li>
+                    <li class="cp_filter_chip"><span>NVIDIA GPU:</span> T4</li>
+                    <li class="cp_filter_chip"><span>NVIDIA GPU:</span> V100S</li>
+                    <li class="cp_filter_chip"><span>Processor Type:</span> Intel Skylake</li>
+                    <li class="cp_filter_chip"><span>Processor Type:</span> AMD Rome</li>
+                    <li class="cp_filter_chip"><span>Max CPU Per Node:</span> 2</li>
+                    <li class="cp_filter_chip"><span>Validation Type:</span> NVIDIA-Cerfitied</li>
+                    <li class="cp_filter_chip"><span>Validation Type:</span> NGC-Ready</li>
+                    <li class="cp_filter_chip_clear">Clear all filters</li>
+                </ul>
+            </div>
+            <div class="res_wrapper tablescroll">
+                <table class="cp_table_qsc">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col"><a>System Builder</a></th>
+                            <!--                        removed :target drop because checkboxes are better -->
+                            <th scope="col"><a>Server Model/Series</a></th>
+                            <th scope="col"><a>NVIDIA GPU</a></th>
+                            <th scope="col">
+                                <input type="checkbox" id="menuselectbox">
+                                <label class="menuselect" for="menuselectbox" tabindex="0">GPU Form Factor</label>
+                                <div class="dropmenu" id="dropdown2">
+                                    <label><input type="checkbox" id="random" name="random">Intel Skylake &nbsp; [20]</label>
+                                    <label><input type="checkbox" id="random" name="random">Intel Ice Lake &nbsp; [5]</label>
+                                    <label><input type="checkbox" id="random" name="random">Intel Scascade Lake &nbsp; [12]</label>
+                                    <label><input type="checkbox" id="random" name="random">Intel Coffee Lake &nbsp; [6]</label>
+                                </div>
+                            </th>
+                            <th scope="col"><a>Processor Type</a>
+                                <!--
+                            <div class="dropmenu" id="dropdown">
+                                <label><input type="checkbox" id="random" name="random">Intel Skylake &nbsp; [20]</label>
+                                <label><input type="checkbox" id="random" name="random">Intel Ice Lake &nbsp; [5]</label>
+                                <label><input type="checkbox" id="random" name="random">Intel Scascade Lake &nbsp; [12]</label>
+                                <label><input type="checkbox" id="random" name="random">Intel Coffee Lake &nbsp; [6]</label>
+                            </div>
+-->
+                            </th>
+                            <th scope="col"><a>Max GPUs</a></th>
+                            <th scope="col"><a>Max CPUs</a></th>
+                            <th scope="col"><a>Validation Type</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Acer
+                            </td>
+                            <td>
+                                Altos P550 F4
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ADLink
+                            </td>
+                            <td>
+                                DLAP-4000
+                            </td>
+                            <td>
+                                RTX 6000
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Coffee Lake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ADLink
+                            </td>
+                            <td>
+                                MVP-6100
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Coffee Lake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-640V2
+                            </td>
+                            <td>
+                                A100 40GB
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Ice Lake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                NVIDIA-Certified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-640V2
+                            </td>
+                            <td>
+                                A30
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Ice Lake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                NVIDIA-Certified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6400
+                            </td>
+                            <td>
+                                A100 40GB
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6400
+                            </td>
+                            <td>
+                                A30
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6200
+                            </td>
+                            <td>
+                                A100 40GB
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6200
+                            </td>
+                            <td>
+                                A30
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                USM-500
+                            </td>
+                            <td>
+                                RTX 6000
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Coffee Lake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                USM-501
+                            </td>
+                            <td>
+                                RTX A6000
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Coffee Lake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                NVIDIA-Certified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6400
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6200
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6100
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                NGC-Ready
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                MIC-770Q-00A1
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Coffee Lake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6420
+                            </td>
+                            <td>
+                                V100 32GB
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6400
+                            </td>
+                            <td>
+                                V100 32GB
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6400
+                            </td>
+                            <td>
+                                V100 32GB
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6420
+                            </td>
+                            <td>
+                                V100S
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6400
+                            </td>
+                            <td>
+                                V100S
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6200
+                            </td>
+                            <td>
+                                V100S
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                ACP-2020G
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Coffee Lake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                ACP-2020G
+                            </td>
+                            <td>
+                                RTX A6000
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Coffee Lake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                IPC-7130
+                            </td>
+                            <td>
+                                RTX A6000
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Coffee Lake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                SKY-6420
+                            </td>
+                            <td>
+                                A30
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Advantech
+                            </td>
+                            <td>
+                                ASMB-622+HPC-6240
+                            </td>
+                            <td>
+                                A2
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                Intel Ice Lake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Aetina
+                            </td>
+                            <td>
+                                AIS-D422-A1
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                NGC-Ready
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Aetina
+                            </td>
+                            <td>
+                                AIS-D422-A1
+                            </td>
+                            <td>
+                                A2
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                NVIDIA-Certified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R685 F5
+                            </td>
+                            <td>
+                                A100 40GB
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                AMD Rome
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R685 F5
+                            </td>
+                            <td>
+                                RTX A6000
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                AMD Rome
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                NVIDIA-Certified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R685 F5
+                            </td>
+                            <td>
+                                A40
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                AMD Rome
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                NVIDIA-Certified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere P550 F4
+                            </td>
+                            <td>
+                                RTX 6000 Passive
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R680 F4
+                            </td>
+                            <td>
+                                RTX 8000
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere P550 F4
+                            </td>
+                            <td>
+                                RTX 8000 Passive
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R389 F4
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R389 F4
+                            </td>
+                            <td>
+                                RTX 8000 Passive
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere P550 F4
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                NGC-Ready
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R680 F4
+                            </td>
+                            <td>
+                                V100S
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Cascade Lake
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R480 F4
+                            </td>
+                            <td>
+                                V100S
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                Intel Skylake
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R385 F5
+                            </td>
+                            <td>
+                                T4
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                AMD Rome
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R385 F5
+                            </td>
+                            <td>
+                                RTX 6000 Passive
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                AMD Rome
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-10">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R385 F5
+                            </td>
+                            <td>
+                                RTX 8000 Passive
+                            </td>
+                            <td>
+                                PCIe Gen 3
+                            </td>
+                            <td>
+                                AMD Rome
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                        <tr class="_1-base _idGenTableRowColumn-9">
+                            <td>
+                                Altos Computing
+                            </td>
+                            <td>
+                                BrainSphere R385 F5
+                            </td>
+                            <td>
+                                RTX A6000
+                            </td>
+                            <td>
+                                PCIe Gen 4
+                            </td>
+                            <td>
+                                AMD Milan
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Qualified
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="res_wrapper md_pagination">
+                <li>
+                    <span class="cp_select_text">Iterms per page</span>
+                    <select class="cp_select">
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>40</option>
+                        <option>50</option>
+                        <option>60</option>
+                        <option>70</option>
+                        <option>80</option>
+                    </select>
+                </li>
+                <li>
+                    <img src="assets/qsc/av-previous.svg">
+                    <img src="assets/qsc/av-play-1.svg">
+                    <select class="cp_select">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                    </select>
+                    <img src="assets/qsc/av-play.svg">
+
+                    <img src="assets/qsc/av-next.svg">
+                </li>
+            </ul>
+            <ul class="res_wrapper md_cta_container">
+                <li><a class="cp_cta_primary large iconleft" href="#"><img class="ic_svg" src="assets/qsc/common-share.svg">Share Result</a></li>
+                <li><a class="cp_cta_primary large iconleft" href="#"><img class="ic_svg" src="assets/qsc/social-chat-message.svg">Contat Sale</a></li>
+            </ul>
+    </main>
+
+</body></html>

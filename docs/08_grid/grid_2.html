@@ -9,10 +9,12 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/grid_p2_specs.css">
     <link rel="stylesheet" href="css/grid_p2_design.css">
     
-    <meta name="theme-color" content="#fafafa">
+<!--    <meta name="theme-color" content="#fafafa">-->
     <style>
 
     </style>
@@ -22,21 +24,130 @@
 <body>
     <section class="res_padding section_intro">
     <h1 class="res_wrapper">Responsive Grid Part Two</h1>
-        <div class="toc">
+        <div class="toc quote res_wrapper">
+        <p>Designer quotes</p>
+            <ul>
+                <li><q>Designed in response to the internal pressures of content and the outer edge or frame, an effective grid is not a rigid formula but a <span class="underline">flexible</span> and resilient <span class="underline">structure</span>, a skeleton that moves in concert with the muscular mass of information.</q>
+                <p>Allen Lupton</p>
+                </li>
+                <li><q>Grid isn't a prison. It’s an underlying structure and a harmonious set of <span class="underline">proportions</span>. There’s a helpful set of guides that enable the designer to organize things with <span class="underline"> hierarchy, clarity and unity.</span></q>
+                <p>Sean Adams</p></li>
+                <li><q>Simplicity, order and visual neutrality can facilitate inclusivity… but they also pose a potential threat through the aesthetic & intellectual conformity. The overused templates may lead to an experiential landscape that’s repetitive, undifferentiated and mind-numbingly dull. 
+</q>
+                <p>Timothy Samara</p></li>
+            </ul>
+        
+        </div>
+        <div class="toc res_wrapper">
         <p>Table of contents</p>
     <ul>
-        <li><a href="#">Space: columns and gaps</a>A preview of viewports, columns, and gutters</li>  
-        <li><a href="#tab_1">Tabular grid</a>Fixed column number under breakpoints</li> 
-        <li><a href="#">Tabular grid</a>Minimum column size that scales up</li> 
-        <li><a href="#">One direction grid - multi row</a>Auto adjusts columns based on fixed width. </li>
-        <li><a href="#">One direction grid - multi row</a>Fixed column number under breakpoints</li>
-        <li><a href="#">One direction grid - multi row</a>Uneven space distribution</li>
+        <li>
+            <a href="#space">Space: columns and gaps</a>
+            <p>A preview of viewports, columns, and gutters</p>
+        </li>  
+        <li>
+            <a href="#tab_1">Tabular grid</a>
+            <p>Fixed column number under breakpoints</p>
+        </li> 
+        <li>
+            <a href="#tab_2">Tabular grid</a>
+            <p>Minimum column size that scales up</p>
+        </li> 
+        <li>
+            <a href="#oned_1">One direction grid - multi row</a>
+            <p>Auto adjusts columns based on fixed width</p>
+        </li>
+        <li>
+            <a href="#oned_2">One direction grid - multi row</a>
+            <p>Fixed column number under breakpoints</p>
+        </li>
+        <li>
+            <a href="#oned_3">One direction grid - multi row</a>
+            <p>Uneven space distribution</p>
+        </li>
+        <li>
+            <a href="#oned_4">One direction grid - multi row</a>
+            <p> Inline flow items that wrap to the next line</p>
+        </li>
+        <li>
+            <a href="#oned_5">One direction grid - single row</a>
+            <p>Navigation style</p>
+        </li>
+        <li>
+            <a href="#oned_6">One direction grid - single row</a>
+            <p>Asymmetrical layout. Uneven space share</p>
+        </li>
+        <li>
+            <a href="#oned_7">One direction grid - multi column</a>
+            <p>Vertical masonry arrangement</p>
+        </li>
+        <li>
+            <a href="#mod_1">Modular grid</a>
+            <p>Vertical masonry arrangement</p>
+        </li>
+        <li>
+            <a href="#mod_2">Modular grid</a>
+            <p>Complex composition 1</p>
+        </li>
+        <li>
+            <a href="#mod_3">Modular grid</a>
+            <p>Complex composition 2</p>
+        </li>
+        <li>
+            <a href="#mod_4">Modular grid</a>
+            <p>Complex composition 3</p>
+        </li>
+        <li>
+            <a href="#cara_1">One direction grid - single row scroll</a>
+            <p>Carousel</p>
+        </li>
+        <li>
+            <a href="#cara_2">Tabular grid - multi row scroll</a>
+            <p>Carousel</p>
+        </li>
+        <li>
+            <a href="#cara_3">Modular grid - multi row scroll</a>
+            <p>Carousel</p>
+        </li>
+    </ul>
+        </div>
+        <div class="toc res_wrapper">
+        <p>Prototype links</p>
+    <ul>
+        <li>
+            <a href="../10_card/remake%20_1600.html" target="_blank">Cards</a>
+            <p>A remake of the cards on our current website</p>
+        </li>
+        <li>
+            <a href="../06_geforcenews/news_home%20_ver2_1600.html" target="_blank">GeForce News</a>
+            <p>A variety of text, image, and link compositions</p>
+        </li>
+        <li>
+            <a href="../07_list/list_dark_1600.html" target="_blank">List</a>
+            <p>Ordered, unordered, definition lists </p>
+        </li>
+        <li>
+            <a href="../01_table/01_QSC_1600.html" target="_blank">Tables 1</a>
+            <p>QSC page with filters, a table, and responsive scrolling</p>
+        </li> 
+        <li>
+            <a href="../01_table/03_ISV_1600.html" target="_blank">Table 2</a>
+            <p>ISV page with filters, a table and responsive scrolling</p>
+        </li> 
+        <li>
+            <a href="../02_dli/dli_card_1600.html" target="_blank">DLI instructor 1</a>
+            <p>Instructor’s search / list page</p>
+        </li>
+        <li>
+            <a href="../02_dli/dli_detail_1600.html" target="_blank">DLI Instrudctor 2</a>
+            <p>Instructor’s detail page</p>
+        </li>
     </ul>
         </div>
     </section>
     <section class="res_padding section_specs">
         <div class="res_wrapper">
-            <h2>Space: columns and gaps</h2>
+            <h2 id="space">Space: columns and gaps</h2>
             <section class="gridcontainer res_desktop-l">
                 <p><span class="material-icons">desktop_mac</span>Desktop large: 1600px+</p>
                 <ul class="col-1">
@@ -333,7 +444,7 @@
                     <li>11</li>
                 </ul>
             </section>
-             <section>
+             <section id="tab_2">
                 <p><span class="material-icons">grid_on</span>Tabular grid. Minimum column size that scales up.</p>                    <p class="description">Auto add columns: minimum 240px, M vertical & horizontal gutters, viewport space evenly divided among the columns.</p>
 
                 <ul class="res_grid_space itemcontainer">
@@ -350,7 +461,7 @@
                     <li>11</li>
                 </ul>
             </section>
-            <section>
+            <section id="oned_1">
                 <p><span class="material-icons">table_rows</span>One direction grid - multi row. Auto adjusts column number based on fixed column width.</p>                    <p class="description">Auto add columns: 240px fixed, M vertical & horizontal gutters, center aligned.</p>
 
                 <ul class="res_flex_fixed pixel itemcontainer">
@@ -367,7 +478,7 @@
                     <li>11</li>
                 </ul>
             </section>
-             <section>
+             <section id="oned_2">
                 <p><span class="material-icons">table_rows</span>One direction grid - multi row. Fixed column number under breakpoints.</p>                    <p class="description">Auto add columns: fixed width under viewports(33% / 25% / 20% / 15% / 12% / 10%), M vertical & horizontal gutters, center aligned.</p>
 
                 <ul class="res_flex_fixed percentage itemcontainer">
@@ -384,7 +495,7 @@
                     <li>11</li>
                 </ul>
             </section>
-             <section>
+             <section id="oned_3">
                 <p><span class="material-icons">table_rows</span>One direction grid - multi row. Uneven space distribution.</p>                    <p class="description">Auto add columns: fixed width under viewports(33% / 25% / 20% / 15% / 12% / 10%), M vertical & horizontal gutters, center aligned, uneven free space distribution.</p>
 
                 <ul class="res_flex_fixed percentage grow itemcontainer">
@@ -401,8 +512,8 @@
                     <li>11</li>
                 </ul>
             </section>
-             <section>
-                <p><span class="material-icons">notes</span>One direction grid - multi row. Inline flow items that wrap to the next line.</p>                    <p class="description" style="flex-basis: 100%;">Item content width, S vertical & horizontal gutters, left aligned.</p>
+             <section id="oned_4">
+                <p><span class="material-icons">notes</span>One direction grid - multi row. Inline flow items that wrap to the next line.</p>                    <p class="description">Item content width, S vertical & horizontal gutters, left aligned.</p>
 
                 <ul class="res_flex_variable itemcontainer">
                     <li>1</li>
@@ -419,8 +530,8 @@
                     <li style="flex-basis: 80px">12</li>
                 </ul>
             </section>
-             <section>
-                <p><span class="material-icons">notes</span>One direction grid - Single row.</p>                    <p class="description" style="flex-basis: 100%;">Item content width, S horizontal gutters, space between two groups.</p>
+             <section id="oned_5">
+                <p><span class="material-icons">notes</span>One direction grid - Single row. Navigation style.</p>                    <p class="description">Item content width, S horizontal gutters, space between two groups.</p>
                 <ul class="res_flex_variable itemcontainer">
                     <li style="flex-basis: min(10vw, 120px); margin-right: auto;">1</li>
                     <li style="flex-basis: min(5vw, 50px);">2</li>
@@ -428,7 +539,21 @@
                     <li style="flex-basis: min(8vw, 80px);">4</li>
                 </ul>
             </section>
-             <section>
+            <section id="oned_6">
+                <p><span class="material-icons">notes</span>One direction grid - Single row. Asymmetrical layout. Uneven space share.</p>                    
+                <p class="description">A fixed share / percentage: 3:1</p>
+                <ul class="res_grid_uneven itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                </ul>
+                <p class="description" style="margin-top: var(--res_gutter-m);">A fixed 240px width for sidebars and the rest goes to main content. Columns reposition under smaller viewports. </p>
+                <ul class="res_grid_uneven2 itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </section>
+             <section id="oned_7">
                 <p><span class="material-icons">view_column</span>One direction grid - multi column. Vertical masonry arrangement.</p>
                  <p class="description">Auto add columns: minimum 320px, L vertical & S horizontal gutters, viewport space evenly divided among the columns, item height varies.</p>
                 <ul class="res_col itemcontainer">
@@ -445,9 +570,9 @@
                     <li style="--item-padding: 60px">11</li>
                 </ul>
             </section>
-             <section>
+             <section id="mod_1">
                 <p><span class="material-icons">dashboard</span>Modular grid. Vertical masonry arrangement.</p>
-                <p class="description">Fixed height</p>
+                <p class="description">All items share the same underlying grid unit, establishing special relationships in width(2 units) and height(3 or 4 units).</p>
                 <ul class="res_modular_1 itemcontainer">
                     <li>1</li>
                     <li>2</li>
@@ -464,9 +589,9 @@
 -->
                 </ul>
             </section>
-            <section>
+            <section id="mod_2">
                 <p><span class="material-icons">dashboard</span>Modular grid. Complex composition 1.</p>
-                <p class="description">Fixed height</p>
+                <p class="description">All items share the same underlying grid unit: 2x7 units, 1x3 units, 1x4 units.</p>
                 <ul class="res_modular_2 itemcontainer">
                     <li style="grid-column: span 2; grid-row: span 7;">1</li>
                     <li class="square">2</li>
@@ -475,9 +600,9 @@
                     <li class="square">5</li>
                 </ul>
             </section>
-                        <section>
+            <section id="mod_3">
                 <p><span class="material-icons">dashboard</span>Modular grid. Complex composition 2.</p>
-                <p class="description">Fixed height</p>
+                <p class="description">All items share the same underlying grid unit: 3x1 units, 1x2 units, 2x1 units, 1 unit.</p>
                 <ul class="res_modular_3 itemcontainer">
                     <li style="grid-column: 1 / -1;">1</li>
                     <li style="grid-row: span 2;">2</li>
@@ -487,13 +612,13 @@
                     <li style="grid-column: span 2;">6</li>
                 </ul>
             </section>
-            <section>
+            <section id="mod_4">
                 <p><span class="material-icons">dashboard</span>Modular grid. Complex composition 3.</p>
-                <p class="description">Fixed height</p>
+                <p class="description">All items share the same underlying grid unit: 1x3 units,  2x1 units, 1 unit.</p>
                 <ul class="res_modular_4 itemcontainer">
                     <li class="rowspan">1</li>
                     <li class="colspan">2</li>
-                    <li>3</li>
+                    <li style="aspect-ratio: 1 / 1;">3</li>
                     <li class="rowspan hide1">4</li>
                     <li class="hide2">5</li>
                     <li  class="colspan">6</li>
@@ -503,8 +628,8 @@
     </section>
      <section class="section_scroll">
          <div class="res_padding">
-            <h2 class="res_wrapper">overflow & scroll</h2>
-             <p class="res_wrapper divider"><span class="material-icons">view_carousel</span>One direction grid - single row scroll. Carousel.</p>
+            <h2 class="res_wrapper">Overflow & scroll</h2>
+             <p id="cara_1" class="res_wrapper divider"><span class="material-icons">view_carousel</span>One direction grid - single row scroll. Carousel.</p>
             <p class="res_wrapper description">Item # determines the column #, fixed width: min(80vw, 300px), S horizontal gutter, horizontal scroll / snap.</p>
             <ul class="res_scroll itemcontainer">
                     <li>1</li>
@@ -517,11 +642,11 @@
                     <li>8</li>
                 </ul>
              
-            <p class="res_wrapper divider"><span class="material-icons">view_carousel</span>Tabular grid - multi row scroll. Carousel.</p>
+            <p id="cara_2" class="res_wrapper divider"><span class="material-icons">view_carousel</span>Tabular grid - multi row scroll. Carousel.</p>
             <p class="res_wrapper description">
 Item # determines the column #, fixed width: min(80vw, 300px), XXS horizontal gutter, M vertical gutter, horizontal scroll / snap.</p>
              <div class="res_scroll_flowcontainer">
-            <ul class="res_scroll_items itemcontainer">
+            <ul class="res_scroll_tabular itemcontainer">
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
@@ -549,6 +674,7 @@ Item # determines the column #, fixed width: min(80vw, 300px), XXS horizontal gu
             </div>
              
              
+<!--
              <p class="res_wrapper divider"><span class="material-icons">view_carousel</span>Tabular grid - multi row scroll. Carousel.</p>
             <p class="res_wrapper description">Item # determines the column #, fixed width: min(80vw, 300px), XXS horizontal gutter, M vertical gutter, horizontal scroll / snap.</p>
             <ul class="res_scroll_2 itemcontainer">
@@ -576,6 +702,41 @@ Item # determines the column #, fixed width: min(80vw, 300px), XXS horizontal gu
                     <li>22</li>
                     <li>23</li>
                 </ul>
+-->
+             
+             
+             <p id="cara_3" class="res_wrapper divider"><span class="material-icons">view_carousel</span>Modular grid - multi row scroll.  horizontal masonry. Carousel.</p>
+            <p class="res_wrapper description">
+Item # determines the column #, fixed width: min(80vw, 300px) - 2 units, S horizontal and vertical gutter, horizontal scroll / snap.</p>
+             <div class="res_scroll_flowcontainer">
+            <ul class="res_scroll_modular itemcontainer">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                </ul>
+            </div>
          </div>
     </section>
 </body>

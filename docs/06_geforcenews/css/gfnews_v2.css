@@ -22,7 +22,7 @@
 
 
         --news-l2-grid: 1fr 1fr;
-        --l2-gap-ver: var(--res_gutter-m);
+        --l2-gap-ver: var(--res_gutter-l);
 
         --card-l3-grid: 1fr 1fr 1fr;
 

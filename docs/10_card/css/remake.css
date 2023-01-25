@@ -185,7 +185,7 @@
 }
 
 
-.homecardlarge :where(.cp_card_base, .introgrid) {
+.homecardlarge :is(.cp_card_base, .introgrid) {
     flex: 0 0 var(--cp_card-homelargew);
     cursor: pointer;
 }
