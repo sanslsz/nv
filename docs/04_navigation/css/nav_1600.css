@@ -1,0 +1,532 @@
+:root {
+    
+    
+    --cp_nav_global-height: 44px;
+    --cp_nav_site-height: 46px;
+    --cp_nav_inpage-height: 36px;
+    
+    --cp_nav_site-title-fsize: 18px;
+    --cp_nav_site-item-fsize: 16px;
+    
+    --cp_nav_inpage-main-padding: 4px;
+    --cp_nav_inpage-title-fsize: 14px;
+    --cp_nav_inpage-item-fsize: 16px;
+/*    the 24px icon space is same as flex gap but list them here in case they change in the future*/
+    --cp_nav_inpage_24pxicon_left: 15px;
+    --cp_nav_inpage_24pxicon_right: 15px;
+    
+    --nav-gap: 15px;
+    --nav-display-desk: none;
+    --nav-display-ellipsis: none;
+    --nav-flex-justify: space-between;
+    --nav-display-truncate: none;
+/*    truncate items have higher specificity than display-desk */
+    
+    
+    --cp_nav_mega-col: 3;
+    
+    
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+        
+    --cp_nav_inpage-height: 54px;
+    
+    --cp_nav_site-title-fsize: 20px;
+    
+    --cp_nav_inpage-main-padding: 11px;
+    --cp_nav_inpage-title-fsize: 16px;
+    --cp_nav_inpage_24pxicon_left: 30px;
+    --cp_nav_inpage_24pxicon_right: 30px;
+        
+    --content-grid-template: repeat(auto-fill, minmax(400px, 1fr));
+        
+    --nav-gap: 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+    
+    --cp_nav_site-height: 66px;
+    --cp_nav_inpage-height: 70px;
+    
+    --cp_nav_site-title-fsize: 24px;
+    
+    --cp_nav_inpage-title-fsize: 20px;
+    --cp_nav_inpage-item-fsize: 14px;
+        
+        
+    --nav-margin-left: 96px;
+    --nav-flex: flex;
+    --nav-display-desk: block;
+    --nav-display-mobile: none;
+    --nav-display-ellipsis: unset;
+    --nav-flex-justify: unset;
+        
+        
+    --cp_nav_mega-col: 6;
+        
+        
+        
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+            
+    --cp_nav_site-title-fsize: 28px;
+    
+    --cp_nav_inpage-title-fsize: 24px;
+    --cp_nav_inpage-item-fsize: 16px;
+        
+        
+        --nav-display-ellipsis: none;
+        --nav-display-truncate: unset;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {
+        /*        --li-padding: 48px;*/
+    }
+}
+
+body {
+/*    background-color: var(--sw-3);*/
+}
+
+/*========================== global nav  ===========================*/
+.cp_nav_global {
+    background-color: var(--nv-16);
+    padding-left: var(--res_padding-lr);
+    padding-right: var(--res_padding-lr);
+}
+.cp_nav_global > ul {
+    display: flex;
+    height: var(--cp_nav_global-height);
+    align-items: center;
+    justify-content: var(--nav-flex-justify);
+    gap: 24px;
+}
+.cp_nav_global .ic_menu {
+    display: var(--nav-display-mobile);
+    line-height: 1;
+/*    icon alignement, not needed after span's display block */
+}
+.cp_nav_global .material-icons {
+    display: block;
+/*    icon alignment */
+    cursor: pointer;
+}
+.cp_nav_global .logo {
+    flex-shrink: 0;
+}
+.cp_nav_global .logo img {
+    height: 20px;
+    margin-right: 32px;
+}
+.cp_nav_global li:not(.ic_menu, .logo, .ic_search) {
+    display: var(--nav-display-desk);
+    cursor: pointer;
+}
+.cp_nav_global li:nth-of-type(6) {
+    margin-right: auto;
+}
+.cp_nav_global .ic_search {
+    margin-left: var(--nav-margin-left);
+    line-height: 1;
+/*    icon alignment */
+}
+
+
+/*========================== site nav  ===========================*/
+
+.cp_nav_site {
+    color: var(--nv-16);
+    background-color: var(--nv-0);
+    padding: 0 var(--res_padding-lr);
+}
+.cp_nav_site > ul {
+    display: flex;
+    gap: var(--nav-gap);
+    align-items: center;
+    height: var(--cp_nav_site-height);
+}
+.sitename {
+    font-weight: 700;
+    font-size: var(--cp_nav_site-title-fsize);
+    flex: 0 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: auto;
+}
+.sitename ~ li {
+    flex-shrink: 0;
+    color: var(--nv-9-5-99);
+}
+.cp_nav_site > ul > li:nth-of-type(n+6):nth-last-of-type(n+3) {
+    display: var(--nav-display-truncate);
+/*    higher specificity than than other list items css*/
+}
+/*
+.cp_nav_site li:nth-of-type(n+3):nth-of-type(-n+5) {
+    color: red;
+}
+*/
+.cp_nav_site  > ul > li:not(.sitename, .ic_ellipsis, .ic_menu) {
+    display: var(--nav-display-desk);
+    padding-right: 24px;
+    position: relative;
+    cursor: pointer;
+}
+.cp_nav_site  > ul > li:not(.sitename, .ic_ellipsis, .ic_menu)::after {
+    content: 'arrow_drop_down';
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.cp_nav_site .ic_menu {
+    display: var(--nav-display-mobile);
+    cursor: pointer;
+    margin-left: auto;
+}
+
+
+/*========================== site nav - drop down  ===========================*/
+.cp_nav_site .ic_ellipsis {
+    display: var(--nav-display-ellipsis);
+    position: relative;
+}
+.cp_nav_site .material-icons {
+    cursor: pointer;
+    display: block;
+/*    vertical alignment */
+}
+.cp_nav_site .ic_ellipsis .hovermenu {
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    right: -80px;
+    width: fit-content;
+    white-space: nowrap;
+    padding: 24px;
+    background-color: var(--nv-15-5-f7);
+    color: var(--nv-1-5-1a);
+    font-weight: 400;
+    display: none;
+/*    fix hover dissappear due to gap */
+    border-top: transparent 28px solid;
+    background-clip: padding-box;
+}
+.cp_nav_site .ic_ellipsis::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: var(--nv-15-5-f7);
+    position: absolute;
+    transform: translateY(32px) rotate(45deg);
+    z-index: 1;
+    display: none;
+}
+.ic_ellipsis:hover .hovermenu, .ic_ellipsis:hover::before {
+    display: revert;
+}
+.ic_ellipsis:hover span {
+    color: var(--nv-green);
+}
+
+
+.hovermenu li {
+    cursor: pointer;
+}
+.ic_ellipsis li:not(.category) {
+    padding-left: 16px;
+}
+.ic_ellipsis li:not(.category):hover {
+    color: var(--nv-green);
+}
+.hovermenu li:not(:last-child) {
+    margin-bottom: var(--space-xs);
+}
+.hovermenu .category {
+    padding-right: 24px;
+    position: relative;
+    width: fit-content;
+}
+.hovermenu .category::after {
+    content: 'arrow_drop_down';
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.hovermenu li + .category {
+    margin-top: var(--space-xl);
+}
+
+
+/*========================== inpage nav  ===========================*/
+
+.cp_nav_inpage {
+    background-color: #1a1a1ae6;
+    backdrop-filter: blur(12px);
+    padding: 0 var(--res_padding-lr);
+    color: var(--nv-16);
+}
+.cp_nav_inpage .main {
+    display: flex;
+    align-items: center;
+    gap: var(--nav-gap);
+    white-space: nowrap;
+    min-height: var(--cp_nav_inpage-height);
+}
+.cp_nav_inpage .pagename {
+    font-size: var(--cp_nav_inpage-title-fsize);
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    color: var(--nv-16);
+}
+
+.cp_nav_inpage .main li:not(.cp_cta_small) {
+    display: var(--nav-display-desk);
+    cursor: pointer;
+}
+
+.cp_nav_inpage .mob {
+/*    display: none;*/
+    font-weight: 700;
+    font-size: 16px;
+/*    max-height: 0px;*/
+    height: 0px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, height 0.2s ease-in-out 0.1s;
+    overflow: hidden;
+}
+.cp_nav_inpage .mob li:first-of-type {
+    margin-top: 48px;
+}
+.cp_nav_inpage .mob li a {
+    color: var(--nv-9-5-99);
+}
+.cp_nav_inpage .mob li a:hover {
+    color: var(--nv-green);
+}
+.cp_nav_inpage .mob li + li {
+    margin-top: 32px;
+}
+
+
+.cp_nav_inpage #inpage_checkbox {
+    display: none;
+}
+@media screen and (max-width: 1023px) {
+    .cp_nav_inpage .main {
+        align-items: flex-start;
+        gap: var(--nav-gap);
+        padding-top: var(--cp_nav_inpage-main-padding);
+        padding: var(--cp_nav_inpage-main-padding) 0px;
+    }
+    .cp_nav_inpage .pagename {
+        padding-right: calc(24px + var(--cp_nav_inpage_24pxicon_left));
+        position: relative;
+        margin-top: calc(var(--space-s) - 4px);
+    }
+    .cp_nav_inpage .pagename::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url(../assets/chevron_24px.svg) center / cover;
+/*        background: red;*/
+        position: absolute;
+        top: calc(var(--space-s) + 2px);
+/*        top: 50%;*/
+        right: 0px;
+        transform: translateY(-50%);
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+    #inpage_checkbox:checked + .main .pagename {
+    white-space: normal;
+}
+    #inpage_checkbox:checked + .main .pagename::after {
+        background-image: url(../assets/chevron_24px%20_green.svg);
+        transform: translateY(-50%) rotate(180deg);
+/*        transform-origin: center center;*/
+    }
+    #inpage_checkbox:checked ~ .mob {
+/*    padding: 48px 0px;*/
+/*    max-height: 100vh;*/
+    height: 98vh;
+    opacity: 1;
+    transition: height 0.2s ease-in-out, opacity 0.2s ease-in-out 0.1s;
+}
+}
+
+
+/*===================== mega =========================*/
+
+.cp_nav_mega {
+    padding: var(--sp_px-xxxl) var(--res_padding-lr);
+    background-color: var(--nv-16);
+}
+.cp_nav_mega > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, max-content));
+/*    grid-template-columns: repeat(auto-fit, minmax(max-content, 140px));*/
+/*    grid-template-columns: repeat(var(--cp_nav_mega-col), auto);*/
+    justify-content: start;
+    grid-gap: var(--res_gutter-l) var(--res_gutter-m);
+}
+.cp_nav_mega ul {
+    line-height: 1.2;
+    font-size: 14px;
+}
+.cp_nav_mega ul li:first-child {
+    font-weight: bold;
+/*    margin-bottom: var(--sp_em-xl);*/
+    border-bottom: 1px solid var(--nv-12-5-cc);
+    padding-bottom: var(--sp_em-m);
+}
+.cp_nav_mega ul li:not(:first-child) {
+    margin-top: var(--sp_em-m);
+}
+
+@media screen and (max-width: 767px) {
+    .cp_nav_mega {
+        display: none;
+    }
+}
+
+/*=================  cp_footer  =================*/
+.cp_footer {
+    background-color: var(--nv-2-22);
+    color: var(--nv-14-dd);
+    font-size: 14px;
+
+}
+.cp_footer > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--res_gutter-xl);
+}
+ .directory {
+    display: flex;
+    flex-wrap: wrap;
+   gap: var(--res_gutter-m);
+    flex: 0 0 auto;
+}
+.directory ul {
+    line-height: 1.2;
+    flex: 1 0 150px;
+}
+
+.directory ul li:first-child {
+    font-weight: bold;
+/*    margin-bottom: var(--sp_em-xl);*/
+    border-bottom: 1px solid var(--nv-12-5-cc);
+    padding-bottom: var(--sp_em-m);
+}
+.directory ul li:not(:first-child) {
+    margin-top: var(--sp_em-m);
+}
+
+
+.sub_social {
+    flex: 0 0 auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+.sub_social li + li {
+    margin-top: var(--res_gutter-m);
+}
+.sub_social figure {
+    display: flex;
+    gap: var(--sp_px-l);
+}
+.sub_social img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .sub_social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--res_gutter-m);
+        flex: 1 0 80%;
+        order: 1;
+    }
+    .directory {
+        flex: 1 0 80%;
+    }
+    .sub_social li {
+/*        flex: 0 0 50%;*/
+    }
+    .sub_social li + li {
+    margin-top: unset;
+}
+    
+    
+}
+
+.fineprint {
+/*    margin-top: calc(var(--res_padding-tb)/2);*/
+    margin-top: var(--sp_px-xxxxl);
+}
+.fineprint img {
+/*    width: min(30vw, 120px);*/
+    height: 20px;
+}
+.fineprint ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp_em-xs) var(--sp_em-m);
+    margin: var(--sp_px-l) 0 var(--sp_px-xs);
+}
+.fineprint li:not(:last-child)::after {
+    content: "|";
+    margin-left: var(--sp_em-m);
+    color: var(--nv-6-5-66);
+}
+
+
+/*========================== page   ===========================*/
+
+.fullnav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+main ul {
+    display: grid;
+    grid-gap: var(--space-l) 0px;
+    grid-template-columns: var(--content-grid-template);
+}
+main li:nth-child(odd) {
+    padding: var(--space-xl);
+    background-color: var(--nv-16);
+}
+main h2 {
+    margin-bottom: 1rem;
+}
+main img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
