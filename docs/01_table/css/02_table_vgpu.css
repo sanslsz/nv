@@ -146,10 +146,6 @@ tr:not(.transparent, .transparentlast) td:nth-child(13)::after {
         scrollbar-width: none;
     }
 
-    .tablescroll::-webkit-scrollbar {
-        display: none;
-    }
-
     thead tr:first-child th:first-child {
         position: sticky;
         left: 0;
@@ -179,5 +175,13 @@ tr:not(.transparent, .transparentlast) td:nth-child(13)::after {
 
     tbody tr:not(.vendor, .transparent, .transparentlast):nth-child(even) td:first-child {
         background-color: var(--nv-15-ee);
+    }
+}
+
+/*=================== hide table's scroll bar on non-mobile devices (for the original table design) ===================*/
+
+@media screen and (any-hover: hover) {
+        .tablescroll::-webkit-scrollbar {
+        display: none;
     }
 }

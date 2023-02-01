@@ -1,0 +1,4012 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>02_vGPU</title>
+    <meta name="description" content="Su Li's experiment">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/00_table_general.css">
+    <link rel="stylesheet" href="css/02_table_vgpu.css">
+    <meta name="theme-color" content="#fafafa">
+    <style>
+/*    ================= scrollbar, no padding right, sticky shadow ======================*/
+        
+        @media screen and (max-width: 1023px) {
+            
+            
+    .scrollindicator {
+        width: unset;
+        max-width: var(--md_chip_scroll-maxw);
+        margin-right: var(--md_chip_scroll-margin);
+        margin-left: calc((100vw - var(--wrapper) - 16px)/2 - var(--padding-lr));
+    }
+    .scrollindicator table {
+        margin-right: var(--md_chip_container-spaceholder);
+    }
+        
+        thead tr:first-child th:first-child {
+        --cellcolor: var(--nv-6-5-66);
+         background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--cell-lr-s), var(--cellcolor) var(--cell-lr-s));
+            padding-right: calc(var(--cell-lr-s)*2);
+    }
+            .vendor td:first-child {
+       --cellcolor: var(--sw-14-5);
+        background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--cell-lr-s), var(--cellcolor) var(--cell-lr-s));
+    }
+         tbody tr:not(.vendor, .transparent, .transparentlast) td:first-child {
+        --cellcolor: var(--nv-15-5-f7);
+        background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--cell-lr-s), var(--cellcolor) var(--cell-lr-s));
+        padding-right: calc(var(--cell-lr-s)*2);
+
+    }
+
+    tbody tr:not(.vendor, .transparent, .transparentlast):nth-child(even) td:first-child {
+        --cellcolor: var(--nv-15-ee);
+    }
+        
+        
+        
+        
+        
+        }
+        
+        
+/*============ scroll bar customization for non touch screen ==============*/
+
+@media screen and (max-width: 1023px) and (any-hover: hover) {
+     .tablescroll::-webkit-scrollbar {
+        display: initial;
+        width: 4px;
+        height: 4px;
+    }
+    .tablescroll::-webkit-scrollbar-track {
+        background-color: var(--sw-14);
+/*        width: 0px;*/
+/*        height: 0px;*/
+}
+        .tablescroll::-webkit-scrollbar-track-piece {
+/*    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+/*        background-color: green;*/
+        width: 0px;
+        height: 0px;
+}
+    .tablescroll::-webkit-scrollbar-thumb {
+        background-color: var(--sw-6);
+        background-color: var(--nv-green);
+/*        width: 20px;*/
+        border-radius: 99999px;
+    }
+    .tablescroll::-webkit-scrollbar:vertical {
+/*        display: none;*/
+/*        width: 4px;*/
+    }
+    .tablescroll::-webkit-scrollbar-button {
+        display: none;
+/*        width: 0px;*/
+/*        height: 0px;*/
+    }
+    .tablescroll::-webkit-scrollbar-corner {
+/*        width: 40px;*/
+/*        display: none;*/
+/*        background-color: red;*/
+    }
+}
+
+    
+    </style>
+
+</head>
+
+<body>
+    <aside class="paddingsmall cp_disclaimer">
+        <div class="wrapper center">
+            This prototype is for design exploration, not meant for production use.
+        </div>
+    </aside>
+    <main class="padding">
+            <ul class="wrapper md_filter_search option2">
+<!--                <li><img class="sz_icon-l" src="assets/vgpu/ic_filter.svg"></li>-->
+                <li class="cp_search_icon"><img class="sz_icon-l" src="../css/cp_assets/ic_filter.svg"></li>
+                <li class="cp_search">
+                    <input class="cp_searchinput" type="search" placeholder="Quick search for table filters">
+                    <ul class="cp_searchdrop">
+                        <li><span>Manufacturer:</span> Cisco &nbsp; [20]</li>
+                        <li><span>Card Model:</span> HyperFlex HX240c M6 &nbsp; [5]</li>
+                        <li><span>Manufacturer:</span> Dell &nbsp; [26]</li>
+                        <li><span>Manufacturer:</span> Lenovo &nbsp; [14]</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="wrapper md_chip_scroll">
+                <ul class="md_chip_container">
+                    <li class="cp_dropdown">
+                        <input type="checkbox" id="manufacturer">
+                        <label for="manufacturer" tabindex="0">Manufacturer</label>
+                        <div class="cp_dropdown_pop">
+                            <label><input type="checkbox" id="random" name="random">Lenovo &nbsp; [20]</label>
+                            <label><input type="checkbox" id="random" name="random">Dell EMC &nbsp; [5]</label>
+                            <label><input type="checkbox" id="random" name="random">Hewlett Packard &nbsp; [12]</label>
+                            <label><input type="checkbox" id="random" name="random">Texas Instruments &nbsp; [6]</label>
+                        </div>
+                    </li>
+                    <li class="cp_dropdown">
+                        <input type="checkbox" tabindex="-1"><label class="menuselect">Height</label>
+
+                    </li>
+                    <li class="cp_dropdown">
+                        <input type="checkbox" tabindex="-1"><label class="menuselect">Form Factor</label>
+
+                    </li>
+                    <li class="cp_dropdown">
+                        <input type="checkbox" tabindex="-1"><label class="menuselect">Card Model</label>
+
+                    </li>
+                    <li class="cp_filter_chip_clear">Clear all filters</li>
+                </ul>
+            </div>
+            <div class="wrapper tablescroll scrollindicator">
+                <table class="cp_table_qsc">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" scope="col">
+                                Model
+                            </th>
+                            <th rowspan="2" scope="col">
+                                Rack Units
+                            </th>
+                            <th colspan="10" scope="col" class="center">
+                                Maximum Cards per Node
+                            </th>
+                            <th rowspan="2" scope="col">
+                                More<br>Info
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col">
+                                Tesla<br>M10
+                            </th>
+                            <th scope="col">
+                                Tesla<br>T4
+                            </th>
+                            <th scope="col">
+                                A100(2)
+                            </th>
+                            <th scope="col">
+                                A100<br>80GB
+                            </th>
+                            <th scope="col">
+                                A40
+                            </th>
+                            <th scope="col">
+                                A10
+                            </th>
+                            <th scope="col">
+                                A30
+                            </th>
+                            <th scope="col">
+                                A16
+                            </th>
+                            <th scope="col">
+                                A2
+                            </th>
+                            <th scope="col">
+                                A6000
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--
+                <tr class="vendor">
+                    <td colspan="13">
+                        <img src="assets/vgpu/cisco-logo.svg" alt="">
+                    <p>
+                        Cisco is the worldwide leader in IT that helps companies seize the opportunities of tomorrow by proving that amazing things can happen when you connect the previously unconnected.
+                    </p>
+                    <p></p>
+                    <p>
+                        www.cisco.com
+                    </p>
+                        </td>
+                </tr>
+-->
+                        <tr class="vendor">
+                            <td>
+                                <img src="assets/vgpu/cisco-logo.svg" alt="">
+                            </td>
+                            <td colspan="7">
+                                Cisco is the worldwide leader in IT that helps companies seize the opportunities of tomorrow by proving that amazing things can happen when you connect the previously unconnected.
+                            </td>
+                            <td colspan="3" class="emptycell">
+                            <td colspan="12">
+                                www.cisco.com
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C220 M5
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HyperFlex HX220c M5
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C4200
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C240 M6
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C245 M6
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C240 M5
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C240 M4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HyperFlex HX245c M6
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HyperFlex HX240c M6
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HyperFlex HX240c M5
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HyperFlex HX240c M4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C480 M5
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                9
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C480 ML M5 Rack
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C460 M4
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS C3260
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS B200 M5
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UCS B480 M5
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr class="transparent">
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                        </tr>
+                        <tr class="transparent">
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="vendor">
+                            <td>
+                                <img src="assets/vgpu/dell-emc-logo.svg" alt="">
+                            </td>
+                            <td colspan="7">
+                                Dell Cloud client – computing offers end to end desktop virtualization solutions comprised of world class products that span from the data center to the end user device.
+                            </td>
+                            <td colspan="3">
+                                (800) 438 9973<br>
+                                CCC_sales@dell.com
+                            </td>
+                            <td colspan="9">
+                                www.dell.com/wyse
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge C4140
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge C6520
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge C4130
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge R640
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge R650
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge R440
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Power Edge XR2
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Power Edge XR11
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Power Edge XR12
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge R7425
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge R730
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                XC740xd
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                XC730 16G
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge XE8545
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4***
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge XE2420
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                R940xa
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                DSS 8440
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                16
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                R840
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dell EMC VxRail V470
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dell EMC VxRail V470F
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dell EMC VxRail V570
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dell EMC VxRail V570F
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dell EMC VxRail V660F
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dell EMC VxRail V670F
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dell EMC VxRail E560/F
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dell EMC VxRail E560N
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Precision Appliance for Wyse
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge T640
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PowerEdge T630
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr class="transparent">
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                        </tr>
+                        <tr class="transparent">
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="vendor">
+                            <td>
+                                <img src="assets/vgpu/hewlett-packard-enterprise-logo.svg" alt="">
+                            </td>
+                            <td colspan="7">
+                                Rock solid platforms. Pioneering technologies. End to end support. It’s no wonder HP has earned its place as the #1 vendor in worldwide server shipments for the 12th consecutive year
+                            </td>
+                            <td colspan="3" class="emptycell">
+                            <td colspan="12">
+                                www.hpe.com
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo pc40 Server
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo sx40 Server
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Proliant DL360 Gen10
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Proliant DL360 Gen9
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HPE Proliant DL325 Gen10
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HPE Proliant DL345 Gen10 Plus
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HPE Proliant DL325 Gen10 Plus
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                SGI 8600 (XA780i Gen 10)
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo XL190r Gen10
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo XL190r Gen9
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant DL380 Gen10 plus
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant DL380 Gen10
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                7
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant DL385 Gen10
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                7
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                HPE Proliant DL385 Gen10 Plus
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant DL380 Gen9
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Hyper Converged 380
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                SimpliVity 380
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                SimpliVity 380G
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                SimpliVity 2600
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Edgeline EL1000
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Edgeline EL4000
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Edgeline EL8000
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant DL560 Gen10
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo XL270d Gen10
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo XL270d Gen9
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant ML350 Gen10
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Proliant DL580 Gen10
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant DL580 Gen9
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo XL 645d Gen10 Plus
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo XL 675d Gen10 Plus
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                16
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Superdome Flex
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Apollo XL250a Gen9
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant BL460c Gen10
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ProLiant WS460c Gen9
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Synergy 480 Gen10 plus
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                4**
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Synergy 480 Gen10
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                2**
+                            </td>
+                            <td>
+                                4**
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Synergy 480 Gen9
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                2**
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr class="transparent">
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                        </tr>
+                        <tr class="transparent">
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="vendor">
+                            <td>
+                                <img src="assets/vgpu/pny-logo.svg" alt="">
+                            </td>
+                            <td colspan="7">
+                            <td colspan="3">
+                            <td colspan="9">
+                        </tr>
+                        <tr>
+                            <td>
+                                PNYSER14 Series
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PNYSER28 Series
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PNYSER48 Series
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PNYSRA48 Series
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr class="transparentlast">
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                            <td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="vendor">
+                            <td>
+                                <img src="assets/vgpu/wiwynn-logo.svg" alt="">
+                            </td>
+                            <td colspan="7">
+                            <td colspan="3">
+                            <td colspan="9">
+                        </tr>
+                        <tr>
+                            <td>
+                                SV310G3
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+    </main>
+
+</body></html>
