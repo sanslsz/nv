@@ -210,10 +210,6 @@ td li {
         scrollbar-width: none;
     }
 
-    .tablescroll::-webkit-scrollbar {
-        display: none;
-    }
-
     thead th:nth-child(2) {
         background-color: var(--nv-15-ee);
         position: sticky;
@@ -245,6 +241,14 @@ td li {
     }
 }
 
+
+/*=================== hide table's scroll bar on non-mobile devices (for the original table design) ===================*/
+
+@media screen and (any-hover: hover) {
+        .tablescroll::-webkit-scrollbar {
+        display: none;
+    }
+}
 
 /* footer */
 body > footer {

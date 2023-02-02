@@ -12,19 +12,117 @@
     <link rel="stylesheet" href="../05_cta/css/cta_styles_ver2.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/remake.css">
+    <link rel="stylesheet" href="../08_grid/css/grid_p2_specs.css">
     <meta name="themeor" content="#fafafa">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
     <style>
+        @media (prefers-color-scheme: dark) {
 
+    :root {
+
+        --cp_card-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+        --cp_card-shadow2: 0px 4px 12px rgba(0, 0, 0, 0.6);
+        --cp_card-shadow3: 0px 20px 40px rgba(0, 0, 0, 0.7);
+        --cp_card-shadow-ho-inner: 0px 6px 8px rgba(0, 0, 0, 0.5);
+        --cp_card-shadow-ho-outter: 0px 6px 30px rgba(0, 0, 0, 0.75);
+        --cp_card-shadow3-ho: 6px 6px 0px 0px rgba(0, 0, 0), 0px 0px 0px 2px rgba(0, 0, 0);
+        --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.5);
+        --cp_card-glassbg: rgba(34, 34, 34, 0.8);
+        --cp_card-glassgradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 0% 2%, rgba(255, 255, 255, 0.6) 15%, rgba(255, 255, 255, 0) 35% 70%, rgba(255, 255, 255, 0.3) 85%, rgba(255, 255, 255, 0) 100%);
+
+        --nv-16: #222222;
+        --nv-15-5-f7: #1A1A1A;
+        --nv-15-ee: #111111;
+        --nv-14-dd: #000000;
+
+        --nv-12-5-cc: #333333;
+
+        --nv-9-5-99: #666666;
+        --nv-6-5-66: #999999;
+        --nv-3-33: #CCCCCC;
+        --nv-2-22: #DDDDDD;
+        --nv-1-5-1a: #EEEEEE;
+        --nv-1-11: #F7F7F7;
+        --nv-0: #FFFFFF;
+        --white: #000000;
+    }
+
+    .nodarkscheme {
+        --nv-16: #ffffff;
+        --nv-0: #000000;
+    }
+
+    .whitesection {
+        --cp_card-glassbg: rgba(34, 34, 34, 0.8);
+        --nv-16: #222222;
+    }
+}
+        
+        
+        
+        :root {
+                --scroll-spaceholder:  max(var(--res_padding-lr), calc((100vw - var(--res_wrapper) - 16px) / 2));
+    
+    --scroll-item-width: min(80vw, 300px);
+        }
+        .col-2 .cardpadding {
+    padding: var(--cp_card-padding-l);
+}
+        section > ul {
+            grid-gap: var(--res_gutter-m);
+        }
+        .res_gutter-xl {
+            grid-gap: var(--res_gutter-xl);
+        }
+        .section_scroll.section_scroll li {
+    width: var(--scroll-item-width);
+    scroll-snap-align: start;
+}
+        .res_scroll {
+    display: flex;
+    overflow-x: scroll;
+    gap: var(--cp_card-padding);
+    scroll-snap-type: x;
+    scroll-padding-left: var(--scroll-spaceholder);
+    margin: 0 calc(var(--res_padding-lr) * -1);
+}
+
+.res_scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.res_scroll > li {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+}
+
+.res_scroll::before,
+.res_scroll::after {
+    content: '';
+    display: block;
+    width: var(--scroll-spaceholder);
+    height: 60px;
+/*    background-color: red;*/
+    flex: 0 0 auto;
+    margin-right: calc(var(--cp_card-padding) * -1);
+/*    scroll-snap-align: start;*/
+}
+
+
+.res_scroll::after {
+    margin-left: calc(var(--cp_card-padding) * -1);
+    margin-right: unset;
+}
+        
     </style>
 
 </head>
 
 <body>
     <!--    first section GTX -->
-    <section class="padding" id="alignelements">
-        <h3 class="wrapper">GeForce RTX 30 Series Laptops</h3>
-        <ul class="wrapper">
+    <section class="res_padding" id="alignelements">
+        <h3 class="res_wrapper">GeForce RTX 30 Series Laptops</h3>
+        <ul class="res_wrapper">
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/laptop_1.jpg" alt="description">
                 <div class="cardpadding">
@@ -75,11 +173,87 @@
             </li>
         </ul>
     </section>
-    
-    
-    <section class="padding">
-        <h3 class="wrapper">DGX Systems Built for the Unique Demands of AI</h3>
-        <ul class="wrapper">
+    <section class="res_padding">
+        <h3 class="res_wrapper">GPU Cloud Computing Solutions</h3>
+        <ul class="res_wrapper">
+            <li class="cp_card_base margin-padding">
+                <img src="assets/remake/cloud_1.jpg" alt="description">
+                <h4>AWS: Netflix</h4>
+                <p>Netflix artists use virtual workstations on Amazon EC2 G4 instances, powered by NVIDIA T4 GPUs, to collaborate on VFX and animation content from anywhere in the world.</p>
+                <a class="cp_cta_tertiary_wrap" href="#"><span class="no-break-custom">Learn More</span></a>
+            </li>
+            <li class="cp_card_base margin-padding">
+                <img src="assets/remake/cloud_2.jpg" alt="description">
+                <h4>Microsoft Azure: BMW</h4>
+                <p>BMW transformed its electric vehicle production system by leveraging NVIDIA GPUs and Azure Machine Learning to power its fully automated quality control processes.</p>
+                <a class="cp_cta_tertiary_wrap" href="#"><span class="no-break-custom">Learn More</span></a>
+            </li>
+            <li class="cp_card_base margin-padding">
+                <img src="assets/remake/cloud_3.jpg" alt="description">
+                <h4>Google Cloud: Subaru </h4>
+                <p>Subaru Corporation uses the power of NVIDIA A100 GPUs with Google Cloud Vertex AI to accelerate AI development for its advanced driver-assistance system, EyeSight.</p>
+                <a class="cp_cta_tertiary_wrap" href="#"><span class="no-break-custom">Learn More</span></a>
+            </li>
+        </ul>
+    </section>
+    <section class="res_padding">
+        <h3 class="res_wrapper">GeForce RTX | Ultimate Ray Tracing & AI</h3>
+        <ul class="res_wrapper" style="grid-row-gap: var(--res_gutter-l);">
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_b_1.jpg" alt="description">
+                <h4>WRC Generations - The FIA WRC Official Game</h4>
+                <p>Dive into the heart of the action and rise to all the challenges of the most comprehensive, realistic, and demanding rally simulation ever developed–powered by GeForce RTX.</p>
+                <p>Tech inside: DLSS 3, DLSS 2, and Reflex.</p>
+                <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+
+            </li>
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_b_2.jpg" alt="description">
+                <h4>A Plague Tale: Requiem</h4>
+                <p>Embark on a heartrending journey into a brutal, breathtaking world in A Plague Tale: Requiem enhanced with stunning ray-traced effects and AI-accelerated NVIDIA DLSS for maximum performance.</p>
+                <p>Tech inside: Ray tracing, DLSS 3, DLSS 2, and Reflex.</p>
+                <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+
+            </li>
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_b_3.jpg" alt="description">
+                <h4>The Lord of the Rings™: Gollum</h4>
+                <p>Take on a perilous journey as Gollum, chasing the only thing that is precious to him in the story-driven stealth adventure game enhanced with ray tracing and NVIDIA DLSS for the definitive PC experience.</p>
+                <p>Tech inside: Ray-traced reflections, shadows, and DLSS.</p>
+                 <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+            </li>
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_b_4.jpg" alt="description">
+                <h4>Steelrising</h4>
+                <p>The city burns and bleeds as it suffers the madness of King Louis XVI and his violent legions of automatons. Aegis, a mechanical masterpiece created by the engineer Vaucanson to be the queen's bodyguard, must save the French Revolution in this challenging action-RPG enhanced with immersive ray tracing and NVIDIA DLSS.</p>
+                <p>Tech inside: Ray-traced reflections and DLSS.</p>
+                 <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+            </li>
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_b_5.jpg" alt="description">
+                <h4>Ghostwire: Tokyo</h4>
+                <p>Face the unknown, uncover the truth, and save the city in Ghostwire: Tokyo with the AI-enhanced power of NVIDIA DLSS for up to 2x faster performance. Explore the beautifully haunted Tokyo at the highest visual quality with ray tracing.</p>
+                <p>Tech inside: Ray-traced reflections, shadows, and NVIDIA DLSS.</p>
+                 <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+            </li>
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_b_6.jpg" alt="description">
+                <h4>F1®22</h4>
+                <p>Take your seat in the new era of Formula 1® with EA Sports F1®22 and get the definitive PC experience with a suite of high-fidelity ray tracing effects and NVIDIA DLSS, accelerating performance by up to 2x.</p>
+                <p>Tech inside: Ray-traced reflections, ambient occlusion, shadows, DLSS 3, DLSS 2 and Reflex.</p>
+                 <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+            </li>
+        </ul>
+    </section>
+    <section class="res_padding">
+        <h3 class="res_wrapper">DGX Systems Built for the Unique Demands of AI</h3>
+        <ul class="res_wrapper">
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/data_1.jpg" alt="description">
                 <div class="cardpadding">
@@ -109,9 +283,9 @@
             </li>
         </ul>
     </section>
-    <section class="padding">
-        <h3 class="wrapper">Homepage small card scroll</h3>
-        <ul class="wrapper md_scroll-edge homecardsmall">
+    <section class="res_padding">
+        <h3 class="res_wrapper">Homepage small card scroll</h3>
+        <ul class="res_scroll homecardsmall">
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/home_small_1.jpg" alt="description">
                 <div class="cardpadding">
@@ -172,15 +346,15 @@
             </li>
         </ul>
     </section>
-    <section class="padding">
-        <h3 class="wrapper">Homepage large card scroll</h3>
+    <section class="res_padding">
+        <h3 class="res_wrapper">Homepage large card scroll</h3>
         <div class="introblock wrapper">
         <p class="tp_p-l">
         NVIDIA RTX™ and NVIDIA Omniverse™ deliver the performance to help professionals, creators, developers, and students worldwide enhance creative workflows and build, operate, and connect metaverse applications.
         </p>
          <a class="cp_cta_tertiary_wrap" href="#"><span class="no-break-custom">Learn More</span></a>
         </div>
-        <ul class="wrapper md_scroll-edge homecardlarge">
+        <ul class="res_scroll homecardlarge">
             <li class="introgrid">
         <p class="tp_p-l">
        NVIDIA RTX™ and NVIDIA Omniverse™ deliver the performance to help professionals, creators, developers, and students worldwide enhance creative workflows and build, operate, and connect metaverse applications.
@@ -253,9 +427,9 @@
             </li>
         </ul>
     </section>
-      <section class="padding col-2">
-        <h3 class="wrapper">AI Data Science Solutions For Every Industry</h3>
-        <ul class="wrapper">
+      <section class="res_padding col-2">
+        <h3 class="res_wrapper">AI Data Science Solutions For Every Industry</h3>
+        <ul class="res_wrapper res_gutter-xl">
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/ai_1.jpg" alt="description">
                 <div class="cardpadding">
@@ -274,12 +448,52 @@
             </li>
           </ul>
     </section>
-    
-    
-     <section class="padding">
-        <h3 class="wrapper">Interaction: hover, tab,  transition FX and linking</h3>
-         <h4 class="wrapper">Cards with background</h4>
-        <ul class="wrapper">
+     <section class="res_padding col-2">
+        <h3 class="res_wrapper">GeForce RTX | Ultimate Ray Tracing & AI</h3>
+        <ul class="res_wrapper res_gutter-xl">
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_a_6.jpg" alt="description">
+                    <h3>Portal With RTX</h3>
+                    <p>Relive the critically acclaimed and award winning Portal™ reimagined with ray tracing, the groundbreaking AI accelerated performance of NVIDIA DLSS 3, and the best responsiveness with NVIDIA Reflex.</p>
+                <p>Tech inside: Ray tracing, DLSS 3, DLSS 2, and Reflex.</p>
+                    <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+            </li>
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_a_5.jpg" alt="description">
+                    <h3>NVIDIA Racer RTX</h3>
+                    <p>NVIDIA Racer RTX
+NVIDIA Racer RTX
+NVIDIA Racer RTX is a fun, high-fidelity RC car experience that allows users to navigate remote-controlled vehicles through a variety of immersive, physically accurate environments. Built in NVIDIA Omniverse and powered by GeForce RTX 40 Series GPUs, NVIDIA Racer RTX showcases the latest NVIDIA technologies.</p>
+                <p>Tech inside: Ray tracing, DLSS 3, DLSS 2, and Reflex.</p>
+                    <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+            </li>
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_a_2.jpg" alt="description">
+                    <h3>Cyberpunk 2077</h3>
+                    <p>Play Cyberpunk 2077 with GeForce RTX Cyberpunk 2077
+Experience the vibrant future metropolis of Night City with the power of GeForce RTX.</p>
+                <p>Tech inside: Ray-traced reflections, ambient occlusion, shadows, diffuse illumination, global illumination, and DLSS 2.</p>
+                    <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+            </li>
+            <li class="cp_card_base margin-padding-s">
+                <img src="assets/remake/rtx_a_1.jpg" alt="description">
+                    <h3>The Witcher 3: Wild Hunt - Complete Edition</h3>
+                    <p>The Witcher 3: Wild Hunt - Complete Edition 
+The Witcher 3: Wild Hunt - Complete Edition
+Explore the massive open world of The Witcher as a mercenary monster slayer, Geralt of Rivia, and track down the child of prophecy to save or destroy this world. Get the ultimate Wild Hunt experience with GeForce RTX 40 Series. </p>
+                <p>Tech inside: Ray-traced reflections, shadows, ambient occlusion, RTXGI, DLSS 3, DLSS 2, and Reflex.</p>
+                    <a class="cp_cta_tertiary_wrap" href="#">Watch <span class="no-break-custom">Video</span></a>
+                <a class="cp_cta_tertiary_wrap" href="#">Learn <span class="no-break-custom">More</span></a>
+            </li>
+          </ul>
+    </section>
+     <section class="res_padding">
+        <h3 class="res_wrapper">Interaction: hover, tab,  transition FX and linking</h3>
+         <h4 class="res_wrapper">Cards with background</h4>
+        <ul class="res_wrapper">
 <!--      No link or CTA, no focus, no cursor change, transition fx disabled      -->
             <li class="cp_card_base bg shadow">
                 <img src="assets/remake/data_1.jpg" alt="description">
@@ -330,8 +544,8 @@
                 </div>
             </li>
         </ul>
-         <h4 class="wrapper">Cards without background</h4>
-         <ul class="wrapper">
+         <h4 class="res_wrapper">Cards without background</h4>
+         <ul class="res_wrapper">
              <li class="cp_card_base">
              <div>
                 <img src="assets/remake/data_1.jpg" alt="description">

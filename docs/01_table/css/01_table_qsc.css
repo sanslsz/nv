@@ -171,9 +171,6 @@ td {
     max-height: 90vh;
     scrollbar-width: none;
 }
-    .tablescroll::-webkit-scrollbar {
-        display: none;
-    }
     .cp_table_qsc {
         white-space: nowrap;
     }
@@ -194,4 +191,10 @@ td {
 }
 
 
+/*=================== hide table's scroll bar on non-mobile devices (for the original table design) ===================*/
 
+@media screen and (any-hover: hover) {
+        .tablescroll::-webkit-scrollbar {
+        display: none;
+    }
+}

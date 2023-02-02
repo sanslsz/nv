@@ -24,33 +24,30 @@
         margin-left: calc((100vw - var(--wrapper) - 16px)/2 - var(--padding-lr));
     }
     .scrollindicator table {
+        --shadow-size: 8px;
+        --shadow-padding: calc(var(--cell-lr-xs) + var(--shadow-size));
         margin-right: var(--md_chip_container-spaceholder);
     }
         
         thead tr:first-child th:first-child {
         --cellcolor: var(--nv-6-5-66);
-         background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--cell-lr-s), var(--cellcolor) var(--cell-lr-s));
-            padding-right: calc(var(--cell-lr-s)*2);
+        background:  linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--shadow-size), var(--cellcolor) var(--shadow-size));
+        padding-right: var(--shadow-padding);
     }
             .vendor td:first-child {
        --cellcolor: var(--sw-14-5);
-        background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--cell-lr-s), var(--cellcolor) var(--cell-lr-s));
+        background:  linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--shadow-size), var(--cellcolor) var(--shadow-size));
     }
          tbody tr:not(.vendor, .transparent, .transparentlast) td:first-child {
         --cellcolor: var(--nv-15-5-f7);
-        background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--cell-lr-s), var(--cellcolor) var(--cell-lr-s));
-        padding-right: calc(var(--cell-lr-s)*2);
+        background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1) var(--shadow-size), var(--cellcolor) var(--shadow-size));
+        padding-right: var(--shadow-padding);
 
     }
 
     tbody tr:not(.vendor, .transparent, .transparentlast):nth-child(even) td:first-child {
         --cellcolor: var(--nv-15-ee);
     }
-        
-        
-        
-        
-        
         }
         
         
