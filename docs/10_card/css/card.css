@@ -5,11 +5,14 @@
     --cp_card-padding-l: 24px;
     
     --cp_card-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-    --cp_card-shadow2: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    --cp_card-shadow3: 0px 20px 40px rgba(0, 0, 0, 0.3);
-    --cp_card-shadow-ho-inner: 0px 6px 8px rgba(0, 0, 0, 0.1);
-    --cp_card-shadow-ho-outter: 0px 6px 30px rgba(0, 0, 0, 0.15);
-    --cp_card-shadow3-ho: 6px 6px 0px 0px var(--nv-9-5-99), 0px 0px 0px 2px var(--nv-9-5-99);
+    --cp_card-shadow-ho: 0px 6px 9px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.1);
+    
+    --cp_card-shadow2: 0px 4px 9px rgba(0, 0, 0, 0.2);
+    --cp_card-shadow2-ho: 0px 12px 27px rgba(0, 0, 0, 0.2), 0px 12px 54px rgba(0, 0, 0, 0.2);
+    
+    --cp_card-shadow3: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    --cp_card-shadow3-ho: 0px 24px 60px rgba(0, 0, 0, 0.3);
+    
     --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.1);
     --cp_card-glassbg: rgba(255, 255, 255, 0.8);
     --cp_card-glassgradient: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0% 2%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0) 35% 70%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0) 100%);
@@ -26,8 +29,11 @@
 
 .whitesection {
     --cp_card-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    --cp_card-shadow-ho: 0px 10px 14px rgba(0, 0, 0, 0.2), 0px 10px 40px rgba(0, 0, 0, 0.15);
+/*
     --cp_card-shadow-ho-inner: 0px 10px 14px rgba(0, 0, 0, 0.2);
     --cp_card-shadow-ho-outter: 0px 10px 40px rgba(0, 0, 0, 0.15);
+*/
     --cp_card-glassbg: rgba(247, 247, 247, 0.8);
 }
 
@@ -126,7 +132,6 @@ section > h4 {
 .cp_card_base {
     min-width: var(--cp_card-minw);
     max-width: var(--cp_card-maxw);
-/*    cursor: pointer;*/
 }
 
 .cp_card_base:not(.glass) :is(p:not(.tp_bold), .cardpadding):first-child {
@@ -189,6 +194,9 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 }
 .shadow3 {
     box-shadow: var(--cp_card-shadow3);
+}
+.hover.reversehover {
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .border {
@@ -321,20 +329,30 @@ section:nth-child(6) > ul:last-of-type .cardpadding:first-child {
 
 
 /*================= interaction ===================*/
+.pointer {
+    cursor: pointer;
+
+}
 .hover {
-    transition: var(--02transition);
+    transition-timing-function: ease-in-out;
     transition-duration: 0.4s;
     transition-property: transform, box-shadow;
 }
 
 .hover:is(:hover, :focus-within, :focus) {
-    box-shadow: var(--cp_card-shadow-ho-outter), var(--cp_card-shadow-ho-inner);
+    box-shadow: var(--cp_card-shadow-ho);
     transform: translateY(-2px);
 }
+.hover.shadow2:is(:hover, :focus-within, :focus) {
+    box-shadow: var(--cp_card-shadow2-ho);
+}
+.hover.shadow3:is(:hover, :focus-within, :focus) {
+    box-shadow: var(--cp_card-shadow3-ho);
+}
+
 
 .hover.reversehover:is(:hover, :focus-within, :focus)  {
-    transform: translateY(-2px);
-    box-shadow: var(--cp_card-shadow3-ho);
+    box-shadow:  6px 6px 0px 0px var(--nv-9-5-99), 0px 0px 0px 2px var(--nv-9-5-99);
 }
 
 .glasshover :is(.frosted),

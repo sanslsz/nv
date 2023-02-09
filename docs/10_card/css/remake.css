@@ -118,7 +118,7 @@
         scroll-snap-type: x;
         scroll-padding-left: var(--scroll_spaceholder);
         margin: 0 calc(var(--padding-lr) * -1);
-        padding-bottom: 6px;
+        padding-bottom: 30px;
     }
 .md_scroll-edge::-webkit-scrollbar {
     display: none;
