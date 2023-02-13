@@ -82,7 +82,7 @@
     opacity: 0;
     transition: var(--02transition);
     font-size: 14px;
-    z-index: -5;
+    z-index: -1;
 /*    hidden without display: none, or z-index: -1 interferes with content below*/
 }
 .cp_searchinput:focus-within ~ .cp_searchdrop {
@@ -145,11 +145,29 @@
 .cp_dropdown {
     position: relative;
 }
-.cp_dropdown > input[type="checkbox"] {
+.cp_dropdown > input {
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
+    appearance: none;
+    opacity: 0;
+/*    display: none;*/
+/*    visibility: hidden;*/
+}
+/*
+opacity 0 hides focus outline
+
+apperance, opacity do not impact the flow of tabbing. display, visibility do impact. when the first radio become tabbable but the following ones aren't, it stucks when going from left to right, but not from right to left strangely 
+
+the compromised solution is to hit extra 2 arrow keys 
+*/
+.cp_dropdown > input:first-child {
+    display: block;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+/*    visibility: visible;*/
 }
 .cp_dropdown > label {
     font-size: 14px;
@@ -173,63 +191,87 @@
     transform: translateY(-50%);
     transition: var(--02transition);
 }
-.cp_dropdown > input:checked ~ label {
+.cp_dropdown > input:first-child:checked + input {
+    display: block;
+/*    visibility: visible;*/
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: green;
+    z-index: -1;
+}
+.cp_dropdown > input:first-child:checked ~ label {
     border: 1px solid var(--nv-green);
 }
-.cp_dropdown > input:checked ~ label::after {
+.cp_dropdown > input:first-child:checked ~ label::after {
     background-image: url(cp_assets/ic_chevron_dropdown_small_green.svg);
     transform: translateY(-50%) rotate(180deg);
 /*    transform-origin: center center;*/
 }
+.cp_dropdown > input:first-child:checked ~ input:last-child {
+    display: block;
+/*    visibility: visible;*/
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
 
 .cp_dropdown_pop {
+    max-width: 90vw;
+    max-height: 400px;
+    width: max-content;
+    overflow-y: auto;
     font-size: 14px;
     position: absolute;
-    width: fit-content;
-    min-width: 100%;
     padding: var(--sp_em-s) var(--sp_em-l);
     background-color: var(--nv-15-5-f7);
     border: 1px solid var(--nv-12-5-cc);
-    top: calc(100% + 4px);
+    top: calc(100% + var(--sp_px-xs) - 6px);
     left: 0;
-    transform: translateY(-6px);
+    transform: scale(1%);
+    transform-origin: top left;
     opacity: 0;
-    transition: var(--02transition);
+    transition: transform 0s ease-in-out 1s, opacity 0.2s ease-in-out, top 0.2s ease-in-out;
     font-weight: 400;
-    z-index: 3;
 }
-input:checked ~ .cp_dropdown_pop {
-    opacity: 100;
-    transform: translate(0px);
+input:first-child:checked ~ .cp_dropdown_pop {
+    opacity: 1;
+    transform: none;
+    top: calc(100% + var(--sp_px-xs));
+    transition: opacity 0.2s ease-in-out 0.01s, top 0.2s ease-in-out 0.01s, transform 0s ease-in-out;
 }
 
 
 .cp_dropdown_pop label {
     display: block;
+    max-width: min(90vw, 400px);
     padding: var(--sp_em-s) 0;
-    position: relative;
     padding-left: calc(var(--sz_icon-s) + var(--sp_em-s));
     line-height: 1.2;
-    white-space: nowrap;
+/*    white-space: nowrap;*/
+    position: relative;
+}
+.cp_dropdown_pop label input {
+    visibility: hidden;
 }
 
-.cp_dropdown_pop label:hover {
-    background-color: var(--nv-15-5-f7);
+input:first-child:checked ~ .cp_dropdown_pop label input {
+    visibility: visible;
 }
 
-.cp_dropdown_pop input[type="checkbox"] {
+.cp_dropdown_pop input:is([type="checkbox"], [type="radio"]) {
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: calc( (1.2em + var(--sp_em-s) + var(--sp_em-s))/2 - var(--sz_icon-s)/2 );
+/*    transform: translateY(-50%);*/
     appearance: none;
     width: var(--sz_icon-s);
     height: var(--sz_icon-s);
     background: url(cp_assets/ic_checkbox_inactive.svg) no-repeat center / auto;
 }
 
-.cp_dropdown_pop input[type="checkbox"]:checked {
-    background-image: url(cp_assets/ic_checkbox_active.svg);
+.cp_dropdown_pop :is([type="checkbox"], [type="radio"]):checked {
+    background-image: url(cp_assets/ic_checkbox_active_green.svg);
 }
 
 /* ========================= pagination dropdown ========================*/

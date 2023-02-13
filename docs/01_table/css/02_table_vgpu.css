@@ -28,6 +28,11 @@ main.padding > :nth-child(n + 2) {
     margin-top: 32px;
 }
 
+.md_chip_container {
+    z-index: 3;
+    position: relative;
+}
+
 
 /*=========== table general ===========*/
 

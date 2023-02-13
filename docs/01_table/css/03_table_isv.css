@@ -25,9 +25,37 @@
     :root {}
 }
 
+/*
+======z-index from high to low================
+
+search drop -1
+search drop hover 10
+
+.md_chip_container 3
+.md_chip_container input outside click -1
+
+table thead 2
+table tbody tr td:nth(2) 1
+
+
+
+
+*/
+
+
+
 /*=========== base ===========*/
 main.padding > :nth-child(n + 2) {
     margin-top: 32px;
+}
+
+.md_chip_scroll {
+    padding-bottom: 400px;
+    margin-bottom: -400px;
+}
+.md_chip_container {
+    z-index: 3;
+    position: relative;
 }
 
 
