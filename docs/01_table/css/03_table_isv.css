@@ -49,11 +49,11 @@ main.padding > :nth-child(n + 2) {
     margin-top: 32px;
 }
 
-.md_chip_scroll {
+.md_chip_scroll:first-of-type {
     padding-bottom: 400px;
     margin-bottom: -400px;
 }
-.md_chip_container {
+.md_chip_scroll:first-of-type .md_chip_container {
     z-index: 3;
     position: relative;
 }

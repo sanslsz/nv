@@ -27,10 +27,10 @@
             <li class="cp_search">
                 <input class="cp_searchinput" type="search" placeholder="Quick search for table filters">
                 <ul class="cp_searchdrop">
-                    <li><span>Software vendor:</span> Autodesk &nbsp; [20]</li>
-                    <li><span>Operating system:</span> Android &nbsp; [5]</li>
-                    <li><span>Industry:</span> Consumer eletronics &nbsp; [26]</li>
-                    <li><span>Graphic card:</span> Nvidia T400 &nbsp; [14]</li>
+                    <li><span>Company:</span> Autodesk &nbsp; [20]</li>
+                    <li><span>Application:</span> AutoCAD 2019 &nbsp; [5]</li>
+                    <li><span>Graphic card:</span> NVIDIA RTX A6000 &nbsp; [26]</li>
+                    <li><span>Graphic card:</span> NVIDIA T400 &nbsp; [14]</li>
                 </ul>
             </li>
         </ul>
@@ -39,9 +39,9 @@
             <li class="cp_dropdown">
                 <input type="radio" id="vendor" name="dropdown">
                 <input type="radio" name="dropdown" tabindex="-1">
-                <label for="vendor">Software vendor</label>
+                <label for="vendor">Company</label>
                 <div class="cp_dropdown_pop">
-                    <label><input type="radio" name="vendor">All &nbsp; [20]</label>
+                    <label><input type="radio" name="vendor">All &nbsp; [120]</label>
                     <label><input type="radio" name="vendor">Autodesk &nbsp; [20]</label>
                     <label><input type="radio" name="vendor">Adobe &nbsp; [5]</label>
                     <label><input type="radio" name="vendor">Oracle &nbsp; [12]</label>
@@ -55,6 +55,7 @@
                 <input type="radio" name="dropdown" tabindex="-1">
                 <label for="application">Application</label>
                 <div class="cp_dropdown_pop">
+                    <label><input type="checkbox" checked>All &nbsp; [120]</label>
                     <label><input type="checkbox">Inventor 2019 &nbsp; [20]</label>
                     <label><input type="checkbox">3ds Max 2020 &nbsp; [5]</label>
                     <label><input type="checkbox">AutoCAD 2019 &nbsp; [12]</label>
@@ -67,12 +68,27 @@
                 <input type="radio" id="graphiccard" name="dropdown">
                 <input type="radio" name="dropdown">
                 <label for="graphiccard">Graphic card</label>
-                <div class="cp_dropdown_pop">
+                <div class="cp_dropdown_pop cp_scrollbar">
+                    <label><input type="checkbox" checked>All &nbsp; [120]</label>
                     <label><input type="checkbox">NVIDIA RTX A5000 &nbsp; [20]</label>
                     <label><input type="checkbox">NVIDIA RTX A6000 &nbsp; [5]</label>
                     <label><input type="checkbox">NVIDIA RTX A7000 &nbsp; [12]</label>
                     <label><input type="checkbox">NVIDIA RTX A8000 &nbsp; [6]</label>
                     <label><input type="checkbox">NVIDIA RTX A9000 &nbsp; [6]</label>
+                    <label><input type="checkbox">Quadro P2200 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P1000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P620 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P400 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro RTX 8000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro RTX 6000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro RTX 5000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro RTX 4000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro T2000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro T1000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P5000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P4000 &nbsp; [20]</label>
+                    <label><input type="checkbox">NVIDIA RTX A6000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P6000 &nbsp; [20]</label>
                 </div>
                 <input type="radio" name="dropdown">
             </li>
@@ -81,6 +97,7 @@
                 <input type="radio" name="dropdown">
                 <label for="driver">Driver version</label>
                 <div class="cp_dropdown_pop">
+                    <label><input type="checkbox" checked>All &nbsp; [120]</label>
                     <label><input type="checkbox">462.31 &nbsp; [20]</label>
                     <label><input type="checkbox">430.86 &nbsp; [5]</label>
                     <label><input type="checkbox">461.09 &nbsp; [12]</label>
@@ -94,14 +111,29 @@
                 <input type="radio" name="dropdown">
                 <label for="certification">Certification level</label>
                 <div class="cp_dropdown_pop">
+                    <label><input type="checkbox" checked>All &nbsp; [120]</label>
                     <label><input type="checkbox">Supported &nbsp; [20]</label>
                     <label><input type="checkbox">Certified &nbsp; [5]</label>
                 </div>
                 <input type="radio" name="dropdown">
             </li>
-            <li class="cp_filter_chip_clear" tabindex="0">Clear all filters
-            </li>
         </ul>
+            </div>
+        <div class="wrapper md_chip_scroll">
+                <ul class="md_chip_container">
+                    <li class="cp_filter_chip"><span>Company:</span> Adobe</li>
+                    <li class="cp_filter_chip"><span>Company:</span> Siemens</li>
+                    <li class="cp_filter_chip"><span>Application:</span> AutoCAD 2019</li>
+                    <li class="cp_filter_chip"><span>Application:</span>Lightroom 2022</li>
+                    <li class="cp_filter_chip"><span>Application:</span> Maya 2020</li>
+                    <li class="cp_filter_chip"><span>Application:</span> Solid Edge 2021</li>
+                    <li class="cp_filter_chip"><span>GPU:</span> NVIDIA RTX A6000</li>
+                    <li class="cp_filter_chip"><span>GPU:</span> Quadro P2200</li>
+                    <li class="cp_filter_chip"><span>GPU:</span> NVIDIA T500</li>
+                    <li class="cp_filter_chip"><span>Driver:</span> 462.361</li>
+<!--                    <li class="cp_filter_chip"><span>Certification:</span> Certified</li>-->
+                    <li class="cp_filter_chip_clear">Clear all filters</li>
+                </ul>
             </div>
         <div class="wrapper tablescroll">
         <table class="cp_table_isv">
