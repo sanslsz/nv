@@ -1,0 +1,318 @@
+    :root {
+        
+        --padding-text: 16px;
+        --padding-largetile: 16px;
+        
+        --4-3: 4 / 3;
+
+    }
+
+
+
+@media screen and (min-width: 640px) {
+    :root {
+        --grid-col: repeat(2, 1fr);
+        --grid-auto-row: 1fr;
+        --16-9: 9 / 16;
+        --4-3: unset;
+        
+        --smalltile-span-column: span 2;
+        
+        --padding-text: 20px;
+        --padding-largetile: 32px;
+        
+         --smalltile-width: 300px;
+        --smalltile-height: 353px;
+
+    }
+    
+}
+   
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --grid-col: repeat(3, 1fr);
+        --16-9: 16 / 9;
+        
+        --smalltile-span-column: revert;
+        --smalltile-span-row: span 2;
+        
+        --padding-text: 24px;
+        
+        --smalltile-width: 298px;
+        --smalltile-height: 525px;
+
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+        
+        --padding-text: 32px;
+    
+        --smalltile-width: 410px;
+        --smalltile-height: 348px;
+
+    }
+     
+}
+
+.switches {
+    margin-bottom: var(--sp_px-xxxl);
+}
+.switches label {
+    margin-right: var(--sp_px-m);
+}
+
+.aspect-ratio-16-9 {
+    aspect-ratio: var(--16-9);
+}
+
+.container {
+    height: 500px;
+    background: lightblue;
+    position: relative;
+}
+.item {
+    transition: var(--02transition);
+    background-color: red;
+    width: 300px;
+    height: 600px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+/*    top: auto;*/
+    top: 0px;
+/*    top: 220px;*/
+/*    bottom: 0px;*/
+/*    bottom: 20px;*/
+}
+.item:hover {
+    width: 1290px;
+    height: 500px;
+}
+p {
+    font-size: var(--tp_p-m);
+    line-height: 1.67;
+    margin: 0;
+}
+
+.cp_copyright {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--nv-16);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--sp_em-xs) var(--sp_em-s);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+
+/*===================== full background small tile ========================*/
+
+.cp_smalltile_fbg, .cp_smalltile_fbg * {
+    transition: all 0.3s ease-in-out 0.3s;
+}
+
+.cp_smalltile_fbg {   
+    width: var(--smalltile-width);
+    height: var(--smalltile-height);
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: var(--4-3);
+}
+.cp_smalltile_fbg::before {
+    content: 'close';
+    display: block;
+    width: fit-content;
+    font-family: 'material icons';
+    font-size: 32px;
+    line-height: 1;
+    border-radius: 50%;
+    padding: var(--sp_px-xs);
+    color: var(--nv-0);
+    background: var(--nv-16);
+    cursor: pointer;
+    position: absolute;
+    top: var(--padding-text);
+    right: var(--padding-text);
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.cp_smalltile_fbg > div {
+    padding: var(--padding-text) var(--padding-text) 100px;
+    color: var(--nv-16);
+    position: relative;
+    z-index: 1;
+    max-width: 410px;
+    transition: all 0.3s ease-in-out 0.3s;
+}
+.cp_smalltile_fbg h4 {
+    margin-bottom: var(--sp_px-s);
+    transition: all 0.3s ease-in-out 0.3s;
+}
+.cp_smalltile_fbg > div .additional {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0s ease-in-out 0.3s, opacity 0.3s ease-in-out;
+}
+.cp_smalltile_fbg > div .additional * {
+margin-top: calc(var(--padding-largetile)/2);
+}
+
+/* vertical shadow*/
+.cp_smalltile_fbg > div::after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 100px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.3s ease-in-out 0.3s;
+}
+
+.cp_smalltile_fbg > figure {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.cp_smalltile_fbg > figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--02transition);
+}
+.cp_smalltile_fbg:hover > figure img {
+    transform: scale(1.05);
+}
+
+/* horziontal shadow */
+.cp_smalltile_fbg > figure::after {
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0) 50%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0.3s;
+}
+
+@media screen and (min-width: 640px) {
+
+.cp_smalltile_fbg::before {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    }
+}
+
+
+
+
+/*===================== open  ========================*/
+section:has(#open:checked) .cp_smalltile_fbg {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
+    transform: none;
+}
+
+section:has(#open:checked) .cp_smalltile_fbg > div {
+    max-width: 440px;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+    }
+section:has(#open:checked) .cp_smalltile_fbg h4 {
+    font-size: var(--tp_h-small);
+    margin-bottom: calc(var(--padding-largetile)/2);
+    transition: all 0.3s ease-in-out;
+}
+section:has(#open:checked) .cp_smalltile_fbg h4 + p {
+    font-size: var(--tp_p-l);
+    transition: all 0.3s ease-in-out;
+}
+section:has(#open:checked) .cp_smalltile_fbg > div .additional {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s;
+}
+section:has(#open:checked) .cp_smalltile_fbg > div::after {
+        opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+section:has(#open:checked) .cp_smalltile_fbg > figure::after {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+section:has(#open:checked) .cp_smalltile_fbg::before { 
+opacity: 1;
+    transition: all 0.3s ease-in-out 0.3s;
+}
+
+
+
+/*===================== presicion crop  ========================*/
+
+.cp_smalltile_fbg > .precisecrop img {
+    max-width: unset;
+    width: 715px;
+    height: auto;
+    object-fit: unset;
+    position: absolute;
+    top: -7.8%;
+    right: 0;
+    transition: all 0.3s ease-in-out 0.3s, transform 0.2s ease-in-out;
+    
+}
+.cp_smalltile_fbg > .precisecrop img {
+    transform-origin: 71.3% 50%;
+}
+
+/*===================== presicion crop open  ========================*/
+
+section:has(#open:checked) .cp_smalltile_fbg > .precisecrop img {
+    width: 1290px;
+/*    width: 100%;*/
+    top: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+.cp_smalltile_fbg > .precisecrop2 img {
+    max-width: unset;
+    width: auto;
+    height: 130%;
+    top: 0;
+    left: 0;
+    object-fit: unset;
+    position: absolute;
+    transition: all 0.3s ease-in-out 0.3s, transform 0.2s ease-in-out;
+}
+
+section:has(#open:checked) .cp_smalltile_fbg > .precisecrop2 img {
+    height: 100%;
+/*    left: 200px;*/
+/*    left: 15%;*/
+/*    height: 726px;*/
+    transition: all 0.3s ease-in-out;
+}

@@ -442,7 +442,7 @@ p {
     top: -7.8%;
     right: 0;
 }
-.cp_smalltile_fbg:hover > .precisecrop img {
+.cp_smalltile_fbg > .precisecrop img {
     transform-origin: 71.3% 50%;
 }
 
