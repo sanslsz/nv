@@ -4,6 +4,8 @@
         --padding-largetile: 16px;
         
         --4-3: 4 / 3;
+        
+        --precisecrop-width: calc(100% * 1.743);
 
     }
 
@@ -20,6 +22,8 @@
         
         --padding-text: 20px;
         --padding-largetile: 32px;
+        
+        --precisecrop-width: 523px;
 
     }
     
@@ -35,6 +39,8 @@
         --smalltile-span-row: span 2;
         
         --padding-text: 24px;
+        
+        --precisecrop-width: 519.5px;
 
     }
 }
@@ -43,6 +49,8 @@
     :root {
         
         --padding-text: 32px;
+        
+        --precisecrop-width: 715px;
     
 
     }
@@ -69,7 +77,7 @@ p {
     aspect-ratio: var(--16-9);
 }
 
-/*===================== small tile ========================*/
+/*===================== small tile default ========================*/
 .cp_smalltile {
     display: flex;
     flex-direction: column;    
@@ -103,7 +111,7 @@ p {
 
 
 
-
+/* image credit */
 
 .cp_copyright {
     font-size: 12px;
@@ -118,9 +126,9 @@ p {
 
 
 
+/* open icon for phone only */
 
-
-@media screen and (max-width: 639px) and (any-hover: none) {
+@media screen and (max-width: 1180px) and (any-hover: none) {
     .cp_smalltile > figure::before {
     content: 'open_in_full';
     font-family: 'material icons';
@@ -129,16 +137,16 @@ p {
     border-radius: 50%;
     padding: var(--sp_px-xs);
     color: var(--nv-0);
-    background: var(--nv-16);
+    background-color: var(--nv-16);
     cursor: pointer;
     position: absolute;
     z-index: 1;
-    bottom: var(--padding-largetile);
-    left: var(--padding-largetile);
+    bottom: var(--padding-text);
+    left: var(--padding-text);
 }
 }
 
-
+/* isometric */
 
 
 .cp_smalltile:has(.isometric) {
@@ -154,9 +162,17 @@ p {
     position: absolute;
     margin-left: 20%;
 }
+@media screen and (max-width: 1180px) and (any-hover: none) {
+    .cp_smalltile > figure.isometric::before {
+    color: var(--nv-16);
+    background-color: var(--nv-0);
+}
+}
 
 
 
+
+/* span */
 
 .cp_smalltile.span {
     grid-column: var(--smalltile-span-column);
@@ -164,7 +180,7 @@ p {
 }
 @media screen and (min-width: 640px) {
     .cp_smalltile.span > figure {
-        aspect-ratio: 10 / 3;
+    aspect-ratio: 10 / 3;
     }
     .cp_smalltile.span > figure.isometric img {
     height: 100%;
@@ -179,9 +195,7 @@ p {
     
 }
 .cp_smalltile.span > figure.isometric img {
-    object-fit: cover;
     object-position: center left;
-    aspect-ratio: 1 / 1;
     margin-left: unset;
 }
 }
@@ -189,12 +203,13 @@ p {
 
 
 
-/*===================== large tile ========================*/
+/*===================== large tile default ========================*/
 .cp_largetile {
     grid-column: 1 / -1;
     background-color: var(--nv-16);
     position: relative;
 }
+/* close button */
 .cp_largetile::before {
     content: 'close';
     display: block;
@@ -204,14 +219,16 @@ p {
     line-height: 1;
     border-radius: 50%;
     padding: var(--sp_px-xs);
-    margin: var(--padding-largetile) var(--padding-largetile) 0 auto;
     color: var(--nv-16);
-    background: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 1);
     cursor: pointer;
+    position: absolute;
+    top: var(--padding-largetile);
+    right: var(--padding-largetile);
     z-index: 1;
 }
 .cp_largetile > div {
-    padding: var(--padding-largetile);
+    padding: calc(var(--padding-text)*2 + 40px) var(--padding-largetile) var(--padding-largetile);
 }
 .cp_largetile > div > *:not(:last-child) {
     margin-bottom: calc(var(--padding-largetile)/2);
@@ -221,25 +238,25 @@ p {
     height: 100%;
     object-fit: cover;
 }
+
+/* isometric */
 .cp_largetile > figure.isometric img {
     object-fit: contain;
 }
 
 @media screen and (min-width: 640px) {
 .cp_largetile {
-        position: relative;
-        grid-row: span 3;
+    grid-row: span 3;
     }
 .cp_largetile::before {
-    margin: 0;
-    position: absolute;
     top: 0;
     right: 0;
     transform: translate(50%, -50%);
     }
 .cp_largetile > div {
-        max-height: 42%;
+    max-height: 42%;
     overflow-y: auto;
+    padding: var(--padding-text);
     }
 .cp_largetile > figure {
     position: absolute;
@@ -259,12 +276,13 @@ p {
         width: calc((100% - 60px)/3 + 30px);;
     }
     .cp_largetile > figure {
-        width: 66.77%;
         width: calc((100% - 60px)/3*2 + 30px);
         height: 100%;
     }
 }
 
+
+/* span */
 
 .cp_smalltile_fbg.span {
     grid-column: var(--smalltile-span-column);
@@ -274,11 +292,31 @@ p {
 
 /*===================== full background small tile ========================*/
 .cp_smalltile_fbg {   
-/*    background-color: var(--nv-15-5-f7);*/
     cursor: pointer;
     position: relative;
     aspect-ratio: var(--4-3);
 }
+
+
+/* open icon for phone only */
+@media screen and (max-width: 1180px) and (any-hover: none) {
+    .cp_smalltile_fbg > figure::before {
+    content: 'open_in_full';
+    font-family: 'material icons';
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 50%;
+    padding: var(--sp_px-xs);
+    color: var(--nv-0);
+    background-color: var(--nv-16);
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    bottom: var(--padding-text);
+    left: var(--padding-text);
+}
+}
+
 
 .cp_smalltile_fbg > div {
     padding: var(--padding-text) var(--padding-text) 100px;
@@ -289,6 +327,8 @@ p {
 .cp_smalltile_fbg > div :first-child {
     margin-bottom: var(--sp_px-s);
 }
+
+/* vertical gradient shadow */
 .cp_smalltile_fbg > div::after {
     content: ' ';
     display: block;
@@ -315,9 +355,10 @@ p {
     object-fit: cover;
     transition: var(--02transition);
 }
-.cp_smalltile_fbg:hover > figure img {
+.cp_smalltile_fbg:is(:hover, :focus, :focus-within) > figure img {
     transform: scale(1.05);
 }
+
 /*
 .cp_smalltile_fbg > figure::after {
     content: ' ';
@@ -340,6 +381,9 @@ p {
     position: relative;
     aspect-ratio: 4 / 6;
 }
+
+
+/* close button */
 .cp_largetile_fbg::before {
     content: 'close';
     display: block;
@@ -350,13 +394,15 @@ p {
     border-radius: 50%;
     padding: var(--sp_px-xs);
     color: var(--nv-0);
-    background: var(--nv-16);
+    background-color: var(--nv-16);
     cursor: pointer;
     position: absolute;
     top: var(--padding-text);
     right: var(--padding-text);
     z-index: 2;
 }
+
+
 .cp_largetile_fbg > div {
     color: var(--nv-16);
     padding: calc(var(--padding-text)*2 + 40px) var(--padding-text) 100px;
@@ -366,6 +412,8 @@ p {
 .cp_largetile_fbg > div > *:not(:last-child) {
     margin-bottom: calc(var(--padding-largetile)/2);
 }
+
+/* vertical gradient shadow */
 .cp_largetile_fbg > div::after {
     content: ' ';
     display: block;
@@ -414,6 +462,7 @@ p {
     }
     .cp_largetile_fbg > div {
         width: calc((100% - 60px)/3 + 30px);
+        padding: var(--padding-text);
         max-height: 100%;
         overflow-y: auto;
     }
@@ -436,11 +485,15 @@ p {
 .cp_smalltile_fbg > .precisecrop img {
     max-width: unset;
     width: 715px;
+    width: var(--precisecrop-width);
     height: auto;
     object-fit: unset;
     position: absolute;
-    top: -7.8%;
+/*    top: -7.8%;*/
+    top: 0;
+    bottom: 0;
     right: 0;
+    margin: auto 0;
 }
 .cp_smalltile_fbg > .precisecrop img {
     transform-origin: 71.3% 50%;

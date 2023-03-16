@@ -1,9 +1,19 @@
     :root {
+
         
         --padding-text: 16px;
         --padding-largetile: 16px;
         
+        
         --4-3: 4 / 3;
+        --4-6: 4 / 6;
+        
+        --precisecrop-horizontal: none;
+        --precisecrop-width: 100%;
+        --precisecrop-width-open: 100%;
+        --precisecrop-origin: 50% 71.9%;
+        --precisecrop-right: 0;
+        --precisecrop-bottom: -16.74%;
 
     }
 
@@ -15,6 +25,7 @@
         --grid-auto-row: 1fr;
         --16-9: 9 / 16;
         --4-3: unset;
+        --4-6: unset;
         
         --smalltile-span-column: span 2;
         
@@ -23,6 +34,12 @@
         
          --smalltile-width: 300px;
         --smalltile-height: 353px;
+        
+        --precisecrop-width: 353px;
+        --precisecrop-width-open: 630px;
+        --precisecrop-right: -8.88%;
+        --precisecrop-bottom: 0;
+        
 
     }
     
@@ -39,8 +56,20 @@
         
         --padding-text: 24px;
         
+        --text-maxwidth: 298px;
+        --text-maxwidth-open: 324px;
+        
         --smalltile-width: 298px;
-        --smalltile-height: 525px;
+        --smalltile-height: 256px;
+        
+        --precisecrop-vertical: none;
+        --precisecrop-horizontal: block;
+        
+        --precisecrop-width: 519.5px;
+        --precisecrop-width-open: 954px;
+        --precisecrop-origin: 71.3% 50%;
+        --precisecrop-right: 0;
+        --precisecrop-bottom: -7.8%
 
     }
 }
@@ -49,23 +78,18 @@
     :root {
         
         --padding-text: 32px;
+        
+        --text-maxwidth: 410px;
+        --text-maxwidth-open: 440px;
     
         --smalltile-width: 410px;
         --smalltile-height: 348px;
+        
+        --precisecrop-width: 715px;
+        --precisecrop-width-open: 1290px;
 
     }
      
-}
-
-.switches {
-    margin-bottom: var(--sp_px-xxxl);
-}
-.switches label {
-    margin-right: var(--sp_px-m);
-}
-
-.aspect-ratio-16-9 {
-    aspect-ratio: var(--16-9);
 }
 
 .container {
@@ -92,6 +116,20 @@
     width: 1290px;
     height: 500px;
 }
+
+
+.switches {
+    margin-bottom: var(--sp_px-xxxl);
+}
+.switches label {
+    margin-right: var(--sp_px-m);
+}
+
+.aspect-ratio-16-9 {
+    aspect-ratio: var(--16-9);
+}
+
+
 p {
     font-size: var(--tp_p-m);
     line-height: 1.67;
@@ -149,7 +187,8 @@ p {
     color: var(--nv-16);
     position: relative;
     z-index: 1;
-    max-width: 410px;
+    max-width: var(--text-maxwidth);
+    max-height: 100%;
     transition: all 0.3s ease-in-out 0.3s;
 }
 .cp_smalltile_fbg h4 {
@@ -161,7 +200,7 @@ p {
     max-height: 0px;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0s ease-in-out 0.3s, opacity 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out 0.3s, opacity 0.3s ease-in-out;
 }
 .cp_smalltile_fbg > div .additional * {
 margin-top: calc(var(--padding-largetile)/2);
@@ -213,6 +252,7 @@ margin-top: calc(var(--padding-largetile)/2);
     transition: all 0.3s ease-in-out 0.3s;
 }
 
+
 @media screen and (min-width: 640px) {
 
 .cp_smalltile_fbg::before {
@@ -222,22 +262,31 @@ margin-top: calc(var(--padding-largetile)/2);
     }
 }
 
+@media screen and (min-width: 1024px) {
+
+.cp_smalltile_fbg > div .additional {
+    transition: max-height 0s ease-in-out 0.3s, opacity 0.3s ease-in-out;
+}
+}
+
 
 
 
 /*===================== open  ========================*/
+
 section:has(#open:checked) .cp_smalltile_fbg {
     width: 100%;
     height: 100%;
+    aspect-ratio: var(--4-6);
     transition: all 0.3s ease-in-out;
 }
-section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
-    transform: none;
+section:has(#open:checked) .cp_smalltile_fbg::before { 
+    opacity: 1;
+    transition: all 0.3s ease-in-out 0.3s;
 }
-
 section:has(#open:checked) .cp_smalltile_fbg > div {
-    max-width: 440px;
-    overflow-y: auto;
+    max-width: var(--text-maxwidth-open);
+    padding: calc(var(--padding-text)*2 + 40px) var(--padding-text) 100px;
     transition: all 0.3s ease-in-out;
     }
 section:has(#open:checked) .cp_smalltile_fbg h4 {
@@ -252,50 +301,64 @@ section:has(#open:checked) .cp_smalltile_fbg h4 + p {
 section:has(#open:checked) .cp_smalltile_fbg > div .additional {
     max-height: 500px;
     opacity: 1;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out 0.3s;
+}
+section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
+    transform: none;
+}
+
+
+
+@media screen and (min-width: 640px) {
+    
+    section:has(#open:checked) .cp_smalltile_fbg > div {
+    padding: var(--padding-text) var(--padding-text) 100px;
+    overflow-y: auto;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    section:has(#open:checked) .cp_smalltile_fbg > div {
+    padding: var(--padding-text);
+    }
+    section:has(#open:checked) .cp_smalltile_fbg > div .additional {
     transition: max-height 0s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s;
 }
-section:has(#open:checked) .cp_smalltile_fbg > div::after {
+    section:has(#open:checked) .cp_smalltile_fbg > div::after {
         opacity: 0;
     transition: all 0.3s ease-in-out;
-}
-section:has(#open:checked) .cp_smalltile_fbg > figure::after {
+    }
+        
+    section:has(#open:checked) .cp_smalltile_fbg > figure::after {
     opacity: 1;
     transition: all 0.3s ease-in-out;
 }
-section:has(#open:checked) .cp_smalltile_fbg::before { 
-opacity: 1;
-    transition: all 0.3s ease-in-out 0.3s;
+    
+    
 }
-
 
 
 /*===================== presicion crop  ========================*/
 
 .cp_smalltile_fbg > .precisecrop img {
     max-width: unset;
-    width: 715px;
+    width: var(--precisecrop-width);
     height: auto;
     object-fit: unset;
     position: absolute;
-    top: -7.8%;
-    right: 0;
+    bottom: var(--precisecrop-bottom);
+    right: var(--precisecrop-right);
     transition: all 0.3s ease-in-out 0.3s, transform 0.2s ease-in-out;
+    transform-origin: var(--precisecrop-origin);
     
 }
-.cp_smalltile_fbg > .precisecrop img {
-    transform-origin: 71.3% 50%;
+.cp_smalltile_fbg > .precisecrop img:first-of-type {
+    display: var(--precisecrop-vertical);
 }
-
-/*===================== presicion crop open  ========================*/
-
-section:has(#open:checked) .cp_smalltile_fbg > .precisecrop img {
-    width: 1290px;
-/*    width: 100%;*/
-    top: 0;
-    transition: all 0.3s ease-in-out;
+.cp_smalltile_fbg > .precisecrop img:last-of-type {
+    display: var(--precisecrop-horizontal);
 }
-
-
 
 
 .cp_smalltile_fbg > .precisecrop2 img {
@@ -308,6 +371,15 @@ section:has(#open:checked) .cp_smalltile_fbg > .precisecrop img {
     position: absolute;
     transition: all 0.3s ease-in-out 0.3s, transform 0.2s ease-in-out;
 }
+/*===================== presicion crop open  ========================*/
+
+section:has(#open:checked) .cp_smalltile_fbg > .precisecrop img {
+    width: var(--precisecrop-width-open);
+    transition: all 0.3s ease-in-out;
+    right: 0;
+    bottom: 0;
+}
+
 
 section:has(#open:checked) .cp_smalltile_fbg > .precisecrop2 img {
     height: 100%;
