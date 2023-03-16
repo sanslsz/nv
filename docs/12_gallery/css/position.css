@@ -14,6 +14,9 @@
         --precisecrop-origin: 50% 71.9%;
         --precisecrop-right: 0;
         --precisecrop-bottom: -16.74%;
+        
+        --example-height: 60%;
+        --example-top: 40%;
 
     }
 
@@ -69,7 +72,10 @@
         --precisecrop-width-open: 954px;
         --precisecrop-origin: 71.3% 50%;
         --precisecrop-right: 0;
-        --precisecrop-bottom: -7.8%
+        --precisecrop-bottom: -7.8%;
+            
+        --example-height: 100%;
+        --example-top: 0;
 
     }
 }
@@ -189,6 +195,7 @@ p {
     z-index: 1;
     max-width: var(--text-maxwidth);
     max-height: 100%;
+    overflow: hidden;
     transition: all 0.3s ease-in-out 0.3s;
 }
 .cp_smalltile_fbg h4 {
@@ -287,6 +294,7 @@ section:has(#open:checked) .cp_smalltile_fbg::before {
 section:has(#open:checked) .cp_smalltile_fbg > div {
     max-width: var(--text-maxwidth-open);
     padding: calc(var(--padding-text)*2 + 40px) var(--padding-text) 100px;
+    overflow-y: auto;
     transition: all 0.3s ease-in-out;
     }
 section:has(#open:checked) .cp_smalltile_fbg h4 {
@@ -313,7 +321,7 @@ section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
     
     section:has(#open:checked) .cp_smalltile_fbg > div {
     padding: var(--padding-text) var(--padding-text) 100px;
-    overflow-y: auto;
+/*    overflow-y: auto;*/
     }
     
 }
@@ -326,7 +334,7 @@ section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
     transition: max-height 0s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s;
 }
     section:has(#open:checked) .cp_smalltile_fbg > div::after {
-        opacity: 0;
+    opacity: 0;
     transition: all 0.3s ease-in-out;
     }
         
@@ -340,6 +348,9 @@ section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
 
 
 /*===================== presicion crop  ========================*/
+.cp_smalltile_fbg {
+    background-color: var(--nv-0);
+}
 
 .cp_smalltile_fbg > .precisecrop img {
     max-width: unset;
@@ -375,16 +386,14 @@ section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
 
 section:has(#open:checked) .cp_smalltile_fbg > .precisecrop img {
     width: var(--precisecrop-width-open);
-    transition: all 0.3s ease-in-out;
     right: 0;
     bottom: 0;
+    transition: all 0.3s ease-in-out;
 }
 
 
 section:has(#open:checked) .cp_smalltile_fbg > .precisecrop2 img {
-    height: 100%;
-/*    left: 200px;*/
-/*    left: 15%;*/
-/*    height: 726px;*/
+    height: var(--example-height);
+    top: var(--example-top);
     transition: all 0.3s ease-in-out;
 }

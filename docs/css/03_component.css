@@ -329,7 +329,7 @@ input:first-child:checked ~ .cp_dropdown_pop label input {
 /*        display: none;*/
     }
     .cp_scrollbar::-webkit-scrollbar-button {
-        display: none;
+/*        display: none;*/
     }
     .cp_scrollbar::-webkit-scrollbar-corner {
 /*        width: 40px;*/
