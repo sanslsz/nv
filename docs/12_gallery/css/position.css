@@ -1,49 +1,27 @@
     :root {
-
-        
         --padding-text: 16px;
         --padding-largetile: 16px;
+        
+        --grid-gap: 30px;
         
         
         --4-3: 4 / 3;
         --4-6: 4 / 6;
-        
-        --precisecrop-horizontal: none;
-        --precisecrop-width: 100%;
-        --precisecrop-width-open: 100%;
-        --precisecrop-origin: 50% 71.9%;
-        --precisecrop-right: 0;
-        --precisecrop-bottom: -16.74%;
-        
-        --example-height: 60%;
-        --example-top: 40%;
-
     }
 
 
 
 @media screen and (min-width: 640px) {
     :root {
-        --grid-col: repeat(2, 1fr);
-        --grid-auto-row: 1fr;
         --16-9: 9 / 16;
         --4-3: unset;
         --4-6: unset;
-        
-        --smalltile-span-column: span 2;
-        
+
         --padding-text: 20px;
         --padding-largetile: 32px;
         
          --smalltile-width: 300px;
         --smalltile-height: 353px;
-        
-        --precisecrop-width: 353px;
-        --precisecrop-width-open: 630px;
-        --precisecrop-right: -8.88%;
-        --precisecrop-bottom: 0;
-        
-
     }
     
 }
@@ -51,349 +29,219 @@
 
 @media screen and (min-width: 1024px) {
     :root {
-        --grid-col: repeat(3, 1fr);
         --16-9: 16 / 9;
-        
-        --smalltile-span-column: revert;
-        --smalltile-span-row: span 2;
-        
+     
         --padding-text: 24px;
-        
-        --text-maxwidth: 298px;
-        --text-maxwidth-open: 324px;
-        
+   
         --smalltile-width: 298px;
-        --smalltile-height: 256px;
-        
-        --precisecrop-vertical: none;
-        --precisecrop-horizontal: block;
-        
-        --precisecrop-width: 519.5px;
-        --precisecrop-width-open: 954px;
-        --precisecrop-origin: 71.3% 50%;
-        --precisecrop-right: 0;
-        --precisecrop-bottom: -7.8%;
-            
-        --example-height: 100%;
-        --example-top: 0;
-
+        --smalltile-height: 254px;
     }
 }
 
 @media screen and (min-width: 1350px) {
     :root {
-        
         --padding-text: 32px;
-        
-        --text-maxwidth: 410px;
-        --text-maxwidth-open: 440px;
-    
+
         --smalltile-width: 410px;
         --smalltile-height: 348px;
-        
-        --precisecrop-width: 715px;
-        --precisecrop-width-open: 1290px;
-
     }
      
 }
 
-.container {
-    height: 500px;
-    background: lightblue;
+
+
+/*===================== layout and positioning ========================*/
+
+.cp_usecase {
+    position: relative;
+    aspect-ratio: var(--16-9);
+    background-color: lightblue;
+    transition: all 0.3s ease-in-out;
+}
+
+.cp_tile {
     position: relative;
 }
-.item {
-    transition: var(--02transition);
-    background-color: red;
-    width: 300px;
-    height: 600px;
+
+.cp_tile + .cp_tile {
+    margin-top: var(--grid-gap);
+}
+
+@media screen and (min-width: 640px) {
+    .cp_tile {
     position: absolute;
-    left: 0px;
-    right: 0px;
-    margin: 0 auto;
-/*    top: auto;*/
-    top: 0px;
-/*    top: 220px;*/
-/*    bottom: 0px;*/
-/*    bottom: 20px;*/
 }
-.item:hover {
-    width: 1290px;
-    height: 500px;
+    .cp_tile + .cp_tile {
+    margin-top: unset;
 }
-
-
-.switches {
-    margin-bottom: var(--sp_px-xxxl);
+    
+.cp_tile:nth-child(1) {
+    top: 0;
+    left: 0;
 }
-.switches label {
-    margin-right: var(--sp_px-m);
+.cp_tile:nth-child(2) {
+    top: 0;
+    left: calc(var(--smalltile-width) + var(--grid-gap));
 }
-
-.aspect-ratio-16-9 {
-    aspect-ratio: var(--16-9);
+    .cp_tile:nth-child(3) {
+    top: calc(var(--smalltile-height) + var(--grid-gap));
+    left: 0;
 }
-
-
-p {
-    font-size: var(--tp_p-m);
-    line-height: 1.67;
-    margin: 0;
+    .cp_tile:nth-child(4) {
+    top: calc(var(--smalltile-height) + var(--grid-gap));
+    left: calc(var(--smalltile-width) + var(--grid-gap));
 }
-
-.cp_copyright {
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--nv-16);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: var(--sp_em-xs) var(--sp_em-s);
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    .cp_tile:nth-child(5) {
+    top: calc(var(--smalltile-height)*2 + var(--grid-gap)*2);
+    left: 0;
+}
+    .cp_tile:nth-child(6) {
+    top: calc(var(--smalltile-height)*2 + var(--grid-gap)*2);
+    left: calc(var(--smalltile-width) + var(--grid-gap));
+}
+    
+    
 }
 
 
-
-/*===================== full background small tile ========================*/
-
-.cp_smalltile_fbg, .cp_smalltile_fbg * {
-    transition: all 0.3s ease-in-out 0.3s;
+@media screen and (min-width: 1024px) {
+    
+    
+.cp_tile:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+.cp_tile:nth-child(2) {
+    top: 0;
+    left: calc(var(--smalltile-width) + var(--grid-gap));
+}
+    .cp_tile:nth-child(3) {
+    top: 0;
+    left: calc(var(--smalltile-width)*2 + var(--grid-gap)*2);
+}
+    .cp_tile:nth-child(4) {
+    top: calc(var(--smalltile-height) + var(--grid-gap));
+    left: 0;
+}
+    .cp_tile:nth-child(5) {
+    top: calc(var(--smalltile-height) + var(--grid-gap));
+    left: calc(var(--smalltile-width) + var(--grid-gap));
+}
+    .cp_tile:nth-child(6) {
+    top: calc(var(--smalltile-height) + var(--grid-gap));
+    left: calc(var(--smalltile-width)*2 + var(--grid-gap)*2);
+}
+    
+    
 }
 
-.cp_smalltile_fbg {   
+
+
+
+
+
+
+
+/*===================== tile closed ========================*/
+
+
+
+
+
+.cp_tile {   
     width: var(--smalltile-width);
     height: var(--smalltile-height);
-    cursor: pointer;
-    position: relative;
+/*    cursor: pointer;*/
     aspect-ratio: var(--4-3);
-}
-.cp_smalltile_fbg::before {
-    content: 'close';
-    display: block;
-    width: fit-content;
-    font-family: 'material icons';
-    font-size: 32px;
-    line-height: 1;
-    border-radius: 50%;
-    padding: var(--sp_px-xs);
-    color: var(--nv-0);
-    background: var(--nv-16);
-    cursor: pointer;
-    position: absolute;
-    top: var(--padding-text);
-    right: var(--padding-text);
-    z-index: 2;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
+    font-size: 24px;
+    background: red;
+    z-index: 0;
+    transition: all 0.3s ease-in-out 0.3s, z-index 0s ease-in-out 0.6s;
 }
 
-.cp_smalltile_fbg > div {
-    padding: var(--padding-text) var(--padding-text) 100px;
-    color: var(--nv-16);
-    position: relative;
+/*
+.cp_tile:hover {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: all 0.3s ease-in-out, z-index 0s ease-in-out;
+}
+*/
+
+
+
+
+
+
+
+/*===================== tile open ========================*/
+
+input[name="tileswtich"]:checked ~ label.activate {
+    display: none;
+}
+input[name="tileswtich"]:checked ~ label.close {
+    visibility: visible;
+    opacity: 1;
+}
+.cp_tile:has(input[name="tileswtich"]:checked) {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    top: 0;
+    left: 0;
     z-index: 1;
-    max-width: var(--text-maxwidth);
-    max-height: 100%;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out 0.3s;
+    transition: all 0.3s ease-in-out, z-index 0s ease-in-out;
 }
-.cp_smalltile_fbg h4 {
-    margin-bottom: var(--sp_px-s);
-    transition: all 0.3s ease-in-out 0.3s;
-}
-.cp_smalltile_fbg > div .additional {
+.cp_tile:has(input[name="tileswtich"]:checked) ~ .treasurechest label[for="switch_hide"] {
     display: block;
-    max-height: 0px;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.3s ease-in-out 0.3s, opacity 0.3s ease-in-out;
-}
-.cp_smalltile_fbg > div .additional * {
-margin-top: calc(var(--padding-largetile)/2);
 }
 
-/* vertical shadow*/
-.cp_smalltile_fbg > div::after {
-    content: ' ';
-    display: block;
+
+/*===================== swtiches ========================*/
+
+input[name="tileswtich"] {
+/*    display: none;*/
+}
+label.activate {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 100px);
     position: absolute;
     top: 0;
+    left: 0;
+    background-color: pink;
+    cursor: pointer;
+}
+label.close {
+/*    display: none;*/
+    background-color: yellow;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
     right: 0;
-    z-index: -1;
-    opacity: 1;
-    transition: all 0.3s ease-in-out 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
 }
 
-.cp_smalltile_fbg > figure {
-    overflow: hidden;
-    position: absolute;
+
+.treasurechest {
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+}
+
+label[for="switch_hide"]:first-of-type {
+    display: none;
+/*    background-color: blue;*/
     width: 100%;
     height: 100%;
+    position: fixed;
     top: 0;
     left: 0;
 }
-.cp_smalltile_fbg > figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--02transition);
-}
-.cp_smalltile_fbg:hover > figure img {
-    transform: scale(1.05);
-}
 
-/* horziontal shadow */
-.cp_smalltile_fbg > figure::after {
-    content: ' ';
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0) 50%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0;
-    transition: all 0.3s ease-in-out 0.3s;
-}
-
-
-@media screen and (min-width: 640px) {
-
-.cp_smalltile_fbg::before {
-    top: 0;
-    right: 0;
-    transform: translate(50%, -50%);
-    }
-}
-
-@media screen and (min-width: 1024px) {
-
-.cp_smalltile_fbg > div .additional {
-    transition: max-height 0s ease-in-out 0.3s, opacity 0.3s ease-in-out;
-}
-}
-
-
-
-
-/*===================== open  ========================*/
-
-section:has(#open:checked) .cp_smalltile_fbg {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: var(--4-6);
-    transition: all 0.3s ease-in-out;
-}
-section:has(#open:checked) .cp_smalltile_fbg::before { 
-    opacity: 1;
-    transition: all 0.3s ease-in-out 0.3s;
-}
-section:has(#open:checked) .cp_smalltile_fbg > div {
-    max-width: var(--text-maxwidth-open);
-    padding: calc(var(--padding-text)*2 + 40px) var(--padding-text) 100px;
-    overflow-y: auto;
-    transition: all 0.3s ease-in-out;
-    }
-section:has(#open:checked) .cp_smalltile_fbg h4 {
-    font-size: var(--tp_h-small);
-    margin-bottom: calc(var(--padding-largetile)/2);
-    transition: all 0.3s ease-in-out;
-}
-section:has(#open:checked) .cp_smalltile_fbg h4 + p {
-    font-size: var(--tp_p-l);
-    transition: all 0.3s ease-in-out;
-}
-section:has(#open:checked) .cp_smalltile_fbg > div .additional {
-    max-height: 500px;
-    opacity: 1;
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out 0.3s;
-}
-section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
-    transform: none;
-}
-
-
-
-@media screen and (min-width: 640px) {
-    
-    section:has(#open:checked) .cp_smalltile_fbg > div {
-    padding: var(--padding-text) var(--padding-text) 100px;
-/*    overflow-y: auto;*/
-    }
-    
-}
-
-@media screen and (min-width: 1024px) {
-    section:has(#open:checked) .cp_smalltile_fbg > div {
-    padding: var(--padding-text);
-    }
-    section:has(#open:checked) .cp_smalltile_fbg > div .additional {
-    transition: max-height 0s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s;
-}
-    section:has(#open:checked) .cp_smalltile_fbg > div::after {
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    }
-        
-    section:has(#open:checked) .cp_smalltile_fbg > figure::after {
-    opacity: 1;
-    transition: all 0.3s ease-in-out;
-}
-    
-    
-}
-
-
-/*===================== presicion crop  ========================*/
-.cp_smalltile_fbg {
-    background-color: var(--nv-0);
-}
-
-.cp_smalltile_fbg > .precisecrop img {
-    max-width: unset;
-    width: var(--precisecrop-width);
-    height: auto;
-    object-fit: unset;
-    position: absolute;
-    bottom: var(--precisecrop-bottom);
-    right: var(--precisecrop-right);
-    transition: all 0.3s ease-in-out 0.3s, transform 0.2s ease-in-out;
-    transform-origin: var(--precisecrop-origin);
-    
-}
-.cp_smalltile_fbg > .precisecrop img:first-of-type {
-    display: var(--precisecrop-vertical);
-}
-.cp_smalltile_fbg > .precisecrop img:last-of-type {
-    display: var(--precisecrop-horizontal);
-}
-
-
-.cp_smalltile_fbg > .precisecrop2 img {
-    max-width: unset;
-    width: auto;
-    height: 130%;
-    top: 0;
-    left: 0;
-    object-fit: unset;
-    position: absolute;
-    transition: all 0.3s ease-in-out 0.3s, transform 0.2s ease-in-out;
-}
-/*===================== presicion crop open  ========================*/
-
-section:has(#open:checked) .cp_smalltile_fbg > .precisecrop img {
-    width: var(--precisecrop-width-open);
-    right: 0;
-    bottom: 0;
-    transition: all 0.3s ease-in-out;
-}
-
-
-section:has(#open:checked) .cp_smalltile_fbg > .precisecrop2 img {
-    height: var(--example-height);
-    top: var(--example-top);
-    transition: all 0.3s ease-in-out;
-}

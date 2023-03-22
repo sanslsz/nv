@@ -10,11 +10,38 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../05_cta/css/cta_styles_ver2.css">
+<!--    <link rel="stylesheet" href="css/transition.css">-->
     <link rel="stylesheet" href="css/position.css">
     
     <meta name="themeor" content="#fafafa">
 <!--    <meta name="color-scheme" content="light dark">-->
     <style>
+        .container {
+    height: 500px;
+    background: lightblue;
+    position: relative;
+}
+.item {
+    transition: var(--02transition);
+    background-color: red;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 0px;
+    right: 10px;
+/*    margin: 0 auto;*/
+/*    top: auto;*/
+    bottom: 0;
+    top: 0px;
+/*    top: 220px;*/
+/*    bottom: 0px;*/
+/*    bottom: 20px;*/
+}
+.item:hover {
+    width: 1290px;
+    height: 500px;
+}
+
     </style>
 
 </head>
@@ -23,6 +50,52 @@
     <section class="padding">
     <ul class="wrapper container">
     <li class="item">some text</li>    
+    </ul>
+    </section>
+    <section class="padding">
+    <ul class="wrapper cp_usecase">
+    <li class="cp_tile">1
+<!--
+                <div class="cp_scrollbar">
+                    <h4 class="tp_h-smallest">Virtual Showrooms and Car Configurators</h4>
+                    <p>Use virtual and augmented reality for immersive retail experiences.</p>
+                    <span class="additional">
+                    <p>As the buying experience migrates from physical retail spaces to online, dealerships need immersive technologies to bring the vehicle to the customer. These technologies make the online car research experience more interactive and bridge the gap between digital and physical. Immersive technologies for the automotive industry include online car configurators, 3D visualizations of vehicles, demonstration of cars in augmented reality, and virtual test drives.</p>
+                    <a href="#" class="cp_cta_tertiary_wrap large"><span class="no-break">Watch Demo</span></a> 
+                    <a href="#" class="cp_cta_tertiary_wrap large">Learn More About NVIDIA Omniverse <span class="no-break">Cloud</span></a> 
+                    </span>
+                </div>
+                <figure>
+                <img src="assets/use-cases-virtual-showrooms-car-configurators-1700x956-updated.jpg">
+                    <figcaption class="cp_copyright">&copy;Credit text placeholder</figcaption>
+                </figure>
+-->
+        <input id="switch_1" name="tileswtich" type="radio">
+        <label class="activate" for="switch_1"></label>
+            </li>   
+    <li class="cp_tile">2
+        
+            <input id="switch_2" name="tileswtich" type="radio">
+        <label class="activate" for="switch_2"></label>    
+    </li> 
+    <li class="cp_tile">3
+        
+            <input id="switch_3" name="tileswtich" type="radio">
+        <label class="activate" for="switch_3"></label>    
+    </li> 
+    <li class="cp_tile">4</li> 
+    <li class="cp_tile">5</li> 
+    <li class="cp_tile">
+        <input id="switch_6" name="tileswtich" type="radio">
+        <label class="activate" for="switch_6"></label>
+        <label class="close" for="switch_hide"></label>
+        </li>
+        
+    <div class="treasurechest">
+    <input id="switch_hide" name="tileswtich" type="radio">
+    <label for="switch_hide">aaa</label>
+<!--    <label for="switch_hide"></label>-->
+    </div>
     </ul>
     </section>
 

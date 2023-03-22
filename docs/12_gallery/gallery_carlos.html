@@ -20,11 +20,41 @@ h4 {
     font-size: var(--tp_h-small);
 }
 
+/*
 h4 + :is(p, .tp_p-l) {
     font-size: var(--tp_h-smallest);
     line-height: 1.25;
     font-weight: bold;
 }
+*/
+        
+.cp_largetile::before, .cp_largetile_fbg::before {
+    content: "";
+    width: 48px;
+    height: 48px;
+    font-family: unset;
+    font-size: unset;
+    line-height: unset;
+    border-radius: unset;
+    padding: unset;
+    color: unset;
+/*    background-color: unset;*/
+    background: url(assets/ic_close.svg) no-repeat center;
+    top: 0;
+    right: 0;
+
+}
+        
+        :is(.cp_largetile_fbg, .cp_largetile) > div {
+            display: flex;
+            flex-direction: column;
+        }
+        :is(.cp_largetile_fbg, .cp_largetile) > div > *:not(p:nth-child(3)) {
+            flex-shrink: 0;
+        }
+        :is(.cp_largetile_fbg, .cp_largetile) > div > p:nth-child(3) {
+            overflow-y: auto;
+        }
     </style>
 
 </head>
@@ -232,7 +262,7 @@ h4 + :is(p, .tp_p-l) {
                 <div class="cp_scrollbar">
                     <h4 class="tp_h-small">Virtual Showrooms and Car Configurators</h4>
                     <p class="tp_p-l">Use virtual and augmented reality for immersive retail experiences.</p>
-                    <p>As the buying experience migrates from physical retail spaces to online, dealerships need immersive technologies to bring the vehicle to the customer. These technologies make the online car research experience more interactive and bridge the gap between digital and physical. Immersive technologies for the automotive industry include online car configurators, 3D visualizations of vehicles, demonstration of cars in augmented reality, and virtual test drives.</p>
+                    <p class="cp_scrollbar">As the buying experience migrates from physical retail spaces to online, dealerships need immersive technologies to bring the vehicle to the customer. These technologies make the online car research experience more interactive and bridge the gap between digital and physical. Immersive technologies for the automotive industry include online car configurators, 3D visualizations of vehicles, demonstration of cars in augmented reality, and virtual test drives.</p>
                     <a href="#" class="cp_cta_tertiary_wrap large"><span class="no-break">Watch Demo</span></a> 
                     <a href="#" class="cp_cta_tertiary_wrap large">Learn More About NVIDIA Omniverse <span class="no-break">Cloud</span></a> 
                 </div>
@@ -252,6 +282,7 @@ h4 + :is(p, .tp_p-l) {
                     <p>Reimagine what’s next—from concept to collaboration to final design.</p>
                 </div>
                 <figure class="precisecrop">
+                <img src="assets/cp_cropspec_vertical.png">
                 <img src="assets/precise_crop_span_ver_1024px.png">
                 </figure>
             </li>
@@ -261,6 +292,7 @@ h4 + :is(p, .tp_p-l) {
                     <p>Boost performance with advanced compute, scalability, and reliability.</p>
                 </div>
                 <figure class="precisecrop">
+                <img src="assets/cp_cropspec_vertical.png">
                 <img src="assets/precise_crop_1024px.png">
                 </figure>
             </li>
@@ -302,11 +334,12 @@ h4 + :is(p, .tp_p-l) {
                 <div class="cp_scrollbar">
                     <h4 class="tp_h-small">Virtual Showrooms and Car Configurators</h4>
                     <p class="tp_p-l">Use virtual and augmented reality for immersive retail experiences.</p>
-                    <p>As the buying experience migrates from physical retail spaces to online, dealerships need immersive technologies to bring the vehicle to the customer. These technologies make the online car research experience more interactive and bridge the gap between digital and physical. Immersive technologies for the automotive industry include online car configurators, 3D visualizations of vehicles, demonstration of cars in augmented reality, and virtual test drives.</p>
+                    <p class="cp_scrollbar">As the buying experience migrates from physical retail spaces to online, dealerships need immersive technologies to bring the vehicle to the customer. These technologies make the online car research experience more interactive and bridge the gap between digital and physical. Immersive technologies for the automotive industry include online car configurators, 3D visualizations of vehicles, demonstration of cars in augmented reality, and virtual test drives.</p>
                     <a href="#" class="cp_cta_tertiary_wrap large"><span class="no-break">Watch Demo</span></a> 
                     <a href="#" class="cp_cta_tertiary_wrap large">Learn More About NVIDIA Omniverse <span class="no-break">Cloud</span></a> 
                 </div>
-                <figure>
+                <figure class="precisecrop">
+                <img src="assets/cp_cropspec_vertical.png">
                 <img src="assets/precise_crop_1024px.png">
                     <figcaption class="cp_copyright">&copy;Credit text placeholder</figcaption>
                 </figure>

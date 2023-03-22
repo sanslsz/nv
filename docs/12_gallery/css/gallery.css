@@ -5,7 +5,18 @@
         
         --4-3: 4 / 3;
         
-        --precisecrop-width: calc(100% * 1.743);
+        
+        --precisecrop-horizontal: none;
+        --precisecrop-width: 100%;
+        --precisecrop-origin: 50% 71.9%;
+        --precisecrop-right: 0;
+        --precisecrop-bottom: -16.74%;
+        
+        --precisecrop-span-width: 100%;
+        --precisecrop-span-height: auto;
+        --precisecrop-span-origin: 50% 71.9%;
+        --precisecrop-span-right: 0;
+        --precisecrop-span-bottom: -16.74%;
 
     }
 
@@ -23,7 +34,12 @@
         --padding-text: 20px;
         --padding-largetile: 32px;
         
-        --precisecrop-width: 523px;
+        
+        --precisecrop-width: calc(100% * 1.178);
+        --precisecrop-right: -8.88%;
+        --precisecrop-bottom: 0;
+        
+        --precisecrop-span-bottom: -44%;
 
     }
     
@@ -41,6 +57,21 @@
         --padding-text: 24px;
         
         --precisecrop-width: 519.5px;
+        
+        --precisecrop-vertical: none;
+        --precisecrop-horizontal: block;
+        
+        --precisecrop-width: calc(100% * 1.743);
+        --precisecrop-width-open: 954px;
+        --precisecrop-origin: 71.3% 50%;
+        --precisecrop-right: 0;
+        --precisecrop-bottom: -7.8%;
+        
+        --precisecrop-span-width: auto;
+        --precisecrop-span-height: 100%;
+        --precisecrop-span-origin: 71.3% 50%;
+        --precisecrop-span-right: -40.2%;
+        --precisecrop-span-bottom: 0;
 
     }
 }
@@ -50,7 +81,8 @@
         
         --padding-text: 32px;
         
-        --precisecrop-width: 715px;
+
+        --precisecrop-width-open: 1290px;
     
 
     }
@@ -295,6 +327,7 @@ p {
     cursor: pointer;
     position: relative;
     aspect-ratio: var(--4-3);
+    overflow: hidden;
 }
 
 
@@ -319,7 +352,7 @@ p {
 
 
 .cp_smalltile_fbg > div {
-    padding: var(--padding-text) var(--padding-text) 100px;
+    padding: var(--padding-text);
     color: var(--nv-16);
     position: relative;
     z-index: 1;
@@ -333,7 +366,7 @@ p {
     content: ' ';
     display: block;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 100px);
     background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 100px);
     position: absolute;
     top: 0;
@@ -484,31 +517,44 @@ p {
 
 .cp_smalltile_fbg > .precisecrop img {
     max-width: unset;
-    width: 715px;
     width: var(--precisecrop-width);
     height: auto;
     object-fit: unset;
     position: absolute;
-/*    top: -7.8%;*/
+    bottom: var(--precisecrop-bottom);
+    right: var(--precisecrop-right);
+    transform-origin: var(--precisecrop-origin);
+/*
     top: 0;
     bottom: 0;
     right: 0;
     margin: auto 0;
+*/
+/*    vertical auto isn't suitable when there are 2 image swapping ver / hor */
 }
-.cp_smalltile_fbg > .precisecrop img {
-    transform-origin: 71.3% 50%;
+.cp_smalltile_fbg > .precisecrop img:first-of-type {
+    display: var(--precisecrop-vertical);
+}
+.cp_smalltile_fbg > .precisecrop img:last-of-type {
+    display: var(--precisecrop-horizontal);
 }
 
 .cp_smalltile_fbg.span > .precisecrop img {
     max-width: unset;
-    width: auto;
-    height: 100%;
+    width: var(--precisecrop-span-width);
+    height: var(--precisecrop-span-height);
     object-fit: unset;
     position: absolute;
-    top: 0;
-    right: -40.2%;
-}
-.cp_smalltile_fbg.span:hover > .precisecrop img {
-    transform-origin: 71.3% 50%;
+    bottom: var(--precisecrop-span-bottom);
+    right: var(--precisecrop-span-right);
+    transform-origin: var(--precisecrop-span-origin);
 }
 
+
+/*===================== precise crop large tile ========================*/
+.cp_largetile_fbg > .precisecrop img:first-of-type {
+    display: var(--precisecrop-vertical);
+}
+.cp_largetile_fbg > .precisecrop img:last-of-type {
+    display: var(--precisecrop-horizontal);
+}
