@@ -20,13 +20,31 @@ h4 {
     font-size: var(--tp_h-small);
 }
 
-/*
 h4 + :is(p, .tp_p-l) {
-    font-size: var(--tp_h-smallest);
-    line-height: 1.25;
+    font-size: 16px;
+    line-height: 1.5;
     font-weight: bold;
 }
-*/
+        
+.cp_copyright {
+    font-size: var(--tp_p-s);
+    font-weight: bold;
+    color: var(--nv-16);
+    background-color: unset;
+    padding: 12px 15px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} 
+.cp_copyright.black {
+    color: var(--nv-0);
+}
+        
+@media screen and (max-width: 639px) {
+:is(.cp_largetile_fbg, .cp_largetile) > div {
+    padding-top: 48px;
+}
+        }
         
 .cp_largetile::before, .cp_largetile_fbg::before {
     content: "";
@@ -45,23 +63,15 @@ h4 + :is(p, .tp_p-l) {
 
 }
         
-        :is(.cp_largetile_fbg, .cp_largetile) > div {
-            display: flex;
-            flex-direction: column;
-        }
-        :is(.cp_largetile_fbg, .cp_largetile) > div > *:not(p:nth-child(3)) {
-            flex-shrink: 0;
-        }
-        :is(.cp_largetile_fbg, .cp_largetile) > div > p:nth-child(3) {
-            overflow-y: auto;
-        }
+
     </style>
 
 </head>
 
 <body>
+<!--
      <section class="padding">
-        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">Auto height, 10:6 thumbnail image, photography</h3>
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">Auto height, 6 items, 10:6 thumbnail image, photography</h3>
         <ul class="wrapper">
             <li class="cp_smalltile">
                 <div>
@@ -134,7 +144,7 @@ h4 + :is(p, .tp_p-l) {
         </ul>
     </section>
     <section class="padding">
-        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">Auto height, 10:6 thumbnail image, isometric</h3>
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">Auto height, 5 items, 10:6 thumbnail image, isometric</h3>
         <ul class="wrapper">
              <li class="cp_smalltile span">
                 <div>
@@ -194,8 +204,9 @@ h4 + :is(p, .tp_p-l) {
             </li>
         </ul>
     </section>
+-->
     <section class="padding">
-        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">16:9, full background, photography</h3>
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">6 items, full background, photography</h3>
         <ul class="wrapper aspect-ratio-16-9">
             <li class="cp_smalltile_fbg">
                 <div>
@@ -255,7 +266,7 @@ h4 + :is(p, .tp_p-l) {
         </ul>
     </section>
      <section class="padding">
-        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">16:9, full background, photography</h3>
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">full background, photography</h3>
         <ul class="wrapper aspect-ratio-16-9">
     
                 <li class="cp_largetile_fbg">
@@ -274,7 +285,7 @@ h4 + :is(p, .tp_p-l) {
          </ul>
     </section>
     <section class="padding">
-        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">16:9, full background, precise crop</h3>
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">5 items, full background, precise crop</h3>
         <ul class="wrapper aspect-ratio-16-9">
             <li class="cp_smalltile_fbg span">
                 <div>
@@ -327,7 +338,7 @@ h4 + :is(p, .tp_p-l) {
         </ul>
     </section>
      <section class="padding">
-        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">16:9, full background, precise crop</h3>
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">full background, precise crop</h3>
         <ul class="wrapper aspect-ratio-16-9">
     
                 <li class="cp_largetile_fbg">
@@ -341,10 +352,109 @@ h4 + :is(p, .tp_p-l) {
                 <figure class="precisecrop">
                 <img src="assets/cp_cropspec_vertical.png">
                 <img src="assets/precise_crop_1024px.png">
-                    <figcaption class="cp_copyright">&copy;Credit text placeholder</figcaption>
+                    <figcaption class="cp_copyright black">&copy;Credit text placeholder</figcaption>
                 </figure>
             </li>
          </ul>
+    </section>
+    <section class="padding">
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">4 items, full background, photography</h3>
+        <ul class="wrapper items-4 aspect-ratio-16-9">
+            <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Design Visualization</h4>
+                    <p>Reimagine what’s next—from concept to collaboration to final design.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-design-visualization-1700x956.jpg">
+                </figure>
+            </li>
+            <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Engineering Simulation</h4>
+                    <p>Boost performance with advanced compute, scalability, and reliability.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-engineering-simulation-1700x956-new.jpg">
+                </figure>
+            </li>
+             <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Industrial Digital Twin</h4>
+                    <p>Create accurate virtual representations powered by NVIDIA Omniverse™ Enterprise.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-industrial-digital-twin-1700x956.jpg">
+                </figure>
+            </li>
+            <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Virtual Showrooms and Car Configurators</h4>
+                    <p>Use virtual and augmented reality for immersive retail experiences.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-virtual-showrooms-car-configurators-1700x956-updated.jpg">
+                <figcaption class="cp_copyright">&copy;Credit text placeholder</figcaption>
+                </figure>
+            </li>
+        </ul>
+    </section>
+    
+    <section class="padding">
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">4 items, full background, photography</h3>
+        <ul class="wrapper items-3 aspect-ratio-16-9">
+            <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Design Visualization</h4>
+                    <p>Reimagine what’s next—from concept to collaboration to final design.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-design-visualization-1700x956.jpg">
+                </figure>
+            </li>
+            <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Engineering Simulation</h4>
+                    <p>Boost performance with advanced compute, scalability, and reliability.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-engineering-simulation-1700x956-new.jpg">
+                </figure>
+            </li>
+             <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Industrial Digital Twin</h4>
+                    <p>Create accurate virtual representations powered by NVIDIA Omniverse™ Enterprise.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-industrial-digital-twin-1700x956.jpg">
+                </figure>
+            </li>
+        </ul>
+    </section>
+    
+    <section class="padding">
+        <h3 class="wrapper center" style="margin-bottom: var(--sp_rem-l);">4 items, full background, photography</h3>
+        <ul class="wrapper items-2 aspect-ratio-16-9">
+            <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Design Visualization</h4>
+                    <p>Reimagine what’s next—from concept to collaboration to final design.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-design-visualization-1700x956.jpg">
+                </figure>
+            </li>
+            <li class="cp_smalltile_fbg">
+                <div>
+                    <h4>Engineering Simulation</h4>
+                    <p>Boost performance with advanced compute, scalability, and reliability.</p>
+                </div>
+                <figure>
+                <img src="assets/use-cases-engineering-simulation-1700x956-new.jpg">
+                </figure>
+            </li>
+        </ul>
     </section>
     
     <!--

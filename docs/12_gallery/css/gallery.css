@@ -24,9 +24,10 @@
 
 @media screen and (min-width: 640px) {
     :root {
-        --grid-col: repeat(2, 1fr);
+        --grid-col-6: repeat(2, 1fr);
+        --grid-col-4: repeat(2, 1fr);
         --grid-auto-row: 1fr;
-        --16-9: 9 / 16;
+        --16-9: 9 / 12;
         --4-3: unset;
         
         --smalltile-span-column: span 2;
@@ -48,7 +49,9 @@
 
 @media screen and (min-width: 1024px) {
     :root {
-        --grid-col: repeat(3, 1fr);
+        --grid-col-6: repeat(3, 1fr);
+        --grid-col-3: repeat(3, 1fr);
+        --grid-col-2: repeat(2, 1fr);
         --16-9: 16 / 9;
         
         --smalltile-span-column: revert;
@@ -101,9 +104,18 @@ p {
 
 .padding > ul.wrapper {
     display: grid;
-    grid-template-columns: var(--grid-col);
+    grid-template-columns: var(--grid-col-6);
     grid-auto-rows: var(--grid-auto-row);
     grid-gap: 30px;
+}
+.padding > ul.wrapper.items-4 {
+    grid-template-columns: var(--grid-col-4);
+}
+.padding > ul.wrapper.items-3 {
+    grid-template-columns: var(--grid-col-3);
+}
+.padding > ul.wrapper.items-2 {
+    grid-template-columns: var(--grid-col-2);
 }
 .aspect-ratio-16-9 {
     aspect-ratio: var(--16-9);
@@ -458,6 +470,20 @@ p {
     right: 0;
     z-index: -1;
 }
+
+/* make the description text scrollable, to absorb the overflow*/
+
+:is(.cp_largetile_fbg, .cp_largetile) > div {
+    display: flex;
+    flex-direction: column;
+}
+:is(.cp_largetile_fbg, .cp_largetile) > div > *:not(p:nth-child(3)) {
+    flex-shrink: 0;
+}
+:is(.cp_largetile_fbg, .cp_largetile) > div > p:nth-child(3) {
+    overflow-y: auto;
+}
+
 .cp_largetile_fbg > figure {
     position: absolute;
     width: 100%;
@@ -501,6 +527,12 @@ p {
     }
     .cp_largetile_fbg > div::after {
         opacity: 0;
+}
+    
+/*    space between the scroll bar and text */
+    :is(.cp_largetile_fbg, .cp_largetile) > div > p:nth-child(3) {
+    padding-right: var(--sp_px-m);
+    margin-right: calc(var(--sp_px-m)*-1);
 }
 .cp_largetile_fbg > figure::after {
     content: ' ';
