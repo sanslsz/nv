@@ -77,12 +77,6 @@
         --padding-text: 20px;
         --padding-largetile: 32px;
         
-        --smalltile-width-6: 300px;
-        --smalltile-height-6: 353px;
-        
-        --smalltile-width-4: 300px;
-        --smalltile-height-4: 405px;
-        
         --smalltile-span-width: calc(var(--smalltile-width-6)*2 + 30px);
         --smalltile-span-height: var(--smalltile-height-6);
         
@@ -96,14 +90,18 @@
         
         --precisecrop-span-bottom: -44%;
         
+        --smalltile-width-6: 300px;
+        --smalltile-height-6: 260px;
         --crop-6-items-width: 300px;
         --crop-6-items-right: 0;
-        --crop-6-items-top: -80.45px;
+        --crop-6-items-top: -47px;
         --crop-6-items-width-open: 720px;
         --crop-6-items-right-open: -45px;
         --crop-6-items-top-open: 0;
-        --crop-6-items-origin: 50% 55.09%;
+        --crop-6-items-origin: 50% 50.6%;
         
+        --smalltile-width-4: 300px;
+        --smalltile-height-4: 405px;
         --crop-4-items-width: 300px;
         --crop-4-items-right: 0;
         --crop-4-items-top: 0;
@@ -153,13 +151,7 @@
         --text-maxwidth-open: 324px;
         
         --vertical-shadow-width: var(--wrapper);
-        
-        --smalltile-width-6: 298px;
-        --smalltile-height-6: 254px;
-        
-        --smalltile-width-4: 462px;
-        --smalltile-height-4: 253px;
-        
+
         --smalltile-span-width: var(--smalltile-width-6);
         --smalltile-span-height: calc(var(--smalltile-height-6)*2 + 30px);
         
@@ -185,6 +177,8 @@
         --example-height: 100%;
         --example-top: 0;
         
+        --smalltile-width-6: 298px;
+        --smalltile-height-6: 254px;
         --crop-6-items-width: 453.31px;
         --crop-6-items-right: 0;
         --crop-6-items-top: 0;
@@ -193,6 +187,8 @@
         --crop-6-items-top-open: -130.83px;
         --crop-6-items-origin: 67.13% 39.87%;
         
+        --smalltile-width-4: 462px;
+        --smalltile-height-4: 253px;
         --crop-4-items-width: 662px;
         --crop-4-items-right: 0;
         --crop-4-items-top: 0;
@@ -690,4 +686,17 @@ section:has(#open:checked) .cp_smalltile_fbg > .crop.items-2 img {
     width: var(--crop-2-items-width-open);
     top: var(--crop-2-items-top-open);
     right: var(--crop-2-items-right-open);
+}
+
+
+/*=========================== auto-fit position ajustement =========================*/
+
+section:has(#topleft:checked) .cp_smalltile_fbg img {
+    object-position: top left;
+}
+section:has(#bottomright:checked) .cp_smalltile_fbg img {
+    object-position: bottom right;
+}
+section:has(#pixel:checked) .cp_smalltile_fbg img {
+    object-position: -100px -30px;
 }
