@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Position experiment</title>
+    <!--    <meta name="description" content="">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../05_cta/css/cta_styles_ver2.css">
+<!--    <link rel="stylesheet" href="css/transition.css">-->
+    <link rel="stylesheet" href="css/position.css">
+    
+    <meta name="themeor" content="#fafafa">
+<!--    <meta name="color-scheme" content="light dark">-->
+    <style>
+        :root {
+/*            --scrollbar-width: 16px;*/
+        }
+        div {
+            width: 360px;
+            height: 400px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            margin-bottom: 300px;
+        }
+        h4, h4 + p, a {
+            flex-shrink: 0;
+        }
+        .cp_scrollbar, .cp_scrollbar1 {
+            overflow-y: auto;
+            overflow-x: scroll;
+/*            margin-right: -32px;*/
+/*            padding-right: 29px;*/
+        }
+        .cp_scrollbar {
+            white-space: nowrap;
+        }
+        .additional {
+            display: flex;
+            flex-direction: column;
+/*            max-height: 300px;*/
+/*            overflow: visible;*/
+            overflow: hidden;
+/*            overflow-y: auto;*/
+/*            overflow-x: visible;*/
+/*            margin-right: -32px;*/
+/*            padding-right: 32px;*/
+/*            max-width: 300px;*/
+/*            width: 300px;*/
+        }
+/*        width or max-width prevents negtive margin from working */
+    </style>
+
+</head>
+
+<body>
+<div class="test1">
+                    <h4 class="tp_h-small">Virtual Showrooms and Car Configurators</h4>
+                    <p>Use virtual and augmented reality for immersive retail experiences.</p>
+                    <p class="cp_scrollbar1">As the buying experience migrates from physical retail spaces to online, dealerships need immersive technologies to bring the vehicle to the customer. These technologies make the online car research experience more interactive and bridge the gap between digital and physical. Immersive technologies for the automotive industry include online car configurators, 3D visualizations of vehicles, demonstration of cars in augmented reality, and virtual test drives.</p>
+                    <a href="#" class="cp_cta_tertiary_wrap large"><span class="no-break">Watch Demo</span></a> 
+                    <a href="#" class="cp_cta_tertiary_wrap large">Learn More About NVIDIA Omniverse <span class="no-break">Cloud</span></a>
+</div>
+    <div class="test2">
+                    <h4 class="tp_h-small">Virtual Showrooms and Car Configurators</h4>
+                    <p>Use virtual and augmented reality for immersive retail experiences.</p>
+                    <span class="additional">
+                    <p class="cp_scrollbar">As the buying experience migrates from physical retail spaces to online, dealerships need immersive technologies to bring the vehicle to the customer. These technologies make the online car research experience more interactive and bridge the gap between digital and physical. Immersive technologies for the automotive industry include online car configurators, 3D visualizations of vehicles, demonstration of cars in augmented reality, and virtual test drives.</p>
+                    <a href="#" class="cp_cta_tertiary_wrap large"><span class="no-break">Watch Demo</span></a> 
+                    <a href="#" class="cp_cta_tertiary_wrap large">Learn More About NVIDIA Omniverse <span class="no-break">Cloud</span></a> 
+                    </span>
+                </div>
+
+</body></html>
