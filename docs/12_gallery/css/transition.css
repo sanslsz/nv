@@ -6,9 +6,9 @@
         
         --hiddentext-maxheight: 320px;
         
-        --crop-display-tablet: none;
-        --crop-display-laptop: none;
-        --crop-display-desktop: none;
+        --image-display-tablet: none;
+        --image-display-laptop: none;
+        --image-display-desktop: none;
         
         --precisecrop-width: 100%;
         --precisecrop-width-open: 100%;
@@ -19,11 +19,11 @@
         --example-height: 60%;
         --example-top: 40%;
         
-        --precisecrop-span-width: 100%;
-        --precisecrop-span-height: auto;
-        --precisecrop-span-origin: 50% 71.9%;
-        --precisecrop-span-right: 0;
-        --precisecrop-span-bottom: -16.74%;
+        --precisecrop-3-items-width: 100%;
+        --precisecrop-3-items-height: auto;
+        --precisecrop-3-items-origin: 50% 71.9%;
+        --precisecrop-3-items-right: 0;
+        --precisecrop-3-items-bottom: -16.74%;
         
         --crop-6-items-width: 100%;
         --crop-6-items-right: 0;
@@ -69,22 +69,19 @@
         
         --padding-text: 20px;
         
-        --smalltile-span-width: calc(var(--smalltile-width-6)*2 + 30px);
-        --smalltile-span-height: var(--smalltile-height-6);
-        
         --text-maxwidth-6items: calc(var(--smalltile-width-6) - var(--padding-text)*2);
         --text-maxwidth-4items: calc(var(--smalltile-width-4) - var(--padding-text)*2);
         --text-maxwidth-open: calc(630px - var(--padding-text)*2);
         
-        --crop-display-phone: none;
-        --crop-display-tablet: block;
+        --image-display-phone: none;
+        --image-display-tablet: block;
         
         --precisecrop-width: 353px;
         --precisecrop-width-open: 630px;
         --precisecrop-right: -8.88%;
         --precisecrop-bottom: 0;
         
-        --precisecrop-span-bottom: -72%;
+        --precisecrop-3-items-bottom: -72%;
         
         --smalltile-width-6: 300px;
         --smalltile-height-6: 260px;
@@ -139,9 +136,6 @@
         --16-9: 16 / 9;
                 
         --padding-text: 24px;
-
-        --smalltile-span-width: var(--smalltile-width-6);
-        --smalltile-span-height: calc(var(--smalltile-height-6)*2 + 30px);
         
         --text-maxwidth-6items: calc(var(--smalltile-width-6) - var(--padding-text)*2);
         --text-maxwidth-4items: calc(var(--smalltile-width-4) - var(--padding-text)*2);
@@ -152,8 +146,8 @@
         --hiddentext-maxheight: 500px;
         
         
-        --crop-display-tablet: none;
-        --crop-display-laptop: block;
+        --image-display-tablet: none;
+        --image-display-laptop: block;
         
         --precisecrop-width: 519.5px;
         --precisecrop-width-open: 954px;
@@ -161,11 +155,11 @@
         --precisecrop-right: 0;
         --precisecrop-bottom: -7.8%;
         
-        --precisecrop-span-width: auto;
-        --precisecrop-span-height: 100%;
-        --precisecrop-span-origin: 71.3% 50%;
-        --precisecrop-span-right: -40.2%;
-        --precisecrop-span-bottom: 0;
+        --precisecrop-3-items-width: auto;
+        --precisecrop-3-items-height: 100%;
+        --precisecrop-3-items-origin: 71.3% 50%;
+        --precisecrop-3-items-right: -40.2%;
+        --precisecrop-3-items-bottom: 0;
             
         --example-height: 100%;
         --example-top: 0;
@@ -217,8 +211,8 @@
         
         --padding-text: 32px;
         
-        --crop-display-laptop: none;
-        --crop-display-desktop: block;
+        --image-display-laptop: none;
+        --image-display-desktop: block;
         
         --precisecrop-width: 715px;
         --precisecrop-width-open: 1290px;
@@ -329,10 +323,7 @@ p {
     height: var(--smalltile-height-2);
 }
 
-.cp_smalltile_fbg.span {
-    width: var(--smalltile-span-width);
-    height: var(--smalltile-span-height);
-}
+
 .cp_smalltile_fbg::before {
     content: "";
     display: block;
@@ -397,6 +388,8 @@ p {
 margin-top: calc(var(--padding-text)/2);
 }
 
+
+
 /* vertical shadow*/
 .cp_smalltile_fbg > div::after {
     content: ' ';
@@ -411,6 +404,9 @@ margin-top: calc(var(--padding-text)/2);
     transition: all 0.3s ease-out 0.3s;
 }
 
+
+
+
 .cp_smalltile_fbg > figure {
     overflow: hidden;
     position: absolute;
@@ -419,6 +415,20 @@ margin-top: calc(var(--padding-text)/2);
     top: 0;
     left: 0;
 }
+
+.cp_smalltile_fbg > :is(.autofit, .precisecrop, .crop) img:nth-child(1) {
+    display: var(--image-display-phone);
+}
+.cp_smalltile_fbg > :is(.autofit, .precisecrop, .crop) img:nth-child(2) {
+    display: var(--image-display-tablet);
+}
+.cp_smalltile_fbg > :is(.autofit, .precisecrop, .crop) img:nth-child(3)  {
+    display: var(--image-display-laptop);
+}
+.cp_smalltile_fbg > :is(.autofit, .precisecrop, .crop) img:nth-child(4)  {
+    display: var(--image-display-desktop);
+}
+
 .cp_smalltile_fbg > figure img {
     width: 100%;
     height: 100%;
@@ -440,6 +450,8 @@ margin-top: calc(var(--padding-text)/2);
     left: -50%;
     transition: all 0.3s ease-out 0.3s;
 }
+
+
 
 /* parageraph over flow scroll */
 
@@ -552,6 +564,8 @@ section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
 
 /*===================== presicion crop  ========================*/
 
+
+/* gen 1 custom crop */
 .cp_smalltile_fbg > .precisecrop img {
     max-width: unset;
     width: var(--precisecrop-width);
@@ -564,25 +578,13 @@ section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
     transform-origin: var(--precisecrop-origin);
     
 }
-.span > .precisecrop img {
-    width: var(--precisecrop-span-width);
-    height: var(--precisecrop-span-height);
-    bottom: var(--precisecrop-span-bottom);
-    right: var(--precisecrop-span-right);
-    transform-origin: var(--precisecrop-span-origin);
+.items-3 > .precisecrop img {
+    width: var(--precisecrop-3-items-width);
+    height: var(--precisecrop-3-items-height);
+    bottom: var(--precisecrop-3-items-bottom);
+    right: var(--precisecrop-3-items-right);
+    transform-origin: var(--precisecrop-3-items-origin);
     
-}
-.cp_smalltile_fbg > :is(.precisecrop, .crop) img:nth-child(1) {
-    display: var(--crop-display-phone);
-}
-.cp_smalltile_fbg > :is(.precisecrop, .crop) img:nth-child(2) {
-    display: var(--crop-display-tablet);
-}
-.cp_smalltile_fbg > :is(.precisecrop, .crop) img:nth-child(3)  {
-    display: var(--crop-display-laptop);
-}
-.cp_smalltile_fbg > :is(.precisecrop, .crop) img:nth-child(4)  {
-    display: var(--crop-display-desktop);
 }
 
 .cp_smalltile_fbg:has(.precisecrop2) {
@@ -598,6 +600,9 @@ section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
     position: absolute;
     transition: all 0.3s ease-out 0.3s, transform 0.2s ease-out;
 }
+
+
+/* gen 2 custom crop */
 
 .cp_smalltile_fbg > .crop img {
     max-width: unset;
