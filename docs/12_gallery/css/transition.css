@@ -4,6 +4,8 @@
         
         --padding-text: 16px;
         
+        --hiddentext-maxheight: 320px;
+        
         --crop-display-tablet: none;
         --crop-display-laptop: none;
         --crop-display-desktop: none;
@@ -70,10 +72,9 @@
         --smalltile-span-width: calc(var(--smalltile-width-6)*2 + 30px);
         --smalltile-span-height: var(--smalltile-height-6);
         
-/*
-        --text-maxwidth: calc(var(--smalltile-width-6) - var(--padding-text)*2);
-        --text-maxwidth-open: 100%;
-*/
+        --text-maxwidth-6items: calc(var(--smalltile-width-6) - var(--padding-text)*2);
+        --text-maxwidth-4items: calc(var(--smalltile-width-4) - var(--padding-text)*2);
+        --text-maxwidth-open: calc(630px - var(--padding-text)*2);
         
         --crop-display-phone: none;
         --crop-display-tablet: block;
@@ -142,9 +143,14 @@
         --smalltile-span-width: var(--smalltile-width-6);
         --smalltile-span-height: calc(var(--smalltile-height-6)*2 + 30px);
         
-        --text-maxwidth: calc(var(--smalltile-width-6) - var(--padding-text)*2);
-        --text-maxwidth-half: calc(var(--smalltile-width-4) - var(--padding-text)*2);
+        --text-maxwidth-6items: calc(var(--smalltile-width-6) - var(--padding-text)*2);
+        --text-maxwidth-4items: calc(var(--smalltile-width-4) - var(--padding-text)*2);
+        --text-maxwidth-3items: calc(var(--smalltile-width-3) - var(--padding-text)*2);
+        --text-maxwidth-2items: calc(var(--smalltile-width-2) - var(--padding-text)*2);
         --text-maxwidth-open: calc(var(--smalltile-width-6) - var(--padding-text)*2);
+        
+        --hiddentext-maxheight: 500px;
+        
         
         --crop-display-tablet: none;
         --crop-display-laptop: block;
@@ -301,12 +307,14 @@ p {
 /*===================== full background small tile ========================*/
 
 .cp_smalltile_fbg {   
-    width: var(--smalltile-width-6);
-    height: var(--smalltile-height-6);
     cursor: pointer;
     position: relative;
     aspect-ratio: var(--4-3);
     transition: all 0.3s ease-out 0.3s;
+}
+.cp_smalltile_fbg.items-6 {
+    width: var(--smalltile-width-6);
+    height: var(--smalltile-height-6);
 }
 .cp_smalltile_fbg.items-4 {   
     width: var(--smalltile-width-4);
@@ -350,12 +358,10 @@ p {
     transition: all 0.3s ease-out 0.3s;
 }
 .cp_smalltile_fbg h4 {
-    max-width: var(--text-maxwidth);
     margin-bottom: var(--sp_px-s);
     transition: margin-bottom 0.3s ease-out 0.3s, max-width 0s ease-out 0.6s;
 }
 .cp_smalltile_fbg h4 + p {
-    max-width: var(--text-maxwidth);
     font-size: 16px;
     line-height: 1.5;
     font-weight: bold;
@@ -364,7 +370,6 @@ p {
 .cp_smalltile_fbg > div .additional {
     display: block;
     max-height: 0px;
-    max-width: var(--text-maxwidth);
 /*
     max-width: calc(var(--text-maxwidth) + var(--sp_px-xs) + var(--scrollbar-width));
     padding-right: calc(var(--sp_px-xs) + var(--scrollbar-width));
@@ -373,9 +378,21 @@ p {
     opacity: 0;
     transition: max-height 0.3s ease-out 0.3s, max-width 0s ease-out 0.6s, opacity 0.3s ease-out;
 }
-:is(.items-4, .items-2) > div :is(h4, h4 + p, .additional) {
-    max-width: var(--text-maxwidth-half);
+
+.cp_smalltile_fbg.items-6 > div :is(h4, h4 + p, .additional) {
+    max-width: var(--text-maxwidth-6items);
 }
+.cp_smalltile_fbg.items-4 > div :is(h4, h4 + p, .additional) {
+    max-width: var(--text-maxwidth-4items);
+}
+.cp_smalltile_fbg.items-3 > div :is(h4, h4 + p, .additional) {
+    max-width: var(--text-maxwidth-3items);
+}
+.cp_smalltile_fbg.items-2 > div :is(h4, h4 + p, .additional) {
+    max-width: var(--text-maxwidth-2items);
+}
+
+
 .cp_smalltile_fbg > div .additional * {
 margin-top: calc(var(--padding-text)/2);
 }
@@ -495,7 +512,7 @@ section:has(#open:checked) .cp_smalltile_fbg h4 + p {
     transition: max-width 0s ease-out 0.3s;
 }
 section:has(#open:checked) .cp_smalltile_fbg > div .additional {
-    max-height: 500px;
+    max-height: var(--hiddentext-maxheight);
     max-width: var(--text-maxwidth-open);
 /*    max-width: calc(var(--text-maxwidth-open) + var(--sp_px-xs) + var(--scrollbar-width));*/
     opacity: 1;
@@ -589,25 +606,25 @@ section:has(#open:checked) .cp_smalltile_fbg:hover > figure img {
     height: auto;
     transition: all 0.3s ease-out 0.3s, transform 0.2s ease-out;
 }
-.cp_smalltile_fbg > .crop.items-6 img {
+.cp_smalltile_fbg.items-6 > .crop img {
     width: var(--crop-6-items-width);
     top: var(--crop-6-items-top);
     right: var(--crop-6-items-right);
     transform-origin: var(--crop-6-items-origin);
 }
-.cp_smalltile_fbg > .crop.items-4 img {
+.cp_smalltile_fbg.items-4 > .crop img {
     width: var(--crop-4-items-width);
     top: var(--crop-4-items-top);
     right: var(--crop-4-items-right);
     transform-origin: var(--crop-4-items-origin);
 }
-.cp_smalltile_fbg > .crop.items-3 img {
+.cp_smalltile_fbg.items-3 > .crop img {
     width: var(--crop-3-items-width);
     top: var(--crop-3-items-top);
     right: var(--crop-3-items-right);
     transform-origin: var(--crop-3-items-origin);
 }
-.cp_smalltile_fbg > .crop.items-2 img {
+.cp_smalltile_fbg.items-2 > .crop img {
     width: var(--crop-2-items-width);
     top: var(--crop-2-items-top);
     right: var(--crop-2-items-right);
@@ -639,22 +656,22 @@ section:has(#open:checked) .cp_smalltile_fbg > .crop img {
     height: auto;
     transition: all 0.3s ease-out;
 }
-section:has(#open:checked) .cp_smalltile_fbg > .crop.items-6 img {
+section:has(#open:checked) .cp_smalltile_fbg.items-6 > .crop img {
     width: var(--crop-6-items-width-open);
     top: var(--crop-6-items-top-open);
     right: var(--crop-6-items-right-open);
 }
-section:has(#open:checked) .cp_smalltile_fbg > .crop.items-4 img {
+section:has(#open:checked) .cp_smalltile_fbg.items-4 > .crop img {
     width: var(--crop-4-items-width-open);
     top: var(--crop-4-items-top-open);
     right: var(--crop-4-items-right-open);
 }
-section:has(#open:checked) .cp_smalltile_fbg > .crop.items-3 img {
+section:has(#open:checked) .cp_smalltile_fbg.items-3 > .crop img {
     width: var(--crop-3-items-width-open);
     top: var(--crop-3-items-top-open);
     right: var(--crop-3-items-right-open);
 }
-section:has(#open:checked) .cp_smalltile_fbg > .crop.items-2 img {
+section:has(#open:checked) .cp_smalltile_fbg.items-2 > .crop img {
     width: var(--crop-2-items-width-open);
     top: var(--crop-2-items-top-open);
     right: var(--crop-2-items-right-open);
