@@ -1,0 +1,232 @@
+:root {
+    --md_modal-padding: 16px;
+
+    
+--nv-dark-16: #ffffff;
+--nv-dark-15-5-f7: #F7F7F7;
+--nv-dark-15-ee: #EEEEEE;
+--nv-dark-14-dd: #dddddd;
+--nv-dark-12-5-cc: #CCCCCC;
+--nv-dark-9-5-99: #999999;
+--nv-dark-6-5-66: #666666;
+--nv-dark-3-33: #333333;
+--nv-dark-2-22: #222222;
+--nv-dark-1-5-1a: #1A1A1A;
+--nv-dark-1-11: #111111;
+--nv-dark-0: #000000;
+
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+    --md_modal-padding: 24px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+    --md_modal-padding: 48px;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+    --md_modal-padding: 64px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    
+    :root {
+        
+        --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.5);
+        
+        --nv-16: var(--nv-dark-2-22);
+        --nv-15-5-f7: var(--nv-dark-1-5-1a);
+        --nv-15-ee: var(--nv-dark-1-11);
+        --nv-14-dd: var(--nv-dark-0);
+        --nv-12-5-cc: var(--nv-dark-3-33);
+        --nv-9-5-99: var(--nv-dark-6-5-66);
+        --nv-6-5-66: var(--nv-dark-9-5-99);
+        --nv-3-33: var(--nv-dark-12-5-cc);
+        --nv-2-22: var(--nv-dark-14-dd);
+        --nv-1-5-1a: var(--nv-dark-15-ee);
+        --nv-1-11: var(--nv-dark-15-5-f7);
+        --nv-0: var(--nv-dark-16);
+    }
+
+}
+
+
+html,
+body {
+    height: 100%;
+}
+body {
+    background: url(../../10_card/assets/Endeavor-NVIDIA-HQ-05A.jpeg) no-repeat center / cover;
+}
+
+dl {
+    margin: 0;
+    line-height: 1.4;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0;
+}
+
+.boxcontainer {
+    background-color: var(--nv-16);
+    padding: var(--md_modal-padding) calc(var(--md_modal-padding)/2);
+/*    padding: var(--padding-tb);*/
+    box-shadow: var(--boxshadow-card);
+}
+.boxcontainer > :is(h2, ul) {
+    padding: 0 calc(var(--md_modal-padding)/2);
+}
+.md_specscontainer > li:nth-of-type(n + 2) {
+    margin-top: var(--sp_px-xxxl);
+}
+
+.cp_specs dt:nth-of-type(n + 2) {
+    margin-top: var(--sp_px-l);
+    padding-top: var(--sp_px-l);
+    border-top: 1px solid var(--nv-9-5-99);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.cp_ol {
+    list-style: decimal;
+    font-size: 12px;
+    color: var(--nv-6-5-66);
+}
+:is(ol, ul) :is(ol, ul) li:not(:first-child) {
+    margin-top: var(--sp_em-s);
+}
+
+
+@media screen and (min-width: 640px) {
+    .cp_specs {
+        display: grid;
+        grid-template-columns: fit-content(50%) 1fr;
+    }
+
+    .cp_specs h3 {
+        grid-column: 1 / -1;
+    }
+
+    .cp_specs dt:nth-of-type(n + 2) {
+        margin-top: unset;
+        border-top: unset;
+    }
+
+    .cp_specs dt {
+        padding: var(--sp_px-l) var(--sp_px-l) var(--sp_px-l) 0;
+    }
+
+    .cp_specs dd {
+        padding: var(--sp_px-l) 0 var(--sp_px-l) var(--sp_px-l);
+    }
+
+    .cp_specs :is(dt:nth-of-type(n + 2), dd:nth-of-type(n + 2)) {
+        border-top: 1px solid var(--nv-9-5-99);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cp_specs {
+        grid-template-columns: 4fr 3fr 5fr;
+    }
+
+    .cp_specs h3 {
+        grid-column: 1 / 2;
+        grid-row: span 2;
+        padding: var(--sp_px-l) var(--md_modal-padding) 0 0;
+        margin: 0;
+    }
+
+    .cp_specs dt {
+        grid-column-start: 2;
+    }
+
+    .cp_specs dd {
+        grid-column-start: 3;
+    }
+}
+
+
+/*==================== modal ==================*/
+input[type="radio"] {
+    display: none;
+}
+
+label[for="show"] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--nv-green);
+    color: white;
+    padding: var(--sp_em-l);
+    box-shadow: var(--boxshadow-card);
+    cursor: pointer;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, top 0s ease-in-out 0.3s;
+    padding: var(--padding-tb);
+}
+
+label[for="hide_1"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.boxcontainer {
+    position: relative;
+    max-width: calc(var(--wrapper) - var(--padding-tb));
+    max-height: calc(100vh - var(--padding-tb) * 2);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.boxcontainer > h2 {
+    flex-shrink: 0;
+}
+.md_specscontainer {
+    overflow-y: auto;
+}
+
+label[for="hide_2"] {
+    width: 48px;
+    height: 48px;
+    background: url(../../css/cp_assets/ic_modal_close.svg) no-repeat center;
+    position: absolute;
+    top: -24px;
+    right: -24px;
+    cursor: pointer;
+}
+
+input[id="show"]:checked ~ .popup {
+    opacity: 1;
+    top: 0;
+    transition: top 0s ease-in-out, opacity 0.3s ease-in-out 0.1s;
+}

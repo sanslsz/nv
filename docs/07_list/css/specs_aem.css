@@ -1,0 +1,196 @@
+:root {
+    /*    NVIDIA web library 2.3 */
+--nv-16: #ffffff;
+--nv-15-5-f7: #F7F7F7;
+--nv-15-ee: #EEEEEE;
+--nv-14-dd: #dddddd;
+--nv-12-5-cc: #CCCCCC;
+--nv-9-5-99: #999999;
+--nv-6-5-66: #666666;
+--nv-3-33: #333333;
+--nv-2-22: #222222;
+--nv-1-5-1a: #1A1A1A;
+--nv-1-11: #111111;
+--nv-0: #000000;
+--nv-green: #76B900;
+--nv-green-hover: #6AA700;
+--nv-annotation: #FF00FF;
+    
+    --sp_px-xs: 4px;
+    --sp_px-s: 8px;
+    --sp_px-m: 12px;
+    --sp_px-l: 16px;
+    --sp_px-xl: 20px;
+    --sp_px-xxl: 24px;
+    --sp_px-xxxl: 28px;
+    --sp_px-xxxxl: 32px;
+    
+    
+    
+    --md_modal-padding: 16px;
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+    --md_modal-padding: 24px;
+        
+    --sp_px-xs: 5px;
+    --sp_px-s: 9px;
+    --sp_px-m: 13px;
+    --sp_px-l: 17px;
+    --sp_px-xl: 22px;
+    --sp_px-xxl: 27px;
+    --sp_px-xxxl: 32px;
+    --sp_px-xxxxl: 38px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+    --md_modal-padding: 48px;
+        
+    --sp_px-xs: 6px;
+    --sp_px-s: 10px;
+    --sp_px-m: 14px;
+    --sp_px-l: 18px;
+    --sp_px-xl: 24px;
+    --sp_px-xxl: 30px;
+    --sp_px-xxxl: 36px;
+    --sp_px-xxxxl: 44px;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+    --md_modal-padding: 64px;
+        
+    --sp_px-xs: 7px;
+    --sp_px-s: 11px;
+    --sp_px-m: 15px;
+    --sp_px-l: 19px;
+    --sp_px-xl: 26px;
+    --sp_px-xxl: 33px;    
+    --sp_px-xxxl: 40px;
+    --sp_px-xxxxl: 50px;
+    }
+}
+
+
+ul {
+    list-style: none;
+}
+
+dl {
+    margin: 0;
+    line-height: 1.4;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0;
+}
+
+.cp_ol {
+    list-style: decimal;
+    font-size: 12px;
+    color: var(--nv-6-5-66);
+    padding-left: 1.2em;
+}
+.cp_ol > li {
+    padding-left: 0.15em;
+}
+.cp_ol > li::marker {
+    font-weight: bold;
+}
+.cp_ol li + li {
+    margin-top: 0.6em;
+}
+
+.boxcontainer {
+    background-color: var(--nv-16);
+    padding: var(--md_modal-padding) calc(var(--md_modal-padding)/2);
+    color: black;
+    font-size: 15px;
+}
+.boxcontainer > :is(h2, ul) {
+    padding: 0 calc(var(--md_modal-padding)/2);
+}
+.md_specscontainer > li:nth-of-type(n + 2) {
+    margin-top: var(--sp_px-xxxl);
+}
+
+.cp_specs dt:nth-of-type(n + 2) {
+    margin-top: var(--sp_px-l);
+    padding-top: var(--sp_px-l);
+    border-top: 1px solid var(--nv-9-5-99);
+}
+
+
+@media screen and (min-width: 640px) {
+    .cp_specs {
+        display: grid;
+        grid-template-columns: fit-content(50%) 1fr;
+    }
+
+    .cp_specs h3 {
+        grid-column: 1 / -1;
+    }
+
+    .cp_specs dt:nth-of-type(n + 2) {
+        margin-top: unset;
+        border-top: unset;
+    }
+
+    .cp_specs dt {
+        padding: var(--sp_px-l) var(--sp_px-l) var(--sp_px-l) 0;
+    }
+
+    .cp_specs dd {
+        padding: var(--sp_px-l) 0 var(--sp_px-l) var(--sp_px-l);
+    }
+
+    .cp_specs :is(dt:nth-of-type(n + 2), dd:nth-of-type(n + 2)) {
+        border-top: 1px solid var(--nv-9-5-99);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cp_specs {
+        grid-template-columns: 4fr 3fr 5fr;
+    }
+
+    .cp_specs h3 {
+        grid-column: 1 / 2;
+        grid-row: span 2;
+        padding: var(--sp_px-l) var(--md_modal-padding) 0 0;
+        margin: 0;
+    }
+
+    .cp_specs dt {
+        grid-column-start: 2;
+    }
+
+    .cp_specs dd {
+        grid-column-start: 3;
+    }
+}
+
+
+/*==================== overflow ==================*/
+
+
+
+.boxcontainer {
+    display: flex;
+    flex-direction: column;
+}
+.boxcontainer > h2 {
+    flex-shrink: 0;
+}
+.md_specscontainer {
+    overflow-y: auto;
+}
