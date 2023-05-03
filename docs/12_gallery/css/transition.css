@@ -480,9 +480,8 @@ margin-top: calc(var(--padding-text)/2);
 
 /*  overflow scroll bottom fade mask */
 .cp_fade {
-    -webkit-mask-image: linear-gradient(to left, black 15px, transparent 15px), linear-gradient(to top, transparent, black 128px);
+    -webkit-mask-image: linear-gradient(to left, black 15px, transparent 15px), linear-gradient(to top, transparent, black 64px);
 }
-
 
 @media screen and (min-width: 640px) {
 
