@@ -109,6 +109,8 @@ ul, ol {
     font-size: 12px;
     color: var(--nv-6-5-66);
 }
+
+/*fine print*/
 :is(ol, ul) :is(ol, ul) li:not(:first-child) {
     margin-top: var(--sp_em-s);
 }
@@ -126,7 +128,6 @@ ul, ol {
 
     .cp_specs dt:nth-of-type(n + 2) {
         margin-top: unset;
-        border-top: unset;
     }
 
     .cp_specs dt {
@@ -137,7 +138,7 @@ ul, ol {
         padding: var(--sp_px-l) 0 var(--sp_px-l) var(--sp_px-l);
     }
 
-    .cp_specs :is(dt:nth-of-type(n + 2), dd:nth-of-type(n + 2)) {
+    .cp_specs dd:nth-of-type(n + 2) {
         border-top: 1px solid var(--nv-9-5-99);
     }
 }

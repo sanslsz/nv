@@ -17,6 +17,7 @@
 
 @media (prefers-color-scheme: dark) {
 
+/*
     :root {
         
         --boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.5);
@@ -34,6 +35,7 @@
         --nv-1-11: var(--nv-dark-15-5-f7);
         --nv-0: var(--nv-dark-16);
     }
+*/
 }
 
 @media screen and (min-width: 360px) {
@@ -67,6 +69,6 @@ body > section:nth-child(even) {
 }
 
 .cp_ul-chev > li::before {
-    background-image: url(../../css/cp_assets/ic_listbullet%20_dark.svg)
+/*    background-image: url(../../css/cp_assets/ic_listbullet%20_dark.svg)*/
 
 }
