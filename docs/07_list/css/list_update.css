@@ -299,9 +299,30 @@ dl {
 }
 
 [id^="cp_dl-spec-fineprint"]:target {
-    text-decoration: underline 1px solid var(--nv-green);
-    text-underline-offset: 0.4em;
+    text-decoration: underline 1px dashed transparent;
+    text-underline-position: under;
+/*    text-underline-offset: 0.4em;*/
     scroll-margin-top: 70vh;
+    animation-name: specshighlighter;
+    animation-direction: alternate;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 6;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes specshighlighter {
+    
+    0%, 40% {
+        text-decoration-color: transparent;
+    }
+    60%, 80% {
+        text-decoration-color: var(--nv-green);
+    }
+    100% {
+        text-decoration-color: transparent;
+    }
 }
 
 
