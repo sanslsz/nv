@@ -245,7 +245,7 @@ dl {
 }
 
 .cp_dl-spec {
-    display: var(--cp_dl-spec-display);
+    display: var(--cp_dl-spec-display, revert);
     grid-template-columns: var(--cp_dl-spec-columns);
     margin: var(--sp_em-l) 0;
 }
