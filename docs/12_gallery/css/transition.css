@@ -405,6 +405,8 @@ p {
     left: 0;
     z-index: -1;
     transition: all 0.3s ease-out 0.3s;
+/*    gradient band fix */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
 }
 
 
@@ -452,6 +454,10 @@ p {
     top: 0;
     left: -50%;
     transition: all 0.3s ease-out 0.3s;
+    /*    gradient band fix */
+    width: 70%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    left: -70%;
 }
 
 
