@@ -56,6 +56,14 @@
         --crop-2-items-right-open: var(--crop-6-items-right-open);
         --crop-2-items-top-open: var(--crop-6-items-top-open);
         --crop-2-items-origin: var(--crop-6-items-origin);
+        
+        --gradient-dark-start:  rgba(17, 17, 17, 0.7);
+        --gradient-dark-end:  rgba(17, 17, 17, 0);
+        --gradient-light-start: rgba(247, 247, 247, 0.7);
+        --gradient-light-end: rgba(247, 247, 247, 0);
+        --gradient-custom-start: var(--gradient-light-start);
+        --gradient-custom-end: var(--gradient-light-end);
+        --textcolor-custom: var(--nv-0);
 
     }
 
@@ -266,8 +274,21 @@
 
 .switches {
     margin-bottom: var(--sp_px-xxxl);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp_px-m) var(--sp_px-l);
 }
-.switches label {
+.switches fieldset {
+    white-space: nowrap;
+    padding: var(--sp_em-s) var(--sp_em-m);
+    border: 1px solid var(--nv-9-5-99);
+    border-radius: 4px;
+}
+.switches legend {
+    font-weight: bold;
+    padding: 0 var(--sp_em-xs);
+}
+.switches label:not(:last-child) {
     margin-right: var(--sp_px-l);
 }
 .switches input {
@@ -406,7 +427,7 @@ p {
     z-index: -1;
     transition: all 0.3s ease-out 0.3s;
 /*    gradient band fix */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    background: linear-gradient(to bottom, var(--gradient-dark-start), var(--gradient-dark-end));
 }
 
 
@@ -456,7 +477,7 @@ p {
     transition: all 0.3s ease-out 0.3s;
     /*    gradient band fix */
     width: 70%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, var(--gradient-dark-start), var(--gradient-dark-end));
     left: -70%;
 }
 
@@ -752,12 +773,22 @@ section:has(#pixel:checked) .cp_smalltile_fbg img {
 
 /*vertical shadow*/
 section:has(#light:checked) .cp_smalltile_fbg > div::after {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, var(--gradient-light-start), var(--gradient-light-end));
 }
 /* horziontal shadow */
 section:has(#light:checked) .cp_smalltile_fbg > figure::after {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, var(--gradient-light-start), var(--gradient-light-end));
 }
 section:has(#light:checked) .cp_smalltile_fbg > div {
     color: var(--nv-0);
+}
+
+section:has(#custom:checked) .cp_smalltile_fbg > div::after {
+    background: linear-gradient(to bottom, var(--gradient-custom-start), var(--gradient-custom-end));
+}
+section:has(#custom:checked) .cp_smalltile_fbg > figure::after {
+    background: linear-gradient(to right, var(--gradient-custom-start), var(--gradient-custom-end));
+}
+section:has(#custom:checked) .cp_smalltile_fbg > div {
+    color: var(--textcolor-custom);
 }
