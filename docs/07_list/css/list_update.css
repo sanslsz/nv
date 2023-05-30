@@ -90,37 +90,28 @@
 
 /*================= general ========================*/
 
-
-ol,
-ul,
-dl {
-    line-height: 1.4;
-}
 .cp_ul-chev, 
 .cp_ol-decimal, 
 .cp_ol-date, 
 .cp_dl-glossary, 
 .cp_dl-spec, 
 .cp_ul-customimage,
-.cp_ul-counter, 
-
-
-
-{
-    
-    
+.cp_ol-counter,
+.cp_ul-multi {
+    line-height: 1.4;
 }
 
-:is(.cp_ul-chev, .cp_ol-decimal, .cp_ul-counter) li + li {
+
+:is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) li + li {
     margin-top: var(--sp_em-s);
 }
 
-:is(.cp_ul-chev, .cp_ol-decimal, .cp_ul-counter) :is(.cp_ul-chev, .cp_ol-decimal, .cp_ul-counter) {
+:is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) {
     margin-top:  var(--sp_em-xs);
     margin-bottom:  var(--sp_em-xs);
 }
 
-:is(.cp_ul-chev, .cp_ol-decimal, .cp_ul-counter) :is(.cp_ul-chev, .cp_ol-decimal, .cp_ul-counter) li + li {
+:is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) li + li {
     margin-top: var(--sp_em-xs);
 }
 
@@ -373,24 +364,15 @@ dl {
     suffix: " ";
 }
 
-.cp_ul-counter {
+.cp_ol-counter {
     padding-left: var(--sp_em-xxxl);
     list-style-type: trophy;
     margin: var(--sp_em-l) 0;
 }
 
-.cp_ul-counter li {
+.cp_ol-counter li {
     padding-left: var(--sp_em-xs);
     list-style-type: trophy;
-}
-
-
-
-
-
-
-.p-large {
-    font-size: var(--tp_p-l);
 }
 
 
