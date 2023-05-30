@@ -132,6 +132,7 @@
 html {
 /*    font-family: 'dinp', helvetica, arial, sans-serif;*/
     font-family: 'nvsans', georgia, serif;
+    font-variant-numeric: proportional-nums;
     font-size: var(--base-size);
     line-height: 1.5;
     color: var(--nv-1-5-1a);

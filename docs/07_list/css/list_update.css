@@ -1,7 +1,7 @@
 :root {
 
     --cp_ul-multi-img: 80px;
-    --cp_ul-customimage-option2-flexbasis: max(200px, 45%);
+    --cp_ul-customimage-inline-flexbasis: max(200px, 45%);
 
     --cp_dl-grid: block;
     --cp_dl-dtmargin: var(--sp_em-l);
@@ -59,7 +59,7 @@
 @media screen and (min-width: 1024px) {
     :root {
         --md_listgrid: 1fr 1fr 1fr;
-        --cp_ul-customimage-option2-flexbasis: auto;
+        --cp_ul-customimage-inline-flexbasis: auto;
         
         --cp_dl-spec-columns: 4fr 3fr 5fr;
         --cp_dl-spec-h3-col: 1 / 2;
@@ -96,7 +96,20 @@ ul,
 dl {
     line-height: 1.4;
 }
+.cp_ul-chev, 
+.cp_ol-decimal, 
+.cp_ol-date, 
+.cp_dl-glossary, 
+.cp_dl-spec, 
+.cp_ul-customimage,
+.cp_ul-counter, 
 
+
+
+{
+    
+    
+}
 
 :is(.cp_ul-chev, .cp_ol-decimal, .cp_ul-counter) li + li {
     margin-top: var(--sp_em-s);
@@ -299,10 +312,10 @@ dl {
 }
 
 [id^="cp_dl-spec-fineprint"]:target {
-    text-decoration: underline 1px dashed transparent;
+        scroll-margin-top: 70vh;
+    text-decoration: underline 1px solid transparent;
     text-underline-position: under;
 /*    text-underline-offset: 0.4em;*/
-    scroll-margin-top: 70vh;
     animation-name: specshighlighter;
     animation-direction: alternate;
     animation-duration: 1s;
@@ -400,7 +413,7 @@ dl {
 
 
 
-.cp_ul-customimage.option2 {
+.cp_ul-customimage.md_inline {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -408,9 +421,9 @@ dl {
 
 }
 
-.cp_ul-customimage.option2 li {
+.cp_ul-customimage.md_inline li {
     white-space: nowrap;
-    flex: 0 0 var(--cp_ul-customimage-option2-flexbasis);
+    flex: 0 0 var(--cp_ul-customimage-inline-flexbasis);
     padding-left: var(--sp_em-xxxxl);
     margin: 0;
 }
