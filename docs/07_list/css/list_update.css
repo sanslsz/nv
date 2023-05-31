@@ -88,7 +88,7 @@
     :root {}
 }
 
-/*================= general ========================*/
+/*================= general list style ========================*/
 
 .cp_ul-chev, 
 .cp_ol-decimal, 
@@ -132,7 +132,7 @@
 
 .cp_ul-chev {
     margin: var(--sp_em-l) 0;
-    padding-left: var(--sp_em-xxxl);
+    padding-left: var(--sp_em-xl);
 }
 
 .cp_ul-chev > li {
@@ -157,7 +157,7 @@
 .cp_ol-decimal {
     list-style: decimal;
     margin: var(--sp_em-l) 0;
-    padding-left: var(--sp_em-xxxl);
+    padding-left: var(--sp_em-xl);
 }
 
 .cp_ol-decimal > li {
@@ -167,6 +167,7 @@
 
 .cp_ol-decimal > li::marker {
     font-weight: bold;
+    font-variant-numeric: proportional-nums;
 }
 
 
