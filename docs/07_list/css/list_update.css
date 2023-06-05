@@ -21,8 +21,8 @@
         --cp_dl-spec-dd-bordertop: ;
 */
 
-    --cp_dl-spec-dt-margin: var(--sp_px-l) 0 0 0;
     --cp_dl-spec-dt-padding: var(--sp_px-l) 0 0 0;
+    --cp_dl-spec-dd-padding: 0 0 var(--sp_px-l) 0;
     
 
 }
@@ -48,7 +48,6 @@
     --cp_dl-spec-display: grid;
     --cp_dl-spec-columns: fit-content(50%) 1fr;
     --cp_dl-spec-h3-col: 1 / -1;
-    --cp_dl-spec-dt-margin: unset;
     --cp_dl-spec-dt-padding: var(--sp_px-l) var(--sp_px-l) var(--sp_px-l) 0;
     --cp_dl-spec-dd-padding: var(--sp_px-l) 0 var(--sp_px-l) var(--sp_px-l);
     --cp_dl-spec-dd-bordertop: 1px solid var(--nv-9-5-99);
@@ -170,6 +169,13 @@
     font-variant-numeric: proportional-nums;
 }
 
+.cp_ol-decimal.subhead > li::marker {
+    font-weight: normal;
+}
+.cp_ol-decimal.subhead > li > span {
+    font-weight: bold;
+    display: block;
+}
 
 
 
@@ -252,7 +258,7 @@
 .cp_dl-spec {
     display: var(--cp_dl-spec-display, revert);
     grid-template-columns: var(--cp_dl-spec-columns);
-    margin: var(--sp_em-l) 0;
+    margin: var(--sp_em-xxl) 0;
 }
 
 .cp_dl-spec h3 {
@@ -266,7 +272,6 @@
     font-weight: bold;
     grid-column: var(--cp_dl-spec-dt-col);
     padding: var(--cp_dl-spec-dt-padding);
-    margin: var(--cp_dl-spec-dt-margin);
     border-top: 1px solid var(--nv-9-5-99);
 }
 
@@ -443,13 +448,13 @@
 .cp_ol-decimal.md_listgrid {
     display: grid;
     grid-template-columns: var(--md_listgrid);
-    grid-gap: var(--sp_rem-s);
-    margin: var(--sp_rem-s) 0;
+    grid-gap: var(--sp_em-xl);
+    margin: var(--sp_em-xxl) 0;
     padding: 0;
 }
 
 .cp_ol-decimal.md_listgrid li {
-    margin: 0 0 0 var(--sp_em-xxl);
+    margin: 0 0 0 var(--sp_em-xl);
 }
 
 .cp_ol-decimal.md_listgrid > li::marker {
