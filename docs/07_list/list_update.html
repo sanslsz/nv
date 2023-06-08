@@ -17,8 +17,20 @@
             background-color: var(--nv-15-ee);
         }
 
-        body>section:nth-child(even) {
+        body > section:nth-child(even) {
             background-color: var(--nv-15-5-f7);
+        }
+        
+        @media screen and (min-width: 1024px) {
+            .subhead-comparison {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: var(--sp_px-xxxxl);
+                margin: var(--sp_px-xxxl) 0;
+            }
+            .subhead-comparison > * {
+                margin: 0;
+            }
         }
         
         @media screen and (min-width: 1290px) {
@@ -54,7 +66,7 @@
 
     <section class="padding" id="ul_chev">
         <div class="wrapper">
-            <h3>Unordered list: chevron bullet</h3>
+            <h3>Unordered list: SVG chevron bullet</h3>
             <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
                 singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
                 aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
@@ -138,6 +150,108 @@
                         <!-- level 2 -->
                         <li>Another level two item
                             <ul class="cp_ul-chev">
+                                <!-- level 3 -->
+                                <li>Third level with long text that wraps to multiple lines</li>
+                                <li>Level three item two</li>
+                            </ul>
+                        </li>
+                        <li>One more level two item that wraps to multiple lines</li>
+                    </ul>
+                </li>
+                <li>Fourth item on the main list</li>
+            </ul>
+            </div>
+
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+    
+    <section class="padding" id="ul_guillemet">
+        <div class="wrapper">
+            <h3>Unordered list: single right-pointing angle quotation mark(U+203A): ›</h3>
+            <p class="tp_p-m">Guillemets are a pair of punctuation marks in the form of sideways double chevrons, « and », used as quotation marks in a number of languages. In some of these languages, "single" guillemets, ‹ and ›, are used for a quotation inside another quotation. Guillemets are not conventionally used in the English language. <a href="https://en.wikipedia.org/wiki/Guillemet" target="_blank">Wikipedia page</a></p>
+            <!--
+            <ul class="cp_ul-chev">
+                <li>Cupidatat legam summis qui quae. Commodo sed consequat.</li>
+                <li>Cupidatat esse sunt commodo sint, admodum noster tempor deserunt.</li>
+                <li>Consequat a nisi singliis.</li>
+                <li>Ne mlitos appellat, dolor ea incididunt.</li>
+                <li>Pariatur esse duis ex anim, doctrina quid nescius, consequat veniam fore voluptate cillum, aliqua est iudicem.</li>
+                <li>Officia adipsum senserit ea incididunt quem malis deserunt dolore, anim pariatur pariatur in summis an proident.</li>
+                <li>Quo ita clipa cernantur ut cillum graviterque ingeniis fore voluptate.</li>
+            </ul>
+-->
+            <div class="size-comparison">
+            <ul class="cp_ul-guillemet" style="font-size: var(--tp_p-l);">
+                <!-- level 1 -->
+                <li>Unordered list item one
+                <li>Second item with long text that wraps to multiple lines
+                    <ul class="cp_ul-guillemet">
+                        <!-- level 2 -->
+                        <li>Level two item</li>
+                        <li>Second level two item that wraps to multiple lines</li>
+                    </ul>
+                </li>
+                <li>Third list item
+                    <ul class="cp_ul-guillemet">
+                        <!-- level 2 -->
+                        <li>Another level two item
+                            <ul class="cp_ul-guillemet">
+                                <!-- level 3 -->
+                                <li>Third level with long text that wraps to multiple lines</li>
+                                <li>Level three item two</li>
+                            </ul>
+                        </li>
+                        <li>One more level two item that wraps to multiple lines</li>
+                    </ul>
+                </li>
+                <li>Fourth item on the main list</li>
+            </ul>
+            
+            <ul class="cp_ul-guillemet">
+                <!-- level 1 -->
+                <li>Unordered list item one
+                <li>Second item with long text that wraps to multiple lines
+                    <ul class="cp_ul-guillemet">
+                        <!-- level 2 -->
+                        <li>Level two item</li>
+                        <li>Second level two item that wraps to multiple lines</li>
+                    </ul>
+                </li>
+                <li>Third list item
+                    <ul class="cp_ul-guillemet">
+                        <!-- level 2 -->
+                        <li>Another level two item
+                            <ul class="cp_ul-guillemet">
+                                <!-- level 3 -->
+                                <li>Third level with long text that wraps to multiple lines</li>
+                                <li>Level three item two</li>
+                            </ul>
+                        </li>
+                        <li>One more level two item that wraps to multiple lines</li>
+                    </ul>
+                </li>
+                <li>Fourth item on the main list</li>
+            </ul>
+            
+            <ul class="cp_ul-guillemet" style="font-size: var(--tp_p-s);">
+                <!-- level 1 -->
+                <li>Unordered list item one
+                <li>Second item with long text that wraps to multiple lines
+                    <ul class="cp_ul-guillemet">
+                        <!-- level 2 -->
+                        <li>Level two item</li>
+                        <li>Second level two item that wraps to multiple lines</li>
+                    </ul>
+                </li>
+                <li>Third list item
+                    <ul class="cp_ul-guillemet">
+                        <!-- level 2 -->
+                        <li>Another level two item
+                            <ul class="cp_ul-guillemet">
                                 <!-- level 3 -->
                                 <li>Third level with long text that wraps to multiple lines</li>
                                 <li>Level three item two</li>
@@ -262,13 +376,14 @@
         </div>
     </section>
     
-     <section class="padding" id="ol_dec">
+     <section class="padding" id="ol_sub">
         <div class="wrapper">
             <h3>Ordered list: number and subhead</h3>
             <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
                 singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
                 aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
                 tempor.</p>
+            <div class="subhead-comparison">
             <ol class="cp_ol-decimal subhead">
                 <li><span>La La Land</span>Cupidatat legam summis qui quae. Commodo sed consequat.</li>
                 <li><span>Once Upon a Time in Hollywood</span>Cupidatat esse sunt commodo sint, admodum noster tempor deserunt.</li>
@@ -280,6 +395,19 @@
                 <li><span>Nocturnal Animals</span>Quo ita clipa cernantur ut cillum graviterque ingeniis fore voluptate.</li>
                 <li value="18"><span>Cafe Society</span>Ne mlitos appellat, dolor ea incididunt. Labore coniunctione cernantur enim appellat non</li>
             </ol>
+            <ol class="cp_ol-decimal firstline">
+                <li>La La Land<br>Cupidatat legam summis qui quae. Commodo sed consequat.</li>
+                <li>Once Upon a Time in Hollywood<br>Cupidatat esse sunt commodo sint, admodum noster tempor deserunt.</li>
+                <li>Drive<br>Consequat a nisi singliis. Labore coniunctione cernantur enim appellat non</li>
+                <li>Blade Runner 2045<br>Officia adipsum senserit ea incididunt quem malis deserunt dolore, anim pariatur pariatur in summis an proident.</li>
+                <li>Marriage Story<br>Labore coniunctione cernantur enim appellat non
+                    laborum do legam.</li>
+                <li>Licorice Pizza<br>Pariatur esse duis ex anim, doctrina quid nescius, consequat veniam fore voluptate cillum, aliqua est iudicem.</li>
+                <li>Nocturnal Animals<br>Quo ita clipa cernantur ut cillum graviterque ingeniis fore voluptate.</li>
+                <li value="18">Cafe Society<br>Ne mlitos appellat, dolor ea incididunt. Labore coniunctione cernantur enim appellat non</li>
+            </ol>
+                
+                </div>
             <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
                 singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
                 aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis

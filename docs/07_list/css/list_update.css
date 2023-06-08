@@ -90,6 +90,7 @@
 /*================= general list style ========================*/
 
 .cp_ul-chev, 
+.cp_ul-guillemet,
 .cp_ol-decimal, 
 .cp_ol-date, 
 .cp_dl-glossary, 
@@ -101,16 +102,16 @@
 }
 
 
-:is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) li + li {
+:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) li + li {
     margin-top: var(--sp_em-s);
 }
 
-:is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) {
+:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) {
     margin-top:  var(--sp_em-xs);
     margin-bottom:  var(--sp_em-xs);
 }
 
-:is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ol-decimal, .cp_ol-counter) li + li {
+:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) li + li {
     margin-top: var(--sp_em-xs);
 }
 
@@ -146,11 +147,32 @@
     background: url(../../css/cp_assets/ic_listbullet.svg) no-repeat center / contain;
     position: absolute;
     top: calc(1em * 1.4 / 2 - (1em + 1px) / 2);
-    /*    align to the middle like a bullet */
     left: calc((1em + 1px) * -1 - var(--sp_em-xs));
 }
 
 
+
+.cp_ul-guillemet {
+    margin: var(--sp_em-l) 0;
+    padding-left: var(--sp_em-xl);
+}
+
+.cp_ul-guillemet > li {
+    position: relative;
+}
+
+.cp_ul-guillemet > li::before {
+    content: '\203A';
+    display: block;
+/*    font-size: calc((1em + 1px) * 1);*/
+    font-weight: bold;
+    line-height: 1;
+    text-align:center;
+    width: 1em;
+    position: absolute;
+    top: calc(1em * 1.4/2 - 0.6em);
+    left: calc(-1em - var(--sp_em-xs));
+}
 
 
 .cp_ol-decimal {
@@ -169,6 +191,8 @@
     font-variant-numeric: proportional-nums;
 }
 
+
+
 .cp_ol-decimal.subhead > li::marker {
     font-weight: normal;
 }
@@ -176,6 +200,22 @@
     font-weight: bold;
     display: block;
 }
+.cp_ol-decimal.subhead > li > span::after {
+    content: "";
+/*    content: ": ";*/
+}
+
+
+
+
+
+.cp_ol-decimal.firstline > li::marker {
+    font-weight: normal;
+}
+.cp_ol-decimal.firstline > li:first-line {
+    font-weight: bold;
+}
+
 
 
 
@@ -339,7 +379,7 @@
 
 
 .cp_ul-customimage {
-    padding-left: var(--sp_em-xxxxl);
+    padding-left: var(--sp_em-xxxl);
     margin: var(--sp_em-xl) 0;
 }
 
@@ -352,7 +392,10 @@
     height: calc((1em + 1px) * 1.5);
     position: absolute;
     top: calc(1em * 1.4 / 2 - (1em + 1px) * 1.5 / 2);
+/*    top: calc(0.5lh - (1em + 1px) * 1.5 / 2);*/
+/*    lh not support in firefox */
     left: calc(((1em + 1px) * 1.5 + var(--sp_em-s)) * -1);
+    left: calc(var(--sp_em-xxxl) * -1);
 }
 
 .cp_ul-customimage li + li {
@@ -412,7 +455,7 @@
 .cp_ul-customimage.md_inline li {
     white-space: nowrap;
     flex: 0 0 var(--cp_ul-customimage-inline-flexbasis);
-    padding-left: var(--sp_em-xxxxl);
+    padding-left: var(--sp_em-xxxl);
     margin: 0;
 }
 
@@ -432,10 +475,9 @@
 
     display: block;
     position: absolute;
-    left: calc(var(--sp_em-xxxxl) - (1em + 1px) * 1.5 - var(--sp_em-s));
-    top: calc((1em / 1.5 - 1px) * 1.4 / 2 - 1em / 2);
-    /*    for placing in margin not padding */
-    /*    left: calc(((1em/1.5 - 1px)*0.6 + 1em)*-1);*/
+/*    left: calc(var(--sp_em-xxxxl) - (1em + 1px) * 1.5 - var(--sp_em-s));*/
+    left: 0;
+    top: calc((1em / 1.5 - 1px) * 1.4 / 2 - 0.5em);
 }
 
 
