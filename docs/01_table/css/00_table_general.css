@@ -57,6 +57,9 @@
 body {
     background-color: var(--nv-16);
 }
+table {
+    font-variant-numeric: tabular-nums;
+}
 th, td {
     line-height: 1.2;
 }

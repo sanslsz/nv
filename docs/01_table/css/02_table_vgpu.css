@@ -24,6 +24,11 @@
 
 /*=========== base ===========*/
 
+.md_chip_scroll:first-of-type {
+    padding-bottom: 420px;
+    margin-bottom: -420px;
+}
+
 main.padding > :nth-child(n + 2) {
     margin-top: 32px;
 }

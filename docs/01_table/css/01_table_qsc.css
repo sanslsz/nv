@@ -63,8 +63,8 @@ thead {
     z-index: 1;
 }
 thead th {
-    padding: var(--cell-tb-xl) var(--cell-tb-m);
-    padding-right: calc(8px + 14px + var(--cell-tb-m));
+/*    padding: var(--cell-tb-xl) var(--cell-tb-m);*/
+/*    padding-right: calc(8px + 14px + var(--cell-tb-m));*/
     text-align: left;
     font-weight: 700;
     position: relative;
@@ -92,6 +92,170 @@ th a:active::after, input:checked ~ .menuselect::after {
     transform: translateY(-50%) rotate(180deg);
     transform-origin: center center;
 }
+
+
+/*================= new table head filter ===========*/
+
+
+.cp_thead_dropdown {
+    position: relative;
+    
+}
+.cp_thead_dropdown > :is(input[id], .backdrop, .front) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.cp_thead_dropdown input[id] {
+    display: block;
+    opacity: 1;     
+    width: 100%;
+    height: 100%;
+    appearance: none;
+}
+
+.cp_thead_dropdown > label.dropdown_text {
+    display: block;
+    padding: var(--cell-tb-xl) var(--cell-tb-m);
+    padding-right: calc(8px + 14px + var(--cell-tb-m));
+    cursor: pointer;
+    position: relative;
+}
+
+.cp_thead_dropdown > label.dropdown_text::after {
+    content: 'filter_list';
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+
+    display: block;
+    position: absolute;
+    right: var(--cell-tb-m);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cp_thead_dropdown > input[id]:checked ~ label.dropdown_text::after {
+    color: var(--nv-green);
+}
+
+.cp_thead_dropdown:has(.cp_thead_dropdown_pop input:checked) > label.dropdown_text::after {
+    content: 'filter_alt';
+    color: var(--nv-green);
+}
+
+
+.cp_thead_dropdown > input[id]:checked ~ .backdrop {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: green;
+    z-index: -1;
+}
+.cp_thead_dropdown > input[id]:checked ~ .front {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    cursor: pointer;
+}
+#dropdown_close {
+    display: none;
+/*    visibility: collapse;*/
+    width: 0px;
+    height: 0px;
+    opacity: 0; 
+    
+}
+
+
+.cp_thead_dropdown_pop {
+    
+/*
+    width: max-content;
+    max-width: min(400px, 80vw);
+    min-width: 200px;
+*/
+    width: 220px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    padding: var(--sp_em-s) var(--sp_em-l);
+    background-color: var(--nv-16);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    top: calc(80% - 8px);
+    left: 0;
+    transform: scale(1%);
+    transform-origin: top left;
+    opacity: 0;
+    transition: transform 0s ease-in-out 0.2s, opacity 0.2s ease-in-out, top 0.2s ease-in-out;
+    z-index: 3;
+}
+.cp_thead_dropdown > input[id]:checked ~ .cp_thead_dropdown_pop {
+    opacity: 1;
+    transform: none;
+    top: 80%;
+    transition: opacity 0.2s ease-in-out 0.01s, top 0.2s ease-in-out 0.01s, transform 0s ease-in-out;
+}
+
+
+.cp_thead_dropdown_pop label {
+    display: block;
+    max-width: min(90vw, 400px);
+    padding: var(--sp_em-s) 0;
+    padding-left: calc(var(--sz_icon-s) + var(--sp_em-s));
+    line-height: 1.2;
+    position: relative;
+}
+.cp_thead_dropdown_pop label input {
+    visibility: hidden;
+}
+
+.cp_thead_dropdown > input[id]:checked ~ .cp_thead_dropdown_pop label input {
+    visibility: visible;
+}
+
+.cp_thead_dropdown_pop input:is([type="checkbox"], [type="radio"]) {
+    position: absolute;
+    left: 0;
+/*    top: calc( (1.2em + var(--sp_em-s) + var(--sp_em-s))/2 - var(--sz_icon-s)/2 );*/
+    top: calc( var(--sp_em-s) + 0.6em - var(--sz_icon-s)/2);
+    appearance: none;
+    width: var(--sz_icon-s);
+    height: var(--sz_icon-s);
+    background: url(../../css/cp_assets/ic_checkbox_inactive.svg) no-repeat center / auto;
+}
+
+.cp_thead_dropdown_pop :is([type="checkbox"], [type="radio"]):checked {
+    background-image: url(../../css/cp_assets/ic_checkbox_active_green.svg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .menuselect {
     display: block;

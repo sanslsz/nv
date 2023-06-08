@@ -143,18 +143,15 @@
     flex: 0 0 fit-content;
     cursor: pointer;
 }
-/*================= filter dropdown ====================*/
+/*================= filter dropdown menu ====================*/
 .cp_dropdown {
     position: relative;
 }
-.cp_dropdown > input {
+.cp_dropdown > :is(input[id], .backdrop, .front) {
     position: absolute;
     top: 0;
     left: 0;
-    appearance: none;
     opacity: 0;
-/*    display: none;*/
-/*    visibility: hidden;*/
 }
 /*
 opacity 0 hides focus outline
@@ -163,15 +160,16 @@ apperance, opacity do not impact the flow of tabbing. display, visibility do imp
 
 the compromised solution is to hit extra 2 arrow keys 
 */
-.cp_dropdown > input:first-child {
+.cp_dropdown > input[id] {
     display: block;
-    opacity: 1;
+    opacity: 1;     
     width: 100%;
     height: 100%;
-    background-color: yellow;
-/*    visibility: visible;*/
+    appearance: none;
+    /*    display: none;*/
+/*    visibility: hidden;*/
 }
-.cp_dropdown > label {
+.cp_dropdown > label.dropdown_text {
     font-size: 14px;
     display: block;
     cursor: pointer;
@@ -181,7 +179,7 @@ the compromised solution is to hit extra 2 arrow keys
     border: 1px solid var(--nv-12-5-cc);
     position: relative;
 }
-.cp_dropdown > label::after {
+.cp_dropdown > label.dropdown_text::after {
     content: '';
     display: block;
     width: var(--sz_icon-s);
@@ -193,32 +191,40 @@ the compromised solution is to hit extra 2 arrow keys
     transform: translateY(-50%);
     transition: var(--02transition);
 }
-.cp_dropdown > input:first-child:checked + input {
+.cp_dropdown > input[id]:checked ~ label.dropdown_text {
+    border: 1px solid var(--nv-green);
+}
+.cp_dropdown > input[id]:checked ~ label.dropdown_text::after {
+    background-image: url(cp_assets/ic_chevron_dropdown_small_green.svg);
+    transform: translateY(-50%) rotate(180deg);
+}
+.cp_dropdown > input[id]:checked ~ .backdrop {
     display: block;
-/*    visibility: visible;*/
     position: fixed;
     width: 100%;
     height: 100vh;
     background-color: green;
     z-index: -1;
 }
-.cp_dropdown > input:first-child:checked ~ label {
-    border: 1px solid var(--nv-green);
-}
-.cp_dropdown > input:first-child:checked ~ label::after {
-    background-image: url(cp_assets/ic_chevron_dropdown_small_green.svg);
-    transform: translateY(-50%) rotate(180deg);
-/*    transform-origin: center center;*/
-}
-.cp_dropdown > input:first-child:checked ~ input:last-child {
+.cp_dropdown > input[id]:checked ~ .front {
     display: block;
-/*    visibility: visible;*/
     width: 100%;
     height: 100%;
     background-color: red;
     cursor: pointer;
 }
+.cp_dropdown_close {
+    display: none;
+/*    visibility: collapse;*/
+    width: 0px;
+    height: 0px;
+    opacity: 0; 
+    
+}
 
+
+
+/*================= filter dropdown pop up ====================*/
 .cp_dropdown_pop {
     max-width: 90vw;
     max-height: 400px;
@@ -237,7 +243,7 @@ the compromised solution is to hit extra 2 arrow keys
     transition: transform 0s ease-in-out 1s, opacity 0.2s ease-in-out, top 0.2s ease-in-out;
     font-weight: 400;
 }
-input:first-child:checked ~ .cp_dropdown_pop {
+.cp_dropdown > input[id]:checked ~ .cp_dropdown_pop {
     opacity: 1;
     transform: none;
     top: calc(100% + var(--sp_px-xs));
@@ -251,14 +257,13 @@ input:first-child:checked ~ .cp_dropdown_pop {
     padding: var(--sp_em-s) 0;
     padding-left: calc(var(--sz_icon-s) + var(--sp_em-s));
     line-height: 1.2;
-/*    white-space: nowrap;*/
     position: relative;
 }
 .cp_dropdown_pop label input {
     visibility: hidden;
 }
 
-input:first-child:checked ~ .cp_dropdown_pop label input {
+.cp_dropdown > input[id]:checked ~ .cp_dropdown_pop label input {
     visibility: visible;
 }
 
@@ -276,6 +281,7 @@ input:first-child:checked ~ .cp_dropdown_pop label input {
 .cp_dropdown_pop :is([type="checkbox"], [type="radio"]):checked {
     background-image: url(cp_assets/ic_checkbox_active_green.svg);
 }
+
 
 /* ========================= pagination dropdown ========================*/
 .cp_select {
@@ -330,7 +336,7 @@ input:first-child:checked ~ .cp_dropdown_pop label input {
         background: linear-gradient(to bottom, transparent 0px 6px, var(--nv-green) 6px 9px, transparent 9px 15px);
     }
     .cp_scrollbar::-webkit-scrollbar-button {
-        display: none;
+/*        display: none;*/
     }
     .cp_scrollbar::-webkit-scrollbar-corner {
     }

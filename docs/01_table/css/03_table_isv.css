@@ -46,12 +46,12 @@ table tbody tr td:nth(2) 1
 
 /*=========== base ===========*/
 main.padding > :nth-child(n + 2) {
-    margin-top: 32px;
+    margin-top: var(--sp_px-xl);
 }
 
 .md_chip_scroll:first-of-type {
-    padding-bottom: 400px;
-    margin-bottom: -400px;
+    padding-bottom: 420px;
+    margin-bottom: -420px;
 }
 .md_chip_scroll:first-of-type .md_chip_container {
     z-index: 3;
@@ -175,7 +175,7 @@ td img {
 }
 
 td li {
-    margin-bottom: var(--space-m);
+    margin-bottom: var(--sp_px-m);
 }
 
 .transparent.transparent {
