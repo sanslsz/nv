@@ -102,16 +102,16 @@
 }
 
 
-:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) li + li {
+:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ul-greater, .cp_ul-caret, .cp_ol-decimal, .cp_ol-counter) li + li {
     margin-top: var(--sp_em-s);
 }
 
-:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) {
+:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ul-greater, .cp_ul-caret, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ul-guillemet, .cp_ul-greater, .cp_ul-caret, .cp_ol-decimal, .cp_ol-counter) {
     margin-top:  var(--sp_em-xs);
     margin-bottom:  var(--sp_em-xs);
 }
 
-:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ul-guillemet, .cp_ol-decimal, .cp_ol-counter) li + li {
+:is(.cp_ul-chev, .cp_ul-guillemet, .cp_ul-greater, .cp_ul-caret, .cp_ol-decimal, .cp_ol-counter) :is(.cp_ul-chev, .cp_ul-guillemet, .cp_ul-greater, .cp_ul-caret, .cp_ol-decimal, .cp_ol-counter) li + li {
     margin-top: var(--sp_em-xs);
 }
 
@@ -164,7 +164,6 @@
 .cp_ul-guillemet > li::before {
     content: '\203A';
     display: block;
-/*    font-size: calc((1em + 1px) * 1);*/
     font-weight: bold;
     line-height: 1;
     text-align:center;
@@ -173,6 +172,54 @@
     top: calc(1em * 1.4/2 - 0.6em);
     left: calc(-1em - var(--sp_em-xs));
 }
+
+
+.cp_ul-greater {
+    margin: var(--sp_em-l) 0;
+    padding-left: var(--sp_em-xl);
+}
+
+.cp_ul-greater > li {
+    position: relative;
+}
+
+.cp_ul-greater > li::before {
+    content: '\003e';
+    display: block;
+    font-weight: bold;
+    line-height: 1;
+    text-align:center;
+    width: 1em;
+    position: absolute;
+    top: calc(1em * 1.4/2 - 0.5em);
+    left: calc(-1em - var(--sp_em-xs));
+}
+
+
+.cp_ul-caret {
+    margin: var(--sp_em-l) 0;
+    padding-left: var(--sp_em-xl);
+}
+
+.cp_ul-caret > li {
+    position: relative;
+}
+
+.cp_ul-caret > li::before {
+    content: '\005e';
+    display: block;
+    font-weight: bold;
+    line-height: 1;
+    text-align:center;
+    width: 1em;
+    position: absolute;
+    top: calc(1em * 1.4/2 - 0.5em);
+    left: calc(-1em - 0.45em);
+    transform: rotate(90deg)
+}
+
+
+
 
 
 .cp_ol-decimal {
