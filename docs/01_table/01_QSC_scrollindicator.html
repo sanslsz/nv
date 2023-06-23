@@ -98,7 +98,7 @@
             <div class="wrapper md_chip_scroll">
                 <ul class="md_chip_container">
                     <li class="cp_filter_chip"><span>System Builder:</span> Aetina</li>
-                    <li class="cp_filter_chip"><span>ServerModel:</span> IPC-7130</li>
+                    <li class="cp_filter_chip"><span>Server Model:</span> IPC-7130</li>
                     <li class="cp_filter_chip"><span>NVIDIA GPU:</span> A30</li>
                     <li class="cp_filter_chip"><span>NVIDIA GPU:</span> T4</li>
                     <li class="cp_filter_chip"><span>NVIDIA GPU:</span> V100S</li>
@@ -123,36 +123,181 @@
                         <col>
                     </colgroup>
                     <thead>
-                        <tr>
-                            <th scope="col"><a>System Builder</a></th>
-                            <!--                        removed :target drop because checkboxes are better -->
-                            <th scope="col"><a>Server Model/Series</a></th>
-                            <th scope="col"><a>NVIDIA GPU</a></th>
-                            <th scope="col">
-                                <input type="checkbox" id="menuselectbox">
-                                <label class="menuselect" for="menuselectbox" tabindex="0">GPU Form Factor</label>
-                                <div class="dropmenu" id="dropdown2">
-                                    <label><input type="checkbox" id="random" name="random">Intel Skylake &nbsp; [20]</label>
-                                    <label><input type="checkbox" id="random" name="random">Intel Ice Lake &nbsp; [5]</label>
-                                    <label><input type="checkbox" id="random" name="random">Intel Scascade Lake &nbsp; [12]</label>
-                                    <label><input type="checkbox" id="random" name="random">Intel Coffee Lake &nbsp; [6]</label>
-                                </div>
-                            </th>
-                            <th scope="col"><a>Processor Type</a>
-                                <!--
-                            <div class="dropmenu" id="dropdown">
-                                <label><input type="checkbox" id="random" name="random">Intel Skylake &nbsp; [20]</label>
-                                <label><input type="checkbox" id="random" name="random">Intel Ice Lake &nbsp; [5]</label>
-                                <label><input type="checkbox" id="random" name="random">Intel Scascade Lake &nbsp; [12]</label>
-                                <label><input type="checkbox" id="random" name="random">Intel Coffee Lake &nbsp; [6]</label>
+                    <tr>
+                        <th scope="col" class="cp_thead_dropdown">
+                        <input type="radio" id="system_builder" name="dropdown">
+                            <label for="system_builder" class="dropdown_text">System Builder</label>
+                            <div class="cp_thead_dropdown_pop cp_scrollbar">
+                                <label><input type="checkbox">Acer</label>
+                                <label><input type="checkbox">ADlink</label>
+                                <label><input type="checkbox">Advantech</label>
+                                <label><input type="checkbox">ASUS</label>
+                                <label><input type="checkbox">BOXX</label>
+                                <label><input type="checkbox">Cisco</label>
+                                <label><input type="checkbox">Dell EMC</label>
+                                <label><input type="checkbox">Enginetech</label>
+                                <label><input type="checkbox">Foxconn</label>
+                                <label><input type="checkbox">Fujitsu</label>
+                                <label><input type="checkbox">Gigabyte</label>
+                                <label><input type="checkbox">H3C</label>
+                                <label><input type="checkbox">Hitachi</label>
+                                <label><input type="checkbox">HPE</label>
+                                <label><input type="checkbox">IBM</label>
+                                <label><input type="checkbox">Lenovo ISG</label>
+                                <label><input type="checkbox">Pegatron</label>
                             </div>
--->
-                            </th>
-                            <th scope="col"><a>Max GPUs</a></th>
-                            <th scope="col"><a>Max CPUs</a></th>
-                            <th scope="col"><a>Validation Type</a></th>
-                        </tr>
-                    </thead>
+                            <label for="dropdown_close" class="backdrop"></label>
+                            <label for="dropdown_close" class="front"></label>
+                        
+                        </th>
+                        <th scope="col" class="cp_thead_dropdown">
+                        <input type="radio" id="server" name="dropdown">
+                            <label for="server" class="dropdown_text">Server Model</label>
+                            <div class="cp_thead_dropdown_pop cp_scrollbar">
+                                <label><input type="checkbox">1019GP-TT</label>
+                                <label><input type="checkbox">1288H V7</label>
+                                <label><input type="checkbox">1U2FH-4L/C622</label>
+                                <label><input type="checkbox">1U2G-ROME/2T</label>
+                                <label><input type="checkbox">1U4G-ROME</label>
+                                <label><input type="checkbox">1U4LW-X570/2L2T</label>
+                                <label><input type="checkbox">1U8S2E-ICX/2T</label>
+                                <label><input type="checkbox">1U8S2E-ROME/2T</label>
+                                <label><input type="checkbox">2288 V7</label>
+                                <label><input type="checkbox">2288H V5</label>
+                                <label><input type="checkbox">2288H V6</label>
+                                <label><input type="checkbox">2288H V7</label>
+                                <label><input type="checkbox">2288X V5</label>
+                                <label><input type="checkbox">2U2G/C622</label>
+                                <label><input type="checkbox">2U4G-C621WS</label>
+                                <label><input type="checkbox">2U4G-EPYC</label>
+                            </div>
+                            <label for="dropdown_close" class="backdrop"></label>
+                            <label for="dropdown_close" class="front"></label>
+                        </th>
+                        <th scope="col" class="cp_thead_dropdown">
+                            <input type="radio" id="nvidiagpu" name="dropdown">
+                            <label for="nvidiagpu" class="dropdown_text">NVIDIA GPU</label>
+                            <div class="cp_thead_dropdown_pop cp_scrollbar">
+                                <label><input type="checkbox">A10</label>
+                                <label><input type="checkbox">A100 40GB</label>
+                                <label><input type="checkbox">A100 80GB</label>
+                                <label><input type="checkbox">A100X</label>
+                                <label><input type="checkbox">A16</label>
+                                <label><input type="checkbox">A2</label>
+                                <label><input type="checkbox">A30</label>
+                                <label><input type="checkbox">A40</label>
+                                <label><input type="checkbox">A800 80GB</label>
+                                <label><input type="checkbox">H100 PCIe</label>
+                                <label><input type="checkbox">HGX A100 4 GPU 40GB</label>
+                                <label><input type="checkbox">L4</label>
+                                <label><input type="checkbox">L40 - 48GB</label>
+                                <label><input type="checkbox">NVIDIA RTX 2000 Ada Generation Laptop GPU</label>
+                                <label><input type="checkbox">NVIDIA RTX A1000 6GB Laptop GPU</label>
+                                <label><input type="checkbox">NVIDIA RTX A1000 Laptop GPU</label>
+
+                            </div>
+                            <label for="dropdown_close" class="backdrop"></label>
+                            <label for="dropdown_close" class="front"></label>
+                            <input type="radio" id="dropdown_close" name="dropdown">
+                        </th>
+
+
+
+                        <th scope="col" class="cp_thead_dropdown">
+                            <input type="radio" id="gpuform" name="dropdown">
+                            <label for="gpuform" class="dropdown_text">GPU Connectivity</label>
+                            <div class="cp_thead_dropdown_pop cp_scrollbar">
+                                <label><input type="checkbox">NVLink Bridge</label>
+                                <label><input type="checkbox">PCIe Gen 3</label>
+                                <label><input type="checkbox">PCIe Gen 4</label>
+                                <label><input type="checkbox">PCIe Gen 5</label>
+                                <label><input type="checkbox">SXM2 Gen 3</label>
+                                <label><input type="checkbox">SXM4 Gen 4</label>
+                                <label><input type="checkbox">SXM5 Gen 5</label>
+                            </div>
+                            <label for="dropdown_close" class="backdrop"></label>
+                            <label for="dropdown_close" class="front"></label>
+                        </th>
+                        <th scope="col" class="cp_thead_dropdown">
+                            <input type="radio" id="processortype" name="dropdown">
+                            <label for="processortype" class="dropdown_text">CPU</label>
+                            <div class="cp_thead_dropdown_pop cp_scrollbar">
+                                <label><input type="checkbox">AMD Chagall Threadripper</label>
+                                <label><input type="checkbox">AMD Genoa</label>
+                                <label><input type="checkbox">AMD Milan</label>
+                                <label><input type="checkbox">AMD Naples</label>
+                                <label><input type="checkbox">AMD Rembrandt-H</label>
+                                <label><input type="checkbox">AMD Rome</label>
+                                <label><input type="checkbox">AMD Ryzen</label>
+                                <label><input type="checkbox">ARM-Altra</label>
+                                <label><input type="checkbox">ARM-Altra Max</label>
+                                <label><input type="checkbox">ARM-Kunpeng 920</label>
+                                <label><input type="checkbox">ARM-ThunderX2</label>
+                                <label><input type="checkbox">IBM POWER9</label>
+                                <label><input type="checkbox">Intel Alder Lake</label>
+                                <label><input type="checkbox">Intel Atom</label>
+                                <label><input type="checkbox">Intel Broadwell</label>
+                                <label><input type="checkbox">Intel Cascade Lake</label>
+                                <label><input type="checkbox">Intel Cascade Lake -R</label>
+                                <label><input type="checkbox">Intel Coffee Lake</label>
+                                <label><input type="checkbox">Intel Comet Lake</label>
+                                <label><input type="checkbox">Intel Comet Lake-S</label>
+                                <label><input type="checkbox">Intel Cooper Lake</label>
+                                <label><input type="checkbox">Intel Haswell</label>
+                                <label><input type="checkbox">Intel Ice Lake</label>
+                                <label><input type="checkbox">Intel Kaby Lake</label>
+                                <label><input type="checkbox">Intel Raptor Lake</label>
+                                <label><input type="checkbox">Intel Rocket Lake</label>
+                                <label><input type="checkbox">Intel Sapphire Rapids</label>
+                            </div>
+                            <label for="dropdown_close" class="backdrop"></label>
+                            <label for="dropdown_close" class="front"></label>
+                        </th>
+                        <th scope="col" class="cp_thead_dropdown">
+                        <input type="radio" id="maxgpus" name="dropdown">
+                            <label for="maxgpus" class="dropdown_text">Max GPU</label>
+                            <div class="cp_thead_dropdown_pop cp_scrollbar">
+                                <label><input type="checkbox">1</label>
+                                <label><input type="checkbox">2</label>
+                                <label><input type="checkbox">3</label>
+                                <label><input type="checkbox">4</label>
+                                <label><input type="checkbox">5</label>
+                                <label><input type="checkbox">6</label>
+                                <label><input type="checkbox">7</label>
+                                <label><input type="checkbox">8</label>
+                                <label><input type="checkbox">10</label>
+                                <label><input type="checkbox">14</label>
+                                <label><input type="checkbox">16</label>
+                                <label><input type="checkbox">20</label>
+                            </div>
+                            <label for="dropdown_close" class="backdrop"></label>
+                            <label for="dropdown_close" class="front"></label>
+                        </th>
+                        <th scope="col" class="cp_thead_dropdown">
+                        <input type="radio" id="maxcpus" name="dropdown">
+                            <label for="maxcpus" class="dropdown_text">Max CPU</label>
+                            <div class="cp_thead_dropdown_pop cp_scrollbar">
+                                <label><input type="checkbox">0</label>
+                                <label><input type="checkbox">1</label>
+                                <label><input type="checkbox">2</label>
+                                <label><input type="checkbox">3</label>
+                                <label><input type="checkbox">4</label>
+                            </div>
+                            <label for="dropdown_close" class="backdrop"></label>
+                            <label for="dropdown_close" class="front"></label>
+                        </th>
+                        <th scope="col" class="cp_thead_dropdown">
+                        <input type="radio" id="validation" name="dropdown">
+                            <label for="validation" class="dropdown_text">Validation</label>
+                            <div class="cp_thead_dropdown_pop cp_scrollbar">
+                                <label><input type="checkbox">NGC-Ready</label>
+                                <label><input type="checkbox">NVIDIA-Certified</label>
+                                <label><input type="checkbox">Qualified</label>
+                            </div>
+                            <label for="dropdown_close" class="backdrop"></label>
+                            <label for="dropdown_close" class="front"></label></th>
+                    </tr>
+                </thead>
                     <tbody>
                         <tr>
                             <td>

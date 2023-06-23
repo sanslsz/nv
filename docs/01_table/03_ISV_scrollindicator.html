@@ -100,43 +100,109 @@
                 </ul>
             </li>
         </ul>
-        <div class="wrapper md_chip_scroll">    
+         <div class="wrapper md_chip_scroll">    
         <ul class="md_chip_container">
             <li class="cp_dropdown">
-                <input type="checkbox" id="manufacturer" tabindex="-1">
-                <label for="manufacturer">Software vendor</label>
+                <input type="radio" id="vendor" name="dropdown">
+                <label for="vendor" class="dropdown_text">Company</label>
                 <div class="cp_dropdown_pop">
-                    <label><input type="checkbox" id="random" name="random">Autodesk &nbsp; [20]</label>
-                    <label><input type="checkbox" id="random" name="random">Adobe &nbsp; [5]</label>
-                    <label><input type="checkbox" id="random" name="random">Oracle &nbsp; [12]</label>
-                    <label><input type="checkbox" id="random" name="random">Intuit &nbsp; [6]</label>
-                    <label><input type="checkbox" id="random" name="random">Microsoft &nbsp; [6]</label>
+                    <label><input type="radio" name="vendor">All &nbsp; [120]</label>
+                    <label><input type="radio" name="vendor">Autodesk &nbsp; [20]</label>
+                    <label><input type="radio" name="vendor">Adobe &nbsp; [5]</label>
+                    <label><input type="radio" name="vendor">Oracle &nbsp; [12]</label>
+                    <label><input type="radio" name="vendor">Intuit &nbsp; [6]</label>
+                    <label><input type="radio" name="vendor">Microsoft &nbsp; [6]</label>
                 </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
             </li>
             <li class="cp_dropdown">
-                <input type="checkbox" tabindex="-1">
-                <label>Application</label>
-                
+                <input type="radio" id="application" name="dropdown">
+                <label for="application" class="dropdown_text">Application</label>
+                <div class="cp_dropdown_pop">
+                    <label><input type="checkbox" checked>All &nbsp; [120]</label>
+                    <label><input type="checkbox">Inventor 2019 &nbsp; [20]</label>
+                    <label><input type="checkbox">3ds Max 2020 &nbsp; [5]</label>
+                    <label><input type="checkbox">AutoCAD 2019 &nbsp; [12]</label>
+                    <label><input type="checkbox">Maya 2022 &nbsp; [6]</label>
+                    <label><input type="checkbox">Solid Edge 2021 &nbsp; [6]</label>
+                </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
             </li>
             <li class="cp_dropdown">
-                <input type="checkbox" tabindex="-1">
-                <label>Graphic card</label>
-                
+                <input type="radio" id="graphiccard" name="dropdown">
+                <label for="graphiccard" class="dropdown_text">Graphic card</label>
+                <div class="cp_dropdown_pop cp_scrollbar">
+                    <label><input type="checkbox" checked>All &nbsp; [120]</label>
+                    <label><input type="checkbox">NVIDIA RTX A5000 &nbsp; [20]</label>
+                    <label><input type="checkbox">NVIDIA RTX A6000 &nbsp; [5]</label>
+                    <label><input type="checkbox">NVIDIA RTX A7000 &nbsp; [12]</label>
+                    <label><input type="checkbox">NVIDIA RTX A8000 &nbsp; [6]</label>
+                    <label><input type="checkbox">NVIDIA RTX A9000 &nbsp; [6]</label>
+                    <label><input type="checkbox">Quadro P2200 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P1000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P620 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P400 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro RTX 8000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro RTX 6000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro RTX 5000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro RTX 4000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro T2000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro T1000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P5000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P4000 &nbsp; [20]</label>
+                    <label><input type="checkbox">NVIDIA RTX A6000 &nbsp; [20]</label>
+                    <label><input type="checkbox">Quadro P6000 &nbsp; [20]</label>
+                </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
             </li>
             <li class="cp_dropdown">
-                <input type="checkbox" tabindex="-1">
-                <label>Operating system</label>
+                <input type="radio" id="driver" name="dropdown">
+                <label for="driver" class="dropdown_text">Driver version</label>
+                <div class="cp_dropdown_pop">
+                    <label><input type="checkbox" checked>All &nbsp; [120]</label>
+                    <label><input type="checkbox">462.31 &nbsp; [20]</label>
+                    <label><input type="checkbox">430.86 &nbsp; [5]</label>
+                    <label><input type="checkbox">461.09 &nbsp; [12]</label>
+                    <label><input type="checkbox">470.74 &nbsp; [6]</label>
+                    <label><input type="checkbox">456.23 &nbsp; [6]</label>
+                </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
             </li>
             <li class="cp_dropdown">
-                <input type="checkbox" tabindex="-1">
-                <label>Industry / vertical</label>
+                <input type="radio" id="certification" name="dropdown">
+                <label for="certification" class="dropdown_text">Certification level</label>
+                <div class="cp_dropdown_pop">
+                    <label><input type="checkbox" checked>All &nbsp; [120]</label>
+                    <label><input type="checkbox">Supported &nbsp; [20]</label>
+                    <label><input type="checkbox">Certified &nbsp; [5]</label>
+                </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
             </li>
-            <li class="cp_dropdown">
-                <input type="checkbox" tabindex="-1">
-                <label>Recent updates</label>
+            <li class="cp_dropdown_close">
+            <input type="radio" id="dropdown_close" name="dropdown">
             </li>
-            <li class="cp_filter_chip_clear">Clear all filters</li>
         </ul>
+            </div>
+        <div class="wrapper md_chip_scroll">
+                <ul class="md_chip_container">
+                    <li class="cp_filter_chip"><span>Company:</span> Adobe</li>
+                    <li class="cp_filter_chip"><span>Company:</span> Siemens</li>
+                    <li class="cp_filter_chip"><span>Application:</span> AutoCAD 2019</li>
+                    <li class="cp_filter_chip"><span>Application:</span>Lightroom 2022</li>
+                    <li class="cp_filter_chip"><span>Application:</span> Maya 2020</li>
+                    <li class="cp_filter_chip"><span>Application:</span> Solid Edge 2021</li>
+                    <li class="cp_filter_chip"><span>GPU:</span> NVIDIA RTX A6000</li>
+                    <li class="cp_filter_chip"><span>GPU:</span> Quadro P2200</li>
+                    <li class="cp_filter_chip"><span>GPU:</span> NVIDIA T500</li>
+                    <li class="cp_filter_chip"><span>Driver:</span> 462.361</li>
+<!--                    <li class="cp_filter_chip"><span>Certification:</span> Certified</li>-->
+                    <li class="cp_filter_chip_clear">Clear all filters</li>
+                </ul>
             </div>
         <div class="wrapper tablescroll scrollindicator">
         <table class="cp_table_isv">

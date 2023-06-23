@@ -229,6 +229,8 @@ the compromised solution is to hit extra 2 arrow keys
     max-width: 90vw;
     max-height: 400px;
     width: max-content;
+    min-width: 200px;
+    max-width: 400px;
     overflow-y: auto;
     font-size: 14px;
     position: absolute;

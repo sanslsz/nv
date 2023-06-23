@@ -117,8 +117,7 @@ th a:active::after, input:checked ~ .menuselect::after {
 
 .cp_thead_dropdown > label.dropdown_text {
     display: block;
-    padding: var(--cell-tb-xl) var(--cell-tb-m);
-    padding-right: calc(8px + 14px + var(--cell-tb-m));
+    padding: var(--cell-tb-xl) calc(8px + 16px + var(--cell-tb-m)) var(--cell-tb-xl) var(--cell-tb-m);
     cursor: pointer;
     position: relative;
 }
@@ -143,10 +142,19 @@ th a:active::after, input:checked ~ .menuselect::after {
     right: var(--cell-tb-m);
     top: 50%;
     transform: translateY(-50%);
+    
+    background-color: transparent;
+    width: 1.5em;
+    line-height: 1.5;
+    border-radius: 50%;
+    text-align: center;
+    right: calc(var(--cell-tb-m) - 0.25em);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .cp_thead_dropdown > input[id]:checked ~ label.dropdown_text::after {
     color: var(--nv-green);
+    background-color: var(--nv-16);
 }
 
 .cp_thead_dropdown:has(.cp_thead_dropdown_pop input:checked) > label.dropdown_text::after {
@@ -214,11 +222,10 @@ th a:active::after, input:checked ~ .menuselect::after {
 
 .cp_thead_dropdown_pop label {
     display: block;
-    max-width: min(90vw, 400px);
-    padding: var(--sp_em-s) 0;
-    padding-left: calc(var(--sz_icon-s) + var(--sp_em-s));
+    padding: var(--sp_em-s) 0 var(--sp_em-s) calc(var(--sz_icon-s) + var(--sp_em-s));
     line-height: 1.2;
     position: relative;
+    white-space: normal;
 }
 .cp_thead_dropdown_pop label input {
     visibility: hidden;

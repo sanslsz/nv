@@ -117,32 +117,84 @@
                     </ul>
                 </li>
             </ul>
-            <div class="wrapper md_chip_scroll">
-                <ul class="md_chip_container">
-                    <li class="cp_dropdown">
-                        <input type="checkbox" id="manufacturer">
-                        <label for="manufacturer" tabindex="0">Manufacturer</label>
-                        <div class="cp_dropdown_pop">
-                            <label><input type="checkbox" id="random" name="random">Lenovo &nbsp; [20]</label>
-                            <label><input type="checkbox" id="random" name="random">Dell EMC &nbsp; [5]</label>
-                            <label><input type="checkbox" id="random" name="random">Hewlett Packard &nbsp; [12]</label>
-                            <label><input type="checkbox" id="random" name="random">Texas Instruments &nbsp; [6]</label>
-                        </div>
-                    </li>
-                    <li class="cp_dropdown">
-                        <input type="checkbox" tabindex="-1"><label class="menuselect">Height</label>
-
-                    </li>
-                    <li class="cp_dropdown">
-                        <input type="checkbox" tabindex="-1"><label class="menuselect">Form Factor</label>
-
-                    </li>
-                    <li class="cp_dropdown">
-                        <input type="checkbox" tabindex="-1"><label class="menuselect">Card Model</label>
-
-                    </li>
-                    <li class="cp_filter_chip_clear">Clear all filters</li>
-                </ul>
+            <div class="wrapper md_chip_scroll">    
+        <ul class="md_chip_container">
+            <li class="cp_dropdown">
+                <input type="radio" id="vendor" name="dropdown">
+                <label for="vendor" class="dropdown_text">Manufacturers</label>
+                <div class="cp_dropdown_pop cp_scrollbar">
+                    <label><input type="radio" name="vendor">All</label>
+                    <label><input type="radio" name="vendor">Acer</label>
+                    <label><input type="radio" name="vendor">ADvantech</label>
+                    <label><input type="radio" name="vendor">Amulet Hotkey</label>
+                    <label><input type="radio" name="vendor">Asus</label>
+                    <label><input type="radio" name="vendor">Cirrascale</label>
+                    <label><input type="radio" name="vendor">Cisco</label>
+                    <label><input type="radio" name="vendor">Cubix</label>
+                    <label><input type="radio" name="vendor">Dell</label>
+                    <label><input type="radio" name="vendor">Exxact</label>
+                    <label><input type="radio" name="vendor">Fujitsu</label>
+                    <label><input type="radio" name="vendor">Gigabyte</label>
+                    <label><input type="radio" name="vendor">Hitachi</label>
+                    <label><input type="radio" name="vendor">HPE</label>
+                    <label><input type="radio" name="vendor">Huawei</label>
+                </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
+            </li>
+            <li class="cp_dropdown">
+                <input type="radio" id="application" name="dropdown">
+                <label for="application" class="dropdown_text">Heights</label>
+                <div class="cp_dropdown_pop cp_scrollbar">
+                    <label><input type="checkbox" checked>All</label>
+                    <label><input type="checkbox">1 Rack Unit</label>
+                    <label><input type="checkbox">2 Rack Unit</label>
+                    <label><input type="checkbox">3 Rack Unit</label>
+                    <label><input type="checkbox">4 Rack Unit</label>
+                    <label><input type="checkbox">5 Rack Unit</label>
+                    <label><input type="checkbox">6 Rack Unit</label>
+                    <label><input type="checkbox">7 Rack Unit</label>
+                    <label><input type="checkbox">8 Rack Unit</label>
+                    <label><input type="checkbox">9 Rack Unit</label>
+                    <label><input type="checkbox">10 Rack Unit</label>
+                    <label><input type="checkbox">11 Rack Unit</label>
+                    <label><input type="checkbox">12 Rack Unit</label>
+                </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
+            </li>
+            <li class="cp_dropdown">
+                <input type="radio" id="graphiccard" name="dropdown">
+                <label for="graphiccard" class="dropdown_text">Form Factors</label>
+                <div class="cp_dropdown_pop cp_scrollbar">
+                    <label><input type="checkbox" checked>All</label>
+                    <label><input type="checkbox">Only Blade</label>
+                </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
+            </li>
+            <li class="cp_dropdown">
+                <input type="radio" id="driver" name="dropdown">
+                <label for="driver" class="dropdown_text">Card Models</label>
+                <div class="cp_dropdown_pop">
+                    <label><input type="checkbox" checked>All</label>
+                    <label><input type="checkbox">Tesla T4</label>
+                    <label><input type="checkbox">A40</label>
+                    <label><input type="checkbox">A10</label>
+                    <label><input type="checkbox">A16</label>
+                    <label><input type="checkbox">A2</label>
+                    <label><input type="checkbox">A6000</label>
+                    <label><input type="checkbox">L40</label>
+                    <label><input type="checkbox">L4</label>
+                </div>
+                <label for="dropdown_close" class="backdrop"></label>
+                <label for="dropdown_close" class="front"></label>
+            </li>
+            <li class="cp_filter_chip_clear">Clear all filters</li>
+            <li class="cp_dropdown_close">
+            <input type="radio" id="dropdown_close" name="dropdown">
+            </li>
+        </ul>
             </div>
             <div class="wrapper tablescroll scrollindicator">
                 <table class="cp_table_qsc">
