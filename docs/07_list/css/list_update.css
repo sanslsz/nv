@@ -21,6 +21,8 @@
         --cp_dl-spec-dd-bordertop: ;
 */
 
+    --cp_dl-spec-h3-padding: 0 0 var(--sp_px-l) 0;
+    --cp_dl-spec-h3-borderbtm: 2px solid var(--nv-3-33);
     --cp_dl-spec-dt-padding: var(--sp_px-l) 0 0 0;
     --cp_dl-spec-dd-padding: 0 0 var(--sp_px-l) 0;
     
@@ -64,6 +66,7 @@
         --cp_dl-spec-h3-col: 1 / 2;
         --cp_dl-spec-h3-row: span 2;
         --cp_dl-spec-h3-padding: var(--sp_px-l) calc(var(--sp_px-l) * 2) 0 0;
+        --cp_dl-spec-h3-borderbtm: unset;
         --cp_dl-spec-dt-col: 2 / 3;
         --cp_dl-spec-dd-col: 3 / 4;
 
@@ -117,72 +120,6 @@
 
 /*================= components ========================*/
 
-/*
-.cp_ul-chev {
-    list-style-image: url(../../css/cp_assets/ic_chevron_dropdown_small_green.svg);
-}
-.cp_ul-chev > li::marker {
-    content: ' ';
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-}
-*/
-
-.cp_ul-chev {
-    margin: var(--sp_em-l) 0;
-    padding-left: var(--sp_em-xl);
-}
-
-.cp_ul-chev > li {
-    position: relative;
-}
-
-.cp_ul-chev > li::before {
-    content: '';
-    display: block;
-    width: calc(1em + 1px);
-    height: calc(1em + 1px);
-    background: url(../../css/cp_assets/ic_listbullet.svg) no-repeat center / contain;
-    position: absolute;
-    top: calc(1em * 1.4 / 2 - (1em + 1px) / 2);
-    left: calc((1em + 1px) * -1 - var(--sp_em-xs));
-}
-.cp_ul-chev.bold > li::before {
-    content: '';
-    background-image: url(../../css/cp_assets/ic_listbullet_bold.svg);
-}
-
-.cp_ul-chev .cp_ol-decimal.resized > li::marker {
-    font-size: 0.9em;
-/*    font-weight: normal;*/
-}
-
-
-
-
-.cp_ul-guillemet {
-    margin: var(--sp_em-l) 0;
-    padding-left: var(--sp_em-xl);
-}
-
-.cp_ul-guillemet > li {
-    position: relative;
-}
-
-.cp_ul-guillemet > li::before {
-    content: '\203A';
-    display: block;
-    font-weight: bold;
-    line-height: 1;
-    text-align:center;
-    width: 1em;
-    position: absolute;
-    top: calc(1em * 1.4/2 - 0.6em);
-    left: calc(-1em - var(--sp_em-xs));
-}
-
 
 .cp_ul-greater {
     margin: var(--sp_em-l) 0;
@@ -204,32 +141,6 @@
     top: calc(1em * 1.4/2 - 0.5em);
     left: calc(-1em - var(--sp_em-xs));
 }
-
-
-.cp_ul-caret {
-    margin: var(--sp_em-l) 0;
-    padding-left: var(--sp_em-xl);
-}
-
-.cp_ul-caret > li {
-    position: relative;
-}
-
-.cp_ul-caret > li::before {
-    content: '\005e';
-    display: block;
-    font-weight: bold;
-    line-height: 1;
-    text-align:center;
-    width: 1em;
-    position: absolute;
-    top: calc(1em * 1.4/2 - 0.5em);
-    left: calc(-1em - 0.45em);
-    transform: rotate(90deg)
-}
-
-
-
 
 
 .cp_ol-decimal {
@@ -362,6 +273,7 @@
     grid-column: var(--cp_dl-spec-h3-col);
     grid-row: var(--cp_dl-spec-h3-row);
     padding: var(--cp_dl-spec-h3-padding);
+    border-bottom: var(--cp_dl-spec-h3-borderbtm);
     margin: 0;
 }
 
