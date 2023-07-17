@@ -381,6 +381,32 @@
     position: relative;
 }
 
+.ic_font {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: calc((1em + 1px) * 1.5);
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+
+    display: block;
+    position: absolute;
+/*    left: calc(var(--sp_em-xxxxl) - (1em + 1px) * 1.5 - var(--sp_em-s));*/
+    left: 0;
+    top: calc((1em / 1.5 - 1px) * 1.4 / 2 - 0.55em);
+}
+
+.cp_ul-customimage .ic_font {
+/*    left: calc((1em - 1.5px) / 1.5 * 2.1 * -1);*/
+    left: calc(-1em - var(--sp_em-xs));
+}
+
 .cp_ul-customimage .ic_svg {
     width: calc((1em + 1px) * 1.5);
     height: calc((1em + 1px) * 1.5);
@@ -392,10 +418,10 @@
     left: calc(var(--sp_em-xxxl) * -1);
 }
 
+
 .cp_ul-customimage li + li {
     margin-top: var(--sp_em-l);
 }
-
 
 
 
@@ -430,7 +456,7 @@
 }
 
 .cp_ol-decimal.md_listcolumn li {
-    margin-left: var(--sp_em-l);
+    margin-left: var(--sp_em-xl);
     break-inside: avoid;
 }
 
@@ -453,29 +479,9 @@
     margin: 0;
 }
 
-.ic_font {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: calc((1em + 1px) * 1.5);
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-
-    display: block;
-    position: absolute;
-/*    left: calc(var(--sp_em-xxxxl) - (1em + 1px) * 1.5 - var(--sp_em-s));*/
+.cp_ul-customimage.md_inline li .ic_font {
     left: 0;
-    top: calc((1em / 1.5 - 1px) * 1.4 / 2 - 0.5em);
 }
-
-
-
 
 
 
@@ -537,4 +543,46 @@
     display: block;
     font-weight: bold;
     font-style: normal;
+}
+
+
+#ul_list-link h4 {
+    
+    margin-top: var(--sp_em-xxxxl);
+}
+
+.cp_list-link {
+    color: var(--nv-6-5-66);
+    text-decoration: underline 0.1em transparent;
+    text-underline-position: under; 
+}
+.cp_list-link:is(:focus, :hover) {
+    text-decoration-color: var(--nv-0);
+}
+
+.cp_ul-greater.md_listcolumn {
+    padding: 0;
+    columns: 50ch 2;
+    column-gap: var(--sp_rem-m);
+}
+.cp_ul-greater.md_listcolumn :is(ul, ol) {
+    padding: 0;
+}
+
+.cp_ul-greater.md_listcolumn li {
+    margin-left: var(--sp_em-xl);
+    break-inside: avoid;
+}
+.cp_ul-greater.md_listcolumn.spacious li + li {
+    margin-top: var(--sp_em-m);
+}
+
+.cp_ul-greater.md_listgrid {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: var(--sp_em-m);
+}
+.cp_ul-greater.md_listgrid li {
+    margin: 0 0 0 var(--sp_em-xl);
 }
