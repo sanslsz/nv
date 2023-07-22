@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Form controls: individual elements</title>
+    <!--    <meta name="description" content="">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--    <meta name="theme-color" content="#fafafa">-->
+        <meta name="color-scheme" content="light dark">
+    <style>
+        @import url(../css/00_fonts.css);
+        @import url(../css/01_type_color.css);
+        @import url(../css/02_base.css);
+        @import url(../css/03_component.css);
+        @import url(../css/04_module.css);
+        @import url(css/reset.css);
+        @import url(css/form.css);
+
+        body {
+            background-color: var(--page-bg);
+        }
+
+        h2+ul>li+li {
+            margin-top: var(--sp_px-m);
+        }
+
+        h2~ul:nth-of-type(2)>li+li {
+            margin-top: var(--sp_px-xl);
+        }
+        @media (prefers-color-scheme: dark) { 
+        
+            html {
+                color: var(--nv-15-ee);
+            }
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Text data</h2>
+            <ul>
+                <li>
+                    <label for="f_i_text" class="cp_f_label_text">Text</label>
+                    <input type="text" class="cp_f_i_text" id="f_i_text" value="John Smith pre-filled">
+                </li>
+                <!--
+                <li class="labelasplace">
+                    <label for="f_i_text2" class="cp_f_label_text">Label as placeholder</label>
+                    <input type="text" minlength="10000" class="cp_f_i_text" id="f_i_text2">
+                </li>
+-->
+                <li>
+                    <label for="f_i_email" class="cp_f_label_text">Email</label>
+                    <input type="email" class="cp_f_i_email" id="f_i_email" placeholder="account@example.com">
+                </li>
+                <li>
+                    <label for="f_i_tel" class="cp_f_label_text">Tel</label>
+                    <input type="tel" class="cp_f_i_tel" id="f_i_tel" list="tel-data" placeholder="10 digits including area code">
+                    <datalist id="tel-data">
+                        <option value="2067089999"></option>
+                        <option value="4244413256"></option>
+                        <option value="5469856324"></option>
+                        <option value="7546235984"></option>
+                    </datalist>
+                </li>
+                <li>
+                    <label for="f_i_num" class="cp_f_label_text">Number</label>
+                    <input type="number" class="cp_f_i_num" id="f_i_num" list="number-data">
+                    <datalist id="number-data">
+                        <option value="10"></option>
+                        <option value="20"></option>
+                        <option value="30"></option>
+                        <option value="40"></option>
+                    </datalist>
+                </li>
+                <li>
+                    <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <input type="password" class="cp_f_i_password" id="f_i_password">
+                </li>
+                <li>
+                    <label for="f_i_search" class="cp_f_label_text">Search</label>
+                    <input type="search" class="cp_f_i_search" id="f_i_search" placeholder="Type in the product code, name or release region">
+                </li>
+                <li>
+                    <label for="f_textarea" class="cp_f_label_text">Textarea</label>
+                    <textarea class="cp_f_textarea" id="f_textarea" rows="5" cols="50" autocomplete="on" placeholder="Write about your dreams. Max 250 characters."></textarea>
+                </li>
+                <li>
+                    <label for="f_i_text_disabled" class="cp_f_label_text">Label(disabled state)</label>
+                    <input type="text" disabled class="cp_f_i_text" id="f_i_text_disabled" placeholder="Placeholder text(disabled state)">
+                </li>
+            </ul>
+
+
+            <ul style="margin-top: var(--sp_px-xxxxl);">
+                <li class="labelasplace">
+                    <label for="f_i_text2" class="cp_f_label_text">Label as placeholder text</label>
+                    <input type="text" minlength="10000" class="cp_f_i_text" id="f_i_text2">
+                </li>
+                <li class="labelasplace">
+                    <label for="f_i_text_2" class="cp_f_label_text">Text</label>
+                    <input type="text" minlength="10000" class="cp_f_i_text" id="f_i_text_2" value="John Smith pre-filled" pattern="[0-9]{10000}">
+                </li>
+                <li class="labelasplace">
+                    <label for="f_i_email_2" class="cp_f_label_text">Email</label>
+                    <input type="email" minlength="10000" class="cp_f_i_email" id="f_i_email_2">
+                </li>
+                <li class="labelasplace">
+                    <label for="f_i_tel_2" class="cp_f_label_text">Tel</label>
+                    <input type="tel" pattern="[0-9]{10000}" class="cp_f_i_tel" id="f_i_tel_2" list="tel-data">
+                    <datalist id="tel-data">
+                        <option value="2067089999"></option>
+                        <option value="4244413256"></option>
+                        <option value="5469856324"></option>
+                        <option value="7546235984"></option>
+                    </datalist>
+                </li>
+                <li class="labelasplace">
+                    <label for="f_i_tel_2" class="cp_f_label_text">Number</label>
+                    <input type="number" required class="cp_f_i_num" id="f_i_num_2" list="number-data">
+                </li>
+                <li class="labelasplace">
+                    <label for="f_i_password_2" class="cp_f_label_text">Password</label>
+                    <input type="password" minlength="10000" class="cp_f_i_password" id="f_i_password_2">
+                </li>
+                <li class="labelasplace">
+                    <label for="f_i_search_2" class="cp_f_label_text">Search</label>
+                    <input type="search" minlength="10000" class="cp_f_i_search" id="f_i_search_2" placeholder="Type in the product code, name or release region">
+                </li>
+                <li class="labelasplace">
+                    <label for="f_textarea_2" class="cp_f_label_text">Textarea</label>
+                    <textarea class="cp_f_textarea" minlength="10000" id="f_textarea_2" rows="5" cols="50" autocomplete="on" placeholder="Write about your dreams. Max 250 characters."></textarea>
+                </li>
+                <li class="labelasplace">
+                    <label for="f_i_text_disabled_2" class="cp_f_label_text">Label as placeholder text(disabled state)</label>
+                    <input type="text" disabled class="cp_f_i_text" id="f_i_text_disabled_2">
+                </li>
+                <li class="labelasplace">
+                    <label for="f_i_text_disabled_3" class="cp_f_label_text">Label(disabled state)</label>
+                    <input type="text" disabled class="cp_f_i_text" id="f_i_text_disabled_3" placeholder="Placeholder text(disabled state)">
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Selection</h2>
+            <ul>
+                <li>
+                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox1">
+                    <label for="f_i_checkbox1" class="cp_f_label_checkbox">Checkbox one</label> &emsp;
+                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2">
+                    <label for="f_i_checkbox2" class="cp_f_label_checkbox">Checkbox two</label> &emsp;
+                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3">
+                    <label for="f_i_checkbox3" class="cp_f_label_checkbox">Checkbox three</label>
+                </li>
+                <li>
+                    <!--
+                    <input type="radio" class="cp_f_i_radio" id="f_i_radio1">
+                    <label>Radio one</label>
+-->
+                    <label class="cp_f_label_checkbox"><input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio1"> Radio one</label> &emsp;
+                    <label class="cp_f_label_checkbox"><input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio2"> Radio two</label> &emsp;
+                    <label class="cp_f_label_checkbox"><input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio3"> Radio three</label>
+
+                </li>
+                <li>
+                    <label for="f_select" class="cp_f_label_select">Single select</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Make selection</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+
+                </li>
+                <li>
+                    <label for="f_select_multi" class="cp_f_label_select">Multi select</label>
+                    <select name="f_select_multi" class="cp_f_select_multi cp_scrollbar" id="f_select_multi" size="10" multiple>
+                        <optgroup label="Group one">
+                            <option value="placeholder">Item one</option>
+                            <option value="placeholder">Item two</option>
+                            <option value="placeholder">Item three</option>
+                            <option value="placeholder">Item four</option>
+                            <option value="placeholder">Item five</option>
+                        </optgroup>
+                        <optgroup label="Group two" disabled>
+                            <option value="placeholder">Item six</option>
+                            <option value="placeholder">Item seven</option>
+                            <option value="placeholder">Item eight</option>
+                            <option value="placeholder">Item nine</option>
+                            <option value="placeholder">Item ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Picker</h2>
+            <ul>
+                <li>
+                    <label for="f_i_date" class="cp_f_label_text">Date</label>
+                    <input type="date" min="2022-06-01" max="2024-05-31" class="cp_f_i_date" id="f_i_date">
+
+                </li>
+                <li>
+                    <label for="f_i_file" class="cp_f_label_text">File</label>
+                    <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file">
+
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Buttons</h2>
+            <ul>
+                <li><button class="cp_f_button_submit" type="submit">Submit</button></li>
+                <li><button class="cp_f_button_submit" type="reset">Reset</button></li>
+                <li><button class="cp_f_button_submit" type="button">Sign in</button></li>
+                <li>
+                    <button class="cp_f_button_search" type="button">
+                        <span class="material-icons" style="vertical-align: -30%;">search</span>
+                        Search
+                    </button>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+    <section class="padding">
+        <div class="wrapper">
+            <h2>UI controls</h2>
+            <ul>
+                <li><input type="checkbox" class="cp_f_switch" id="cp_f_switch">&emsp; <label for="cp_f_switch"  class="cp_f_label_checkbox">On / Off Switch</label></li>
+                <li>
+                    <div>Filter Chips / Pills</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--sp_px-s); align-items: center;">
+                        <div class="cp_f_chip">
+                            <input type="checkbox">
+                            <span>Processor Type:</span> AMD Rome
+                        </div>
+                        <div class="cp_f_chip">
+                            <input type="checkbox">
+                            <span>NVIDIA GPU:</span> A30
+                        </div>
+                        <div class="cp_f_chip">
+                            <input type="checkbox">
+                            <span>Validation Type:</span> NVIDIA-Cerfitied
+                        </div>
+                        <div class="cp_f_chip">
+                            <input type="checkbox">
+                            <span>System Builder:</span> Aetina
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    Page / item / flow controls: first, last, previous, next arrows
+                    <span style="display: flex; gap: var(--sp_em-s); vertical-align: middle;">
+                        <span class="material-icons cp_f_ctr_arrow" tabindex="0" title="first">skip_previous</span>
+                        <span class="material-icons cp_f_ctr_arrow" style="transform: scaleX(-1);" tabindex="0" title="previous">play_arrow</span>
+                        <span class="material-icons cp_f_ctr_arrow" tabindex="0" title="next">play_arrow</span>
+                        <span class="material-icons cp_f_ctr_arrow" tabindex="0" title="last">skip_next</span>
+                        <span class="material-icons cp_f_ctr_arrow" tabindex="0" title="first">first_page</span>
+                        <span class="material-icons cp_f_ctr_arrow" tabindex="0" title="previous">navigate_before</span>
+                        <span class="material-icons cp_f_ctr_arrow" tabindex="0" title="next">navigate_next</span>
+                        <span class="material-icons cp_f_ctr_arrow" tabindex="0" title="last">last_page</span>
+                    </span>
+
+                </li>
+                <li>
+                    Page / item / flow controls: first, last, previous, next buttons
+                    <span style="display: flex; gap: var(--sp_em-l); vertical-align: middle;">
+                        <span class="material-icons cp_f_ctr_btn" tabindex="0" title="first">skip_previous</span>
+                        <span class="material-icons cp_f_ctr_btn" style="transform: scaleX(-1);" tabindex="0" title="previous">play_arrow</span>
+                        <span class="material-icons cp_f_ctr_btn" tabindex="0" title="next">play_arrow</span>
+                        <span class="material-icons cp_f_ctr_btn" tabindex="0" title="last">skip_next</span>
+                        <span class="material-icons cp_f_ctr_btn" tabindex="0" title="first">first_page</span>
+                        <span class="material-icons cp_f_ctr_btn" tabindex="0" title="previous">navigate_before</span>
+                        <span class="material-icons cp_f_ctr_btn" tabindex="0" title="next">navigate_next</span>
+                        <span class="material-icons cp_f_ctr_btn" tabindex="0" title="last">last_page</span>
+                    </span>
+
+                </li>
+
+            </ul>
+        </div>
+    </section>
+    <!--
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Text data</h2>
+            <ul>
+            </ul>
+        </div>
+    </section>
+-->
+
+</body></html>

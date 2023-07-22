@@ -5,10 +5,16 @@
     --cp_f_i-color-disabled: var(--nv-12-5-cc);
     --cp_f_i_placeholder-color: var(--nv-9-5-99);
     --cp_f_i_border: var(--nv-12-5-cc);
+    --cp_f_i_border_2: var(--nv-9-5-99);
     --cp_f_i_bg: var(--nv-15-5-f7);
     --cp_f_i_bg-hover: var(--nv-16);
-/*    --cp_f_button-color: var(--nv-16);*/
+    --cp_f_button-color: var(--nv-16);
+    --cp_f_ctr_arrow: var(--nv-6-5-66);
+    --cp_f_ctr_arrow-hover: var(--nv-1-5-1a);
     --cp_f_transition: background-color 0.3s ease-in-out;
+    
+/*    --page-bg: var(--nv-16);*/
+    --page-bg: var(--nv-15-ee);
 
 }
 
@@ -34,198 +40,41 @@
 
 @media (prefers-color-scheme: dark) {
 
-    :root {}
+    :root {
+    --cp_f_label-color: var(--nv-15-ee);
+    --cp_f_i-color: var(--nv-15-ee);
+    --cp_f_i-color-disabled: var(--nv-3-33);
+    --cp_f_i_placeholder-color: var(--nv-6-5-66);
+    --cp_f_i_border: var(--nv-3-33);
+    --cp_f_i_border_2: var(--nv-6-5-66);
+    --cp_f_i_bg: var(--nv-1-5-1a);
+    --cp_f_i_bg-hover: var(--nv-16);
+    --cp_f_button-color: var(--nv-2-22);
+    --cp_f_ctr_arrow: var(--nv-9-5-99);
+    --cp_f_ctr_arrow-hover: var(--nv-15-ee); 
+        
+/*    --page-bg: var(--nv-2-22);*/
+    --page-bg: var(--nv-1-11);
+        
+/*      --nv-16: var(--nv-dark-2-22);
+        --nv-15-5-f7: var(--nv-dark-1-5-1a);
+        --nv-15-ee: var(--nv-dark-1-11);
+        --nv-14-dd: var(--nv-dark-0);
+        --nv-12-5-cc: var(--nv-dark-3-33);
+        --nv-9-5-99: var(--nv-dark-6-5-66);
+        --nv-6-5-66: var(--nv-dark-9-5-99);
+        --nv-3-33: var(--nv-dark-12-5-cc);
+        --nv-2-22: var(--nv-dark-14-dd);
+        --nv-1-5-1a: var(--nv-dark-15-ee);
+        --nv-1-11: var(--nv-dark-15-5-f7);
+        --nv-0: var(--nv-dark-16);
+        
+        */
+    }
 }
 
 
-/*================= normalize & resets ========================*/
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-
-button,
-input,
-optgroup,
-option,
-select,
-textarea {
-  font-family: inherit;
-/*  font-size: 100%;*/
-    font-size: inherit;
-  line-height: 1.2; 
-  margin: 0; 
-}
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input { 
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
-  text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-
-/*
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-*/
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-  vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
-  overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-/*  -webkit-appearance: textfield; */
-/*  outline-offset: -2px;*/
-}
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
-/*  -webkit-appearance: none;*/
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-/*    ::file-selector-button        */
-
-
-/*================= UI control ========================*/
+/*================= Text data simple ========================*/
 
 .cp_f_label_text {
     display: block;
@@ -233,6 +82,10 @@ textarea {
     font-size: 14px;
     color: var(--cp_f_label-color); 
 }
+.cp_f_label_text:has(+ :disabled) {
+    color: var(--cp_f_i-color-disabled);
+}
+
 
 .cp_f_i_text,
 .cp_f_i_email,
@@ -250,11 +103,28 @@ textarea {
     font-size: var(--tp_p-m);
     line-height: 1.2;
     color: var(--cp_f_i-color); 
+    text-overflow: ellipsis;
 }
 
 ::placeholder {
     color: var(--cp_f_i_placeholder-color);
 }
+
+:is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_num,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+):disabled::placeholder {
+    color: var(--cp_f_i-color-disabled);
+}
+
+
+
+/*================= Text data complex ========================*/
 
 .labelasplace {
     position: relative;
@@ -262,49 +132,147 @@ textarea {
 .labelasplace .cp_f_label_text {
     font-weight: normal;
     font-size: inherit;
-    color: var(--nv-6-5-66);
+    color: var(--cp_f_i_placeholder-color);
     position: absolute;
     z-index: -1;
-    top: var(--sp_em-s);
-    left: var(--sp_em-s);
+    top: var(--sp_em-m);
+    left: var(--sp_em-m);
     transition: all 0.2s ease-out;
 }
 
+/*
 .labelasplace:has(.cp_f_i_text:focus, .cp_f_i_text:invalid) .cp_f_label_text {
-    padding: 0 var(--sp_em-s);
+    padding: 0 var(--sp_em-xs);
     z-index: 0;
     top: -10px;
+    left: 0.7em;
     font-size: 14px;
     font-weight: bold;
     color: var(--cp_f_label-color);
     background-color: var(--nv-15-ee);
 }
+*/
 
-.labelasplace .cp_f_i_text {
-    border: 1px solid var(--nv-9-5-99);
+.labelasplace:has(:is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+):is(:invalid, :placeholder-shown, :focus)) .cp_f_label_text, 
+.labelasplace:has(.cp_f_i_num:is(:valid, :focus)) .cp_f_label_text
+{
+    padding: 0 var(--sp_em-xs);
+    z-index: 0;
+    top: -10px;
+    left: 0.7em;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--cp_f_label-color);
+    background-color: var(--page-bg);
+}
+
+.labelasplace:has(:is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_num,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+):focus) .cp_f_label_text {
+/*    color: var(--nv-green);*/
+}
+
+.labelasplace:has(:is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_num,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+):disabled) .cp_f_label_text {
+    color: var(--cp_f_i-color-disabled);
+}
+
+
+.labelasplace :is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_num,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+) {
+    padding: var(--sp_em-m) var(--sp_em-m);
+    border: 1px solid var(--cp_f_i_border_2);
+    outline: 1px solid transparent; 
     background-color: transparent;
-    transition: border 0.2s ease-out;
-}
-.labelasplace .cp_f_i_text:focus {
-    outline: none;
-    border: 1px solid var(--nv-green);
+    transition: all 0.2s ease-out;
 }
 
+.labelasplace :is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_num,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+):focus {
+    outline: 1px solid var(--nv-green);
+    border-color: var(--nv-green)
+}
+
+.labelasplace :is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_num,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+):disabled {
+    border-color: var(--cp_f_i_border);
+}
+
+.labelasplace :is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_num,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+):disabled::placeholder {
+    color: var(--cp_f_i-color-disabled);
+}
 
 
 
 
+
+
+/*================= Selection ========================*/
+
+.cp_f_label_checkbox {
+    font-size: var(--tp_p-m);
+    color: var(--cp_f_label-color); 
+}
 
 .cp_f_i_checkbox, .cp_f_i_radio {
     appearance: none;
     width: var(--cp_f_icon-size);
     height: var(--cp_f_icon-size);
     vertical-align: -10%;
-    background: url(../assets/ic_checkbox_inactive.svg) no-repeat center / cover;
+    background: url(../assets/ic_checkbox_off.svg) no-repeat center / cover;
 }
 
 .cp_f_i_checkbox:checked {
-    background-image: url(../assets/ic_checkbox_active_green.svg);
+    background-image: url(../assets/ic_checkbox_on);
 }
 .cp_f_i_radio {
     background-image: url(../assets/ic_radio_off.svg);
@@ -317,6 +285,7 @@ textarea {
     display: block;
     font-weight: bold;
     font-size: 14px;
+    color: var(--cp_f_label-color);
 }
 .cp_f_select, 
 .cp_f_select_multi {
@@ -361,13 +330,13 @@ option:disabled {
 
 
 
-
+/*================= Picker ========================*/
 
 
 .cp_f_i_date {
     display: block;
     min-width: 15ch;
-    padding: var(--sp_em-xs);
+    padding: var(--sp_em-s) var(--sp_em-s);
     border: 1px solid var(--cp_f_i_border);
     background-color: var(--cp_f_i_bg);
     font-family: inherit;
@@ -378,7 +347,7 @@ option:disabled {
 }
 
 .cp_f_i_file::file-selector-button   {
-    padding: var(--sp_em-s);
+    padding: var(--sp_em-m);
     border: 1px solid var(--cp_f_i_border);
     background-color: var(--cp_f_i_bg);
     font-size: 13px;
@@ -399,7 +368,7 @@ option:disabled {
 
 
 
-
+/*================= Button ========================*/
 
 
 .cp_f_button_submit {
@@ -413,7 +382,7 @@ option:disabled {
     cursor: pointer;
     transition: var(--cp_f_transition);
 }
-.cp_f_button_submit:hover {
+.cp_f_button_submit:is(:hover, :focus) {
     background-color: #6ba700;
 }
 
@@ -429,7 +398,7 @@ option:disabled {
     transition: var(--cp_f_transition);
 }
 
-.cp_f_button_search:hover {
+.cp_f_button_search:is(:hover, :focus) {
     background-color: var(--cp_f_i_bg-hover);
 }
 
@@ -437,7 +406,7 @@ option:disabled {
 
 
 
-
+/*================= UI controls ========================*/
 
 .cp_f_switch {
     appearance: none;
@@ -473,6 +442,7 @@ option:disabled {
 
 .cp_f_chip {
     font-size: 14px;
+    color: var(--cp_f_i-color);
     background-color: var(--cp_f_i_bg);
     padding: var(--sp_em-xs) calc(var(--sp_em-xs) + var(--sz_icon-s) + var(--sp_em-m)) var(--sp_em-xs) var(--sp_em-m);
     border: 1px solid var(--cp_f_i_border);
@@ -480,7 +450,6 @@ option:disabled {
     position: relative;
     width: max-content;
     white-space: nowrap;
-/*    flex: 0 0 max-content;*/
     cursor: default;
 }
 
@@ -511,6 +480,8 @@ option:disabled {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+    
+    color: var(--cp_f_label-color);
 }
 .cp_f_chip span {
     font-weight: 700;
@@ -529,12 +500,20 @@ option:disabled {
 }*/
 
 .cp_f_ctr_arrow {
+    color: var(--cp_f_ctr_arrow);
+    transition: color 0.3s ease-in-out;
     cursor: pointer;
 }
-
+.cp_f_ctr_arrow:is(:hover, :focus) {
+    color: var(--cp_f_ctr_arrow-hover);
+}
 .cp_f_ctr_btn {
     padding: 4px;
     color: var(--nv-16);
     background-color: var(--nv-green);
+    transition: var(--cp_f_transition);
     cursor: pointer;
+}
+.cp_f_ctr_btn:is(:hover, :focus) {
+    background-color: #6ba700;
 }
