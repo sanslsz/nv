@@ -104,6 +104,7 @@
 .cp_dl-spec, 
 .cp_ul-customimage,
 .cp_ol-counter,
+.cp_ol-counters,
 .cp_ul-multi {
     line-height: 1.4;
 }
@@ -443,6 +444,58 @@
     padding-left: var(--sp_em-xs);
     list-style-type: trophy;
 }
+
+
+
+
+.cp_ol-counters {
+    margin: var(--sp_em-l) 0;
+    padding-left: 7ch;
+    counter-reset: cp_ol-counters;
+}
+
+.cp_ol-counters ol {
+    margin-top:  var(--sp_em-xs);
+    margin-bottom:  var(--sp_em-xs);
+    padding-left: 8.5ch;
+    counter-reset: cp_ol-counters;
+}
+.cp_ol-counters ol ol {
+    padding-left: 10ch;
+}
+
+.cp_ol-counters li {
+    counter-increment: cp_ol-counters;
+    padding-left: var(--sp_em-xs);
+}
+
+.cp_ol-counters li::marker {
+    content: 'Amdt1.' counters(cp_ol-counters, ".", decimal);
+    font-weight: bold;
+/*    font-variant-numeric: proportional-nums;*/
+    
+}
+
+/*
+.cp_ol-counters li::before {
+    counter-increment: cp_ol-counters;
+    content: counters(cp_ol-counters, '.', decimal) " ";
+    font-weight: bold;
+    font-variant-numeric: proportional-nums;
+    
+}
+*/
+
+.cp_ol-counters li + li {
+    margin-top: var(--sp_em-s);
+}
+
+.cp_ol-counters ol li + li {
+    margin-top: var(--sp_em-xs);
+}
+
+
+
 
 
 
