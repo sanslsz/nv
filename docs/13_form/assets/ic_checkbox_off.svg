@@ -2,16 +2,17 @@
     <defs>
         <style>
             .cls-1 {
-            fill: #f7f7f7;
-            stroke: #cccccc;
-            stroke-width: 2;
+                fill: #f7f7f7;
+                stroke: #cccccc;
+                stroke-width: 2;
             }
-             @media (prefers-color-scheme: dark) {
-            .cls-1 {
-            fill: #1a1a1a;
-            stroke: #333333;
+
+            @media (prefers-color-scheme: dark) {
+                .cls-1 {
+                fill: #1a1a1a;
+                stroke: #333333;
+                }
             }
-        }
 
         </style>
     </defs>

@@ -1,14 +1,22 @@
 :root {
     --cp_f_icon-size: 16px;
+    --cp_f_line-height-s: 1.25;
+    --cp_f_line-height-m: 1.4;
+    
+    
     --cp_f_label-color: var(--nv-1-5-1a);
     --cp_f_i-color: var(--nv-1-5-1a);
+/*    --cp_f_i-color-hover: var(--nv-0);*/
     --cp_f_i-color-disabled: var(--nv-12-5-cc);
     --cp_f_i_placeholder-color: var(--nv-9-5-99);
     --cp_f_i_border: var(--nv-12-5-cc);
     --cp_f_i_border_2: var(--nv-9-5-99);
     --cp_f_i_bg: var(--nv-15-5-f7);
     --cp_f_i_bg-hover: var(--nv-16);
-    --cp_f_button-color: var(--nv-16);
+/*    --cp_f_select-color-disabled: #cccccc;*/
+    --cp_f_button-color: var(--nv-15-5-f7);
+    --cp_f_button-bg-hover: #6ba700;
+    --cp_f_ctr_switch_circle-color: var(--nv-15-5-f7);
     --cp_f_ctr_arrow: var(--nv-6-5-66);
     --cp_f_ctr_arrow-hover: var(--nv-1-5-1a);
     --cp_f_transition: background-color 0.3s ease-in-out;
@@ -43,13 +51,17 @@
     :root {
     --cp_f_label-color: var(--nv-15-ee);
     --cp_f_i-color: var(--nv-15-ee);
+    --cp_f_i-color-hover: var(--nv-16);
     --cp_f_i-color-disabled: var(--nv-3-33);
     --cp_f_i_placeholder-color: var(--nv-6-5-66);
     --cp_f_i_border: var(--nv-3-33);
     --cp_f_i_border_2: var(--nv-6-5-66);
     --cp_f_i_bg: var(--nv-1-5-1a);
-    --cp_f_i_bg-hover: var(--nv-16);
-    --cp_f_button-color: var(--nv-2-22);
+    --cp_f_i_bg-hover: var(--nv-2-22);
+/*    --cp_f_select-color-disabled: #333333;*/
+    --cp_f_button-color: var(--nv-1-5-1a);
+    --cp_f_button-bg-hover: #85d000;
+    --cp_f_ctr_switch_circle-color: var(--nv-6-5-66);
     --cp_f_ctr_arrow: var(--nv-9-5-99);
     --cp_f_ctr_arrow-hover: var(--nv-15-ee); 
         
@@ -78,14 +90,15 @@
 
 .cp_f_label_text {
     display: block;
+    margin-bottom: var(--sp_em-xs);
     font-weight: bold;
     font-size: 14px;
+    line-height: var(--cp_f_line-height-s);
     color: var(--cp_f_label-color); 
 }
 .cp_f_label_text:has(+ :disabled) {
     color: var(--cp_f_i-color-disabled);
 }
-
 
 .cp_f_i_text,
 .cp_f_i_email,
@@ -95,21 +108,27 @@
 .cp_f_i_search,
 .cp_f_textarea {
     display: block;
-    width: clamp(300px, 50%, 75ch);
+    width: min(100%, 80ch);
     padding: var(--sp_em-s);
     border: 1px solid var(--cp_f_i_border);
     background-color: var(--cp_f_i_bg);
     font-family: inherit;
     font-size: var(--tp_p-m);
-    line-height: 1.2;
+    line-height: var(--cp_f_line-height-m);
     color: var(--cp_f_i-color); 
     text-overflow: ellipsis;
 }
-
-::placeholder {
+:is(
+.cp_f_i_text,
+.cp_f_i_email,
+.cp_f_i_tel,
+.cp_f_i_num,
+.cp_f_i_password,
+.cp_f_i_search,
+.cp_f_textarea
+)::placeholder {
     color: var(--cp_f_i_placeholder-color);
 }
-
 :is(
 .cp_f_i_text,
 .cp_f_i_email,
@@ -122,6 +141,11 @@
     color: var(--cp_f_i-color-disabled);
 }
 
+.cp_f_textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
 
 
 /*================= Text data complex ========================*/
@@ -129,30 +153,19 @@
 .labelasplace {
     position: relative;
 }
+
 .labelasplace .cp_f_label_text {
+    margin: 0;
     font-weight: normal;
-    font-size: inherit;
+    font-size: var(--tp_p-m);
+    line-height: var(--cp_f_line-height-m);
     color: var(--cp_f_i_placeholder-color);
     position: absolute;
     z-index: -1;
-    top: var(--sp_em-m);
+    top: calc(var(--sp_em-m) + 0.1em);
     left: var(--sp_em-m);
     transition: all 0.2s ease-out;
 }
-
-/*
-.labelasplace:has(.cp_f_i_text:focus, .cp_f_i_text:invalid) .cp_f_label_text {
-    padding: 0 var(--sp_em-xs);
-    z-index: 0;
-    top: -10px;
-    left: 0.7em;
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--cp_f_label-color);
-    background-color: var(--nv-15-ee);
-}
-*/
-
 .labelasplace:has(:is(
 .cp_f_i_text,
 .cp_f_i_email,
@@ -165,9 +178,10 @@
 {
     padding: 0 var(--sp_em-xs);
     z-index: 0;
-    top: -10px;
+    top: -0.4lh;
     left: 0.7em;
     font-size: 14px;
+    line-height: var(--cp_f_line-height-s);
     font-weight: bold;
     color: var(--cp_f_label-color);
     background-color: var(--page-bg);
@@ -263,6 +277,7 @@
     color: var(--cp_f_label-color); 
 }
 
+
 .cp_f_i_checkbox, .cp_f_i_radio {
     appearance: none;
     width: var(--cp_f_icon-size);
@@ -270,9 +285,8 @@
     vertical-align: -10%;
     background: url(../assets/ic_checkbox_off.svg) no-repeat center / cover;
 }
-
 .cp_f_i_checkbox:checked {
-    background-image: url(../assets/ic_checkbox_on);
+    background-image: url(../assets/ic_checkbox_on.svg);
 }
 .cp_f_i_radio {
     background-image: url(../assets/ic_radio_off.svg);
@@ -281,10 +295,14 @@
     background-image: url(../assets/ic_radio_on.svg);
 }
 
+
+
 .cp_f_label_select {
     display: block;
+    margin-bottom: var(--sp_em-xs);
     font-weight: bold;
     font-size: 14px;
+    line-height: var(--cp_f_line-height-s);
     color: var(--cp_f_label-color);
 }
 .cp_f_select, 
@@ -296,7 +314,7 @@
     background-color: var(--cp_f_i_bg);
     font-family: inherit;
     font-size: var(--tp_p-m);
-    line-height: 1.2;
+    line-height: var(--cp_f_line-height-m);
     color: var(--cp_f_i-color);
     appearance: none;
     position: relative;
@@ -324,6 +342,7 @@ option {
 }
 option:disabled {
     color: var(--cp_f_i-color-disabled);
+/*    color: var(--cp_f_select-color-disabled);*/
 }
 
 
@@ -359,7 +378,7 @@ option:disabled {
 }
 
 .cp_f_i_file::file-selector-button:hover {
-    background-color: var(--nv-16);
+    background-color: var(--cp_f_i_bg-hover);
 }
 
 
@@ -383,7 +402,7 @@ option:disabled {
     transition: var(--cp_f_transition);
 }
 .cp_f_button_submit:is(:hover, :focus) {
-    background-color: #6ba700;
+    background-color: var(--cp_f_button-bg-hover);
 }
 
 .cp_f_button_search {
@@ -410,7 +429,7 @@ option:disabled {
 
 .cp_f_switch {
     appearance: none;
-    background-color: var(--nv-12-5-cc);
+    background-color: var(--cp_f_i_border);
     width: 40px;
     height: 16px;
     border-radius: 999px;
@@ -422,7 +441,7 @@ option:disabled {
 .cp_f_switch::after {
     content: '';
     display: block;
-    background-color: var(--nv-16);
+    background-color: var(--cp_f_ctr_switch_circle-color);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     width: 20px;
     height: 20px;
@@ -509,11 +528,11 @@ option:disabled {
 }
 .cp_f_ctr_btn {
     padding: 4px;
-    color: var(--nv-16);
+    color: var(--cp_f_button-color);
     background-color: var(--nv-green);
     transition: var(--cp_f_transition);
     cursor: pointer;
 }
 .cp_f_ctr_btn:is(:hover, :focus) {
-    background-color: #6ba700;
+    background-color: var(--cp_f_button-bg-hover);
 }

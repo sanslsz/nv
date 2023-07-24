@@ -12,10 +12,11 @@
                 stroke-linejoin: round;
                 stroke-width: 2px;
             }
-             @media (prefers-color-scheme: dark) {
-            .cls-2 {
-            stroke: #1a1a1a;
-            }
+
+            @media (prefers-color-scheme: dark) {
+                .cls-2 {
+                stroke: #1a1a1a;
+                }
 
         </style>
     </defs>
