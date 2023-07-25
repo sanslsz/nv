@@ -168,20 +168,19 @@
     left: var(--sp_em-m);
     transition: all 0.2s ease-out;
 }
-:is(
+.labelasplace:has(:is(
 .cp_f_i_text,
 .cp_f_i_email,
 .cp_f_i_tel,
 .cp_f_i_password,
 .cp_f_i_search,
 .cp_f_textarea
-):is(:invalid, :placeholder-shown, :focus) ~ .cp_f_label_text, 
-.cp_f_i_num:is(:valid, :focus) ~ .cp_f_label_text
+):is(:invalid, :placeholder-shown, :focus)) .cp_f_label_text, 
+.labelasplace:has(.cp_f_i_num:is(:valid, :focus)) .cp_f_label_text
 {
     padding: 0 var(--sp_em-xs);
     z-index: 0;
-/*    top: -0.4lh;*/
-    top: -0.5em;
+    top: -0.4lh;
     left: 0.7em;
     font-size: 14px;
     line-height: var(--cp_f_line-height-s);
@@ -190,7 +189,7 @@
     background-color: var(--page-bg);
 }
 
-:is(
+.labelasplace:has(:is(
 .cp_f_i_text,
 .cp_f_i_email,
 .cp_f_i_tel,
@@ -198,11 +197,11 @@
 .cp_f_i_password,
 .cp_f_i_search,
 .cp_f_textarea
-):focus ~ .cp_f_label_text {
+):focus) .cp_f_label_text {
 /*    color: var(--nv-green);*/
 }
 
-:is(
+.labelasplace:has(:is(
 .cp_f_i_text,
 .cp_f_i_email,
 .cp_f_i_tel,
@@ -210,7 +209,7 @@
 .cp_f_i_password,
 .cp_f_i_search,
 .cp_f_textarea
-):disabled ~ .cp_f_label_text {
+):disabled) .cp_f_label_text {
     color: var(--cp_f_i-color-disabled);
 }
 
