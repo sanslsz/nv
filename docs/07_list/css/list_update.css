@@ -450,18 +450,18 @@
 
 .cp_ol-counters {
     margin: var(--sp_em-l) 0;
-    padding-left: 7ch;
+    padding-left: var(--sp_em-xl);
     counter-reset: cp_ol-counters;
 }
 
 .cp_ol-counters ol {
     margin-top:  var(--sp_em-xs);
     margin-bottom:  var(--sp_em-xs);
-    padding-left: 8.5ch;
+    padding-left: 2.5ch;
     counter-reset: cp_ol-counters;
 }
 .cp_ol-counters ol ol {
-    padding-left: 10ch;
+    padding-left: 4ch;
 }
 
 .cp_ol-counters li {
@@ -470,7 +470,7 @@
 }
 
 .cp_ol-counters li::marker {
-    content: 'Amdt1.' counters(cp_ol-counters, ".", decimal);
+    content: counters(cp_ol-counters, ".", decimal);
     font-weight: bold;
 /*    font-variant-numeric: proportional-nums;*/
     
@@ -494,7 +494,34 @@
     margin-top: var(--sp_em-xs);
 }
 
+.cp_ol-counters li p:not(:last-child) {
+    margin-bottom: var(--sp_em-xs);
+}
+.cp_ol-counters .subhead {
+    font-weight: bold;
+}
+.cp_ol-counters .lead {
+    text-decoration: 1px solid underline;
+    text-underline-position: under;
+}
 
+.eula {
+/*    font-size: 13px;*/
+    line-height: 1.5;
+}
+.eula li {
+    padding-left: var(--sp_em-s);
+}
+.eula li + li {
+    margin-top: var(--sp_em-m);
+}
+.eula ol {
+    margin-top:  var(--sp_em-s);
+    margin-bottom:  var(--sp_em-s);
+}
+.eula ol li + li {
+    margin-top: var(--sp_em-s);
+}
 
 
 

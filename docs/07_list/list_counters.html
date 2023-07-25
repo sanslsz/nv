@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>List styles</title>
+    <!--    <meta name="description" content="">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+    <!--    <meta name="color-scheme" content="light dark">-->
+    <style>
+        html {
+/*            font-family: georgia, 'times new roman', sans-serif;*/
+            font-family: 'EB Garamond', serif;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        body {
+            background-color: var(--nv-15-ee);
+        }
+
+        body>section:nth-child(even) {
+            background-color: var(--nv-15-5-f7);
+        }
+
+        .cp_ol-counters {
+            margin: var(--sp_em-l) 0;
+            padding-left: 7ch;
+            counter-reset: cp_ol-counters;
+        }
+
+        .cp_ol-counters ol {
+            margin-top: var(--sp_em-xs);
+            margin-bottom: var(--sp_em-xs);
+            padding-left: 8.5ch;
+            counter-reset: cp_ol-counters;
+        }
+
+        .cp_ol-counters ol ol {
+            padding-left: 10ch;
+        }
+
+        .cp_ol-counters li {
+            counter-increment: cp_ol-counters;
+            padding-left: var(--sp_em-xs);
+        }
+
+        .cp_ol-counters li::marker {
+            content: 'Amdt1.'counters(cp_ol-counters, ".", decimal);
+            font-weight: bold;
+            /*    font-variant-numeric: proportional-nums;*/
+
+        }
+
+        /*
+.cp_ol-counters li::before {
+    counter-increment: cp_ol-counters;
+    content: counters(cp_ol-counters, '.', decimal) " ";
+    font-weight: bold;
+    font-variant-numeric: proportional-nums;
+    
+}
+*/
+
+        .cp_ol-counters li+li {
+            margin-top: var(--sp_em-s);
+        }
+
+        .cp_ol-counters ol li+li {
+            margin-top: var(--sp_em-xs);
+        }
+
+        .cp_ol-counters {
+            font-variant-numeric: lining-nums;
+        }
+
+        .cp_ol-counters li::marker {
+            font-variant-caps: all-small-caps;
+            /*            font-variant-numeric: oldstyle-nums;*/
+            /*            font-variant-numeric: lining-nums;*/
+            /*            font-variant-numeric: proportional-nums;*/
+            /*            font-variant-numeric: tabular-nums;*/
+            letter-spacing: 0.02em;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="padding" id="ol_cuscounters">
+        <div class="wrapper">
+            <h4>First Amendment Fundamental Freedoms</h4>
+            <p class="tp_p-m" style="font-size: 32px;">Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.</p>
+
+            <ol class="cp_ol-counters">
+                <li>Overview of First Amendment, Fundamental Freedoms</li>
+                <li>
+                    Religion
+                    <ol>
+                        <li>Overview of the Religion Clauses (Establishment and Free Exercise Clauses)</li>
+                        <li>Historical Background
+                            <ol>
+                                <li>Introduction to the Historical Background on the Religion Clauses</li>
+                                <li>England and Religious Freedom</li>
+                                <li>State-Established Religion in the Colonies</li>
+                                <li>Colonial Concepts of Religious Liberty</li>
+                                <li>Virginia's Movement Towards Religious Freedom</li>
+                                <li>Continental Congresses and Religious Freedom</li>
+                                <li>Constitutional Convention, Ratification, and the Bill of Rights</li>
+                                <li>Early Interpretations of the Religion Clauses</li>
+                            </ol>
+                        </li>
+                        <li>Religious Disputes
+                            <ol>
+                                <li>Overview of Government Resolution of Religious Disputes</li>
+                                <li>Doctrinal Basis of Government Resolution of Religious Disputes</li>
+                                <li>Neutral Principles of Law and Government Resolution of Religious Disputes</li>
+                                <li>Church Leadership and the Ministerial Exception</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <!--
+                <li>Establishment Clause
+                    <ol>
+                        <li>General Principle of Government Neutrality to Religion</li>
+                        <li>Accommodationist and Separationist Theories of the Establishment Clause</li>
+                        <li>Establishment Clause Tests Generally</li>
+                        <li>Financial Assistance to Religion
+                            <ol>
+                                <li>Overview of Financial Assistance to Religion</li>
+                                <li>Early Cases on Financial Assistance to Religion</li>
+                                <li>Adoption of the Lemon Test</li>
+                                <li>Application of the Lemon Test</li>
+                                <li>Zelman and Indirect Assistance to Religion</li>
+                                <li>Denying Financial Assistance to Religion</li>
+                            </ol>
+                        </li>
+                        <li>Non-Financial Assistance to Religion
+                            <ol>
+                                <li>Overview of Non-Financial Assistance to Religion</li>
+                                <li>Early Cases on Non-Financial Assistance to Religion</li>
+                                <li>Purpose and Effect Test Before Lemon</li>
+                            </ol>
+                        </li>
+                        <li>Non-Financial Assistance to Religion and the Lemon Test
+                            <ol>
+                                <li>Lemon's Purpose Prong</li>
+                                <li>Overview of Lemon's Effect Prong</li>
+                                <li>Lemon's Effect Prong and Accommodation of Religion</li>
+                                <li>Lemon's Effect Prong and Pervasively Sectarian Institutions</li>
+                                <li>Lemon's Entanglement Prong</li>
+                                <li>Endorsement Variation on Lemon</li>
+                            </ol>
+                        </li>
+                        <li>Non-Financial Assistance to Religion and Non-Lemon Tests
+                            <ol>
+                                <li>Abandonment of the Lemon Test</li>
+                                <li>Coercion and Establishment Clause Doctrine</li>
+                                <li>Establishment Clause and Historical Practices and Tradition</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+-->
+            </ol>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+</body></html>
