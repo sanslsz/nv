@@ -1,0 +1,303 @@
+<!docType html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>01_QSC</title>
+    <meta name="description" content="Su Li's experiment">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/00_table_general.css">
+    <link rel="stylesheet" href="css/04_simple.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+    <meta name="color-scheme" content="light dark">
+    <style>
+        body {
+            background-color: var(--nv-15-ee);
+        }
+    </style>
+
+</head>
+
+<body>
+    <aside class="paddingsmall cp_disclaimer">
+        <div class="wrapper center">
+            This protoType is for design exploration, not meant for production use.
+        </div>
+    </aside>
+    <main>
+        <section class="padding">
+            <div class="wrapper">
+                <h4>Simple table: 01 base</h4>
+                <div class="md_table_scroll cp_scrollbar">
+                    <table class="cp_table_simple cp_table_01_base">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <th></th>
+                            <th>GeForce RTX<br>4090</th>
+                            <th>GeForce RTX<br>4080</th>
+                            <th>GeForce RTX<br>4070 Ti</th>
+                            <th>GeForce RTX<br>4070</th>
+                            <th>GeForce RTX<br>4060 Ti</th>
+                            <th>GeForce RTX<br>4060</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>NVIDIA CUDA Cores</th>
+                                <td>16384</td>
+                                <td>9728</td>
+                                <td>7680</td>
+                                <td>5888</td>
+                                <td>4352</td>
+                                <td>3072</td>
+                            </tr>
+                            <tr>
+                                <th>Boost Clock (gHz)</th>
+                                <td>2.52</td>
+                                <td>2.51</td>
+                                <td>2.61</td>
+                                <td>2.48</td>
+                                <td>2.54</td>
+                                <td>2.46</td>
+                            </tr>
+                            <tr>
+                                <th>Memory Size</th>
+                                <td>24GB</td>
+                                <td>16GB</td>
+                                <td>12GB</td>
+                                <td>12GB</td>
+                                <td>16GB or 8GB</td>
+                                <td>8GB</td>
+                            </tr>
+                            <tr>
+                                <th>Memory Type</th>
+                                <td>GDDR6X</td>
+                                <td>GDDR6X</td>
+                                <td>GDDR6X</td>
+                                <td>GDDR6X</td>
+                                <td>GDDR6</td>
+                                <td>GDDR6</td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="padding">
+            <div class="wrapper">
+                <h4>Simple table: 02 clean</h4>
+                <table class="cp_table_simple cp_table_02_clean md_table_list">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th></th>
+                        <th>GeForce RTX<br>4090</th>
+                        <th>GeForce RTX<br>4080</th>
+                        <th>GeForce RTX<br>4070 Ti</th>
+                        <th>GeForce RTX<br>4070</th>
+                        <th>GeForce RTX<br>4060 Ti</th>
+                        <th>GeForce RTX<br>4060</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>NVIDIA CUDA Cores</th>
+                            <td>16384</td>
+                            <td>9728</td>
+                            <td>7680</td>
+                            <td>5888</td>
+                            <td>4352</td>
+                            <td>3072</td>
+                        </tr>
+                        <tr>
+                            <th>Boost Clock (gHz)</th>
+                            <td>2.52</td>
+                            <td>2.51</td>
+                            <td>2.61</td>
+                            <td>2.48</td>
+                            <td>2.54</td>
+                            <td>2.46</td>
+                        </tr>
+                        <tr>
+                            <th>Memory Size</th>
+                            <td>24GB</td>
+                            <td>16GB</td>
+                            <td>12GB</td>
+                            <td>12GB</td>
+                            <td>16GB or 8GB</td>
+                            <td>8GB</td>
+                        </tr>
+                        <tr>
+                            <th>Memory Type</th>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6</td>
+                            <td>GDDR6</td>
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        <section class="padding">
+            <div class="wrapper">
+                <h4>Simple table: 03 column</h4>
+                <div class="md_table_sticky cp_table_scrollbar">
+                <table class="cp_table_simple cp_table_03_col">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th></th>
+                        <th>GeForce RTX<br>4090</th>
+                        <th>GeForce RTX<br>4080</th>
+                        <th>GeForce RTX<br>4070 Ti</th>
+                        <th>GeForce RTX<br>4070</th>
+                        <th>GeForce RTX<br>4060 Ti</th>
+                        <th>GeForce RTX<br>4060</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>NVIDIA CUDA Cores</th>
+                            <td>16384</td>
+                            <td>9728</td>
+                            <td>7680</td>
+                            <td>5888</td>
+                            <td>4352</td>
+                            <td>3072</td>
+                        </tr>
+                        <tr>
+                            <th>Boost Clock (gHz)</th>
+                            <td>2.52</td>
+                            <td>2.51</td>
+                            <td>2.61</td>
+                            <td>2.48</td>
+                            <td>2.54</td>
+                            <td>2.46</td>
+                        </tr>
+                        <tr>
+                            <th>Memory Size</th>
+                            <td>24GB</td>
+                            <td>16GB</td>
+                            <td>12GB</td>
+                            <td>12GB</td>
+                            <td>16GB or 8GB</td>
+                            <td>8GB</td>
+                        </tr>
+                        <tr>
+                            <th>Memory Type</th>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6</td>
+                            <td>GDDR6</td>
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                    </div>
+            </div>
+        </section>
+        <section class="padding">
+            <div class="wrapper">
+                <h4>Simple table: 04 row</h4>
+                <div class="md_table_sticky cp_table_scrollbar">
+                <table class="cp_table_simple cp_table_04_row">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th></th>
+                        <th>GeForce RTX<br>4090</th>
+                        <th>GeForce RTX<br>4080</th>
+                        <th>GeForce RTX<br>4070 Ti</th>
+                        <th>GeForce RTX<br>4070</th>
+                        <th>GeForce RTX<br>4060 Ti</th>
+                        <th>GeForce RTX<br>4060</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>NVIDIA CUDA Cores</th>
+                            <td>16384</td>
+                            <td>9728</td>
+                            <td>7680</td>
+                            <td>5888</td>
+                            <td>4352</td>
+                            <td>3072</td>
+                        </tr>
+                        <tr>
+                            <th>Boost Clock (gHz)</th>
+                            <td>2.52</td>
+                            <td>2.51</td>
+                            <td>2.61</td>
+                            <td>2.48</td>
+                            <td>2.54</td>
+                            <td>2.46</td>
+                        </tr>
+                        <tr>
+                            <th>Memory Size</th>
+                            <td>24GB</td>
+                            <td>16GB</td>
+                            <td>12GB</td>
+                            <td>12GB</td>
+                            <td>16GB or 8GB</td>
+                            <td>8GB</td>
+                        </tr>
+                        <tr>
+                            <th>Memory Type</th>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6</td>
+                            <td>GDDR6</td>
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body></html>
