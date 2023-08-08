@@ -54,16 +54,20 @@
 .cp_table_simple {
     font-size: 14px;
     text-align: left;
-    vertical-align: top;
     line-height: 1.2;
     border-collapse: collapse;
     width: 100%;
 }
 .cp_table_simple :is(th, td) {
+    vertical-align: middle;
     padding: var(--cell-tb-xl) var(--cell-lr-m);
 }
 .cp_table_simple th {
     font-weight: bold;
+}
+.cp_table_simple tbody td {
+/*    text-align: right;*/
+/*    text-align: center;*/
 }
 
 
@@ -75,15 +79,16 @@
 .cp_table_01_base :is(th, td) {
     border: 1px solid var(--nv-12-5-cc);
 }
-
-
+.cp_table_01_base thead {
+    border-bottom: 2px solid var(--nv-6-5-66);
+}
 
 
 .cp_table_02_clean thead {
     border-bottom: 2px solid var(--nv-6-5-66);
 }
-.cp_table_02_clean tbody tr:not(:last-child) {
-    border-bottom: 1px solid var(--nv-12-5-cc);
+.cp_table_02_clean tbody tr:not(:first-child) {
+    border-top: 1px solid var(--nv-12-5-cc);
 }
 .cp_table_02_clean :is(th, td) {
     padding-left: 0;
@@ -96,38 +101,34 @@
 .cp_table_03_col {
     background-color: var(--nv-16);
 }
-
 .cp_table_03_col col:nth-child(even) {
     background-color: var(--nv-15-5-f7);
-}
-
-.cp_table_03_col thead {
-    border-bottom: 2px solid var(--nv-6-5-66);
 }
 
 .cp_table_03_col thead th {
     padding-top: var(--cell-tb-xxl);
     padding-bottom: var(--cell-tb-xxl);
+    background: linear-gradient(to top, var(--nv-6-5-66) 0px 3px, transparent 3px), var(--nv-16);
 }
-
-.cp_table_03_col tbody tr:not(:last-child) {
-    border-bottom: 1px solid var(--nv-12-5-cc);
+.cp_table_03_col thead th:nth-child(even) {
+    background-color: var(--nv-15-5-f7);
+}
+.cp_table_03_col tbody tr:not(:first-child) {
+    border-top: 1px solid var(--nv-12-5-cc);
 }
 
 
 .cp_table_04_row {
     background-color: var(--nv-16);
 }
-
 .cp_table_04_row col:not(:last-child) {
     border-right: 1px solid var(--nv-12-5-cc);
 }
-
 .cp_table_04_row thead th {
     padding-top: var(--cell-tb-xxl);
     padding-bottom: var(--cell-tb-xxl);
+    background: linear-gradient(to top, var(--nv-6-5-66) 0px 3px, transparent 3px), var(--nv-16);
 }
-
 .cp_table_04_row tbody tr:nth-child(odd) {
     background-color: var(--nv-15-5-f7);
 }
@@ -138,11 +139,19 @@
 
 
 @media screen and (max-width: 1023px) {
+    
+/*    simple overflow scroll */
     .md_table_scroll {
         overflow: auto;
         max-height: 90vh;
+        margin-right: calc(var(--padding-lr) * -1);
+    }
+    .md_table_scroll table {
+        margin-right: var(--padding-lr);
     }
     
+
+/* scroll bar with margin */
     .cp_table_scrollbar::-webkit-scrollbar {
         display: initial;
         width: 3px;
@@ -151,6 +160,7 @@
     .cp_table_scrollbar::-webkit-scrollbar-track {
         background-color: var(--nv-14-dd);
         border-radius: 99999px;
+        margin-right: var(--padding-lr);
 }
 
     .cp_table_scrollbar::-webkit-scrollbar-thumb {
@@ -164,7 +174,7 @@
         display: none;
     }
     .cp_table_scrollbar::-webkit-scrollbar-corner {
-        background-color: red;
+/*        background-color: red;*/
     }
 
 
@@ -172,6 +182,8 @@
 }
 
 @media screen and (max-width: 639px) {
+    
+/*    table to list */
     .md_table_list thead {
         display: none;
     }
@@ -183,8 +195,8 @@
         padding: var(--sp_em-m) 0;
     }
     .md_table_list tbody th {
-        font-size: 16px;
-        font-weight: normal;
+/*        font-size: 16px;*/
+/*        font-weight: normal;*/
     }
     .md_table_list tbody td:nth-child(n + 2) {
         display: flex;
@@ -192,7 +204,7 @@
     }
     .md_table_list tbody td:nth-child(n + 2)::before {
         content: 'GeForce RTX 4090:';
-        font-weight: bold;
+/*        font-weight: bold;*/
         padding-right: var(--sp_em-xs);
         flex-basis: 22ch;
     }
@@ -212,6 +224,8 @@
         content: 'GeForce RTX 4060:';
     }
     
+    
+/*    sticky overflow scroll */
     .md_table_sticky {
         overflow: auto;
         max-height: 90vh;
@@ -223,11 +237,13 @@
     .md_table_sticky thead {
         position: sticky;
         top: 0;
+        z-index: 2;
     }
     .md_table_sticky :is(tbody, thead) th:first-child {
         background-color: var(--nv-16);
         position: sticky;
         left: 0;
+        z-index: 1;
     }
     .md_table_sticky :is(tbody, thead) th:first-child::after {
         content: '';
