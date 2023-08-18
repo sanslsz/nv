@@ -95,7 +95,6 @@ tbody th {
 tbody :is(.hidden_row_level1, .hidden_row_level2) {
     background-color: var(--nv-15-ee);
     border: none !important;
-    padding-top: calc(var(--cell-tb-xl) * 2);
     display: none;
 }
 :is(.hidden_row_level1, .hidden_row_level2) + tr {
@@ -315,10 +314,139 @@ tbody td) {
  
 }
 
+/*============ 02 clean with gap =================*/
+
+.cp_table_02_clean.gap {
+    min-width: 480px;
+}
+.cp_table_02_clean.gap .l_3 + col {
+    background-color: var(--nv-16);
+}
+
+.cp_table_02_clean.gap thead {
+    border-bottom: none;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.cp_table_02_clean.gap thead th {
+    background: linear-gradient(to top, var(--nv-6-5-66) 0px 3px, transparent 3px), var(--nv-15-ee);
+}
+.cp_table_02_clean.gap thead th:nth-last-child(4) {
+    background-color: var(--nv-16);
+}
+   
+
+.cp_table_02_clean.gap :is(
+thead th:nth-last-child(-n + 4), 
+tbody td) {
+    text-align: center;
+    padding: var(--cell-tb-xl) var(--cell-lr-m) !important;
+}
+.md_table_02_gap_sticky tbody :is(.hidden_row_level1, .hidden_row_level2) {
+    display: revert;
+    }
+
+.cp_table_02_clean.gap :is(.l_1, .l_2, thead th:nth-child(-n + 2), .level_1, .level_2) {
+    display: none;
+}
 
 
 
-/*============ 03 column gap=================*/
+@media screen and (max-width: 639px) {
+    
+    .md_table_02_gap_sticky {
+        overflow: auto;
+        max-height: 90vh;
+        margin-right: calc(var(--padding-lr) * -1);
+    }
+    .md_table_02_gap_sticky table {
+        margin-right: var(--padding-lr);
+    }
+    
+    .md_table_02_gap_sticky :is(thead th:nth-last-child(5), tbody .level_3) {
+        background-color: var(--nv-15-ee);
+        position: sticky;
+        left: 0;
+        z-index: 1;
+    }
+    .md_table_02_gap_sticky :is(thead th:nth-last-child(5), tbody .level_3)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -6px;
+        width: 6px;
+        height: 100%;
+        background: var(--cp_table_shadow);
+    }
+    .md_table_02_gap_sticky tbody :is(.hidden_row_level1, .hidden_row_level2) th p {
+    width: fit-content;
+    position: sticky;
+    left: 0;
+    }
+
+    
+    
+ 
+}
+
+@media screen and (min-width: 640px) {
+    
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .md_table_02_gap_sticky tbody .hidden_row_level2 {
+    display: none;
+    }
+/*
+.md_table_02_gap_sticky tbody :is(.hidden_row_level1) {
+    position: sticky;
+    top: var(--sp_nogap_sticky_top_03col);
+    z-index: 1;
+    }
+*/
+
+
+    .cp_table_02_clean.gap :is(.l_2, thead th:nth-child(2), .level_2) {
+    display: revert;
+}
+    
+    .cp_table_02_clean.gap .row_level2 {
+        border-top: 1px solid var(--nv-6-5-66) !important;
+    }
+    .cp_table_02_clean.gap :is(.level_1, .level_2) p {
+    position: sticky;
+    top: calc(var(--sp_gap_sticky_top_03col) + var(--cell-tb-xl)); 
+}
+    
+}
+
+@media screen and (min-width: 1350px) {
+    
+    .md_table_02_gap_sticky tbody .hidden_row_level1 {
+    display: none;
+    }
+
+    .cp_table_02_clean.gap :is(.l_1, thead th:nth-child(1), .level_1) {
+    display: revert;
+}
+    
+    .cp_table_02_clean.gap tbody:not(:first-of-type) {
+    border-top: 1px solid var(--nv-6-5-66);
+}
+
+}
+
+
+
+
+
+
+
+
+
+/*============ 03 column with gap =================*/
 
 .cp_table_03_col.gap {
     min-width: 480px;

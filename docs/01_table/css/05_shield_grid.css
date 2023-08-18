@@ -1,0 +1,351 @@
+:root {
+    --col_gap_1-width: 96px;
+    --col_gap_2-width: 96px;
+    --col_gap_3-width: auto;
+    --col_gap_4-width: 80px;
+    
+    --sp_gap_sticky_top_02clean: px;
+    --sp_gap_sticky_top_03col: 81px;
+    
+    --cp_table_shadow: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+    
+    --col_gap_1-width: 1.5fr;
+    --col_gap_2-width: 1.5fr;
+    --col_gap_3-width: 1.5fr;
+    --col_gap_4-width: 1fr;
+        
+    --sp_gap_sticky_top_02clean: px;
+    --sp_gap_sticky_top_03col: 87px;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        
+    --sp_gap_sticky_top_02clean: px;
+    --sp_gap_sticky_top_03col: 76px;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+
+    --sp_gap_sticky_top_02clean: px;
+    --sp_gap_sticky_top_03col: 82px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+      
+        --cp_table_shadow: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        
+
+        --nv-dark-16: #ffffff;
+        --nv-dark-15-5-f7: #F7F7F7;
+        --nv-dark-15-ee: #EEEEEE;
+        --nv-dark-14-dd: #dddddd;
+        --nv-dark-12-5-cc: #CCCCCC;
+        --nv-dark-9-5-99: #999999;
+        --nv-dark-6-5-66: #666666;
+        --nv-dark-3-33: #333333;
+        --nv-dark-2-22: #222222;
+        --nv-dark-1-5-1a: #1A1A1A;
+        --nv-dark-1-11: #111111;
+        --nv-dark-0: #000000;
+
+
+        --nv-16: var(--nv-dark-2-22);
+        --nv-15-5-f7: var(--nv-dark-1-5-1a);
+        --nv-15-ee: var(--nv-dark-1-11);
+        --nv-14-dd: var(--nv-dark-0);
+        --nv-12-5-cc: var(--nv-dark-3-33);
+        --nv-9-5-99: var(--nv-dark-6-5-66);
+        --nv-6-5-66: var(--nv-dark-9-5-99);
+        --nv-3-33: var(--nv-dark-12-5-cc);
+        --nv-2-22: var(--nv-dark-14-dd);
+        --nv-1-5-1a: var(--nv-dark-15-ee);
+        --nv-1-11: var(--nv-dark-15-5-f7);
+        --nv-0: var(--nv-dark-16);
+
+    }
+}
+
+/*================ overall table =====================*/
+.cp_table_simple {
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.2;
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 480px;
+}
+:is(.level_1, .level_2, li) {
+/*    vertical-align: middle;*/
+    padding: var(--cell-tb-xl) var(--cell-lr-m);
+    hyphens: auto;
+    overflow-wrap: anywhere;
+}
+:is(.container_head li, .level_1, .level_2) {
+    font-weight: bold;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+}
+
+
+
+
+
+/*================ table head =====================*/
+.container_head {
+    display: grid;
+    grid-template-columns: var(--col_gap_3-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.container_head li {
+    background: linear-gradient(to top, var(--nv-6-5-66) 0px 3px, transparent 3px), var(--nv-16);
+    padding-top: var(--cell-tb-xxl);
+    padding-bottom: var(--cell-tb-xxl);
+}
+.container_head li:nth-child(even) {
+    background-color: var(--nv-15-5-f7);
+}
+.container_head li:nth-child(-n + 2) {
+    display: none;
+}
+
+
+
+
+
+
+/*================ table body =====================*/
+
+
+.level_1 {
+    font-size: 16px;
+}
+
+.container_level_3 {
+    display: grid;
+    grid-template-columns: var(--col_gap_3-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width);
+/*    grid-gap: 1px 0px;*/
+    background-color: var(--12-5-cc);
+}
+.container_level_3 li {
+    background-color: var(--nv-16);
+}
+.container_level_3 li:is(
+:nth-child(5n + 2),
+:nth-child(5n + 4)
+) {
+    background-color: var(--nv-15-5-f7);
+}
+.container_level_3 li:nth-child(n + 6) {
+    border-top: 1px solid var(--nv-12-5-cc);
+}
+
+
+.container_level_3 li:empty {
+    position: relative;
+}
+.container_level_3 li:empty:not(.nocheck)::after {
+    content: "check";
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.5em);
+}
+
+.container_level_1:nth-of-type(2) li:not(.level_3) {
+    text-align: center;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 639px) {
+    
+  .md_table_03_gap_sticky {
+        overflow: auto;
+        max-height: 90vh;
+        margin-right: calc(var(--padding-lr) * -1);
+    }
+    .md_table_03_gap_sticky table {
+        margin-right: var(--padding-lr);
+    }   
+    
+ /* scroll bar with margin */
+    .cp_table_scrollbar::-webkit-scrollbar {
+        display: initial;
+        width: 3px;
+        height: 3px;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-track {
+        background-color: var(--nv-14-dd);
+        border-radius: 99999px;
+        margin-right: var(--padding-lr);
+}
+
+    .cp_table_scrollbar::-webkit-scrollbar-thumb {
+        background-color: var(--nv-green);
+        border-radius: 99999px;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar:vertical {
+/*        display: none;*/
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-button {
+        display: none;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-corner {
+/*        background-color: red;*/
+    }
+    
+    .container_head li:nth-child(3), .level_3 {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+    }
+    :is(.container_head li:nth-child(3), .level_3)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -6px;
+        width: 6px;
+        height: 100%;
+        background: var(--cp_table_shadow);
+    }
+    :is(.level_1, .level_2) p {
+    width: fit-content;
+    position: sticky;
+    left: var(--cell-lr-m);
+    }
+    
+    
+    
+    
+:is(.level_1, .level_2) {
+    padding-top: calc(var(--cell-tb-xl) * 2);
+}
+.container_level_1:first-of-type .level_1 {
+    padding-top: var(--cell-tb-xl);
+}
+.level_1 + .container_level_2 .level_2 {
+    padding-top: 0;
+}
+
+}
+
+
+@media screen and (min-width: 640px) {
+    
+:is(.level_1, .level_2) {
+    padding-top: calc(var(--cell-tb-xl) * 2);
+}
+.container_level_1:first-of-type .level_1 {
+    padding-top: var(--cell-tb-xl);
+}
+.level_1 + .container_level_2 .level_2 {
+    padding-top: 0;
+}
+    
+}
+
+
+@media screen and (min-width: 1024px) {
+    
+    .container_head {
+        grid-template-columns: var(--col_gap_2-width) var(--col_gap_3-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width);
+    }
+    .container_head li:nth-child(2) {
+        display: revert;
+    }
+    
+    
+    
+    .container_level_2 {
+        display: grid;
+        grid-template-columns: var(--col_gap_2-width) var(--col_gap_3-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width);
+    }
+    .container_level_2 + .container_level_2 {
+        margin-top: 16px;
+    }
+    .level_2, 
+    .level_1 + .container_level_2 .level_2{
+        padding-top: var(--cell-tb-xl);
+        background-color: var(--nv-15-5-f7);
+    }
+    .level_2 p {
+    position: sticky;
+    top: calc(var(--sp_gap_sticky_top_03col) + var(--cell-tb-xl)); 
+}
+    .container_level_3 {
+        grid-column: span 5 / -1;
+    }
+    
+}
+
+
+@media screen and (min-width: 1350px) {
+    
+    .container_head {
+        grid-template-columns: var(--col_gap_1-width) var(--col_gap_2-width) var(--col_gap_3-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width);
+    }
+    .container_head li:nth-child(1) {
+        display: revert;
+    }
+    
+    
+    
+    .container_level_1 {
+        display: grid;
+        grid-template-columns: var(--col_gap_1-width) var(--col_gap_2-width) var(--col_gap_3-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width) var(--col_gap_4-width);
+    }
+    .container_level_1 + .container_level_1 {
+        border-top: 1px solid var(--nv-6-5-66);
+    }
+    
+    .level_1 {
+        padding-top: var(--cell-tb-xl);
+        background-color: var(--nv-16);
+        grid-row: span var(--rowspan, 1);
+    }
+    .level_1 p {
+    position: sticky;
+    top: calc(var(--sp_gap_sticky_top_03col) + var(--cell-tb-xl)); 
+}
+    .container_level_2 {
+        grid-column: span 6 / -1;
+    }
+    .container_level_2 + .container_level_2 {
+        margin-top: unset;
+        border-top: 1px solid var(--nv-6-5-66);
+    }
+    
+    
+}
