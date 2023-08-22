@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NVIDIA GeForce RTX Series</title>
+  <!-- Include Google Fonts API to use Noto Sans font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
+  <style>
+    /* CSS for table styling */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1290px; /* Maximum width of the table */
+        margin: 0 auto;
+      font-family: 'Noto Sans', sans-serif; /* Use Noto Sans font */
+      color: #1a1a1a; /* Text color */
+    }
+
+    th, td {
+      border: 1px solid #cccccc; /* Horizontal row borders */
+      padding: 24px 20px; /* Top & Bottom Padding: 24px, Left & Right Padding: 20px */
+      text-align: left; /* Align text to the left for most cells */
+    }
+
+    th {
+      background-color: #ffffff; /* Header background color (No background color) */
+      text-align: left; /* Align text to the center for the "GeForce RTX Series" cell */
+    }
+
+    tr:nth-child(even) {
+      background-color: #ffffff; /* Even row background color (No background color) */
+    }
+
+    tr:hover {
+      background-color: #f2f2f2; /* Hover row background color */
+    }
+
+    /* Remove all borders from the table cells */
+    td, th {
+      border: none;
+    }
+
+    /* Add bottom border to each row */
+    tr {
+      border-bottom: 1px solid #cccccc;
+    }
+
+    /* Add 2px bottom border to the second row (index 1) */
+    tr:nth-child(2) {
+      border-bottom: 2px solid #666666;
+    }
+
+    /* Remove bottom border from the first row */
+    tr:first-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th rowspan="2">Model</th>
+      <th colspan="6" style="text-align: center;">GeForce RTX Series</th>
+    </tr>
+    <tr>
+      <th>GeForce<br>RTX 4090</th>
+      <th>GeForce<br>RTX 4080</th>
+      <th>GeForce<br>RTX 4070 Ti</th>
+      <th>GeForce<br>RTX 4070</th>
+      <th>GeForce<br>RTX 4060 Ti</th>
+      <th>GeForce<br>RTX 4060</th>
+    </tr>
+    <tr>
+      <th>NVIDIA CUDA Cores</th>
+      <td>16384</td>
+      <td>9728</td>
+      <td>7680</td>
+      <td>5888</td>
+      <td>4352</td>
+      <td>3072</td>
+    </tr>
+    <tr>
+      <th>Boost Clock (GHz)</th>
+      <td>2.52</td>
+      <td>2.51</td>
+      <td>2.61</td>
+      <td>2.48</td>
+      <td>2.54</td>
+      <td>2.46</td>
+    </tr>
+    <tr>
+      <th>Memory Size</th>
+      <td>24 GB</td>
+      <td>16 GB</td>
+      <td>12 GB</td>
+      <td>12 GB</td>
+      <td>16 GB or 8 GB</td>
+      <td>8 GB</td>
+    </tr>
+    <tr>
+      <th>Memory Type</th>
+      <td>GDDR6X</td>
+      <td>GDDR6X</td>
+      <td>GDDR6X</td>
+      <td>GDDR6X</td>
+      <td>GDDR6</td>
+      <td>GDDR6</td>
+    </tr>
+  </table>
+</body>
+</html>
