@@ -90,11 +90,14 @@
 .cp_table_02_clean tbody tr:not(:first-child) {
     border-top: 1px solid var(--nv-12-5-cc);
 }
-.cp_table_02_clean :is(th, td) {
+.cp_table_02_clean:not(.background) :is(th, td):first-child {
     padding-left: 0;
 }
-.cp_table_02_clean :is(th, td):last-child {
+.cp_table_02_clean:not(.background) :is(th, td):last-child {
     padding-right: 0;
+}
+.cp_table_02_clean.background {
+    background-color: var(--nv-16);
 }
 
 
@@ -191,7 +194,7 @@
         display: block;
         padding: 0;
     }
-    .md_table_list tbody tr {
+    .md_table_list:not(.background) tbody tr {
         padding: var(--sp_em-m) 0;
     }
     .md_table_list tbody th {
@@ -200,6 +203,8 @@
     }
     .md_table_list tbody td:nth-child(n + 2) {
         display: flex;
+    }
+        .md_table_list:not(.background) tbody td:nth-child(n + 2) {
         margin-top: var(--sp_em-xs);
     }
     .md_table_list tbody td:nth-child(n + 2)::before {
@@ -223,6 +228,27 @@
     .md_table_list tbody td:nth-child(7)::before {
         content: 'GeForce RTX 4060:';
     }
+    
+    .md_table_list.background {
+        background-color: transparent;
+    }
+    .md_table_list.background tbody :is(th, td) {
+        padding: var(--cell-tb-s);
+    }
+        .md_table_list.background tbody td{
+        background-color: var(--nv-16);
+    }
+       .md_table_list.background tbody td:nth-child(even) {
+        background-color: var(--nv-15-5-f7);
+    }
+    .md_table_list.background tbody tr:not(:first-child) {
+        border-top: none;
+        margin-top: var(--cell-tb-l);
+}
+    
+    
+    
+    
     
     
 /*    sticky overflow scroll */
