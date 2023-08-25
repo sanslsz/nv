@@ -52,11 +52,11 @@
 }
 
 .cp_table_simple {
+    border-collapse: collapse;
+    width: 100%;
     font-size: 14px;
     text-align: left;
     line-height: 1.2;
-    border-collapse: collapse;
-    width: 100%;
 }
 .cp_table_simple :is(th, td) {
     vertical-align: middle;
@@ -65,9 +65,11 @@
 .cp_table_simple th {
     font-weight: bold;
 }
-.cp_table_simple tbody td {
-/*    text-align: right;*/
-/*    text-align: center;*/
+.cp_table_simple caption {
+    caption-side: bottom;
+    padding: var(--cell-tb-xl) 0;
+    text-align: left;
+    display: none;
 }
 
 
@@ -80,12 +82,12 @@
     border: 1px solid var(--nv-12-5-cc);
 }
 .cp_table_01_base thead {
-    border-bottom: 2px solid var(--nv-6-5-66);
+    border-bottom: 3px solid var(--nv-6-5-66);
 }
 
 
 .cp_table_02_clean thead {
-    border-bottom: 2px solid var(--nv-6-5-66);
+    border-bottom: 3px solid var(--nv-6-5-66);
 }
 .cp_table_02_clean tbody tr:not(:first-child) {
     border-top: 1px solid var(--nv-12-5-cc);
