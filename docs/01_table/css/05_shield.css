@@ -182,9 +182,6 @@ tbody td:empty:not(.nocheck)::after {
 
 /*============ 02 clean no gap =================*/
 
-.cp_table_02_clean.nogap {
-    min-width: 639px;
-}
 .cp_table_02_clean.nogap .l_3 + col {
     background-color: var(--nv-16);
 }
@@ -205,7 +202,9 @@ tbody td:empty:not(.nocheck)::after {
 .cp_table_02_clean.nogap tbody:not(:first-of-type) {
     border-top: 1px solid var(--nv-6-5-66);
 }
-
+.cp_table_02_clean.nogap :is(th, td):nth-last-child(n + 5) {
+    padding-left: 0;
+}
 .cp_table_02_clean.nogap :is(
 thead th:nth-last-child(-n + 4), 
 tbody td) {
@@ -232,6 +231,9 @@ tbody td) {
     .md_table_02_nogap_sticky table {
         margin-right: var(--padding-lr);
     }
+    .cp_table_02_clean.nogap {
+    min-width: 640px;
+}
     
     .md_table_02_nogap_sticky :is(thead th:nth-last-child(5), tbody .level_3) {
         background-color: var(--nv-15-ee);
@@ -252,10 +254,6 @@ tbody td) {
 }
 
 /*============ 03 column no gap =================*/
-
-.cp_table_03_col.nogap {
-    min-width: 639px;
-}
 
 
 .cp_table_03_col.nogap thead {
@@ -295,6 +293,9 @@ tbody td) {
     .md_table_03_nogap_sticky table {
         margin-right: var(--padding-lr);
     }
+    .cp_table_03_col.nogap {
+    min-width: 640px;
+}
     
     .md_table_03_nogap_sticky :is(thead th:nth-last-child(5), tbody .level_3) {
         background-color: var(--nv-16);
@@ -336,7 +337,9 @@ tbody td) {
     background-color: var(--nv-16);
 }
    
-
+.cp_table_02_clean.gap :is(th, td):nth-last-child(n + 5) {
+    padding-left: 0;
+}
 .cp_table_02_clean.gap :is(
 thead th:nth-last-child(-n + 4), 
 tbody td) {
@@ -352,8 +355,8 @@ tbody td) {
 }
 
 
-
-@media screen and (max-width: 639px) {
+/* viewport size calculated as 480+10*2+15=515px*/
+@media screen and (max-width: 515px) {
     
     .md_table_02_gap_sticky {
         overflow: auto;
@@ -473,8 +476,8 @@ tbody td) {
 }
 
 
-
-@media screen and (max-width: 639px) {
+/* viewport size calculated as 480+10*2+15=515px*/
+@media screen and (max-width: 515px) {
     
     .md_table_03_gap_sticky {
         overflow: auto;

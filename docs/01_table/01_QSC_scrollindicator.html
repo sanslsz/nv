@@ -22,10 +22,10 @@
         width: unset;
         max-width: var(--md_chip_scroll-maxw);
         margin-right: var(--md_chip_scroll-margin);
-        margin-left: calc((100vw - var(--wrapper) - 16px)/2 - var(--padding-lr));
+        margin-left: max(0px, calc((100vw - var(--wrapper) - 16px)/2 - var(--padding-lr)));
     }
     .scrollindicator table {
-        --shadow-size: 8px;
+        --shadow-size: 6px;
         margin-right: var(--md_chip_container-spaceholder);
     }
         
@@ -35,7 +35,7 @@
          display: block;
          height: 100%;
          width: var(--shadow-size);
-        background:  linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.1));
+        background:  linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.15));
          position: absolute;
          top: 0;
          right: calc(var(--shadow-size) * -1);
@@ -45,15 +45,16 @@
         
 /*============ scroll bar customization for non touch screen ==============*/
 
-@media screen and (max-width: 1023px) and (any-hover: hover) {
+@media screen and (max-width: 1023px) {
      .tablescroll::-webkit-scrollbar {
         display: initial;
-        width: 4px;
-        height: 4px;
+        width: 3px;
+        height: 3px;
     }
     .tablescroll::-webkit-scrollbar-track {
         background-color: var(--sw-14);
         border-radius: 99999px;
+        margin-right: var(--md_chip_container-spaceholder);
 }
 
     .tablescroll::-webkit-scrollbar-thumb {
