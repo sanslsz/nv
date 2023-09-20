@@ -14,6 +14,7 @@
     :root {}
 }
 
+/*
 @media (prefers-color-scheme: dark) {
 
     :root {
@@ -50,6 +51,7 @@
 
     }
 }
+*/
 
 .cp_table_simple {
     border-collapse: collapse;

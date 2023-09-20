@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>List styles</title>
+    <!--    <meta name="description" content="">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/list.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+    <!--    <meta name="color-scheme" content="light dark">-->
+    <style>
+        body {
+            background-color: var(--nv-15-5-f7);
+        }
+
+        body>section:nth-child(even) {
+/*            background-color: var(--nv-15-ee);*/
+        }
+
+
+        @media screen and (min-width: 1290px) {
+            .size-comparison {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: var(--sp_px-xxxxl);
+                margin: var(--sp_px-xxxl) 0;
+            }
+
+            .size-comparison>* {
+                margin: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="padding">
+        <div class="wrapper">
+            <h1>List styles</h1>
+            <!--
+            <p class="tp_p-m">
+                <a href="">Ordered list</a>
+                <a href="">Ordered list</a>
+                <a href="">Ordered list</a>
+                <a href="">Ordered list</a>
+            </p>
+-->
+        </div>
+    </section>
+
+
+    <section class="padding" id="ul_greater">
+        <div class="wrapper">
+            <h3>Bullet list: default</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <div class="size-comparison">
+                <div>
+                <p class="tp_h-smallest">P-large</p>
+                <ul class="cp_ul-greater tp_p_l">
+                    <li>Eliminate tedious set up and testing with ready-to-run, optimized AI software.</li>
+                    <li>Create better models faster with unmatched performance that enables more iterations.</li>
+                    <li>Avoid time lost on systems integration and software engineering.</li>
+                    <li>Experience simplified infrastructure design and capacity planning with one system for all AI workloads.</li>
+                    <li>Achieve the highest compute density and performance in the smallest footprint.</li>
+                    <li>Take advantage of built-in security at every layer.</li>
+                    <li>Increase data scientist productivity and eliminate non-value-added effort.</li>
+                    <li>Accelerate the development cycle, from concept to production.</li>
+                    <li>Remove roadblocks with advice from DGXperts.</li>
+                </ul>
+                </div>
+                <div>
+                <p class="tp_h-smallest">P-medium</p>
+                <ul class="cp_ul-greater">
+                    <li>Eliminate tedious set up and testing with ready-to-run, optimized AI software.</li>
+                    <li>Create better models faster with unmatched performance that enables more iterations.</li>
+                    <li>Avoid time lost on systems integration and software engineering.</li>
+                    <li>Experience simplified infrastructure design and capacity planning with one system for all AI workloads.</li>
+                    <li>Achieve the highest compute density and performance in the smallest footprint.</li>
+                    <li>Take advantage of built-in security at every layer.</li>
+                    <li>Increase data scientist productivity and eliminate non-value-added effort.</li>
+                    <li>Accelerate the development cycle, from concept to production.</li>
+                    <li>Remove roadblocks with advice from DGXperts.</li>
+                </ul>
+                </div>
+                <div>
+                <p class="tp_h-smallest">P-small</p>
+                <ul class="cp_ul-greater tp_p_s">
+                    <li>Eliminate tedious set up and testing with ready-to-run, optimized AI software.</li>
+                    <li>Create better models faster with unmatched performance that enables more iterations.</li>
+                    <li>Avoid time lost on systems integration and software engineering.</li>
+                    <li>Experience simplified infrastructure design and capacity planning with one system for all AI workloads.</li>
+                    <li>Achieve the highest compute density and performance in the smallest footprint.</li>
+                    <li>Take advantage of built-in security at every layer.</li>
+                    <li>Increase data scientist productivity and eliminate non-value-added effort.</li>
+                    <li>Accelerate the development cycle, from concept to production.</li>
+                    <li>Remove roadblocks with advice from DGXperts.</li>
+                </ul>
+                </div>  
+            </div>
+
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+<section class="padding" id="ul_cusicon">
+        <div class="wrapper">
+            <h3>Bullet list: custom icon</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <ul class="cp_ul-customimage">
+                <li>
+                    <img class="ic_svg" src="../css/cp_assets/ic_download.svg" alt="download icon">
+                    Pariatur esse duis ex anim, doctrina quid nescius, consequat veniam fore voluptate cillum, aliqua est iudicem.
+                </li>
+                <li>
+                    <img class="ic_svg" src="../css/cp_assets/ic_video.svg" alt="download icon">
+                    Cupidatat esse sunt commodo sint, admodum noster tempor deserunt.
+                </li>
+                <li>
+                    <img class="ic_svg" src="../css/cp_assets/ic_img.svg" alt="download icon">
+                    Officia adipsum senserit ea incididunt quem malis deserunt dolore, anim pariatur pariatur in summis an proident.
+                </li>
+            </ul>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+
+    <section class="padding" id="ol_dec">
+        <div class="wrapper">
+            <h3>Numbered list: default</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <div class="size-comparison">
+                <div>
+                <p class="tp_h-smallest">P-large</p>
+                    <ol class="cp_ol-decimal tp_p-l">
+                        <li>Install your qualified graphics card.</li>
+                        <li>Update or install the latest version of GeForce Experience (Version 3.18 or higher).</li>
+                        <li>Open and log in to GeForce Experience.</li>
+                        <li>Go to the Account drop-down menu in the top-right and select “Redeem”.</li>
+                        <li>Enter your bundle code from your qualifying bundle purchase</li>   <li value="16">Follow the remaining instructions on screen.</li>
+                        <li>If for a game title on Steam, Uplay, Battle.Net, or Origin, you may be prompted to log in to a digital store account where your game will be received. If for a game title on other digital stores, you will receive a second code to redeem on their portal.</li>
+                        <li>For troubleshooting help, please visit our FAQ here. If you are still experiencing problems, please contact our customer support team.</li>
+                    </ol>
+                </div>
+                <div>
+                <p class="tp_h-smallest">P-medium</p>
+                    <ol class="cp_ol-decimal">
+                        <li>Install your qualified graphics card.</li>
+                        <li>Update or install the latest version of GeForce Experience (Version 3.18 or higher).</li>
+                        <li>Open and log in to GeForce Experience.</li>
+                        <li>Go to the Account drop-down menu in the top-right and select “Redeem”.</li>
+                        <li>Enter your bundle code from your qualifying bundle purchase</li>   <li value="16">Follow the remaining instructions on screen.</li>
+                        <li>If for a game title on Steam, Uplay, Battle.Net, or Origin, you may be prompted to log in to a digital store account where your game will be received. If for a game title on other digital stores, you will receive a second code to redeem on their portal.</li>
+                        <li>For troubleshooting help, please visit our FAQ here. If you are still experiencing problems, please contact our customer support team.</li>
+                    </ol>
+                </div>
+                <div>
+                <p class="tp_h-smallest">P-small</p>
+                    <ol class="cp_ol-decimal tp_p-s">
+                        <li>Install your qualified graphics card.</li>
+                        <li>Update or install the latest version of GeForce Experience (Version 3.18 or higher).</li>
+                        <li>Open and log in to GeForce Experience.</li>
+                        <li>Go to the Account drop-down menu in the top-right and select “Redeem”.</li>
+                        <li>Enter your bundle code from your qualifying bundle purchase</li>   <li value="16">Follow the remaining instructions on screen.</li>
+                        <li>If for a game title on Steam, Uplay, Battle.Net, or Origin, you may be prompted to log in to a digital store account where your game will be received. If for a game title on other digital stores, you will receive a second code to redeem on their portal.</li>
+                        <li>For troubleshooting help, please visit our FAQ here. If you are still experiencing problems, please contact our customer support team.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+<section class="padding" id="ol_sub">
+        <div class="wrapper">
+            <h3>Numbered list: titled</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+                <ol class="cp_ol-decimal subhead">
+                    <li>
+                        <span>8x NVIDIA H100 GPUs with up to 640GB total GPU memory</span>
+                        18x NVIDIA® NVLink® connections per GPU, 900 gigabytes per second of bidirectional GPU-to-GPU bandwidth
+                    </li>
+                    <li>
+                        <span>6x NVIDIA NVSwitches™</span>
+                      4.8TB/s of bidirectional bandwidth, 2X more than previous-generation NVSwitch
+                    </li>
+                    <li>
+                        <span>10x NVIDIA ConnectX-7 200Gb/s network interface</span>
+                        500GB/s of peak bidirectional bandwidth
+                    </li>
+                    <li>
+                        <span>Dual 64-CORE AMD CPUs and 2TB system memory</span>
+                       3.2X more cores to power the most intensive AI jobs
+                    </li>
+                    <li>
+                        <span>30TB Gen4 NVMe SSD</span>
+                        50GB/s of peak bandwidth, 2X faster than Gen3 NVMe SSDs
+                    </li>
+                    <li>
+                        <span>Dual Intel Xeon Platinum 8480C processors, 112 cores total, and 2 TB System Memory</span>
+                        Powerful CPUs for the most intensive AI jobs
+                    </li>
+                </ol>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+    <section class="padding" id="ol_cuscounters">
+        <div class="wrapper">
+            <h3>Ordered list: counters</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <h4>Nvidia AI Product Agreement</h4>
+            <p class="tp_p-m">By using or registering to use AI Products, Customer is affirming that Customer has read the Agreement and agrees to its terms. If Customer does not have the required authority to enter into the Agreement or if Customer does not accept all the terms and conditions below, do not use (or register to use) AI Products.</p>
+
+<ol class="cp_ol-counters eula">
+                
+<li>
+    <span class="subhead">AI Products Offerings</span>
+    <ol>
+
+        <li><span class="lead">Grant.</span> Subject to the terms of the Agreement, Customer’s Order Agreement and Subscription or Perpetual license parameters, and payment of applicable fees, NVIDIA grants Customer a non-exclusive, non-transferable, non-sublicensable (except as expressly provided in the Agreement) license to do the following for the duration of the license:
+            <ol>
+
+                <li>install and use copies of AI Products,</li>
+
+                <li>create Derivative Samples and Derivative Models to develop and test services and applications,</li>
+
+                <li>configure the AI Product using the configuration files provided (as applicable),</li>
+
+                <li>deploy AI Products, and Derivative Samples and Derivative Models Customer develops as authorized in Section 1.1.2, on infrastructure Customer owns or leases to offer a service, without distributing AI Products, Derivative Samples and Derivative Models, and</li>
+
+                <li>
+                    <p>develop and extend AI Products, and Derivative Samples and Derivative Models Customer develops as authorized in Section 1.1.2, to develop Compatible Applications, and deploy and distribute such Compatible Applications.</p>
+
+                    <p>Notwithstanding the grants above, users that receive an Enterprise Product identified as “not for resale” or “NFR”, typically a license to a distributor or reseller, may exercise the grants in Section 1.1.1, Section 1.1.2 and Section 1.1.3 above solely for internal evaluation or to demonstrate the Enterprise Product to others, and the grants in Section 1.1.4 and Section 1.1.5 are excluded such that no production deployment or distribution is authorized.</p>
+                    </li>
+            </ol>
+    </li>
+
+        <li><span class="lead">Authorized Users.</span> Customer’s and its subsidiaries’ employees and contractors may access and use the AI Products from Customer devices to perform work authorized by the Agreement on Customer’s behalf. If Customer is an academic institution, Customer may allow users enrolled or employed by the academic institution to access and use the AI Products as authorized by the Agreement from Customer’s devices. Customer is responsible for the compliance with the terms of the Agreement by Customer’s authorized users. Any act or omission that if committed by Customer would constitute a breach of the Agreement will be deemed to constitute a breach of the Agreement if committed by Customer’s authorized users.</li>
+
+        <li><span class="lead">License Types.</span> The terms in this Section 1.3 apply only to Enterprise Products, not to Community Products. The license types below describe features that may be part of an Enterprise Product; and not all license types may be available for each Enterprise Product. Enterprise Products are licensed under the following license types: Subscription per CPU Socket, Subscription per GPU, Subscription per Node, Usage Based Subscription, or Perpetual license. Once a certain Enterprise Product is under a paid Subscription or Perpetual license, all Customer’s licenses to such Enterprise Product must be under a paid Subscription or Perpetual license. Customer’s order, license key or the product description will indicate the parameters of Customer’s license.</li>
+
+        <li><span class="lead">Replacement Products.</span> NVIDIA may, from time to time at its discretion, give Customer the option to replace a certain Enterprise Product, subject to payment of applicable fees. In such cases, Customer must discontinue use of the replaced Enterprise Product timely upon the start of use of the replacement Enterprise Product. If requested in writing by NVIDIA, Customer will provide a written certificate signed by an authorized officer affirming Customer’s compliance with the replacement terms.</li>
+
+        <li><span class="lead">Promotional Offerings.</span> NVIDIA may, from time to time, offer free or discounted pricing programs covering certain uses of Enterprise Products, as examples having different license parameters or fees for evaluation or academic use. NVIDIA may stop accepting new sign-ups or discontinue a promotional offering at any time. Standard charges will apply after a promotional offering ends or if Customer exceeds the promotional offering use terms. Customer must comply with any additional terms, restrictions, or limitations (e.g., limitations on the total amount of usage) for a promotional offering as described in the corresponding offer terms.
+            <ol><li>
+
+                <span class="lead">NVIDIA Riva offer.</span> NVIDIA Riva is a Community Product for up to 90 days, and beyond this limit, requires an Enterprise Product Subscription. This is a one-time offer and subsequent use of NVIDIA Riva without an Enterprise Product Subscription requires a written agreement with NVIDIA.
+                </li></ol>
+        </li>
+    </ol>
+</li>
+    <li> <span class="subhead">Requirements.</span> The requirements in this section apply for AI Products, and Derivative Samples and Derivative Models Customer develops as authorized in Section 1.1.2, that Customer deploys as a service and for Customer to exercise the distribution grants:
+        <ol>
+
+            <li><span class="lead">Additional Functionality.</span> A service or application to third parties must have material additional functionality, beyond the included portions of AI Products.</li>
+
+            <li><span class="lead">Notification of Misuse.</span> Customer agrees to notify NVIDIA in writing of any known or suspected use or distribution of AI Products, and Derivative Samples and Derivative Models Customer develops as authorized in Section 1.1.2, not in compliance with the terms and conditions the Agreement, and to enforce the terms of Customer’s agreements with respect to AI Products.</li>
+
+            <li><span class="lead">NVIDIA Works Notice.</span> The following notice must be included in Derivative Samples and Derivative Models distributed: “This software contains source code provided by NVIDIA Corporation.”</li>
+
+            <li><span class="lead">Customer Agreements.</span> The terms under which Customer deploys as a service or distributes the AI Products, and Derivative Samples and Derivative Models Customer develops as authorized in Section 1.1.2, must be at least as protective as the terms of the Agreement (including, but not limited to, terms relating to the grant, restrictions and protection of Intellectual Property Rights).</li>
+
+            <li><span class="lead">Use Report.</span> Customer must report upon NVIDIA’s email request, no more than monthly, the AI Products in use by all users Customer enabled, quantity, start and end dates, and any other reasonably requested information for NVIDIA to determine the fees due.</li>
+
+            <li><span class="lead">Enterprise Support.</span> Subject to the terms of the Agreement NVIDIA will provide Enterprise Support to Customer for the duration indicated in the Order Agreement, and Enterprise Support does not extend to any other parties.</li>
+
+            <li><span class="lead">License Administration.</span> Customer will be responsible for the administration of licenses and services to Customer’s users during their use period.</li>
+
+            <li><span class="lead">Use of TAO Toolkit.</span> If Customer intends to deploy as a service or distribute AI Products that include “unpruned”, “trainable” or “train-ready” Models or Derivative Models, such Models are only distributable or deployable after trained using the NVIDIA TAO Toolkit, which is separately available.</li>
+                </ol>
+    </li>
+                
+    </ol>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+    
+    <section class="padding" id="multilevel">
+        <div class="wrapper">
+            <h3>Multi level / nested list</h3>
+            <p class="tp_p-m">Veniam ubi sed cillum incididunt. Ingeniis irure nam senserit transferrem o te
+                multos ea fore, officia velit aliquip mentitum si labore excepteur officia. O
+                sint vidisse sempiternum.</p>
+                <ul class="cp_ul-greater">
+                    <!-- level 1 -->
+                    <li>Level 1 item placeholder text. Eget magna fermentum iaculis eu non. Diam maecenas ultricies mi eget mauris. Odio eu feugiat pretium nibh ipsum consequat nisl vel pretium.</li>
+                    <li>Level 1 item placeholder text. Risus in hendrerit gravida rutrum quisque non tellus. Rutrum tellus pellentesque eu tincidunt tortor aliquam.
+                        <ul class="cp_ul-greater">
+                            <!-- level 2 -->
+                            <li>Level 2 item placeholder text. Massa ultricies mi quis hendrerit dolor magna eget est. </li>
+                            <li>Level 2 item placeholder text. Commodo ullamcorper a lacus vestibulum sed.</li>
+                        </ul>
+                    </li>
+                    <li>Level 1 item placeholder text. Fringilla est ullamcorper eget nulla facilisi. Praesent semper feugiat nibh sed pulvinar proin gravida. Sit amet mauris commodo quis imperdiet massa tincidunt.
+                        <ul class="cp_ul-greater">
+                            <!-- level 2 -->
+                            <li>Level 2 item placeholder text. Lobortis feugiat vivamus at augue eget arcu dictum. 
+                                <ul class="cp_ul-greater">
+                                    <!-- level 3 -->
+                                    <li>Level 3 item placeholder text.</li>
+                                    <li>Level 3 item placeholder text.</li>
+                                </ul>
+                            </li>
+                            <li>Level 2 item placeholder text. Vitae purus faucibus ornare suspendisse sed nisi lacus sed.. 
+                                <ol class="cp_ol-decimal">
+                                    <!-- level 3 -->
+                                    <li>Level 3 item placeholder text.</li>
+                                    <li>Level 3 item placeholder text.</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Level 1 item placeholder text. Eget magna fermentum iaculis eu non. Diam maecenas ultricies mi eget mauris. Odio eu feugiat pretium nibh ipsum consequat nisl vel pretium.</li>
+                </ul>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+    
+    <section class="padding" id="dl_spec">
+        <div class="wrapper">
+            <h3>Descrpition list: specification</h3>
+            <h2>NVIDIA RTX A6000 Specifications</h2>
+            <ul class="md_specscontainer">
+                <li>
+                    <dl class="cp_dl-spec grid-cozy">
+                        <dt>GPU Memory</dt>
+                        <dd>48 GB GDDR6 with error-correcting code (ECC)</dd>
+                        <dt>Display Ports</dt>
+                        <dd>4x DisplayPort 1.4a<a class="sup" href="#cp_dl-spec-fineprint1-1"></a></dd>
+                        <dt>Max Power Consumption</dt>
+                        <dd>300 W</dd>
+                        <dt>Graphics Bus<a class="sup" href="#cp_dl-spec-fineprint1-2"></a></dt>
+                        <dd>PCI Express Gen 4 x 16</dd>
+                        <dt>Form Factor</dt>
+                        <dd>4.4” (H) x 10.5” (L) dual slot</dd>
+                        <dt>Thermal</dt>
+                        <dd>Active</dd>
+                        <dt>NVLink</dt>
+                        <dd>2-way low profile (2-slot and 3-slot bridges) Connect 2 RTX A6000</dd>
+                        <dt>vGPU Software Support<a class="sup" href="#cp_dl-spec-fineprint1-3"></a></dt>
+                        <dd>NVIDIA vPC/vApps, NVIDIA RTX Virtual Workstation, NVIDIA Virtual Compute Server</dd>
+                        <dt>vGPU Profiles Supported</dt>
+                        <dd>See the Virtual GPU Licensing Guide</dd>
+                        <dt>VR Ready</dt>
+                        <dd>Yes<a class="sup" href="#cp_dl-spec-fineprint1-4"></a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <ol class="cp_ol-decimal cp_dl-spec-fineprint grid-cozy">
+                        <li id="cp_dl-spec-fineprint1-1">Up to 4k 12-bit HDR at 240Hz with DP 1.4a + DSC. Up to 8k 12-bit HDR at 60Hz with DP 1.4a + DSC or HDMI 2.1 + DSC. With dual DP 1.4a + DSC, up to 8K HDR at 120Hz.</li>
+
+                        <li id="cp_dl-spec-fineprint1-2">Supports 4K 120Hz HDR, 8K 60Hz HDR and Variable Refresh Rate as specified in HDMI 2.1a.</li>
+
+                        <li id="cp_dl-spec-fineprint1-3">DisplayPort 1.4a.</li>
+
+                        <li id="cp_dl-spec-fineprint1-4">Minimum is based on a PC configured with a Ryzen 9 5900X processor. Power requirements can be different depending on system configuration.</li>
+                    </ol>
+
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="padding" id="dl_spec">
+        <div class="wrapper">
+            <h3>Descrpition list: specification with group titles</h3>
+            <h2>NVIDIA RTX A6000 Specifications</h2>
+            <ul class="md_specscontainer">
+                <li>
+                    <dl class="cp_dl-spec group">
+                        <h3>Specs Group Title #1</h3>
+                        <dt>GPU Memory</dt>
+                        <dd>48 GB GDDR6 with error-correcting code (ECC)</dd>
+                        <dt>Display Ports</dt>
+                        <dd>4x DisplayPort 1.4a<a class="sup" href="#cp_dl-spec-fineprint-1"></a></dd>
+                        <dt>Max Power Consumption</dt>
+                        <dd>300 W</dd>
+                        <dt>Graphics Bus<a class="sup" href="#cp_dl-spec-fineprint-2"></a></dt>
+                        <dd>PCI Express Gen 4 x 16</dd>
+                        <dt>Form Factor</dt>
+                        <dd>4.4” (H) x 10.5” (L) dual slot</dd>
+                        <dt>Thermal</dt>
+                        <dd>Active</dd>
+                        <dt>NVLink</dt>
+                        <dd>2-way low profile (2-slot and 3-slot bridges) Connect 2 RTX A6000</dd>
+                        <dt>vGPU Software Support<a class="sup" href="#cp_dl-spec-fineprint-3"></a></dt>
+                        <dd>NVIDIA vPC/vApps, NVIDIA RTX Virtual Workstation, NVIDIA Virtual Compute Server</dd>
+                        <dt>vGPU Profiles Supported</dt>
+                        <dd>See the Virtual GPU Licensing Guide</dd>
+                        <dt>VR Ready</dt>
+                        <dd>Yes<a class="sup" href="#cp_dl-spec-fineprint-4"></a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl class="cp_dl-spec group">
+                        <h3>Specs Group Title #2</h3>
+                        <dt>GPU Memory</dt>
+                        <dd>48 GB GDDR6 with error-correcting code (ECC)<a class="sup" href="#cp_dl-spec-fineprint-5"></a></dd>
+                        <dt>Display Ports</dt>
+                        <dd>4x DisplayPort 1.4a<a class="sup" href="#cp_dl-spec-fineprint-6"></a></dd>
+                        <dt>Max Power Consumption</dt>
+                        <dd>300 W</dd>
+                        <dt>Graphics Bus</dt>
+                        <dd>PCI Express Gen 4 x 16</dd>
+                        <dt>Form Factor</dt>
+                        <dd>4.4” (H) x 10.5” (L) dual slot</dd>
+                        <dt>Thermal</dt>
+                        <dd>Active<a class="sup" href="#cp_dl-spec-fineprint-7"></a></dd>
+                        <dt>NVLink</dt>
+                        <dd>2-way low profile (2-slot and 3-slot bridges) Connect 2 RTX A6000</dd>
+                        <dt>vGPU Software Support</dt>
+                        <dd>NVIDIA vPC/vApps, NVIDIA RTX Virtual Workstation, NVIDIA Virtual Compute Server</dd>
+                        <dt>vGPU Profiles Supported<a class="sup" href="#cp_dl-spec-fineprint-8"></a></dt>
+                        <dd>See the Virtual GPU Licensing Guide</dd>
+                        <dt>VR Ready</dt>
+                        <dd>Yes</dd>
+                    </dl>
+                </li>
+                <li>
+                    <ol class="cp_ol-decimal cp_dl-spec-fineprint">
+                        <li id="cp_dl-spec-fineprint-1">Up to 4k 12-bit HDR at 240Hz with DP 1.4a + DSC. Up to 8k 12-bit HDR at 60Hz with DP 1.4a + DSC or HDMI 2.1 + DSC. With dual DP 1.4a + DSC, up to 8K HDR at 120Hz.</li>
+
+                        <li id="cp_dl-spec-fineprint-2">Supports 4K 120Hz HDR, 8K 60Hz HDR and Variable Refresh Rate as specified in HDMI 2.1a.</li>
+
+                        <li id="cp_dl-spec-fineprint-3">DisplayPort 1.4a.</li>
+
+                        <li id="cp_dl-spec-fineprint-4">Minimum is based on a PC configured with a Ryzen 9 5900X processor. Power requirements can be different depending on system configuration.</li>
+
+                        <li id="cp_dl-spec-fineprint-5">The above specifications represent this GPU as incorporated into NVIDIA's Founders Edition or reference graphics card design. </li>
+                        <li id="cp_dl-spec-fineprint-6">Clock specifications apply while gaming with medium to full GPU utilization.</li>
+                        <li id="cp_dl-spec-fineprint-7">Graphics card specifications may vary by add-in-card manufacturer. Please refer to the add-in-card manufacturers' website for actual shipping specifications.</li>
+
+                        <li id="cp_dl-spec-fineprint-8">Average gaming power is measured across 22 games at 4K, 1440p, and 1080p</li>
+                    </ol>
+
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="padding" id="dl_glo">
+        <div class="wrapper">
+            <h3>Descrpition list: glossary</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <dl class="cp_dl-glossary">
+                <div class="alphabet">A</div>
+                <dt>Aerial cuBB</dt>
+                <dd>The CUDA Baseband (cuBB) SDK provides a GPU-accelerated 5G signal processing pipeline, including cuPHY for Layer 1 5G PHY. It delivers unprecedented throughput and efficiency by keeping all physical layer processing within the high-performance GPU memory.</dd>
+                <dt>Aerial cuVNF</dt>
+                <dd>The CUDA Virtual Network Functions (cuVNF) SDK provides optimized input/output and packet processing, exchanging packets directly between GPU memory and GPUDirect®-capable NVIDIA ConnectX®-6 DX network interface cards.</dd>
+                <dt>Aerial Developer Kit</dt>
+                <dd>NVIDIA Aerial is an Application framework for building high performance, software-defined, cloud-native 5G applications to address increasing consumer demand. Optimize your results with parallel processing on GPU for baseband signals and data flow. </dd>
+                <dt>Ansel</dt>
+                <dd>NVIDIA Ansel is a revolutionary way to capture in-game shots and share the moment. Compose your screenshots from any position, adjust them with post-process filters, capture HDR images in high-fidelity formats.</dd>
+                <div class="alphabet">B</div>
+                <dt>BioNeMo</dt>
+                <dd>BioNeMo is an AI-powered drug discovery cloud service and framework built on NVIDIA NeMo Megatron for training and deploying large biomolecular transformer AI models at supercomputing scale.</dd>
+                <dt>Bunk of America</dt>
+                <dd>CV-CUDA is an open source project that enables developers to build highly efficient, graphics processing unit (GPU)-accelerated pre- and post-processing pipelines in cloud-scale Artificial Intelligence (AI) imaging and computer vision (CV) workloads.</dd>
+                <div class="alphabet">C</div>
+                <dt>Capture SDK</dt>
+                <dd>NVIDIA Capture SDK (formerly GRID SDK) enables developers to easily and efficiently capture, and optionally encode, the display content.</dd>
+                <dt>Clara AGX</dt>
+                <dd>The NVIDIA Clara AGX™ developer kit delivers real-time AI and imaging for medical devices. By combining low-powered, NVIDIA Jetson AGX Xavier and RTX GPU with the NVIDIA Clara AGX SDK and the NVIDIA EGX stack.</dd>
+                <dt>Clara Discovery</dt>
+                <dd>Clara Discovery is a collection of frameworks, applications, and AI models enabling GPU-accelerated computational drug discovery. Drug development is a cross-disciplinary endeavor.</dd>
+                <dt>Clara Holoscan</dt>
+                <dd>NVIDIA Clara™ Holoscan is a hybrid computing platform for medical devices that combines hardware systems for low-latency sensor and network connectivity, optimized libraries for data processing and AI.</dd>
+            </dl>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+    
+    <section class="padding" id="ol_date">
+        <div class="wrapper">
+            <h3>Event list</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <ol class="cp_ol-date">
+                <li>
+                    <div class="date">Oct 17-27, 2022</div>
+                    <div>
+                        <span class="event">OLCF GPU Hackathon 2022</span>
+                        <span class="venue">Online</span>
+                        <span class="description">
+                            Exciting opportunities for scientists to accelerate their AI research or HPC codes under the guidance of expert mentors from National Labs, Universities and Industry leaders in a collaborative environment.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="date">Oct 23-26, 2022</div>
+                    <div>
+                        <span class="event">Money20/20 USA</span>
+                        <span class="venue">Las Vegas, NV</span>
+                        <span class="description">
+                            Join NVIDIA and AWS at Money20/20 USA to see how AI, machine learning, and data science are driving innovation in the financial services industry. Stop by our booth, visit our partners on the show floor, and attend our conference keynotes and sessions.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="date">Oct 25-26, 2022</div>
+                    <div>
+                        <span class="event">NVIDIA/HLRS SciML GPU Bootcamp</span>
+                        <span class="venue">Santa Monica, CA</span>
+                        <span class="description">
+                            This workshop introduce Scientific Machine Learning (SciML) with PINN and hands-on experience with a PDE solver NVIDIA Modulus, a neural network framework that builds high-fidelity, parameterized surrogate models with near-real-time latency. </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="date">Nov 18, 2022</div>
+                    <div>
+                        <span class="event">Gartner IT IOCS 2022</span>
+                        <span class="venue">Seattle, WA</span>
+                        <span class="description">
+                            Infrastructure and operations (I&O) leaders have a critical role to play in transforming and enhancing their capabilities to empower the anywhere business.</span>
+                    </div>
+                </li>
+            </ol>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+    
+    <section class="padding" id="multicol">
+        <div class="wrapper">
+            <h3>List in multi-column layout</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <ol class="cp_ol-decimal md_listcolumn">
+                <li>Up to 4k 12-bit HDR at 240Hz with DP 1.4a + DSC. Up to 8k 12-bit HDR at 60Hz with DP 1.4a + DSC or HDMI 2.1 + DSC. With dual DP 1.4a + DSC, up to 8K HDR at 120Hz.</li>
+
+                <li>Supports 4K 120Hz HDR, 8K 60Hz HDR and Variable Refresh Rate as specified in HDMI 2.1a.</li>
+
+                <li>DisplayPort 1.4a.</li>
+
+                <li>Minimum is based on a PC configured with a Ryzen 9 5900X processor. Power requirements can be different depending on system configuration.</li>
+
+                <li>The above specifications represent this GPU as incorporated into NVIDIA's Founders Edition or reference graphics card design. </li>
+                <li>Clock specifications apply while gaming with medium to full GPU utilization.</li>
+                <li>Graphics card specifications may vary by add-in-card manufacturer. Please refer to the add-in-card manufacturers' website for actual shipping specifications.</li>
+
+                <li>Ubi id irure irure quae, quem quo te quem aliquip, anim ingeniis se quis veniam
+                    et pariatur aliqua ipsum expetendis probant. </li>
+                <li>Sunt
+                    o commodo do minim in a nulla se eram, minim mentitum laboris, offendit eram
+                    incididunt officia. </li>
+                <li>Pariatur voluptatibus a proident non hic ipsum quamquam aut
+                    non ea irure possumus a minim ingeniis an incididunt. </li>
+                <li>Ea labore do malis ea
+                    voluptate aut enim incididunt, si id familiaritatem, litteris aut summis. </li>
+                <li>In
+                    sunt excepteur, velit tempor ad singulis si qui de comprehenderit an legam
+                    quibusdam ad multos esse, dolore hic cupidatat hic velit ab illum. </li>
+                <li>E anim ullamco e
+                    eram laborum non culpa dolore, enim doctrina a mandaremus ubi malis iis doctrina
+                    iis summis. </li>
+                <li> De an instituendarum ubi ubi sunt firmissimum, minim o ullamco id
+                    iudicem esse ita singulis illustriora.</li>
+            </ol>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+    <section class="padding" id="ol_inline">
+        <div class="wrapper">
+            <h3>List in inline / horizontal layout</h3>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <ul class="cp_ul-customimage md_inline">
+                <li>
+                    <span class="ic_font">cake</span>
+                    Apple pumpkin pie
+                </li>
+
+                <li>
+                    <span class="ic_font">local_bar</span>
+                    Chocolate pudding
+                </li>
+                <li>
+                    <span class="ic_font">kebab_dining</span>
+                    Sugar cream pie
+                </li>
+                <li>
+                    <span class="ic_font">ramen_dining</span>
+                    tiramisu
+                </li>
+                <li>
+                    <span class="ic_font">local_pizza</span>
+                    Coconut Macaroons
+                </li>
+                <li>
+                    <span class="ic_font">egg</span>
+                    Hot milk cake
+                </li>
+                <li>
+                    <span class="ic_font">bakery_dining</span>
+                    Mango shortcake
+                </li>
+                <li>
+                    <span class="ic_font">rice_bowl</span>
+                    Pizza
+                </li>
+                <li>
+                    <span class="ic_font">icecream</span>
+                    Stawberry yogurt trifle
+                </li>
+                <li>
+                    <span class="ic_font">soup_kitchen</span>
+                    Bacardi cannoli
+                </li>
+            </ul>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+    <section class="padding" id="ul_grid">
+        <div class="wrapper">
+            <h3>List in 2 direction / grid layout</h3>
+
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+            <ol class="cp_ol-decimal subhead md_listgrid">
+                <li><span>La La Land</span>Cupidatat legam summis qui quae. Commodo sed consequat.</li>
+                <li><span>Once Upon a Time in Hollywood</span>Cupidatat esse sunt commodo sint, admodum noster tempor deserunt.</li>
+                <li><span>Drive</span>Consequat a nisi singliis. Labore coniunctione cernantur enim appellat non</li>
+                <li><span>Blade Runner 2045</span>Officia adipsum senserit ea incididunt quem malis deserunt dolore, anim pariatur pariatur in summis an proident.</li>
+                <li><span>Marriage Story</span>Labore coniunctione cernantur enim appellat non
+                    laborum do legam.</li>
+                <li><span>Licorice Pizza</span>Pariatur esse duis ex anim, doctrina quid nescius, consequat veniam fore voluptate cillum, aliqua est iudicem.</li>
+                <li><span>Nocturnal Animals</span>Quo ita clipa cernantur ut cillum graviterque ingeniis fore voluptate.</li>
+                <li value="18"><span>Cafe Society</span>Ne mlitos appellat, dolor ea incididunt. Labore coniunctione cernantur enim appellat non</li>
+            </ol>
+            <p class="tp_p-m">Irure familiaritatem admodum malis iudicem. Irure iudicem est adipisicing hic
+                singulis noster fore ut aute. Nescius ex quae, iis eram nostrud instituendarum,
+                aut eram mandaremus admodum quo admodum fugiat cernantur. Pariatur eu malis
+                tempor.</p>
+        </div>
+    </section>
+</body></html>
