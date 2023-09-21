@@ -37,10 +37,16 @@
         --cp_ol-date-align: right;
         --cp_ol-date-row-gap: var(--sp_em-xs);
         --cp_ol-date-detail-mtop: unset;
+    }
+
+}
+
+
+@media screen and (min-width: 460px) {
+    :root {
 
         --cp_dl-grid: grid;
         --cp_dl-dtmargin: unset;
-
     }
 
 }
