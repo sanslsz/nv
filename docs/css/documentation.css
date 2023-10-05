@@ -1,0 +1,248 @@
+:root {
+   
+
+
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+        --cp_toc-display: grid;
+        --cp_toc-column: repeat(2, 1fr);
+        
+   
+}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+    --cp_toc-column: repeat(4, 1fr);
+  
+}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+  
+
+}
+}
+
+/*=========== Type =============*/
+
+body {
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: 2.4em;
+    margin-bottom: 1.2em;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 32px;
+}
+h3 {
+    font-size: 24px;
+    margin-bottom: 1em;
+}
+h4 {
+    font-size: 16px;
+    margin-bottom: 0.6em;
+}
+
+p {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+}
+figure {
+    margin-top: 1.2em;
+    margin-bottom: 2.4em;
+}
+video {
+    display: block;
+    max-width: 100%;
+    max-height: 1000px;
+    margin: 1.2em auto 2.4em;
+}
+
+.wrapper > *:not(figure, video) {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*=========== color =============*/
+body {
+    color: var(--nv-0);
+/*    background-color: #ceeaff;*/
+/*    background-color: #e8e2d9;*/
+    background-color: var(--nv-15-5-f7);
+    background-color: var(--nv-16);
+}
+body > section:nth-child(even) {
+/*    background-color: #e2dcd4;*/
+    background-color: var(--nv-16);
+    background-color: var(--nv-15-5-f7);
+}
+
+
+
+.cp_toc {
+    line-height: 1.2;
+    margin: var(--sp_px-xl) 0;
+    display: grid;
+    grid-template-columns: var(--cp_toc-column);
+    grid-gap: var(--sp_px-xl);
+}
+.cp_toc > li {
+    font-size: 24px;
+}
+.cp_toc > li > ol {
+    padding-left: 1.2em;
+    font-size: var(--tp_p-m);
+    margin-top: 0.6em;
+}
+.cp_toc > li > ol > li {
+    list-style: decimal;
+}
+.cp_toc > li > ol > li + li {
+    margin-top: 0.6em;
+}
+html {
+    scroll-padding-top: var(--padding-tb);
+}
+
+
+.cp_link_cta {
+    display: block;
+    width: fit-content;
+    padding: 0.6em;
+    margin: 1.2em 0;
+    color: var(--nv-16);
+    background-color: var(--nv-green);
+}
+
+
+.cp_image img {
+    max-height: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cp_image figcaption {
+    margin-top: 0.6em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--nv-6-5-66);
+    font-style: italic;
+}
+
+.cp_ana_list {
+    padding-left: 1.2em;
+    list-style: decimal;
+}
+.cp_ana_list li {
+    list-style: decimal;
+}
+.cp_ana_list li span {
+    display: block;
+    font-weight: bold;
+}
+.cp_ana_list.margin li + li{
+    margin-top: 0.6em;
+}
+
+.cp_spec_table {
+    border-collapse: collapse;
+    width: 100%;
+    width: auto;
+    margin: 1.2em 0 2.4em;
+    font-variant-numeric: tabular-nums;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.2;
+    border: 1px solid var(--nv-12-5-cc);
+}
+.cp_spec_table :is(th, td) {
+    vertical-align: middle;
+    padding: 1.2em 1.2em;
+    border: 1px solid var(--nv-12-5-cc);
+}
+.cp_spec_table th {
+    font-weight: bold;
+}
+/*
+.cp_spec_table caption {
+    caption-side: bottom;
+    padding: var(--cell-tb-xl) 0;
+    text-align: left;
+    display: none;
+}
+*/
+@media screen and (max-width: 1023px) {
+    
+/*    simple overflow scroll */
+    .md_table_scroll {
+        overflow: auto;
+        max-height: 90vh;
+        margin-right: calc(var(--padding-lr) * -1);
+        padding-bottom: 0.4em;
+    }
+    .md_table_scroll table {
+        margin-right: var(--padding-lr);
+    }
+    
+
+/* scroll bar with margin */
+    .cp_table_scrollbar::-webkit-scrollbar {
+        display: initial;
+        width: 3px;
+        height: 3px;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-track {
+        background-color: var(--nv-14-dd);
+        border-radius: 99999px;
+        margin-right: var(--padding-lr);
+}
+
+    .cp_table_scrollbar::-webkit-scrollbar-thumb {
+        background-color: var(--nv-green);
+        border-radius: 99999px;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar:vertical {
+/*        display: none;*/
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-button {
+        display: none;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-corner {
+/*        background-color: red;*/
+    }   
+}
+
+.cp_examples {
+    columns: 300px 3;
+    column-gap: 16px;
+}
+.cp_examples li {
+    overflow: hidden;
+}
+.cp_examples li + li {
+    margin-top: 16px;
+}
+.cp_examples img {
+    width: 100%;
+    max-height: var(--img-maxh, 500px);
+    object-fit: cover;
+    object-position: top;
+    transition: 0.3s ease-in-out transform;
+}
+.cp_examples img:hover {
+    transform: scale(1.05);
+
+}
+

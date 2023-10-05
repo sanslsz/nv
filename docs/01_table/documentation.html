@@ -1,0 +1,965 @@
+<!docType html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Table Component Documentation</title>
+    <meta name="description" content="Table Component Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/documentation.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+    <!--    <meta name="color-scheme" content="light dark">-->
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <section class="md_01_banner">
+    <img src="docs/table_comp.png" alt="">
+    </section>
+    <section class="md_02_title padding">
+        <div class="wrapper">
+            <h1>Table Component</h1>
+            <p>Tables offer two-directional data display and comparison, making organizing and interpreting information efficient. Its content may be static (built in the same page), or dynamic (from an external database).
+                <a href="#" class="cp_link_cta">View Prototype</a>
+            </p>
+            <p style="margin-top: 4em;">Table of contents</p>
+            <ol class="cp_toc">
+                <li>Overview
+                    <ol>
+                        <li><a href="#toc_anatomy">Anatomy</a></li>
+                        <li><a href="#toc_variants">Variants</a></li>
+                    </ol>
+                </li>
+                <li>Specification
+                    <ol>
+                        <li><a href="#toc_color">Color</a></li>
+                        <li><a href="#toc_type">Type</a></li>
+                        <li><a href="#toc_spacing">Spacing</a></li>
+                        <li><a href="#toc_size">Size</a></li>
+                        <li><a href="#toc_smallviewport">Small viewport</a></li>
+                        <li><a href="#toc_interaction">Interaction</a></li>
+                    </ol>
+                </li>
+                <li>Guidline
+                    <ol>
+                        <li><a href="#toc_comparison">Simple table and data table</a></li>
+                        <li><a href="#toc_tips">Tips</a></li>
+                        <li><a href="#toc_examples">Examples</a></li>
+                        <li><a href="#toc_software">Software comparison</a></li>
+                    </ol>
+                </li>
+                <li>Links
+                    <ol>
+                        <li><a href="#toc_prototypes">Prototypes</a></li>
+                        <li><a href="#toc_documentations">Documentations</a></li>
+                        <li><a href="#toc_usecases">Use cases</a></li>
+                    </ol>
+                </li>
+            </ol>
+
+        </div>
+    </section>
+    <section class="md_04_overview padding">
+        <div class="wrapper">
+            <h2>Overview</h2>
+            <h3 id="toc_anatomy">Anatomy</h3>
+            <figure class="cp_image">
+                <img src="docs/table_.png">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>Table head</li>
+                        <li>Table body</li>
+                        <li>Column</li>
+                        <li>Row</li>
+                        <li>Header cell in table head</li>
+                        <li>Header cell in row</li>
+                        <li>Data cell</li>
+                    </ol>
+                </figcaption>
+            </figure>
+
+
+
+            <h3 id="toc_variants">Variants / styles</h3>
+            <p>There are 3 table visual style options, each with their unique and shared characteristics. Headers, borders, and background colors work as visual guides, enhancing the clarity of the table. The clear tabular structure helps the audience interpret, identify and compare the content.</p>
+
+            <h4>Clean: lightweight and versatile</h4>
+            <p>Row borders only. May include a table background color.</p>
+            <figure class="cp_image">
+                <img src="docs/screenshot_style_clean.png" alt="">
+                <figcaption>
+                    The clean table style presents the content in a simple and minimal way. Vertical space is divided by cell padding. The row borders serve as horizontal visual guides.
+                </figcaption>
+            </figure>
+
+            <figure class="cp_image">
+                <img src="docs/screenshot_style_clean_bg.png" alt="">
+                <figcaption>
+                    With background color
+                </figcaption>
+            </figure>
+
+
+            <h4>Column: vertical pattern</h4>
+            <p>Row borders + alternating column background colors</p>
+            <figure class="cp_image">
+                <img src="docs/screenshot_style_col.png" alt="">
+                <figcaption>
+                    The alternating column backgrounds divide the vertical space. The row borders serve as horizontal visual guides.
+                </figcaption>
+            </figure>
+
+
+            <h4>Row: horizontal pattern</h4>
+            <p>Column borders + alternating row background colors</p>
+            <figure class="cp_image">
+                <img src="docs/screenshot_style_row.png" alt="">
+                <figcaption>
+                    The vertical space is divided by the column borders. The alternating row backgrounds serve as horizontal visual guides.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+    <section class="md_05_spec padding">
+        <div class="wrapper">
+            <h2>Specification</h2>
+            <h3 id="toc_color">Color</h3>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Background color</td>
+                            <td>#F7F7F7</td>
+                        </tr>
+
+                        <tr>
+                            <td>Alternating background color</td>
+                            <td>#FFF or #EEE</td>
+                        </tr>
+
+                        <tr>
+                            <td>Head border</td>
+                            <td>3px solid #666</td>
+                        </tr>
+
+                        <tr>
+                            <td>Column / row border</td>
+                            <td>1px solid #CCC</td>
+                        </tr>
+
+                        <tr>
+                            <td>Text</td>
+                            <td>#1A1A1A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <figure class="cp_image">
+                <img src="docs/table_3.png" alt="">
+                <figcaption>
+                    Page background color: #EEE
+                </figcaption>
+            </figure>
+            <figure class="cp_image">
+                <img src="docs/table_4.png" alt="">
+                <figcaption>
+                    Page background color: #FFF
+                </figcaption>
+            </figure>
+
+            <h3 id="toc_type">Type</h3>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Size</th>
+                            <th>Weight</th>
+                            <th>Line-height</th>
+                            <th>Alignment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Header cell</th>
+                            <td>14px</td>
+                            <td>Bold</td>
+                            <td>1.2</td>
+                            <td>Left(default) center</td>
+                        </tr>
+
+                        <tr>
+                            <th>Data cell</th>
+                            <td>14px</td>
+                            <td>Regular</td>
+                            <td>1.2</td>
+                            <td>Left(default) center</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 id="toc_spacing">Spacing</h3>
+            <figure class="cp_image">
+                <img src="docs/table_2.png" alt="">
+                <figcaption>
+                    Table head and cell spacing
+                </figcaption>
+            </figure>
+
+            <p>Default spacing values for the 3 styles</p>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2"></th>
+                            <th colspan="2" style="text-align: center;">Table head cell</th>
+                            <th colspan="2" style="text-align: center;">Table body cell</th>
+                        </tr>
+                        <tr>
+                            <th>Padding top / bottom</th>
+                            <th>Padding left / right</th>
+                            <th>Padding top / bottom</th>
+                            <th>Padding left / right</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Clean</th>
+                            <td>cell-tb-xl</td>
+                            <td>cell-lr-m</td>
+                            <td>cell-tb-xl</td>
+                            <td rowspan="3">Follow table head cell left / right padding</td>
+
+                        </tr>
+                        <tr>
+                            <th>Column</th>
+                            <td>cell-tb-xxl</td>
+                            <td>cell-lr-m</td>
+                            <td>cell-tb-xl</td>
+
+                        </tr>
+                        <tr>
+                            <th>Row</th>
+                            <td>cell-tb-xxl</td>
+                            <td>cell-lr-m</td>
+                            <td>cell-tb-xl</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <p>Spacing tokens available for configuration</p>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>320—639</th>
+                            <th>640—1023</th>
+                            <th>1024—1349</th>
+                            <th>1350—∞</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>cell-lr-xs</th>
+                            <td>6</td>
+                            <td>8</td>
+                            <td>10</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th>cell-lr-s</th>
+                            <td>8</td>
+                            <td>11</td>
+                            <td>14</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <th>cell-lr-m</th>
+                            <td>12</td>
+                            <td>16</td>
+                            <td>20</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <th>cell-lr-l</th>
+                            <td>16</td>
+                            <td>22</td>
+                            <td>28</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <th>cell-lr-xl</th>
+                            <td>20</td>
+                            <td>28</td>
+                            <td>36</td>
+                            <td>44</td>
+                        </tr>
+                        <tr>
+                            <th>cell-lr-xxl</th>
+                            <td>24</td>
+                            <td>34</td>
+                            <td>44</td>
+                            <td>54</td>
+                        </tr>
+                        <tr>
+                            <th>cell-tb-xs</th>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <th>cell-tb-s</th>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <th>cell-tb-m</th>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <th>cell-tb-l</th>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <th>cell-tb-xl</th>
+                            <td>20</td>
+                            <td>22</td>
+                            <td>24</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <th>cell-tb-xxl</th>
+                            <td>24</td>
+                            <td>27</td>
+                            <td>30</td>
+                            <td>33</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <h3 id="toc_size">Size</h3>
+            <p>
+                Tables have an interesting mechanism that manages the width. By UA default, a table is only as wide as its content, up to the full container width. Each column takes up the space that’s necessary to accommodate the content within it. However our tables are set to be full container width on large viewports, having each column divide the available space within. See below for size and space distribution options.</p>
+
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 16.67%;">
+                        <col style="width: 16.67%;">
+                        <col style="width: 16.67%;">
+                        <col style="width: 16.67%;">
+                        <col style="width: 16.67%;">
+                        <col style="width: 16.67%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>UA default</th>
+                            <th>Desktop</th>
+                            <th>Laptop</th>
+                            <th>Tablet</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Table width</th>
+                            <td>Content width</td>
+                            <td>100% container width</td>
+                            <td>100% container width</td>
+                            <td colspan="2">100% container width, or min-width / fixed width(may overflow), or content width(may overflow)</td>
+                        </tr>
+
+                        <tr>
+                            <th>Column width</th>
+                            <td>Content width</td>
+                            <td colspan="4">Auto(flexible), fixed size in px, percentage</td>
+                        </tr>
+
+                        <tr>
+                            <th>Table length</th>
+                            <td>Content length</td>
+                            <td>Content length</td>
+                            <td>Content length</td>
+                            <td colspan="2">Max-height: 90vh (may overflow)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <p>A video demo of the table’s size and internal space distribution under desktop, laptop, tablet and phone viewports.</p>
+            <video src="docs/video_isv_size_2.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/video_isv_size_2.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+            <figure class="cp_image">
+                <img src="docs/table_5.png" alt="">
+                <figcaption>
+                    The ISV table is set to full width on desktop, laptop and tablet viewports. The horizontal space is evenly distributed to the columns on desktop and laptop viewports, then automatically divided by the columns on tablet viewport. On phone viewport, the cells determine their columns’ width which in turn determine the width of the table. Note overflow occurs when the table’s width is larger than its container width.
+                </figcaption>
+            </figure>
+
+
+
+            <video src="docs/video_shield_size.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/video_shield_size.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+            <figure class="cp_image">
+                <img src="docs/table_6.png" alt="">
+                <figcaption>
+                    The SHIELD table is set to full width on desktop, laptop and tablet viewports, and 640px on phone viewport. The column width follows a percentage / fraction allocation: 17.65%(1.5x) and 11.76%(1x) on desktop and laptop; fixed width of 96px, 80px and flexible width on tablet and phone.
+                </figcaption>
+            </figure>
+
+
+
+
+
+            <h3 id="toc_smallviewport">Small viewport</h3>
+
+            <p>When the table’s width or height is bigger than its container, overflow occurs on their respective axis. The treatments below are available to optimize the responsiveness under small viewports.</p>
+
+            <h4>Horizontal scrolling</h4>
+            <p>
+                Allows the users to scroll the overflowed content both horizontally and vertically. It’s recommended that the table’s width is below 800px to avoid excessive scrolling.</p>
+            <ol class="cp_ana_list margin">
+                <li>
+                    <span>Sticky row header</span>
+                    Sticks to the left with a drop shadow on the right side. The elevation gives it a sense of depth and suggests that the rest of the table can be tucked under.
+                </li>
+
+                <li>
+                    <span>Overflow on the right</span>
+                    The absence of the right padding suggests overflow to the right. Once it’s scrolled to the end the padding is restored.
+                </li>
+
+                <li>
+                    <span>Scroll bar</span>
+                    Indicates the position of the visible content in relation to the full content.
+                </li>
+            </ol>
+            <video src="docs/video_shield_scroll.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/video_shield_scroll.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+
+
+            <h4>Convert to list</h4>
+            <p>
+                The tabular structure gets rearranged into a vertical list structure. TTHis option is recommended for tables with more than 50 cells.</p>
+            <figure class="cp_image">
+                <img src="docs/table_7.png" alt="">
+                <figcaption>
+                    Geforce comparison table in “clean” style under tablet and phone viewports.
+                </figcaption>
+            </figure>
+
+            <h4>Hide columns</h4>
+            <p>
+                Hide the row headers and reposition them as rows to reduce the width of the table.</p>
+            <video src="docs/video_shield_colreposition.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/video_shield_colreposition.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+            <figure class="cp_image">
+                <img src="docs/table_8.png" alt="">
+                <figcaption>
+                    The shield table features 3 levels of headers and 4 product comparison columns. The level 1 columns are repositioned as rows on laptop viewport. Both level 1 and 2 headers are repositioned as rows on tablet viewport.
+                </figcaption>
+            </figure>
+
+            <p>In addition to the column reposition described above, this video shows that horizontal scrolling doesn’t start until the viewport width is 515px or smaller. Because the left 2 columns are removed, the space is enough for the remaining columns(480px min-width) when the viewport is larger than 515px. It’s not necessary to enable horizontal scrolling until the table overflows the container.</p>
+
+
+            <h3 id="toc_interaction">Interaction</h3>
+
+            <p>Interactive features give the audience control on how the table content is presented, making it easy to narrow down and pinpoint relevant information.</p>
+
+            <h4>Search</h4>
+            <p>Identifies matches from the filter criteria, displays them in the dropdown along with the filter category in bold weight. Selecting the item applies the filter.</p>
+
+            <h4>Filters</h4>
+            <p>Dropdown selects that target a specific table column. It can be placed above the table or incorporated into the table head.</p>
+
+            <h4>Chips / pills</h4>
+            <p>Display the filter criteria applied to the table. Users have the option to remove a filter criteria by clicking the "X", or clear all filter criteria.</p>
+            <figure class="cp_image">
+                <img src="docs/screenshot_qsc_filter.png" alt="">
+                <figcaption>
+                    The Qualified Server Catalog page has filters incorporated into the table head.
+                </figcaption>
+            </figure>
+
+            <h4>Pagination</h4>
+            <p>Set the number of the items to display per page, and page navigation.</p>
+            <figure class="cp_image">
+                <img src="docs/screenshot_qsc_pagination.jpeg" alt="">
+                <figcaption>
+                    The Qualified Server Catalog page has the pagination located at the bottom of the table.
+                </figcaption>
+            </figure>
+
+            <h4>Sticky table head</h4>
+            <p>Header row sticks to the top of the viewport while scrolling, keeping the context in place.</p>
+            <video src="docs/video_qsc_tablehead.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/video_qsc_tablehead.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+
+            <h4>Sticky cell content</h4>
+            <p>Content within the cell sticks to the top of the viewport, below the table head. This helps relevant information within the same row stay visible and/or close to each other while scrolling.</p>
+            <video src="docs/video_qsc_stickycellcontent.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/video_qsc_stickycellcontent.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+            <p>The 1st, 2nd, 4th and 5th columns all have their content set to sticky. They stay visible while the 3rd column scrolls, keeping the context in close proximity.</p>
+
+        </div>
+    </section>
+    <section class="md_06_guide padding">
+        <div class="wrapper">
+            <h2 id="toc_guideline">Guideline</h2>
+            <h3 id="toc_compare">Simple table and data table</h3>
+
+            <p>Data tables and simple tables have identical visual stylings, but some differences when it comes to function and content.</p>
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Simple table</th>
+                            <th>Data table</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Source of data</th>
+                            <td>Built in, static</td>
+                            <td>External, dynamic</td>
+                        </tr>
+
+                        <tr>
+                            <th>Content length</th>
+                            <td>shorter</td>
+                            <td>longer</td>
+                        </tr>
+
+                        <tr>
+                            <th>Scrollable</th>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+
+                        <tr>
+                            <th>Filter and search</th>
+                            <td>No</td>
+                            <td>Yes</td>
+                        </tr>
+
+                        <tr>
+                            <th>Pagination</th>
+                            <td>No</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <th>Icon</th>
+                            <td>Yes</td>
+                            <td>No</td>
+
+                        </tr>
+                        <tr>
+                            <th>Footer</th>
+                            <td>Optional</td>
+                            <td>No</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 id="toc_tips">Tips</h3>
+            <ol class="cp_ana_list margin">
+                <li>Two-directional data display and comparison is the table's strength. For simple property and value pairs, consider the spec list component.</li>
+                <li>For e-commerce pages, it may be better to use card items and a side filter bar, instead of a table with filter functionality.</li>
+                <li>Depending on the content, some tables benefit from being simplified and restructured. Under certain viewports, the columns and rows can be removed and/or repositioned. Elements inside the table cells can be sticky to keep relevant information visible while scrolling.</li>
+            </ol>
+
+            <h3 id="toc_examples">Design examples</h3>
+            <ul class="cp_examples" style="max-width: unset;">
+                <li><a href="docs/examples/04_simpletable_v4_bgcolor.png" target="_blank"><img src="docs/examples/04_simpletable_v4_bgcolor.png" alt=""></a></li>
+                <li><a href="docs/examples/04_simpletable_v3_.png" target="_blank"><img src="docs/examples/04_simpletable_v3_.png" alt=""></a></li>
+                <li><a href="docs/examples/04_simpletable_v4_other_8.png" target="_blank"><img src="docs/examples/04_simpletable_v4_other_8.png" alt=""></a></li>
+
+
+                <li><a href="docs/examples/04_simpletable_8.png" target="_blank"><img src="docs/examples/04_simpletable_8.png" alt="" style="aspect-ratio: 1 / 0.8;"></a></li>
+                <li><a href="docs/examples/04_simpletable_v3_3.png" target="_blank"><img src="docs/examples/04_simpletable_v3_3.png" alt=""></a></li>
+                <li><a href="docs/examples/04_simpletable_v4_other_select.png" target="_blank"><img src="docs/examples/04_simpletable_v4_other_select.png" alt=""></a></li>
+                <li><a href="docs/examples/04_simpletable_v4_bgcolor2.png" target="_blank"><img src="docs/examples/04_simpletable_v4_bgcolor2.png" alt=""></a></li>
+                
+                
+                
+                <li><a href="docs/examples/04_simpletable_v3_2.png" target="_blank"><img src="docs/examples/04_simpletable_v3_2.png" alt=""></a></li>
+                <li><a href="docs/examples/04_simpletable_v3_6.png" target="_blank"><img src="docs/examples/04_simpletable_v3_6.png" alt="" style="aspect-ratio: 1 / 0.8;"></a></li>
+                <li><a href="docs/examples/04_simpletable_v4_other_10.png" target="_blank"><img src="docs/examples/04_simpletable_v4_other_10.png" alt=""></a></li>
+                <li><a href="docs/examples/04_simpletable_v4_other_13.png" target="_blank"><img src="docs/examples/04_simpletable_v4_other_13.png" alt=""></a></li>
+
+            </ul>
+
+            <h3 id="toc_software">Software comparison</h3>
+            <p>After a thorough evaluation of a few design software options, we recommend the "Table Creator" plugin for table design in Figma.</p>
+            <p style="font-variant-numeric: tabular-nums;">Evaluation criteria and their measurements:<br>
+                5 - 💯 super efficient/ automated<br>
+                4 - ✨ efficient<br>
+                3 - 👌 average/acceptable<br>
+                2 - ⏳ time consuming<br>
+                1 - 🙅‍♂️ unacceptable amount of effort & time<br>
+                0 - 🚫 not possible
+            </p>
+
+            <div class="md_table_scroll cp_table_scrollbar" style="max-width: unset;">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 34%;">
+                        <col style="width: 17%;">
+                        <col style="width: 17%;">
+                        <col style="width: 17%;">
+                        <col style="width: 17%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th style="border-top: 1px solid transparent; border-left: 1px solid transparent;"></th>
+                            <th>Figma: Table Creator</th>
+                            <th>Figma: Convertify</th>
+                            <th>Indesign</th>
+                            <th>Google Doc</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <th colspan="5" style="background-color: var(--nv-15-ee);">Content editing</th>
+                        </tr>
+
+                        <tr>
+                            <td>Import or paste entire table from word or excel docs</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Convert text to table</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Convert table to text</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Copy, paste, combine content in tabular format (from table to table, not one cell at a time)</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Manual data entry</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Edit content within multiple cells</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Add / delete / select: multiple cells / rows / columns</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Reorder columns and rows</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Define table head row</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Span(merge) cols and rows</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Split cols and rows</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Insert icons / images</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Sort column</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="5" style="background-color: var(--nv-15-ee);">Table visual formatting &amp; styling</th>
+                        </tr>
+
+                        <tr>
+                            <td>Background</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Alternating row / column background</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Border</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Cell padding</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Swap entire table’s visual styling</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Format multiple cells, rows, cols</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Adjust the height / width of the table, columns, and rows</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Even column width</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Even row height</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Change alignment</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="5" style="background-color: var(--nv-15-ee);">Design system / UI kit / style control</th>
+                        </tr>
+
+                        <tr>
+                            <td>Component</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>UI kit update</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Generate viewport sizes</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>char/para/cell/table styles</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>High fidelity visual</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="5" style="background-color: var(--nv-15-ee);">Overall</th>
+                        </tr>
+
+                        <tr>
+                            <td>Scores</td>
+                            <td>??</td>
+                            <td>??</td>
+                            <td>??</td>
+                            <td>??</td>
+
+                        </tr>
+                        <tr>
+                            <td>Conclusion</td>
+                            <td>Recommended for visual mockup</td>
+                            <td>Not recommended</td>
+                            <td>Complex design only</td>
+                            <td>Complex design only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="md_06_guide padding">
+        <div class="wrapper">
+            <h2 id="toc_links">Links</h2>
+            <ul>
+                <li>
+                    <h4 id="toc_prototypes">Prototypes</h4>
+                    <a href="#" target="_blank">Visual style</a>
+                    <a href="#" target="_blank">ISV page</a>
+                    <a href="#" target="_blank">QSC page</a>
+                    <a href="#" target="_blank">Shield page</a>
+                </li>
+                <li>
+                    <h4 id="toc_documentations">Documentations</h4>
+                    <a href="#" target="_blank">Design system component</a>
+                    <a href="#" target="_blank">AEM specimen page</a>
+                </li>
+                <li>
+                    <h4 id="toc_usecases">Use cases</h4>
+                    <a href="#" target="_blank">Seagraph</a>
+                    <a href="#" target="_blank">Page 1</a>
+                    <a href="#" target="_blank">Page 2</a>
+                    <a href="#" target="_blank">Page 3</a>
+                </li>
+            </ul>
+
+
+        </div>
+    </section>
+    <table class="cp_spec_table">
+        <thead>
+
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</body></html>
