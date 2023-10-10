@@ -142,6 +142,17 @@
 
 
 
+/*=================   white bg color swap   ===================*/
+
+.whitebg {
+    background-color: #ffffff;
+}
+
+.whitebg {
+    --nv-16: #eeeeee;
+    --nv-15-ee: #ffffff;
+}
+
 /*===================  responsive view   ========================*/
 
 
@@ -168,6 +179,7 @@
         background-color: var(--nv-14-dd);
         border-radius: 99999px;
         margin-right: var(--padding-lr);
+/*        margin-left: var(--padding-lr);*/
 }
 
     .cp_table_scrollbar::-webkit-scrollbar-thumb {
@@ -260,9 +272,11 @@
         overflow: auto;
         max-height: 90vh;
         margin-right: calc(var(--padding-lr) * -1);
+/*        margin-left: calc(var(--padding-lr) * -1);*/
     }
     .md_table_sticky table {
         margin-right: var(--padding-lr);
+/*        margin-left: var(--padding-lr);*/
     }
     .md_table_sticky thead {
         position: sticky;
