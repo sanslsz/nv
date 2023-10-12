@@ -1,4 +1,7 @@
 :root {
+    --tp_h1: 34px;
+    --tp_h2: 26px;
+    --tp_h3: 18px;
    
 
 
@@ -6,6 +9,11 @@
 
 @media screen and (min-width: 640px) {
     :root {
+    --tp_h1: 36px;
+    --tp_h2: 28px;
+    --tp_h3: 20px;
+        
+        
         --cp_toc-display: grid;
         --cp_toc-column: repeat(2, 1fr);
         
@@ -15,6 +23,10 @@
 
 @media screen and (min-width: 1024px) {
     :root {
+        
+    --tp_h1: 38px;
+    --tp_h2: 30px;
+    --tp_h3: 22px;
     --cp_toc-column: repeat(4, 1fr);
   
 }
@@ -22,7 +34,9 @@
 
 @media screen and (min-width: 1350px) {
     :root {
-  
+    --tp_h1: 40px;
+    --tp_h2: 32px;
+    --tp_h3: 24px;
 
 }
 }
@@ -34,17 +48,17 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-    margin-top: 2.4em;
+    margin-top: 3.2em;
     margin-bottom: 1.2em;
 }
 h1 {
-    font-size: 40px;
+    font-size: var(--tp_h1);
 }
 h2 {
-    font-size: 32px;
+    font-size: var(--tp_h2);
 }
 h3 {
-    font-size: 24px;
+    font-size: var(--tp_h3);
     margin-bottom: 1em;
 }
 h4 {
@@ -57,6 +71,10 @@ p {
     margin-bottom: 0.6em;
     line-height: 1.6;
 }
+ol, ul {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
 figure {
     margin-top: 1.2em;
     margin-bottom: 2.4em;
@@ -67,12 +85,29 @@ video {
     max-height: 1000px;
     margin: 1.2em auto 2.4em;
 }
+figure:not(:has(figcaption)) + video, video + figure {
+    margin-top: -1.2em;
+}
 
-.wrapper > *:not(figure, video) {
+.md_table_scroll {
+    margin-top: 1.2em;
+    margin-bottom: 2.4em;
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper > *:not(figure, video) {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
+}
+
+.wrapper> :is(figure, video) {
+            max-width: min(100%, 800px);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
 
 
 /*=========== color =============*/
@@ -87,6 +122,25 @@ body > section:nth-child(even) {
 /*    background-color: #e2dcd4;*/
     background-color: var(--nv-16);
     background-color: var(--nv-15-5-f7);
+/*    background-color: var(--nv-15-ee);*/
+}
+
+
+
+
+/*=========== components =============*/
+.cp_link_cta {
+    display: block;
+    width: fit-content;
+    padding: 0.6em;
+    margin: 1.2em 0;
+    color: var(--nv-16);
+    background-color: var(--nv-green);
+    font-weight: bold;
+}
+.cp_link_cta:is(:hover, :focus) {
+    color: var(--nv-16);
+    background-color: var(--nv-green-hover);
 }
 
 
@@ -96,34 +150,31 @@ body > section:nth-child(even) {
     margin: var(--sp_px-xl) 0;
     display: grid;
     grid-template-columns: var(--cp_toc-column);
-    grid-gap: var(--sp_px-xl);
+    grid-gap: var(--sp_px-xxxl) var(--sp_px-xl);
 }
 .cp_toc > li {
-    font-size: 24px;
+    font-size: 16px;
+    font-weight: bold;
 }
 .cp_toc > li > ol {
     padding-left: 1.2em;
+    margin-top: 0.8em;
     font-size: var(--tp_p-m);
-    margin-top: 0.6em;
+    font-weight: normal;
+    color: var(--nv-6-5-66);
 }
 .cp_toc > li > ol > li {
     list-style: decimal;
+    transition: var(--02transition);
 }
 .cp_toc > li > ol > li + li {
-    margin-top: 0.6em;
+    margin-top: 0.8em;
+}
+.cp_toc > li > ol > li:is(:hover, :focus-within) {
+    color: var(--nv-0);
 }
 html {
     scroll-padding-top: var(--padding-tb);
-}
-
-
-.cp_link_cta {
-    display: block;
-    width: fit-content;
-    padding: 0.6em;
-    margin: 1.2em 0;
-    color: var(--nv-16);
-    background-color: var(--nv-green);
 }
 
 
@@ -131,6 +182,9 @@ html {
     max-height: 1280px;
     margin-left: auto;
     margin-right: auto;
+}
+.cp_image img + img {
+    margin-top: 0.6em;
 }
 .cp_image figcaption {
     margin-top: 0.6em;
@@ -140,6 +194,7 @@ html {
     color: var(--nv-6-5-66);
     font-style: italic;
 }
+
 
 .cp_ana_list {
     padding-left: 1.2em;
@@ -156,11 +211,29 @@ html {
     margin-top: 0.6em;
 }
 
+
+
+.cp_ul_list {
+    padding-left: 1.2em;
+    list-style: disc;
+}
+.cp_ul_list li {
+    list-style: disc;
+}
+.cp_ul_list li span {
+    display: block;
+    font-weight: bold;
+}
+.cp_ul_list.margin li + li{
+    margin-top: 0.6em;
+}
+
+
+
 .cp_spec_table {
     border-collapse: collapse;
     width: 100%;
     width: auto;
-    margin: 1.2em 0 2.4em;
     font-variant-numeric: tabular-nums;
     font-size: 14px;
     text-align: left;
@@ -183,17 +256,20 @@ html {
     display: none;
 }
 */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 639px) {
     
 /*    simple overflow scroll */
     .md_table_scroll {
         overflow: auto;
         max-height: 90vh;
         margin-right: calc(var(--padding-lr) * -1);
+        margin-left: calc(var(--padding-lr) * -1);
         padding-bottom: 0.4em;
     }
     .md_table_scroll table {
         margin-right: var(--padding-lr);
+        margin-left: var(--padding-lr);
+        min-width: 600px;
     }
     
 
@@ -207,6 +283,7 @@ html {
         background-color: var(--nv-14-dd);
         border-radius: 99999px;
         margin-right: var(--padding-lr);
+        margin-left: var(--padding-lr);
 }
 
     .cp_table_scrollbar::-webkit-scrollbar-thumb {
@@ -246,3 +323,63 @@ html {
 
 }
 
+.cp_links {
+    margin: 3.2em auto;
+    line-height: 1.4;
+}
+.cp_links li + li {
+    margin-top: 4em;
+}
+.cp_links h3 {
+/*    font-weight: normal;*/
+    font-size: 16px;
+/*    margin-bottom: 0.4em;*/
+}
+.cp_links a {
+    display: block;
+    padding-left: 2em;
+    position: relative;
+    margin-top: 0.8em;
+}
+.cp_links a::before {
+    content: 'link';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    
+    font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/*====================== layout =====================*/
+#md_01_banner img {
+    max-height: 800px;
+/*    max-width: min(100%, 2400px);*/
+    width: 100%;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 640px) {
+.md_flex_2col {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 1.6em;
+}
+.md_flex_2col video {
+    flex: 0 0 auto;
+}
+}

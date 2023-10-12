@@ -403,7 +403,7 @@
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: calc((1em + 1px) * 1.5);
+    font-size: 1.6em;
     line-height: 1;
     letter-spacing: normal;
     text-transform: none;
@@ -417,7 +417,8 @@
     position: absolute;
 /*    left: calc(var(--sp_em-xxxxl) - (1em + 1px) * 1.5 - var(--sp_em-s));*/
     left: 0;
-    top: calc((1em / 1.5 - 1px) * 1.4 / 2 - 0.55em);
+/*    top: calc((1em / 1.5 - 1px) * 1.4 / 2 - 0.55em);*/
+    top: calc(1em / 1.6 * 1.4 / 2 - 0.55em);
 }
 
 .cp_ul-customimage .ic_font {
@@ -426,12 +427,15 @@
 }
 
 .cp_ul-customimage .ic_svg {
-    width: calc((1em + 1px) * 1.5);
-    height: calc((1em + 1px) * 1.5);
+/*    width: calc((1em + 1px) * 1.5);*/
+/*    height: calc((1em + 1px) * 1.5);*/
+    width: 1.6em;
+    height: 1.6em;
     position: absolute;
-    top: calc(1em * 1.4 / 2 - (1em + 1px) * 1.5 / 2);
+/*    top: calc(1em * 1.4 / 2 - (1em + 1px) * 1.5 / 2);*/
 /*    top: calc(0.5lh - (1em + 1px) * 1.5 / 2);*/
 /*    lh not support in firefox */
+    top: calc(1em * 1.4 / 2 - 1.6em / 2);
     left: calc(((1em + 1px) * 1.5 + var(--sp_em-s)) * -1);
     left: calc(var(--sp_em-xxxl) * -1);
 }

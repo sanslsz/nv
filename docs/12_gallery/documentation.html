@@ -1,0 +1,483 @@
+<!docType html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Frame Gallery Component Documentation</title>
+    <meta name="description" content="Table Component Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/documentation.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+    <!--    <meta name="color-scheme" content="light dark">-->
+    <style>
+        body {
+    background-color: var(--nv-15-5-f7);
+}
+        body>section:nth-child(even) {
+            background-color: var(--nv-15-ee);
+        }
+        #md_05_spec table {
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <section id="md_01_banner">
+    <img src="docs/coverart@2x.jpg" alt="cover artwork">
+    </section>
+    <section id="md_02_title" class="padding">
+        <div class="wrapper">
+            <h1>Frame Gallery component</h1>
+            <p>The Frame Gallery displays a group of items that expand and collapse upon clicking. The content is contained within the section, making efficient use of the space.</p>
+            <p>Unique features: </p>
+            <ol class="cp_ana_list margin">
+                <li>Accommodates 2 - 6 items.</li>
+                <li>The Animated transitions bridge the gap between the collapsed and expanded states. The continuous transformation allows the audience to see the element appear, resize and reposition, providing a fresh and interactive experience. </li>
+                <li>Better visual aesthetics and legibility thanks to the color theme options.</li>
+            </ol>
+            <p><a href="https://preview.nvidia.com/sg-ce/style-guide/components/frame-gallery/" class="cp_link_cta" target="_blank" rel="noreferrer">View specimen page</a></p>
+            <p style="margin-top: 4em;">Table of contents</p>
+            <ol class="cp_toc">
+                <li>Overview
+                    <ol>
+                        <li><a href="#toc_anatomy">Anatomy</a></li>
+                        <li><a href="#toc_fitting">Image fitting options</a></li>
+                        <li><a href="#toc_layout">Item number and layout</a></li>
+                    </ol>
+                </li>
+                <li>Specification
+                    <ol>
+                        <li><a href="#toc_theme">Color theme</a></li>
+                        <li><a href="#toc_typography">Typography</a></li>
+                        <li><a href="#toc_spacing">Spacing</a></li>
+                        <li><a href="#toc_interaction">Interaction</a></li>
+                    </ol>
+                </li>
+                <li>Guidline
+                    <ol>
+                        <li><a href="#toc_accessibility">Accessibility</a></li>
+                    </ol>
+                </li>
+                <li>Links
+                    <ol>
+                        <li><a href="#toc_prototypes">Prototype</a></li>
+                        <li><a href="#toc_documentations">Documentation</a></li>
+                        <li><a href="#toc_usecases">Use case</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section id="md_04_anatomy" class="padding">
+        <div class="wrapper">
+            <h2>Overview</h2>
+            <h3 id="toc_anatomy">Anatomy</h3>
+            <figure class="cp_image">
+                <img src="docs/anatomy.jpg">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>Heading</li>
+                        <li>Subhead</li>
+                        <li>Description</li>
+                        <li>CTA</li>
+                        <li>Vertical gradient shadow</li>
+                        <li>Horizontal gradient shadow</li>
+                        <li>Image </li>
+                        <li>Optional image credit </li>
+                        <li>Close button</li>
+                    </ol>
+                </figcaption>
+            </figure>
+
+            <h3 id="toc_fitting">Image fitting options</h3>
+            <h4>Auto-fit</h4>
+            <p>Both the collapsed and expanded states share the same setting: background-size: cover background-position: center. As a result, a smiliar crop is maintained between the 2 states. </p>
+            <p>Auto-fit is recommended for images with evenly distributed content, such as pattern, abstract art, certain concept artworks and photographs.</p>
+            <figure class="cp_image">
+                <img src="docs/autofit.jpg">
+            </figure>
+            <video src="docs/demo_autofit.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/demo_autofit.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+
+
+            <h4>Custom crop</h4>
+            <p>The collapsed and expanded state have very different background size and position settings, resulting in a zoom-in or zoom-out effect between the 2 states.</p>
+            <p>It’s a good choice for images with a generous amount of empty space around the subject, such as product renderings. The subject is usually positioned in an asymmetrical position.</p>
+            <figure class="cp_image">
+                <img src="docs/customcrop.jpg">
+            </figure>
+            <video src="docs/demo_cc.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/demo_cc.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+
+
+
+            <h3 id="toc_layout">Item number and layout</h3>
+
+            <p>The component supports 2-6 items and all 4 viewports. The number of items and viewport size determine the layout.</p>
+
+            <figure class="cp_image">
+                <img src="docs/layout.png">
+            </figure>
+        </div>
+    </section>
+    <section id="md_05_spec" class="padding">
+        <div class="wrapper">
+            <h2>Specification</h2>
+            <h3 id="toc_theme">Color Theme</h3>
+            <p>There are 3 color theme options:</p>
+            <ol class="cp_ana_list">
+                <li><b>Dark(default):</b> recommended if the image has a dark color palette.</li>
+                <li><b>Light:</b> recommended if the image has a light color palette.</li>
+                <li><b>Custom:</b> a natural blend with colors sampled from the image.</li>
+            </ol>
+            <figure class="cp_image">
+                <img src="docs/themes.jpg">
+            </figure>
+
+            <h4>Setting details</h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    
+                    <colgroup>
+                        <col style="width: 16.67%">
+                        <col style="width: 16.67%">
+                        <col style="width: 16.67%">
+                        <col style="width: 16.67%">
+                        <col style="width: 16.67%">
+                        <col style="width: 16.67%">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Gradient start</th>
+                            <th>Gradient end</th>
+                            <th>Text color</th>
+                            <th>CTA theme</th>
+                            <th>Image credit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Dark</th>
+                            <td>rgba(17, 17, 17, 0.7)</td>
+                            <td>rgba(17, 17, 17, 0)</td>
+                            <td>#FFFFFF</td>
+                            <td>Dark</td>
+                            <td>#CCCCCC</td>
+                        </tr>
+                        <tr>
+                            <th>Light</th>
+                            <td>rgba(247, 247, 247, 0.7)</td>
+                            <td>rgba(247, 247, 247, 0)</td>
+                            <td>#000000</td>
+                            <td>Light</td>
+                            <td>#333333</td>
+                        </tr>
+                        <tr>
+                            <th>Custom</th>
+                            <td>Custom value</td>
+                            <td>Custom value</td>
+                            <td>Custom value</td>
+                            <td>Choose between dark and light themes</td>
+                            <td>Custom value</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+
+            <h4>Color contrast enhancement</h4>
+            <p>An optional text legibility enhancement feature can be enabled to help boost the color contrast between the text and background image. When enabled, in the expanded state on phone viewport, the item's background gradient height is increased to 300%, expanding the coverage of the dark end of the gradient. If the item meets the following description, it may be a good candidate for this feature:</p>
+            <ol class="cp_ana_list">
+                <li>Large body of text that fills up the entire item in the expanded state on phone viewport.</li>
+                <li>The background image has an opposite or mixed color palette that doesn’t provide enough contrast against the text.</li>
+            </ol>
+            <figure class="cp_image">
+                <img src="docs/contrastboost.jpg">
+                <figcaption>This illustration features a mixed color palette that doesn't provide enough contrast against the white text in the area where the gradient fades. Enabling the legibility boost helps increase the contrast in the lower part of the image.</figcaption>
+            </figure>
+
+
+            <h3 id="toc_typography">Typography</h3>
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <!--
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+-->
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Type style</th>
+                            <th>Max character count recommendation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Subhead</th>
+                            <td>p-medium, bold</td>
+                            <td>2 lines, under 100 characters including space</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>p-medium</td>
+                            <td>Overflow starts at about 870/380 characters</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+            <h3 id="toc_spacing">Spacing</h3>
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <!--
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+-->
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Desktop</th>
+                            <th>Laptop</th>
+                            <th>Tablet</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Padding</th>
+                            <td>32px</td>
+                            <td>24px</td>
+                            <td>20px</td>
+                            <td>16px</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+            <h3 id="toc_interaction">Interaction</h3>
+            <h4>Hover</h4>
+            <p>The cursor changes from default to pointer. The image scales up 5%.</p>
+            <video src="docs/hover.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/hover.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+
+            <h4>Click</h4>
+            <p>Initiates an animated transition between the collapsed and expanded states. The background image resizes and repositions, content appears and disappears.</p>
+
+            <h4>Collapsed State</h4>
+            <p>The heading and subhead are displayed. All items are in a collapsed state when the page is first loaded.</p>
+
+
+            <h4>Expanded State</h4>
+            <p>The description, CTAs and close buttons are revealed below the heading and subhead. In the desktop, laptop and tablet viewports, an expanded item takes up the entire section space. In the phone viewport, an expanded item’s height increases, forming an aspect ratio of 4:6.</p>
+
+            <video src="docs/click.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/click.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+
+            <h4>Animation Sequence - Expand</h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Timeline</th>
+                            <th>Timing Function</th>
+                            <th>Element</th>
+                            <th>Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0-0.2s</td>
+                            <td>Ease-out</td>
+                            <td>Other / non-active items</td>
+                            <td>Fade-out</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">0.2-0.5s</td>
+                            <td>Ease-out</td>
+                            <td>Active item</td>
+                            <td>Expand to cover full section</td>
+                        </tr>
+                        <tr>
+                            <td>Ease-out</td>
+                            <td>Active item’s image</td>
+                            <td>Resize and reposition</td>
+                        </tr>
+                        <tr>
+                            <td>0.5-0.8s</td>
+                            <td>Ease-out</td>
+                            <td>Description text, CTA, close button</td>
+                            <td>Fade-in</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+            <h4>Animation Sequence - Collapse</h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Timeline</th>
+                            <th>Timing Function</th>
+                            <th>Element</th>
+                            <th>Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0-0.3s</td>
+                            <td>Ease-out</td>
+                            <td>Description text, CTA, close button</td>
+                            <td>Fade-out</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">0.3-0.6s</td>
+                            <td>Ease-out</td>
+                            <td>Active item</td>
+                            <td>Collapse to original item size</td>
+                        </tr>
+                        <tr>
+                            <td>Ease-out</td>
+                            <td>Active item’s image</td>
+                            <td>Resize and reposition</td>
+                        </tr>
+                        <tr>
+                            <td>0.6-0.8s</td>
+                            <td>Ease-out</td>
+                            <td>Other / non-active items</td>
+                            <td>Fade-in</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+            <h4>Overflow scroll:</h4>
+            <p>In the expanded state, when there’s not enough vertical space to accommodate the content, the description text becomes scrollable. A scrollbar appears to indicate text overflow. The top and bottom fading effects help the text blend in, and suggest scrolling directions. Heading, subhead and CTAs do not scroll.</p>
+            <video src="docs/scroll.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/scroll.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+        </div>
+    </section>
+
+    <section id="md_06_guide" class="padding">
+        <div class="wrapper">
+            <h2>Guidelines</h2>
+            <h3 id="toc_accessibility">Accessibility</h3>
+            <h4>Alternate text for images</h4>
+            <p>Designers usually don’t deal with alternate text for images, which describes the image and helps SEO and assisted devices understand the image content. This option is available in the backend configuration of the component. </p>
+
+            <h4>Color theme and text legibility</h4>
+            <p>Leverage the image’s color palette and choose a color theme that maximizes the color contrast between the text and background image. Use the “legibility boost” feature for phone viewport if necessary.</p>
+
+            <h3>Image naming convention</h3>
+            <p>Example image file name: [rename-me]-fg-i1of6-p.jpg<br>
+                -fc: frame gallery<br>
+                -cc: custom crop<br>
+                -i1of6: item number 1 of the 6 items
+            </p>
+
+        </div>
+    </section>
+    <section class="md_06_links padding">
+        <div class="wrapper">
+            <h2 id="toc_links">Links</h2>
+            <ul class="cp_links">
+                <li>
+                    <h3 id="toc_prototypes">Prototype</h3>
+                    <a href="https://embersl.github.io/nv/12_gallery/gallery.html" target="_blank">Frame gallery and theme options</a>
+                    <a href="https://embersl.github.io/nv/12_gallery/theater.html" target="_blank">Frame gallery upgrade - video capability</a>
+                </li>
+                <li>
+                    <h3 id="toc_documentations">Documentation</h3>
+                    <a href="https://brand.nvidia.com/d/UKVz9aA18m6Q/components#/frame-gallery" target="_blank" rel="noreferrer">Component guide on brand.nvidia.com/web</a>
+                    <a href="https://preview.nvidia.com/sg-ce/style-guide/components/frame-gallery/" target="_blank" rel="noreferrer">AEM specimen page</a>
+                </li>
+                <li>
+                    <h3 id="toc_usecases">Use case</h3>
+                    <a href="https://www.nvidia.com/en-us/ai-data-science/" target="_blank" rel="noreferrer">Advanced AI Platform for Enterprise | NVIDIA AI</a>
+                    <a href="https://www.nvidia.com/en-us/industries/media-and-entertainment/" target="_blank" rel="noreferrer">Solutions for the Media and Entertainment Industry | NVIDIA</a>
+                    <a href="https://www.nvidia.com/en-us/data-center/l40s/" target="_blank" rel="noreferrer">L40S GPU for AI and Graphics Performance | NVIDIA</a>
+                    <a href="https://www.nvidia.com/en-us/design-visualization/rtx-4000/" target="_blank" rel="noreferrer">RTX 4000 Ada Generation Graphics Card | NVIDIA</a>
+                </li>
+            </ul>
+
+
+        </div>
+    </section>
+
+</body>
+
+</html>

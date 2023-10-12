@@ -1,0 +1,1204 @@
+<!docType html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>List Component Documentation</title>
+    <meta name="description" content="Table Component Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/documentation.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+    <!--    <meta name="color-scheme" content="light dark">-->
+    <style>
+
+        #md_05_spec table {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="md_01_banner">
+    <img src="docs/coverart@2x.png" alt="cover artwork">
+    </section>
+    <section id="md_02_title" class="padding">
+        <div class="wrapper">
+            <h1>List Component</h1>
+            <p>There are a variety of list types within the list family. In general, a list component itemizes things under the same category, transforming the content into digestible bits of information. The list components help the audience read and process the information efficiently by establishing scannable structure and hierarchy within the page.
+                <a href="https://embersl.github.io/nv/07_list/list.html" class="cp_link_cta" target="_blank" rel="noreferrer">View Prototype</a>
+            </p>
+            <p style="margin-top: 4em;">Table of contents</p>
+            <ol class="cp_toc">
+                <li>Overview
+                    <ol>
+                        <li><a href="#toc_bullet">Bullet list</a></li>
+                        <li><a href="#toc_numbered">Numbered list</a></li>
+                        <li><a href="#toc_multi">Multi-level list</a></li>
+                        <li><a href="#toc_description">Description list</a></li>
+                        <li><a href="#toc_event">Event list</a></li>
+                    </ol>
+                </li>
+                <li>Specification
+                    <ol>
+                        <li><a href="#toc_typography">Typography</a></li>
+                        <li><a href="#toc_color">Color</a></li>
+                        <li><a href="#toc_size">Size</a></li>
+                        <li><a href="#toc_spacing">Spacing</a></li>
+                        <li><a href="#toc_responsive">Responsive design</a></li>
+                    </ol>
+                </li>
+                <li>Guidline
+                    <ol>
+                        <li><a href="#toc_heading">Headings and list components</a></li>
+                        <li><a href="#toc_when">When to use</a></li>
+                        <li><a href="#toc_flow">Content flow</a></li>
+                    </ol>
+                </li>
+                <li>Links
+                    <ol>
+                        <li><a href="#toc_prototypes">Prototype</a></li>
+                        <li><a href="#toc_documentations">Documentation</a></li>
+                        <li><a href="#toc_usecases">Use case</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section id="md_04_anatomy" class="padding">
+        <div class="wrapper">
+            <h2>Overview</h2>
+            <h3 id="toc_bullet">Bullet List</h3>
+            <p>A bullet or unordered list houses items that are of similar importance or under the same category. The items don’t have a numerical sequence, meaning changing their order doesn’t affect the accuracy of the information.</p>
+            <h4>Default</h4>
+            <p>We do not use a bullet glyph, instead a “>” (greater than) character is placed on the left side of the list items.</p>
+            <figure class="cp_image">
+                <img src="docs/bullet_default.png">
+                <figcaption>
+                    
+                </figcaption>
+            </figure>
+
+            <h4>Custom Icon</h4>
+            <p>Custom icons replace the greater than characters.</p>
+            <figure class="cp_image">
+                <img src="docs/bullet_icon.png">
+                <figcaption>
+                    
+                </figcaption>
+            </figure>
+
+            <h3 id="toc_numbered">Numbered List</h3>
+
+            <p>A numbered or ordered list houses items that are of similar importance or under the same category. The sequence or priority among the list items is conveyed by the lead character - a number and period appear on the left side of each item.</p>
+
+            <h4>Default</h4>
+            <p>The default numbered list is the most commonly used.</p>
+            <figure class="cp_image">
+                <img src="docs/numbered_default.png">
+                <figcaption>
+                    
+                </figcaption>
+            </figure>
+
+            <h4>Titled</h4>
+            <p>A subhead gives an entry point to each list item. It is a good option for items that need additional description.</p>
+            <figure class="cp_image">
+                <img src="docs/list_.png">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>List container</li>
+                        <li>List item</li>
+                        <li>Lead number</li>
+                        <li>Title</li>
+                    </ol>
+                    
+                </figcaption>
+            </figure>
+
+
+
+
+            <h4>Custom Counter</h4>
+            <p>Custom counter list allows the designer to define the lead character. Commonly used in content with multiple level list structure such as user agreements, legal terms and table of contents etc. In the following example, there are 3 levels of items. For List items at level 2 and 3, the lead numbers include the upper level’s numbers.</p>
+            <figure class="cp_image">
+                <img src="docs/list_2.png">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>List container</li>
+                        <li>List item level 1</li>
+                        <li>List item level 2</li>
+                        <li>List item level 3</li>
+                        <li>Lead number</li>
+                    </ol>
+                    
+                </figcaption>
+            </figure>
+
+
+
+            <h3 id="toc_multi">Multi-level / Nested List</h3>
+            <p>The default bullet and numbered lists can be nested inside each other, creating a multi-level list structure. A maximum level of 3 is recommended. </p>
+
+            <figure class="cp_image">
+                <img src="docs/list_3.png">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>List container</li>
+                        <li>List item level 1</li>
+                        <li>List item level 2</li>
+                        <li>List item level 3</li>
+                        <li>Lead character</li>
+                    </ol>
+                </figcaption>
+            </figure>
+
+
+
+
+            <h3 id="toc_description">Description List</h3>
+            <p>Description term and detail groups are housed in the description list. A description term is followed by a description detail that provides explanation.</p>
+            <h4>Specification</h4>
+            <p>Content in the specification list component features a group of property and value pairs that provide specification related information for the products. An optional group title can be added to the specification list.</p>
+            <figure class="cp_image">
+                <img src="docs/dd_spec_1500px.png">
+                <img src="docs/list_4.png">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>Container</li>
+                        <li>Group title</li>
+                        <li>Description term</li>
+                        <li>Description detail</li>
+                    </ol>
+
+                </figcaption>
+            </figure>
+            <h4>Glossary</h4>
+            <p>Content in the glossary list component features terminology and definition pairs that are organized in alphabetical order.
+</p>
+            <figure class="cp_image">
+                <img src="docs/list_5.png">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>Alphabet</li>
+                        <li>Description term</li>
+                        <li>Description detail</li>
+                    </ol>
+                </figcaption>
+            </figure>
+
+
+            <h3 id="toc_event">Event List</h3>
+            <p>The event list component features information for a group of events. Each list item compromises the date, title, venue and detail of an event. The event list items are arranged in chronological order.</p>
+
+            <figure class="cp_image">
+                <img src="docs/list_6.png">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>Date</li>
+                        <li>Title</li>
+                        <li>Venue</li>
+                        <li>Description</li>
+                    </ol>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+    <section id="md_05_spec" class="padding" style="background-color: var(--nv-15-ee);">
+        <div class="wrapper">
+            <h2>Specification</h2>
+            <h3 id="toc_typography">Typography</h3>
+            <h4>Bullet and Numbered List - Default</h4>
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Font-size</th>
+                            <th>Font-weight</th>
+                            <th>Line-height</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Body</th>
+                            <td>P-small / medium / large</td>
+                            <td>Regular</td>
+                            <td>1.4</td>
+                        </tr>
+                        <tr>
+                            <th>Lead Character</th>
+                            <td>Same as body</td>
+                            <td>Bold</td>
+                            <td>1.4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <h4>Numbered List - Titled </h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Font-size</th>
+                            <th>Font-weight</th>
+                            <th>Line-height</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Body</th>
+                            <td>P-medium</td>
+                            <td>Regular</td>
+                            <td>1.4</td>
+                        </tr>
+
+                        <tr>
+                            <th>Lead Character</th>
+                            <td>Same as body</td>
+                            <td>Regular</td>
+                            <td>1.4</td>
+                        </tr>
+
+                        <tr>
+                            <th>Title</th>
+                            <td>Same as body</td>
+                            <td>Bold</td>
+                            <td>1.4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+            <h4>Description List - Specification</h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Font-size</th>
+                            <th>Font-weight</th>
+                            <th>Line-height</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Group Title</th>
+                            <td>H-smaller</td>
+                            <td>Bold</td>
+                            <td>1.25</td>
+                        </tr>
+                        <tr>
+                            <th>Term</th>
+                            <td>P-medium</td>
+                            <td>Bold</td>
+                            <td>1.667</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>P-medium</td>
+                            <td>Regular</td>
+                            <td>1.667</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+            <h4>Description List - Glossary</h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Font-size</th>
+                            <th>Font-weight</th>
+                            <th>Line-height</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Alphabet</th>
+                            <td>P-medium</td>
+                            <td>Regular</td>
+                            <td>1.667</td>
+                        </tr>
+                        <tr>
+                            <th>Term</th>
+                            <td>P-medium</td>
+                            <td>Bold</td>
+                            <td>1.667</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>P-medium</td>
+                            <td>Regular</td>
+                            <td>1.667</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+            <h4>Description List - Event</h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Font-size</th>
+                            <th>Font-weight</th>
+                            <th>Line-height</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Date</th>
+                            <td>P-medium</td>
+                            <td>Regular</td>
+                            <td>1.667</td>
+                        </tr>
+
+                        <tr>
+                            <th>Title</th>
+                            <td>P-medium</td>
+                            <td>Bold</td>
+                            <td>1.667</td>
+                        </tr>
+
+                        <tr>
+                            <th>Venue</th>
+                            <td>-medium</td>
+                            <td>egular</td>
+                            <td>.667</td>
+                        </tr>
+
+                        <tr>
+                            <th>Detail</th>
+                            <td>P-medium</td>
+                            <td>Regular</td>
+                            <td>1.667</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 id="toc_color">Color</h3>
+            <p>Text color: #1a1a1a, same as other body text</p>
+            <p>Line color: 1px solid #999999</p>
+
+            <h3 id="toc_size">Size and position</h3>
+            <figure class="cp_image">
+                <img src="docs/list_responsive_.png">
+            </figure>
+            <h4>Bullet List - Default</h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 33%">
+                        <col style="width: 33%">
+                        <col style="width: 33%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Size</th>
+                            <th>Position / Alignment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>“<b>></b>”</td>
+                            <td>1em x 1em</td>
+                            <td>Vertically align to the middle of the text cap height<br><br>
+                                Horizontally align to the left side of the text with a 0.3em gap
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+            <h4>Bullet List - Icon</h4>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 33%">
+                        <col style="width: 33%">
+                        <col style="width: 33%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Size</th>
+                            <th>Position / Alignment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Custom icon</td>
+                            <td>24 x 24px</td>
+                            <td>Vertically align to the middle of the text cap height<br><br>
+                                Horizontally align to the left edge of the container padding
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 id="toc_spacing">Spacing</h3>
+            <p>The space around and within the component indicates the grouping and separation of the list items, making the content easy to read and scan. Both relative and absolute space tokens are used.</p>
+
+            <h4>Bullet and Numbered List - Default</h4>
+            <figure class="cp_image">
+                <img src="docs/list_8.png">
+            </figure>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 33%">
+                        <col style="width: 33%">
+                        <col style="width: 33%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Left Padding</th>
+                            <th>Vertical Margin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Level 1 Container</th>
+                            <td>1.5em(sp-em-xl)</td>
+                            <td>1.2em(sp-em-l)</td>
+                        </tr>
+                        <tr>
+                            <th>Level 1 Item</th>
+                            <td>-</td>
+                            <td>0.6em(sp-em-s)</td>
+                        </tr>
+                        <tr>
+                            <th>Level 2+ Container</th>
+                            <td>1.5em(sp-em-xl)</td>
+                            <td>0.3em(sp-em-xs)</td>
+                        </tr>
+                        <tr>
+                            <th>Level 2+ Item</th>
+                            <td>-</td>
+                            <td>0.3em(sp-em-xs)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+            <h4>Bullet List - Icon</h4>
+            <figure class="cp_image">
+                <img src="docs/list_9.png">
+            </figure>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 33%">
+                        <col style="width: 33%">
+                        <col style="width: 33%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Left Padding</th>
+                            <th>Vertical Margin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Container</th>
+                            <td>2.1em(sp-em-xxxl)</td>
+                            <td>1.5em(sp-em-xl)</td>
+                        </tr>
+                        <tr>
+                            <th>Item</th>
+                            <td>-</td>
+                            <td>1.2em(sp-em-l)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+            <h4>Description List - Specification</h4>
+            <figure class="cp_image">
+                <img src="docs/list_10.png">
+            </figure>
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Top Padding</th>
+                            <th>Right Padding</th>
+                            <th>Bottom Padding</th>
+                            <th>Left Padding</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Container</th>
+                            <td>sp-px-xl</td>
+                            <td>-</td>
+                            <td>sp-px-xl</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th>Group title</th>
+                            <td>sp-px-l</td>
+                            <td>sp-px-l x 2</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th>Term</th>
+                            <td>sp-px-l</td>
+                            <td>sp-px-l</td>
+                            <td>sp-px-l</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>sp-px-l</td>
+                            <td>-</td>
+                            <td>sp-px-l</td>
+                            <td>sp-px-l</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+            <h4>Description List - Glossary</h4>
+            <figure class="cp_image">
+                <img src="docs/list_11.png">
+            </figure>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Vertical margin</th>
+                            <th>Vertical gap</th>
+                            <th>Horizontal gap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Container</th>
+                            <td>sp_px-xl</td>
+                            <td>sp_px-xl</td>
+                            <td>sp_px-xxl</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+            <h4>Event List</h4>
+            <figure class="cp_image">
+                <img src="docs/list_12.png">
+            </figure>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Vertical margin</th>
+                            <th>Vertical gap</th>
+                            <th>Horizontal gap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Container</th>
+                            <td>sp_px-xl</td>
+                            <td>sp_px-xl</td>
+                            <td>sp_px-xxl</td>
+                        </tr>
+                        <tr>
+                            <th>Item</th>
+                            <td>-</td>
+                            <td>0.3em(sp_em-s)</td>
+                            <td>1.2em(sp_em-l)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+            <h4>Space tokens</h4>
+            <p>Relative units maintain the special relationship among the text elements, allowing them to be scaled proportionally relative to the font-size.
+                Absolute units manage the macro space that is a part of the responsive layout.</p>
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th style="border-top: 1px solid transparent; border-left: 1px solid transparent;"></th>
+                            <th>320—639</th>
+                            <th>640—1023</th>
+                            <th>1024—1349</th>
+                            <th>1350—∞</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="5" style="background-color: var(--nv-15-ee);">Absolute units</th>
+                        </tr>
+                        <tr>
+                            <th>sp-res-px-xs</th>
+                            <td>4px</td>
+                            <td>5px</td>
+                            <td>6px</td>
+                            <td>7px</td>
+                        <tr>
+                            <th>sp-res-px-s</th>
+                            <td>8px</td>
+                            <td>9px</td>
+                            <td>10px</td>
+                            <td>11px</td>
+                        </tr>
+                        <tr>
+                            <th>sp-res-px-m</th>
+                            <td>12px</td>
+                            <td>13px</td>
+                            <td>14px</td>
+                            <td>15px</td>
+                        </tr>
+                        <tr>
+                            <th>sp-res-px-l</th>
+                            <td>16px</td>
+                            <td>17px</td>
+                            <td>18px</td>
+                            <td>19px</td>
+                        </tr>
+                        <tr>
+                            <th>sp-res-px-xl</th>
+                            <td>20px</td>
+                            <td>22px</td>
+                            <td>24px</td>
+                            <td>26px</td>
+                        </tr>
+                        <tr>
+                            <th>sp-res-px-xxl</th>
+                            <td>24px</td>
+                            <td>27px</td>
+                            <td>30px</td>
+                            <td>33px</td>
+                        </tr>
+                        <tr>
+                            <th>sp-res-px-xxxl</th>
+                            <td>28px</td>
+                            <td>32px</td>
+                            <td>36px</td>
+                            <td>40px</td>
+                        </tr>
+                        <tr>
+                            <th>sp-res-px-xxxxl</th>
+                            <td>32px</td>
+                            <td>38px</td>
+                            <td>44px</td>
+                            <td>50px</td>
+                        </tr>
+                        <tr>
+                            <th>sp-res-px-xxxxxl</th>
+                            <td>36px</td>
+                            <td>44px</td>
+                            <td>52px</td>
+                            <td>60px</td>
+                        </tr>
+                        <tr>
+                            <th colspan="5" style="background-color: var(--nv-15-ee);">Relative units</th>
+                        </tr>
+                        <tr>
+                            <th>sp-em-xs</th>
+                            <td colspan="4">0.3em</td>
+                        </tr>
+                        <tr>
+                            <th>sp-em-s</th>
+                            <td colspan="4">0.6em</td>
+                        </tr>
+                        <tr>
+                            <th>sp-em-m</th>
+                            <td colspan="4">0.9em</td>
+                        </tr>
+                        <tr>
+                            <th>sp-em-l</th>
+                            <td colspan="4">1.2em</td>
+                        </tr>
+                        <tr>
+                            <th>sp-em-xl</th>
+                            <td colspan="4">1.5em</td>
+                        </tr>
+                        <tr>
+                            <th>sp-em-xxl</th>
+                            <td colspan="4">1.8em</td>
+                        </tr>
+                        <tr>
+                            <th>sp-em-xxxl</th>
+                            <td colspan="4">2.1em</td>
+                        </tr>
+                        <tr>
+                            <th>sp-em-xxxxl</th>
+                            <td colspan="4">2.4em</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <h3 id="toc_responsive">Responsive design</h3>
+            <p>The Specification, Glossary and Event list components feature a more complex content structure that takes advantage of the responsive layout.</p>
+
+
+            <h4>Description List - Specification</h4>
+            <figure class="cp_image">
+                <img src="docs/list_responsive_2.png">
+            </figure>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <!--
+                    <colgroup>
+                    <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                    </colgroup>
+-->
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Phone</th>
+                            <th>Tablet</th>
+                            <th>Laptop</th>
+                            <th>Desktop</th>
+                            <th>Position / alignment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Term</th>
+                            <td>100%</td>
+                            <td>fit-content(50%)*</td>
+                            <td>33%</td>
+                            <td>33%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>100%</td>
+                            <td>auto</td>
+                            <td>66%</td>
+                            <td>66%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <h4>Description List - Grouped Specification</h4>
+            <figure class="cp_image">
+                <img src="docs/list_responsive_3.png">
+            </figure>
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Phone</th>
+                            <th>Tablet</th>
+                            <th>Laptop</th>
+                            <th>Desktop</th>
+                            <th>Position / alignment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Title</th>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>33%</td>
+                            <td>33%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Term</th>
+                            <td>100%</td>
+                            <td>fit-content(50%)*</td>
+                            <td>25%</td>
+                            <td>25%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>100%</td>
+                            <td>auto</td>
+                            <td>42%</td>
+                            <td>42%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+            <h4>Description List - Glossary</h4>
+            <figure class="cp_image">
+                <img src="docs/list_responsive_4.png">
+            </figure>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>&lt; 460px</th>
+                            <th>460px+</th>
+                            <th>Position / alignment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Alphabet</th>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                        <tr>
+
+                            <th>Term</th>
+                            <td>100%</td>
+                            <td>fit-content(20%)*</td>
+                            <td>Left aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>100%</td>
+                            <td>auto</td>
+                            <td>Left aligned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+            <h4>Event List </h4>
+            <figure class="cp_image">
+                <img src="docs/list_responsive_5.png">
+            </figure>
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 33.33%;">
+                        <col style="width: 33.33%;">
+                        <col style="width: 33.33%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>360px+</th>
+                            <th>Position / alignment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Date</th>
+                            <td>clamp(5em, 15%, 10em)*</td>
+                            <td>Right aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>Auto</td>
+                            <td>Left aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Venue</th>
+                            <td>Auto</td>
+                            <td>Right aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>100%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="md_table_scroll cp_table_scrollbar">
+                <table class="cp_spec_table">
+                    <colgroup>
+                        <col style="width: 33.33%;">
+                        <col style="width: 33.33%;">
+                        <col style="width: 33.33%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>&lt; 360px</th>
+                            <th>Position / alignment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Date</th>
+                            <td>100%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>Auto</td>
+                            <td>Left aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Venue</th>
+                            <td>Auto</td>
+                            <td>Right aligned</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>100%</td>
+                            <td>Left aligned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Notes:</p>
+            <ol class="cp_ana_list">
+                <li>fit-content(percentage) means max width of the percentage but can be narrower if the terms are shorter.</li>
+                <li>clamp(5em, 15%, 15em) indicates the min, flexible and max sizes.</li>
+                <li>Auto behaves like a flexible scale based on the size needed until it reaches the full width.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="md_06_guide" class="padding">
+        <div class="wrapper">
+            <h2>Guidelines</h2>
+            <h3 id="toc_heading">Headings and List Components</h3>
+            <p>Heading and list are important mechanisms that often work together to help establish the hierarchy within the page and make content scannable. Consider the overall structure of the page and avoid repeated content that may cause confusion.</p>
+            <h3 id="toc_when">When to Use</h3>
+            <p>Not all content can benefit from the list structure. Consider the following questions before turning something into a list, or when receiving a list from the copywriter:</p>
+            <ol class="cp_ul_list">
+                <li>Does breaking the content down to list items help the audience read and understand the information?</li>
+                <li>Do the list items share a common topic or category?</li>
+                <li>Does sequence exist among the list items?</li>
+                <li>Is there a pattern of pairing such as property and value, term and definition, time and location?</li>
+            </ol>
+
+            <p>For comparison among the items consider using table for its 2 directional display capability. </p>
+            <h3 id="toc_flow">Content Flow</h3>
+            <p>List items by default are block level elements, taking the full width and stacking vertically. For lists without nested items, we can change its content flow and enhance the design with layout options.</p>
+            <figure class="cp_image">
+                <img src="docs/list_13.png">
+                <figcaption>
+                    <ol class="cp_ana_list">
+                        <li>Vertical flow in full width</li>
+                        <li>Vertical flow in multiple columns</li>
+                        <li>Horizontal flow</li>
+                        <li>Two direction flow, a grid structure in which rows and columns are formed</li>
+                    </ol>
+                </figcaption>
+            </figure>
+
+
+
+
+            <figure class="cp_image">
+                <img src="docs/list_14.png">
+                <figcaption>
+A numbered list - default in multi-column layout.
+                </figcaption>
+            </figure>
+
+            <figure class="cp_image">
+                <img src="docs/list_15.png">
+                <figcaption>
+A bullet list - icon in horizontal flow. The vertical and horizontal gaps among the items are set separately.
+                </figcaption>
+            </figure>
+            
+
+            <figure class="cp_image">
+                <img src="docs/list_16.png">
+                <figcaption>
+A numbered list - titled in a two direction flow. The vertical and horizontal gaps among the items are set to 2 different values.
+                </figcaption>
+            </figure>
+            
+
+        </div>
+    </section>
+    <section class="md_06_links padding">
+        <div class="wrapper">
+            <h2 id="toc_links">Links</h2>
+            <ul class="cp_links">
+                <li>
+                    <h3 id="toc_prototypes">Prototype</h3>
+                    <a href="https://embersl.github.io/nv/07_list/list.html" target="_blank">List styles(all in one)</a>
+                </li>
+                <li>
+                    <h3 id="toc_documentations">Documentation</h3>
+                    <a href="https://brand.nvidia.com/d/UKVz9aA18m6Q/components#/list" target="_blank" rel="noreferrer">Component guide on brand.nvidia.com/web</a>
+                    <a href="https://preview.nvidia.com/sg-ce/style-guide/components/list" target="_blank" rel="noreferrer">AEM specimen page</a>
+                </li>
+                <li>
+                    <h3 id="toc_usecases">Use case</h3>
+                    <a href="https://developer.nvidia.com/rtx" target="_blank" rel="noreferrer">NVIDIA RTX™ platform | NVIDIA Developer</a>
+                    <a href="https://www.nvidia.com/en-us/geforce/geforce-experience/download/" target="_blank" rel="noreferrer">Download GeForce Experience | NVIDIA</a>
+                    <a href="https://www.nvidia.com/en-us/design-visualization/rtx-5000/#specifications" target="_blank" rel="noreferrer">RTX 5000 Ada Generation Graphics Card | NVIDIA</a>
+                    <a href="https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/#specs" target="_blank" rel="noreferrer">GeForce RTX 4090 Graphics Cards for Gaming | NVIDIA</a>
+                    <a href="https://www.nvidia.com/en-us/data-center/dgx-a100/#tour" target="_blank" rel="noreferrer">DGX A100 : Universal System for AI Infrastructure | NVIDIA</a>
+                    <a href="https://www.nvidia.com/en-us/geforce/geforce-experience/redeem-instructions/" target="_blank" rel="noreferrer">Geforce Experience: Redemption Instructions | NVIDIA</a>
+                    
+                </li>
+            </ul>
+
+
+        </div>
+    </section>
+
+</body></html>
