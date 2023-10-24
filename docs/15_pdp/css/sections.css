@@ -1,0 +1,641 @@
+:root {
+    --success-performance-grid: repeat(2, 1fr);
+    --tour-annotation-height: 24px;
+    --tour-annotation-text-width: 300px;
+    
+    --cp_newscard-toppadding: 120px;
+
+
+}
+
+@media screen and (min-width: 480px) {
+ :root {
+    --success-performance-grid: repeat(4, 1fr);
+     
+    --cp_newscard-toppadding: 130px;
+
+
+}   
+
+}
+
+
+@media screen and (min-width: 640px) {
+    :root {
+        --success-height: 580px;
+        --success-box-width: 50%;
+        --success-performance-grid: repeat(2, 1fr);
+        --tour-annotation-height: 32px;
+        
+        --sc_news_4items-col: repeat(2, 1fr);
+/*        --sc_news_4items-colspan: span 6;*/
+        --sc_news_4items-rowspan: span 5;
+/*        --sc_news_4items-wider-colspan: span 6;*/
+        --sc_news_4items-wider-rowspan: span 7;
+        --cp_newscard-toppadding: 120px;
+        
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --success-box-width: 40%;
+        --tour-annotation-height: 40px;
+        
+    --sc_news_4items-col: repeat(12, 1fr);
+    --sc_news_4items-colspan: span 5;
+    --sc_news_4items-rowspan: revert;
+    --sc_news_4items-wider-colspan: span 7;
+    --sc_news_4items-wider-rowspan: revert;
+    --cp_newscard-toppadding: 160px;
+    }
+    
+}
+@media screen and (min-width: 1350px) {
+    :root {
+        --success-box-width: 35%;
+        --tour-annotation-height: 48px;
+        --cp_newscard-toppadding: 200px;
+    }
+   
+
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+
+   
+}
+
+
+/*================= success ========================*/
+
+.sc_success {
+    position: relative;
+    height: var(--success-height);
+}
+
+.sc_success figcaption {
+    padding: var(--sp_card-padding);
+    color: var(--nv-16);
+    background-color: rgba(0,0,0,0.7);
+}
+.sc_success figcaption > ul {
+    display: grid;
+    grid-template-columns: var(--success-performance-grid);
+    grid-gap: 1em;
+    margin: 1em 0;
+}
+
+.sc_success .performance {
+    display: grid;
+    grid-template-columns: fit-content(50%) auto;
+    grid-gap: 0 0.2em;
+    line-height: 1;
+}
+.sc_success .performance span:first-child {
+    grid-row: span 2;
+    font-size: 2.4em;
+}
+.sc_success .performance span:nth-child(2) {
+    font-size: 1.2em;
+    font-weight: bold;
+/*    line-height: 0.9;*/
+    align-self: end;
+}
+.sc_success .performance span:nth-child(3) {
+    font-size: 0.8em;
+    align-self: start;
+}
+
+.performance + p {
+    line-height: 1.4;
+}
+
+@media screen and (min-width: 640px) {
+    
+    .sc_success {
+        padding: var(--sp_px-xl) 0;
+        display: flex;
+        align-items: center;
+/*        justify-content: flex-end;*/
+    }
+    .sc_success img {
+    position: absolute;
+        top: 0;
+        left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+    
+    .sc_success figcaption {
+    position: relative;
+    width: var(--success-box-width);
+    backdrop-filter: blur(10px);
+}
+    
+}
+
+@media screen and (min-width: 1024px) {
+    
+}
+@media screen and (min-width: 1350px) {
+   
+
+}
+
+/*======================= tour ======================*/
+
+/* visual */
+section#sc_tour {
+    overflow: hidden;
+/*    prevent scrollbar when the box goes outside*/
+}
+
+
+#autoplay + label {
+    display: inline-block;
+    width: 6em;
+    cursor: pointer;
+}
+#autoplay + label::after {
+content: " Off";
+}
+#autoplay:checked + label::after {
+content: " On";
+}
+
+
+.sc_tour {
+    background-color: var(--nv-16);
+    padding: var(--sp_px-xxxxl);
+    margin: var(--sp_px-m) auto;
+}
+.sc_tour figure {
+    position: relative;
+}
+.sc_tour ol {
+    counter-reset: sc_tour_annotation;
+}
+.sc_tour ol li {
+    counter-increment: sc_tour_annotation;
+    width: var(--tour-annotation-height);
+    max-height: var(--tour-annotation-height);
+    background-color: var(--nv-green);
+    border-radius: 24px;
+    color: var(--nv-16);
+    overflow: hidden;
+    
+    position: absolute;
+    top: var(--sc_tour-top);
+    left: var(--sc_tour-left);
+    
+    transition: opacity 0.3s ease-in-out;
+}
+.sc_tour ol li::before {
+    content: counter(sc_tour_annotation, decimal);
+    display: block;
+    font-size: calc(var(--tour-annotation-height)/2);
+    font-weight: bold;
+    line-height: var(--tour-annotation-height);
+    text-align: center;
+    width: var(--tour-annotation-height);
+/*    overflow: hidden;*/
+}
+
+.sc_tour ol li span:first-of-type {
+    display: none;
+    width: var(--tour-annotation-text-width);
+    padding: 16px 16px 0 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    color: var(--nv-1-5-1a);
+    opacity: 0;
+}
+.sc_tour ol li span:last-of-type {
+    display: none;
+    width: var(--tour-annotation-text-width);
+    padding: 0px 16px 16px 16px;
+    line-height: 1.4;
+    color: var(--nv-1-5-1a);
+    opacity: 0;
+}
+
+
+
+
+.sc_tour + div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sc_tour + div div {
+    display: flex;
+    align-items: center;
+    gap: var(--sp_em-m);
+}
+.cp_f_ctr_btn {
+    padding: 0;
+}
+
+@media screen and (max-width: 639px) { 
+    .tour_list > li:last-child .cp_ol-decimal {
+        margin-bottom: 0;
+    }
+
+
+}
+
+@media screen and (min-width: 640px) {
+.tour_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp_px-xxl);
+    margin-top: var(--sp_px-xxl);
+    overflow: hidden;
+    max-height: 500px;
+    transition: max-height 0.3s ease-in-out,
+                margin-top 0.3s ease-in-out,
+                opacity 0.3s ease-in-out 0.3s;
+}
+.tour_list > li {
+    flex: 1 1 320px;
+}
+.tour_list .cp_ol-decimal {
+    margin-bottom: 0;
+}
+}
+
+
+
+
+/* interaction */
+
+
+.wrapper:has(#autoplay:checked) .sc_tour ol li {
+    opacity: 0;
+    animation-name: autoplay;
+    animation-direction: alternate;
+    animation-direction: normal;
+    animation-duration: 5s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+}
+
+@media screen and (max-width: 639px) { 
+    
+    .wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(1) {
+        animation-delay: 1s;
+    }
+        .wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(2) {
+        animation-delay: 6s;
+    }
+        .wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(3) {
+        animation-delay: 11s;
+    }
+        .wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(4) {
+        animation-delay: 16s;
+    }
+        .wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(5) {
+        animation-delay: 21s;
+    }
+        .wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(6) {
+        animation-delay: 26s;
+    }
+        .wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(7) {
+        animation-delay: 31s;
+    }
+    
+/*flex*/
+    
+    .wrapper:has(#autoplay:checked) .tour_list {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: calc(var(--padding-lr) * -1);
+        margin-right: calc(var(--padding-lr) * -1);
+        overflow: visible;
+/*        overflow: scroll;*/
+        position: relative;
+        left: 0;
+        opacity: 0;
+        
+        animation-name: autoplay-list;
+        animation-delay: 1s;
+    animation-direction: alternate;
+    animation-direction: normal;
+    animation-duration: 35s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+        
+    }
+    .wrapper:has(#autoplay:checked) .tour_list > li {
+        flex: 0 0 auto;
+    }
+    .wrapper:has(#autoplay:checked) .tour_list h4 {
+        display: none;
+    }
+    .wrapper:has(#autoplay:checked) .tour_list ol {
+        display: flex;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .wrapper:has(#autoplay:checked) .tour_list ol li {
+        flex: 0 0 100vw;
+        list-style-type: none;
+        padding: 0 var(--padding-lr);
+    }
+    
+/*    position */
+    
+    
+}
+
+@media screen and (min-width: 640px) {
+    
+.wrapper:has(#autoplay:checked) .sc_tour ol li::before {
+    animation-name: autoplay-num;
+    animation-direction: alternate;
+    animation-direction: normal;
+    animation-duration: 5s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+}
+.wrapper:has(#autoplay:checked) .sc_tour ol li span {
+    display: block;
+    animation-name: autoplay-text;
+    animation-direction: alternate;
+    animation-direction: normal;
+    animation-duration: 5s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+}
+.wrapper:has(#autoplay:checked) .sc_tour:hover :is(ol li, ol li span), 
+.wrapper:has(#autoplay:checked) .sc_tour:hover ol li::before {
+    animation-play-state: paused;
+}
+
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(1),
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(1)::before,
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(1) span {
+    animation-delay: 1s;
+}
+
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(2),
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(2)::before,
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(2) span {
+    animation-delay: 6s;
+}
+
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(3),
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(3)::before,
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(3) span {
+    animation-delay: 11s;
+}
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(4),
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(4)::before,
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(4) span {
+    animation-delay: 16s;
+}
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(5),
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(5)::before,
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(5) span {
+    animation-delay: 21s;
+}
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(6),
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(6)::before,
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(6) span {
+    animation-delay: 26s;
+}
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(7),
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(7)::before,
+.wrapper:has(#autoplay:checked) .sc_tour ol li:nth-child(7) span {
+    animation-delay: 31s;
+}
+
+
+.wrapper:has(#autoplay:checked) .tour_list {
+    max-height: 0px;
+    margin-top: 0px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out,
+                max-height 0.3s ease-in-out 0.3s,
+                margin-top 0.3s ease-in-out 0.3s;
+}
+    
+    
+}
+
+/* animation */
+
+@media screen and (max-width: 639px) {
+    
+    @keyframes autoplay {
+        
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        
+    }
+    
+    5%, 95% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+        
+    }
+    }
+    
+    @keyframes autoplay-list {
+        0% {
+            opacity: 0;
+            left: 0;
+        }
+        0.714%, 13.571% {
+            opacity: 1;
+            left: 0;
+        }
+        14.286% {
+            left: 0;
+        }
+        15%, 27.857% {
+            left: -100vw;
+        }
+        
+        28.571% {
+            left: -100vw;
+        }
+        29.285%, 42.142% {
+            left: -200vw;
+        }
+        42.857% {
+            left: -200vw;
+        }
+        43.571%, 56.428% {
+            left: -300vw;
+        }
+        57.143% {
+            left: -300vw;
+        }
+        57.857%, 70.714% {
+            left: -400vw;
+        }
+        71.428% {
+            left: -400vw;
+        }
+        72.142%, 84.999% {
+            left: -500vw;
+        }
+        85.714% {
+            left: -500vw;
+        }
+        86.428%, 99.285% {
+            left: -600vw;
+            opacity: 1;
+        }
+        100% {
+            left: -600vw;
+            opacity: 0;
+        }
+    }
+}
+
+
+@media screen and (min-width: 640px) {
+    
+@keyframes autoplay {
+    
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        
+    }
+    
+    5%, 10% {
+        transform: scale(1);
+        width: var(--tour-annotation-height);
+        max-height: var(--tour-annotation-height);
+        border-radius: 24px;
+        background-color: var(--nv-green);
+        box-shadow: none;
+        opacity: 1;
+    }
+    15%, 75% {
+        width: var(--tour-annotation-text-width);
+        max-height: 150px;
+        border-radius: 0px;
+        background-color: var(--nv-15-ee);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    80%, 95% {
+        width: var(--tour-annotation-height);
+        max-height: var(--tour-annotation-height);
+        border-radius: 24px;
+        background-color: var(--nv-green);
+        box-shadow: none;
+        opacity: 1;
+        transform: scale(1);
+    }
+        100% {
+        opacity: 0;
+        transform: scale(0);
+        
+    }
+}
+
+
+@keyframes autoplay-num {
+    10% {
+        opacity: 1;
+        max-height: var(--tour-annotation-height);
+    }
+    15% {
+        opacity: 0;
+        max-height: 0;
+        
+    }
+    75% {
+        max-height: 0;
+        
+    }
+    80% {
+        max-height: var(--tour-annotation-height);
+        opacity: 0;
+    }
+    85% {
+        opacity: 1;
+    }
+}
+
+@keyframes autoplay-text {
+    15% {
+        opacity: 0;
+    }
+    20%, 70% {
+        opacity: 1;
+    }
+    75%, 100% {
+        opacity: 0;
+    }
+    
+}
+
+
+}
+
+
+
+
+/*================ news and events =================*/
+
+.cp_newscard {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+.cp_newscard img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+/*    object-position:center;*/
+}
+.cp_newscard figcaption {
+    width: 100%;
+    padding: var(--cp_newscard-toppadding) var(--sp_card-padding) var(--sp_card-padding) var(--sp_card-padding);
+    position: relative;
+    color: var(--nv-16);
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7) var(--cp_newscard-toppadding));
+}
+.cp_newscard figcaption > *:not(:last-child) {
+    margin-bottom: calc(var(--sp_card-padding) / 2);
+}
+
+.sc_news_4items {
+    display: grid;
+    grid-template-columns: var(--sc_news_4items-col, unset);
+    grid-auto-rows: 1fr;
+    grid-gap: var(--sp_px-l);
+}
+.sc_news_4items .cp_newscard {
+    grid-column: var(--sc_news_4items-colspan, unset);
+    grid-row: var(--sc_news_4items-rowspan, unset);
+}
+.sc_news_4items .cp_newscard.wider {
+    grid-column: var(--sc_news_4items-wider-colspan, unset);
+    grid-row: var(--sc_news_4items-wider-rowspan, unset);
+}

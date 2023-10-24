@@ -30,7 +30,7 @@
     --sp_grid-gap-2col: 16px;
     --sp_grid-gap-3col: 16px;
     
-/*    --sp_card-padding: 16px;*/
+    --sp_card-padding: 16px;
 
     --space-xs: 4px;
     --space-s: 8px;
@@ -80,7 +80,7 @@
     --sp_grid-gap-2col: 24px;
     --sp_grid-gap-3col: 16px;   
     
-/*    --sp_card-padding: 20px;*/
+    --sp_card-padding: 20px;
         
         
     --space-xs: 5px;
@@ -120,7 +120,7 @@
     --sp_grid-gap-2col: 32px;
     --sp_grid-gap-3col: 24px;
         
-/*    --sp_card-padding: 24px;*/
+    --sp_card-padding: 24px;
         
     --space-xs: 6px;
     --space-s: 10px;
@@ -161,7 +161,7 @@
     --sp_grid-gap-2col: 48px;
     --sp_grid-gap-3col: 32px; 
     
-/*    --sp_card-padding: 32px;*/
+    --sp_card-padding: 32px;
         
     --space-xs: 7px;
     --space-s: 11px;
