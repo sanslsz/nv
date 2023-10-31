@@ -27,19 +27,22 @@
             margin: var(--sp_em-s) 0 var(--sp_em-l);
         }
 
-        .wrapper>p {
-            margin: var(--sp_em-xxl);
+        .wrapper>.tp_p-l {
+            margin-top: var(--sp_em-xxl);
+            margin-bottom: var(--sp_em-xxl);
         }
 
-        .cp_cta_sec_wrap {
-            /*            font-size: inherit;*/
+        .cp_cta_sec_wrap+.cp_cta_sec_wrap {
+            margin-top: var(--sp_em-xs);
+        }
+        
+        .cp_cta_sec_wrap.light {
             color: var(--nv-16);
         }
 
-        .cp_cta_sec_wrap:is(:hover, :focus, :active) {
+        .cp_cta_sec_wrap.light:is(:hover, :focus, :active) {
             color: var(--nv-16);
         }
-
     </style>
 </head>
 
@@ -89,7 +92,7 @@
                         </li>
 
                     </ul>
-                    <a href="#" class="cp_cta_sec_wrap">Firmissimum qui ipsum si est cillum singulis <span class="no-break">no break</span></a>
+                    <a href="#" class="cp_cta_sec_wrap light">Firmissimum qui ipsum si est cillum singulis <span class="no-break">no break</span></a>
 
                 </figcaption>
 
@@ -218,7 +221,7 @@
                     <figcaption>
                         <h4>Power Efficiency</h4>
                         <p>Featuring a dual-slot, power efficient design, the RTX A6000 is up to 2X more power efficient than Turing GPUs and crafted to fit into a wide range of workstations from worldwide OEM vendors.</p>
-                        <a href="#" class="cp_cta_sec_wrap">Learn <span class="no-break">More</span></a>
+                        <a href="#" class="cp_cta_sec_wrap light">Learn <span class="no-break">More</span></a>
                     </figcaption>
                 </figure>
                 <figure class="cp_newscard wider">
@@ -226,15 +229,15 @@
                     <figcaption>
                         <h4>NVIDIA Ampere Architecture Based CUDA Cores</h4>
                         <p>Double-speed processing for single-precision floating point (FP32) operations provides significant performance improvements for graphics and simulation workflows, such as complex 3D computer-aided design (CAD) and computer-aided engineering (CAE), on the desktop.</p>
-                        <a href="#" class="cp_cta_sec_wrap">Learn <span class="no-break">More</span></a>
+                        <a href="#" class="cp_cta_sec_wrap light">Learn <span class="no-break">More</span></a>
                     </figcaption>
                 </figure>
-                                <figure class="cp_newscard wider">
+                <figure class="cp_newscard wider">
                     <img src="assets/2021-nvidia-corporate-key-visual-16x9-dark-4k.jpeg" alt="">
                     <figcaption>
                         <h4>48 Gigabytes (GB) of GPU Memory</h4>
                         <p>Ultra-fast GDDR6 memory, scalable up to 96 GB with NVLink, gives data scientists, engineers, and creative professionals the large memory necessary to work with massive datasets and workloads like data science and simulation.</p>
-                        <a href="#" class="cp_cta_sec_wrap">Learn <span class="no-break">More</span></a>
+                        <a href="#" class="cp_cta_sec_wrap light">Learn <span class="no-break">More</span></a>
                     </figcaption>
                 </figure>
                 <figure class="cp_newscard">
@@ -242,13 +245,13 @@
                     <figcaption>
                         <h4>Virtualization-Ready</h4>
                         <p>Support for NVIDIA virtual GPU (vGPU) software allows a personal workstation to be repurposed into multiple high-performance virtual workstation instances enabling remote users, to share resources to drive high-end design, AI, and compute workloads.</p>
-                        <a href="#" class="cp_cta_sec_wrap">Learn <span class="no-break">More</span></a>
+                        <a href="#" class="cp_cta_sec_wrap light">Learn <span class="no-break">More</span></a>
                     </figcaption>
                 </figure>
             </div>
         </div>
     </section>
-    
+
     <section class="padding" id="sc_tour">
         <div class="wrapper">
             <h4 class="center">Product Tour: autoplay by default, hover to interupt the animation</h4>
@@ -299,11 +302,174 @@
                     <span class="material-icons cp_f_ctr_btn" tabindex="0" title="next">navigate_next</span>
                 </div>
             </div>
-            
+
+        </div>
+    </section>
+
+
+
+    <section class="padding">
+        <div class="wrapper">
+            <h4 class="center">Quotes</h4>
+            <!--            <h2 class="center">Explore the Powerful Components of DGX A100</h2>-->
+            <p class="tp_p-l cp_quote">The ray-tracing capabilities of NVIDIA RTX help artists push the boundaries of content creation. Arnold GPU is now available, and we’re excited to see how our users will take advantage of the unprecedented rendering speeds and amazing efficiency.</p>
+            <p class="name">Chris Vienneau</p>
+            <p class="position">Senior Director of Media and Entertainment Products</p>
+            <p class="organization">Autodesk</p>
+            <ul class="slidecontrol">
+                <li class="material-icons cp_f_ctr_btn" tabindex="0" title="previous">navigate_before</li>
+                <li>
+                    <ul class="dots">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li class="on"></li>
+                        <li></li>
+                    </ul>
+
+
+                </li>
+                <li class="material-icons cp_f_ctr_btn" tabindex="0" title="next">navigate_next</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="padding">
+        <div class="wrapper">
+            <h4 class="center">Solutions</h4>
+            <h2 class="center">Industry Technology—From Data Center to Edge to Cloud</h2>
+            <p class="tp_p-l center">Learn about the AI and HPC hardware, software, and networking solutions for financial institutions.</p>
+
+            <ul class="cp_solutions grid">
+                <li>
+                    <span class="material-icons">security</span>
+                    <h4>Protect Your Institution and Your Customers From Fraud</h4>
+                    <div>
+                        <ul class="cp_ul-greater">
+                            <li>Combat the most sophisticated transaction types</li>
+                            <li>Combat identity fraud</li>
+                            <li>Reduce false positives</li>
+                            <li>Identify unknown patterns across accounts/entities</li>
+                            <li>Improve compliance with AML and KYC regulations</li>
+                        </ul>
+                        <p>... and more</p>
+                    </div>
+                    <div>
+                        <a href="#" class="cp_cta_sec_wrap">Prevent <span class="no-break">Fraud</span></a>
+                        <a href="#" class="cp_cta_sec_wrap">Improve compliance regulations <span class="no-break">regulations</span></a>
+                    </div>
+                </li>
+                <li>
+                    <span class="material-icons">support_agent</span>
+                    <h4>Gain the Competitive Edge With High-Performance Computing</h4>
+                    <div>
+                        <ul class="cp_ul-greater">
+                            <li>Run more simulations</li>
+                            <li>Run simulations with a more variety and volume of data</li>
+                            <li>Yield insights to successfully manage risk profiles</li>
+                            <li>Stay ahead of regulatory and compliance requirements</li>
+                            <li>Yield insights to employ resources more efficiently</li>
+                        </ul>
+                        <p>... and more</p>
+                    </div>
+                    <div>
+                        <a href="#" class="cp_cta_sec_wrap">Prevent <span class="no-break">Fraud</span></a>
+                        <a href="#" class="cp_cta_sec_wrap">Discover How to <span class="no-break">Secure</span></a>
+                    </div>
+                </li>
+                <li>
+                    <span class="material-icons">thumb_up_alt</span>
+                    <h4>Deliver State-of-the Art Customer Experience</h4>
+                    <div>
+                        <ul class="cp_ul-greater">
+                            <li>Develop AI applications for virtual assistants</li>
+                            <li>Develop AI applications for chatbots</li>
+                            <li>Develop AI applications for call centers</li>
+                            <li>Reduce post-call time by as much as 80 percent</li>
+                            <li>Measure sentiment throughout interactions</li>
+                            <li>Serve recommendations for best next-steps to call reps</li>
+                            <li>Improve the customer experience while reducing costs</li>
+                        </ul>
+                        <p>... and more</p>
+                    </div>
+                    <div>
+                        <a href="#" class="cp_cta_sec_wrap">Prevent <span class="no-break">Fraud</span></a>
+                        <a href="#" class="cp_cta_sec_wrap">Explore How to Enable <span class="no-break">More</span></a>
+                    </div>
+                </li>
+            </ul>
+
+
         </div>
     </section>
     
     
+    <section class="padding">
+        <div class="wrapper">
+            <h4 class="center">Solutions</h4>
+            <h2 class="center">Industry Technology—From Data Center to Edge to Cloud</h2>
+            <p class="tp_p-l center">Learn about the AI and HPC hardware, software, and networking solutions for financial institutions.</p>
+
+            <ul class="cp_solutions list">
+                <li>
+                    <h4>Protect Your Institution and Your Customers From Fraud</h4>
+                    <div>
+                        <ul class="cp_ul-greater">
+                            <li>Combat the most sophisticated transaction types</li>
+                            <li>Combat identity fraud</li>
+                            <li>Reduce false positives</li>
+                            <li>Identify unknown patterns across accounts/entities</li>
+                            <li>Improve compliance with AML and KYC regulations</li>
+                        </ul>
+                        <p>... and more</p>
+                    </div>
+                    <div>
+                        <a href="#" class="cp_cta_sec_wrap">Prevent <span class="no-break">Fraud</span></a>
+                        <a href="#" class="cp_cta_sec_wrap">Improve compliance regulations <span class="no-break">regulations</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h4>Gain the Competitive Edge With High-Performance Computing</h4>
+                    <div>
+                        <ul class="cp_ul-greater">
+                            <li>Run more simulations</li>
+                            <li>Run simulations with a more variety and volume of data</li>
+                            <li>Yield insights to successfully manage risk profiles</li>
+                            <li>Stay ahead of regulatory and compliance requirements</li>
+                            <li>Yield insights to employ resources more efficiently</li>
+                        </ul>
+                        <p>... and more</p>
+                    </div>
+                    <div>
+                        <a href="#" class="cp_cta_sec_wrap">Prevent <span class="no-break">Fraud</span></a>
+                        <a href="#" class="cp_cta_sec_wrap">Discover How to <span class="no-break">Secure</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h4>Deliver State-of-the Art Customer Experience</h4>
+                    <div>
+                        <ul class="cp_ul-greater">
+                            <li>Develop AI applications for virtual assistants</li>
+                            <li>Develop AI applications for chatbots</li>
+                            <li>Develop AI applications for call centers</li>
+                            <li>Reduce post-call time by as much as 80 percent</li>
+                            <li>Measure sentiment throughout interactions</li>
+                            <li>Serve recommendations for best next-steps to call reps</li>
+                            <li>Improve the customer experience while reducing costs</li>
+                        </ul>
+                        <p>... and more</p>
+                    </div>
+                    <div>
+                        <a href="#" class="cp_cta_sec_wrap">Prevent <span class="no-break">Fraud</span></a>
+                        <a href="#" class="cp_cta_sec_wrap">Explore How to Enable <span class="no-break">More</span></a>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+    </section>
+
 
     <!--
     <section class="padding">
@@ -315,6 +481,4 @@
     </section>
 -->
 
-</body>
-
-</html>
+</body></html>
