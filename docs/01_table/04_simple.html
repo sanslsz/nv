@@ -20,6 +20,17 @@
         h4 {
             margin-bottom: var(--sp_px-xxxl);
         }
+        .cp_disclaimer .theme_options {
+            display: flex;
+            gap: var(--sp_px-xl);
+            justify-content: center;
+            margin-top: var(--sp_em-xs);
+        }
+        .cp_disclaimer .material-icons {
+            vertical-align: text-bottom;
+            margin-left: var(--sp_em-xs);
+            margin-right: var(--sp_em-xs);
+        }
     </style>
 
 </head>
@@ -28,9 +39,15 @@
     <aside class="paddingsmall cp_disclaimer">
         <div class="wrapper center">
             This protoType is for design exploration, not meant for production use.
+            <div class="theme_options">
+            <label><input type="radio" id="theme_light" name="theme_option" checked><span class="material-icons">light_mode</span>Light theme</label>
+            <label><input type="radio" id="theme_dark" name="theme_option"><span class="material-icons">dark_mode</span>Dark theme</label>
+            </div>
         </div>
     </aside>
+    
     <main>
+
 <!--
         <section class="padding">
             <div class="wrapper">

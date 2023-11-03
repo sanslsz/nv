@@ -17,9 +17,26 @@
 /*
 @media (prefers-color-scheme: dark) {
 
-    :root {
-        
-        --cp_table_shadow: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+   
+}
+*/
+
+
+/*=================   white bg color swap and theme changes  ===================*/
+
+.whitebg {
+    background-color: #ffffff;
+}
+
+.whitebg {
+    --nv-16: #eeeeee;
+    --nv-15-ee: #ffffff;
+}
+
+
+:root:has(#theme_dark:checked) {
+ 
+         --cp_table_shadow: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
         
 
         --nv-dark-16: #ffffff;
@@ -36,22 +53,30 @@
         --nv-dark-0: #000000;
 
 
-        --nv-16: var(--nv-dark-2-22);
-        --nv-15-5-f7: var(--nv-dark-1-5-1a);
-        --nv-15-ee: var(--nv-dark-1-11);
+                                        --nv-16: var(--nv-dark-2-22);
+                                        --nv-15-5-f7: var(--nv-dark-1-5-1a);
+                                        --nv-15-ee: var(--nv-dark-1-11);
         --nv-14-dd: var(--nv-dark-0);
-        --nv-12-5-cc: var(--nv-dark-3-33);
+                                        --nv-12-5-cc: var(--nv-dark-3-33);
         --nv-9-5-99: var(--nv-dark-6-5-66);
-        --nv-6-5-66: var(--nv-dark-9-5-99);
+                                        --nv-6-5-66: var(--nv-dark-9-5-99);
         --nv-3-33: var(--nv-dark-12-5-cc);
         --nv-2-22: var(--nv-dark-14-dd);
-        --nv-1-5-1a: var(--nv-dark-15-ee);
+                                        --nv-1-5-1a: var(--nv-dark-15-ee);
         --nv-1-11: var(--nv-dark-15-5-f7);
         --nv-0: var(--nv-dark-16);
-
-    }
 }
-*/
+
+
+:root:has(#theme_dark:checked) .whitebg {
+    background-color: var(--nv-dark-2-22);
+    --nv-16: var(--nv-dark-1-11);
+    --nv-15-ee: var(--nv-dark-2-22);
+}
+
+
+
+
 
 .cp_table_simple {
     border-collapse: collapse;
@@ -59,6 +84,7 @@
     font-size: 14px;
     text-align: left;
     line-height: 1.2;
+    color: var(--nv-1-5-1a);
 }
 .cp_table_simple :is(th, td) {
     vertical-align: middle;
@@ -142,16 +168,6 @@
 
 
 
-/*=================   white bg color swap   ===================*/
-
-.whitebg {
-    background-color: #ffffff;
-}
-
-.whitebg {
-    --nv-16: #eeeeee;
-    --nv-15-ee: #ffffff;
-}
 
 /*===================  responsive view   ========================*/
 
