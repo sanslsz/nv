@@ -1,0 +1,415 @@
+<style>
+:root { 
+
+    
+/*    NVIDIA web library 2.3 */
+--nv-16: #ffffff;
+--nv-15-5-f7: #F7F7F7;
+--nv-15-ee: #EEEEEE;
+--nv-14-dd: #dddddd;
+--nv-12-5-cc: #CCCCCC;
+--nv-9-5-99: #999999;
+--nv-8-80: #808080;
+--nv-6-5-66: #666666;
+--nv-3-33: #333333;
+--nv-2-22: #222222;
+--nv-1-5-1a: #1A1A1A;
+--nv-1-11: #111111;
+--nv-0: #000000;
+--nv-green: #76B900;
+--nv-green-hover: #6AA700;
+--nv-annotation: #FF00FF;
+    
+--boxshadow-card: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    
+--cp_table_shadow: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    
+}
+:root {
+    
+/*    ============= spacing =============*/
+    --sp_em-xs: 0.3em;
+    --sp_em-s: 0.6em;
+    --sp_em-m: 0.9em;
+    --sp_em-l: 1.2em;
+    --sp_em-xl: 1.5em;
+    --sp_em-xxl: 1.8em;
+    --sp_em-xxxl: 2.1em;
+    --sp_em-xxxxl: 2.4em;
+    
+    --sp_px-xs: 4px;
+    --sp_px-s: 8px;
+    --sp_px-m: 12px;
+    --sp_px-l: 16px;
+    --sp_px-xl: 20px;
+    --sp_px-xxl: 24px;
+    --sp_px-xxxl: 28px;
+    --sp_px-xxxxl: 32px;
+    
+   --padding-lr: 15px;
+    
+    --cell-lr-xs: 6px;
+    --cell-lr-s: 8px;
+    --cell-lr-m: 12px;
+    --cell-lr-l: 16px;
+    --cell-lr-xl: 20px;
+    --cell-lr-xxl: 24px;
+    
+    --cell-tb-xs: var(--sp_px-xs);
+    --cell-tb-s: var(--sp_px-s);
+    --cell-tb-m: var(--sp_px-m);
+    --cell-tb-l: var(--sp_px-l);
+    --cell-tb-xl: var(--sp_px-xl);
+    --cell-tb-xxl: var(--sp_px-xxl);
+    
+}
+
+@media screen and (min-width: 640px) {
+    :root {
+        
+    --sp_rem-xs: 0.5rem;
+    --sp_rem-s: 1rem;
+    --sp_rem-m: 1.5rem;
+    --sp_rem-l: 2rem;
+    --sp_rem-xl: 2.5rem;
+    --sp_rem-xxl: 3rem;
+        
+    --sp_px-xs: 5px;
+    --sp_px-s: 9px;
+    --sp_px-m: 13px;
+    --sp_px-l: 17px;
+    --sp_px-xl: 22px;
+    --sp_px-xxl: 27px;
+    --sp_px-xxxl: 32px;
+    --sp_px-xxxxl: 38px;
+        
+    --cell-lr-xs: 8px;
+    --cell-lr-s: 11px;
+    --cell-lr-m: 16px;
+    --cell-lr-l: 22px;
+    --cell-lr-xl: 28px;
+    --cell-lr-xxl: 34px;
+    
+}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+            
+    --sp_rem-xs: 0.75rem;
+    --sp_rem-s: 1.5rem;
+    --sp_rem-m: 2.25rem;
+    --sp_rem-l: 3rem;
+    --sp_rem-xl: 3.75rem;
+    --sp_rem-xxl: 4.5rem;
+        
+    --sp_px-xs: 6px;
+    --sp_px-s: 10px;
+    --sp_px-m: 14px;
+    --sp_px-l: 18px;
+    --sp_px-xl: 24px;
+    --sp_px-xxl: 30px;
+    --sp_px-xxxl: 36px;
+    --sp_px-xxxxl: 44px;
+    
+    --cell-lr-xs: 10px;
+    --cell-lr-s: 14px;
+    --cell-lr-m: 20px;
+    --cell-lr-l: 28px;
+    --cell-lr-xl: 36px;
+    --cell-lr-xxl: 44px;
+}
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+            
+    --sp_rem-xs: 1rem;
+    --sp_rem-s: 2rem;
+    --sp_rem-m: 3rem;
+    --sp_rem-l: 4rem;
+    --sp_rem-xl: 5rem;
+    --sp_rem-xxl: 6rem;
+        
+    --sp_px-xs: 7px;
+    --sp_px-s: 11px;
+    --sp_px-m: 15px;
+    --sp_px-l: 19px;
+    --sp_px-xl: 26px;
+    --sp_px-xxl: 33px;    
+    --sp_px-xxxl: 40px;
+    --sp_px-xxxxl: 50px;
+        
+    --cell-lr-xs: 12px;
+    --cell-lr-s: 17px;
+    --cell-lr-m: 24px;
+    --cell-lr-l: 34px;
+    --cell-lr-xl: 44px;
+    --cell-lr-xxl: 54px;
+    
+}
+}
+
+table {
+    font-variant-numeric: tabular-nums;
+}
+
+.padding {
+padding-left: var(--padding-lr);
+padding-right: var(--padding-lr);
+}
+
+
+.cp_table_simple {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.2;
+color: var(--nv-1-5-1a);
+}
+.cp_table_simple :is(th, td) {
+    vertical-align: middle;
+    padding: var(--cell-tb-xl) var(--cell-lr-m);
+}
+.cp_table_simple th {
+    font-weight: bold;
+}
+.cp_table_simple caption {
+    caption-side: bottom;
+    padding: var(--cell-tb-xl) 0;
+    text-align: left;
+    display: none;
+}
+
+
+
+
+.cp_table_01_base {
+    border: 1px solid var(--nv-12-5-cc);
+}
+.cp_table_01_base :is(th, td) {
+    border: 1px solid var(--nv-12-5-cc);
+}
+.cp_table_01_base thead {
+    border-bottom: 3px solid var(--nv-6-5-66);
+}
+
+
+.cp_table_02_clean thead {
+    border-bottom: 3px solid var(--nv-6-5-66);
+}
+.cp_table_02_clean tbody tr:not(:first-child) {
+    border-top: 1px solid var(--nv-12-5-cc);
+}
+.cp_table_02_clean:not(.background) :is(th, td):first-child {
+    padding-left: 0;
+}
+.cp_table_02_clean:not(.background) :is(th, td):last-child {
+    padding-right: 0;
+}
+.cp_table_02_clean.background {
+    background-color: var(--nv-16);
+}
+
+
+.cp_table_03_col {
+    background-color: var(--nv-16);
+}
+.cp_table_03_col col:nth-child(even) {
+    background-color: var(--nv-15-5-f7);
+}
+
+.cp_table_03_col thead th {
+    padding-top: var(--cell-tb-xxl);
+    padding-bottom: var(--cell-tb-xxl);
+    background: linear-gradient(to top, var(--nv-6-5-66) 0px 3px, transparent 3px), var(--nv-16);
+}
+.cp_table_03_col thead th:nth-child(even) {
+    background-color: var(--nv-15-5-f7);
+}
+.cp_table_03_col tbody tr:not(:first-child) {
+    border-top: 1px solid var(--nv-12-5-cc);
+}
+
+
+.cp_table_04_row {
+    background-color: var(--nv-16);
+}
+.cp_table_04_row col:not(:last-child) {
+    border-right: 1px solid var(--nv-12-5-cc);
+}
+.cp_table_04_row thead th {
+    padding-top: var(--cell-tb-xxl);
+    padding-bottom: var(--cell-tb-xxl);
+    background: linear-gradient(to top, var(--nv-6-5-66) 0px 3px, transparent 3px), var(--nv-16);
+}
+.cp_table_04_row tbody tr:nth-child(odd) {
+    background-color: var(--nv-15-5-f7);
+}
+
+
+
+
+/*=================   white bg color swap   ===================*/
+
+
+.whitebg {
+    --nv-16: #eeeeee;
+    --nv-15-ee: #ffffff;
+}
+
+
+
+/*===================  responsive view   ========================*/
+
+
+@media screen and (max-width: 1023px) {
+    
+/*    simple overflow scroll */
+    .md_table_scroll {
+        overflow: auto;
+        max-height: 90vh;
+        margin-right: calc(var(--padding-lr) * -1);
+    }
+    .md_table_scroll table {
+        margin-right: var(--padding-lr);
+    }
+    
+
+/* scroll bar with margin */
+    .cp_table_scrollbar::-webkit-scrollbar {
+        display: initial;
+        width: 3px;
+        height: 3px;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-track {
+        background-color: var(--nv-14-dd);
+        border-radius: 99999px;
+        margin-right: var(--padding-lr);
+}
+
+    .cp_table_scrollbar::-webkit-scrollbar-thumb {
+        background-color: var(--nv-green);
+        border-radius: 99999px;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar:vertical {
+/*        display: none;*/
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-button {
+        display: none;
+    }
+    .cp_table_scrollbar::-webkit-scrollbar-corner {
+/*        background-color: red;*/
+    }
+
+
+    
+}
+
+@media screen and (max-width: 639px) {
+    
+/*    table to list */
+    .md_table_list thead {
+        display: none;
+    }
+    .md_table_list tbody :is(tr, th, td) {
+        display: block;
+        padding: 0;
+    }
+    .md_table_list:not(.background) tbody tr {
+        padding: var(--sp_em-m) 0;
+    }
+    .md_table_list tbody th {
+/*        font-size: 16px;*/
+/*        font-weight: normal;*/
+    }
+    .md_table_list tbody td:nth-child(n + 2) {
+        display: flex;
+    }
+        .md_table_list:not(.background) tbody td:nth-child(n + 2) {
+        margin-top: var(--sp_em-xs);
+    }
+    .md_table_list tbody td:nth-child(n + 2)::before {
+        content: 'GeForce RTX 4090:';
+/*        font-weight: bold;*/
+        padding-right: var(--sp_em-xs);
+        flex-basis: 22ch;
+    }
+    .md_table_list tbody td:nth-child(3)::before {
+        content: 'GeForce RTX 4080:';
+    }
+    .md_table_list tbody td:nth-child(4)::before {
+        content: 'GeForce RTX 4070 Ti:';
+    }
+    .md_table_list tbody td:nth-child(5)::before {
+        content: 'GeForce RTX 4070:';
+    }
+    .md_table_list tbody td:nth-child(6)::before {
+        content: 'GeForce RTX 4060 Ti:';
+    }
+    .md_table_list tbody td:nth-child(7)::before {
+        content: 'GeForce RTX 4060:';
+    }
+    
+    .md_table_list.background {
+        background-color: transparent;
+    }
+    .md_table_list.background tbody :is(th, td) {
+        padding: var(--cell-tb-s);
+    }
+        .md_table_list.background tbody td{
+        background-color: var(--nv-16);
+    }
+       .md_table_list.background tbody td:nth-child(even) {
+        background-color: var(--nv-15-5-f7);
+    }
+    .md_table_list.background tbody tr:not(:first-child) {
+        border-top: none;
+        margin-top: var(--cell-tb-l);
+}
+    
+    
+    
+    
+    
+    
+/*    sticky overflow scroll */
+    .md_table_sticky {
+        overflow: auto;
+        max-height: 90vh;
+        margin-right: calc(var(--padding-lr) * -1);
+    }
+    .md_table_sticky table {
+        margin-right: var(--padding-lr);
+    }
+    .md_table_sticky thead {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+    .md_table_sticky :is(tbody, thead) th:first-child {
+        background-color: var(--nv-16);
+        position: sticky;
+        left: 0;
+        z-index: 1;
+    }
+    .md_table_sticky :is(tbody, thead) th:first-child::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -6px;
+        width: 6px;
+        height: 100%;
+        background: var(--cp_table_shadow);
+    }
+    
+    .md_table_sticky .cp_table_04_row col:first-child {
+        border-right: none;
+    }
+    .md_table_sticky .cp_table_04_row tbody tr:nth-child(odd) th:first-child {
+        background-color: var(--nv-15-5-f7);
+    }
+    
+}
+</style>

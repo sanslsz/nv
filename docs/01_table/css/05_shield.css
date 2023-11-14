@@ -227,9 +227,11 @@ tbody td) {
         overflow: auto;
         max-height: 90vh;
         margin-right: calc(var(--padding-lr) * -1);
+/*        margin-left: calc(var(--padding-lr) * -1);*/
     }
     .md_table_02_nogap_sticky table {
         margin-right: var(--padding-lr);
+/*        margin-left: var(--padding-lr);*/
     }
     .cp_table_02_clean.nogap {
     min-width: 640px;
@@ -239,6 +241,7 @@ tbody td) {
         background-color: var(--nv-15-ee);
         position: sticky;
         left: 0;
+/*        left: var(--cell-lr-m);*/
         z-index: 1;
     }
     .md_table_02_nogap_sticky :is(thead th:nth-last-child(5), tbody .level_3)::after {
@@ -289,9 +292,11 @@ tbody td) {
         overflow: auto;
         max-height: 90vh;
         margin-right: calc(var(--padding-lr) * -1);
+/*        margin-left: calc(var(--padding-lr) * -1);*/
     }
     .md_table_03_nogap_sticky table {
         margin-right: var(--padding-lr);
+/*        margin-left: var(--padding-lr);*/
     }
     .cp_table_03_col.nogap {
     min-width: 640px;
@@ -362,15 +367,18 @@ tbody td) {
         overflow: auto;
         max-height: 90vh;
         margin-right: calc(var(--padding-lr) * -1);
+/*        margin-left: calc(var(--padding-lr) * -1);*/
     }
     .md_table_02_gap_sticky table {
         margin-right: var(--padding-lr);
+/*        margin-left: var(--padding-lr);*/
     }
     
     .md_table_02_gap_sticky :is(thead th:nth-last-child(5), tbody .level_3) {
         background-color: var(--nv-15-ee);
         position: sticky;
         left: 0;
+/*        left: var(--cell-lr-m);*/
         z-index: 1;
     }
     .md_table_02_gap_sticky :is(thead th:nth-last-child(5), tbody .level_3)::after {
@@ -386,6 +394,7 @@ tbody td) {
     width: fit-content;
     position: sticky;
     left: 0;
+/*        left: var(--cell-lr-m);*/
     }
 
     
@@ -483,9 +492,11 @@ tbody td) {
         overflow: auto;
         max-height: 90vh;
         margin-right: calc(var(--padding-lr) * -1);
+/*        margin-left: calc(var(--padding-lr) * -1);*/
     }
     .md_table_03_gap_sticky table {
         margin-right: var(--padding-lr);
+/*        margin-left: var(--padding-lr);*/
     }
     
     .md_table_03_gap_sticky :is(thead th:nth-last-child(5), tbody .level_3) {
