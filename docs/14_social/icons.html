@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Social icons</title>
+    <!--    <meta name="description" content="">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="css/fontawesome.css" rel="stylesheet">
+    <link href="css/brands.css" rel="stylesheet">
+    <!--    <meta name="theme-color" content="#fafafa">-->
+    <meta name="color-scheme" content="light dark">
+    <style>
+        /*        ============== experiment =============*/
+        a,
+        a:is(:hover, :focus) {
+            color: inherit;
+        }
+
+        a {
+            transition: color 0.3s ease-in-out;
+            display: block;
+            /*            line-height: 1;*/
+        }
+
+        a:is(:hover, :focus) {
+            color: var(--nv-green);
+        }
+
+        .fa-brands {
+            font-size: 24px;
+            display: block;
+        }
+
+
+        /*        ============= component =================*/
+        .cp_social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: var(--padding-tb);
+            margin-bottom: 15px;
+        }
+
+        .follow {
+            padding-right: 15px;
+        }
+
+        .nvnews {
+            text-align: right;
+            font-size: 12px;
+        }
+
+        .nvnews a {
+            display: inline;
+            color: #eeeeee;
+            text-decoration: underline 2px var(--nv-green);
+            text-underline-offset: 0.3125em;
+        }
+
+
+        .cp_social.left {
+            justify-content: flex-start;
+        }
+
+        .cp_social.left+.nvnews {
+            text-align: left;
+        }
+
+        .cp_social.center {
+            justify-content: center;
+        }
+
+        .cp_social.center .follow {
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        .cp_social.center+.nvnews {
+            text-align: center;
+        }
+
+
+
+
+
+
+        .theme_dark {
+            background-color: var(--nv-1-11);
+            color: var(--nv-15-ee);
+        }
+
+        .theme_dark .cp_social {
+            color: var(--nv-9-5-99);
+        }
+
+        .theme_dark .cp_social a:is(:hover, :focus) {
+            color: var(--nv-15-5-f7);
+        }
+
+        .theme_light {
+            background-color: var(--nv-15-5-f7);
+            color: var(--nv-2-22);
+        }
+
+        .theme_light .cp_social {
+            color: var(--nv-8-80);
+        }
+
+        .theme_light .cp_social a:is(:hover, :focus) {
+            color: var(--nv-1-5-1a);
+        }
+
+        .theme_dark .nvnews a {
+            color: var(--nv-15-ee);
+        }
+
+        .theme_dark .nvnews a:is(:hover, :focus) {
+            text-decoration-color: var(--nv-16);
+        }
+
+        .theme_light .nvnews a {
+            color: var(--nv-2-22);
+        }
+
+        .theme_light .nvnews a:is(:hover, :focus) {
+            text-decoration-color: var(--nv-0);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="theme_dark padding">
+        <div class="wrapper">
+            <h2>Icon Font Dark Theme</h2>
+            <p>Icon height: 24px &emsp;/&emsp; Auto width &emsp;/&emsp; Line-height: 1 &emsp;/&emsp; 15px gap </p>
+            <div style="" class="cp_social">
+                <span class="follow">Follow NVIDIA</span>
+                <a href="#" title="Bilibili"><span class="fa-brands fa-bilibili"></span></a>
+                <a href="#" title="Discord"><span class="fa-brands fa-discord"></span></a>
+                <a href="#" title="Facebook"><span class="fa-brands fa-facebook-f"></span></a>
+                <a href="#" title="Github"><span class="fa-brands fa-github"></span></a>
+                <a href="#" title="Instagram"><span class="fa-brands fa-instagram"></span></a>
+                <a href="#" title="Linkedin"><span class="fa-brands fa-linkedin-in"></span></a>
+                <a href="#" title="Medium"><span class="fa-brands fa-medium"></span></a>
+                <a href="#" title="Threads"><span class="fa-brands fa-threads"></span></a>
+                <a href="#" title="Tiktok"><span class="fa-brands fa-tiktok"></span></a>
+                <a href="#" title="Twitch"><span class="fa-brands fa-twitch"></span></a>
+                <a href="#" title="Twitter"><span class="fa-brands fa-twitter"></span></a>
+                <a href="#" title="Weibo"><span class="fa-brands fa-weibo"></span></a>
+                <a href="#" title="Weixin"><span class="fa-brands fa-weixin"></span></a>
+                <a href="#" title="X"><span class="fa-brands fa-x-twitter"></span></a>
+                <a href="#" title="Youtube"><span class="fa-brands fa-youtube"></span></a>
+            </div>
+            <p class="nvnews">Find more news and stories on <a href="#" title="Visit NVIDIA Blog">NVIDIA Blog</a></p>
+            <div style="" class="cp_social left">
+                <span class="follow">Follow NVIDIA</span>
+                <a href="#" title="Bilibili"><span class="fa-brands fa-bilibili"></span></a>
+                <a href="#" title="Discord"><span class="fa-brands fa-discord"></span></a>
+                <a href="#" title="Facebook"><span class="fa-brands fa-facebook-f"></span></a>
+                <a href="#" title="Github"><span class="fa-brands fa-github"></span></a>
+                <a href="#" title="Instagram"><span class="fa-brands fa-instagram"></span></a>
+                <a href="#" title="Linkedin"><span class="fa-brands fa-linkedin-in"></span></a>
+                <a href="#" title="Medium"><span class="fa-brands fa-medium"></span></a>
+                <a href="#" title="Threads"><span class="fa-brands fa-threads"></span></a>
+                <a href="#" title="Tiktok"><span class="fa-brands fa-tiktok"></span></a>
+                <a href="#" title="Twitch"><span class="fa-brands fa-twitch"></span></a>
+                <a href="#" title="Twitter"><span class="fa-brands fa-twitter"></span></a>
+                <a href="#" title="Weibo"><span class="fa-brands fa-weibo"></span></a>
+                <a href="#" title="Weixin"><span class="fa-brands fa-weixin"></span></a>
+                <a href="#" title="X"><span class="fa-brands fa-x-twitter"></span></a>
+                <a href="#" title="Youtube"><span class="fa-brands fa-youtube"></span></a>
+            </div>
+            <p class="nvnews">Find more news and stories on <a href="#" title="Visit NVIDIA Blog">NVIDIA Blog</a></p>
+            <div class="cp_social center">
+                <span class="follow">Follow NVIDIA</span>
+                <a href="#" title="Bilibili"><span class="fa-brands fa-bilibili"></span></a>
+                <a href="#" title="Discord"><span class="fa-brands fa-discord"></span></a>
+                <a href="#" title="Facebook"><span class="fa-brands fa-facebook-f"></span></a>
+                <a href="#" title="Github"><span class="fa-brands fa-github"></span></a>
+                <a href="#" title="Instagram"><span class="fa-brands fa-instagram"></span></a>
+                <a href="#" title="Linkedin"><span class="fa-brands fa-linkedin-in"></span></a>
+                <a href="#" title="Medium"><span class="fa-brands fa-medium"></span></a>
+                <a href="#" title="Threads"><span class="fa-brands fa-threads"></span></a>
+                <a href="#" title="Tiktok"><span class="fa-brands fa-tiktok"></span></a>
+                <a href="#" title="Twitch"><span class="fa-brands fa-twitch"></span></a>
+                <a href="#" title="Twitter"><span class="fa-brands fa-twitter"></span></a>
+                <a href="#" title="Weibo"><span class="fa-brands fa-weibo"></span></a>
+                <a href="#" title="Weixin"><span class="fa-brands fa-weixin"></span></a>
+                <a href="#" title="X"><span class="fa-brands fa-x-twitter"></span></a>
+                <a href="#" title="Youtube"><span class="fa-brands fa-youtube"></span></a>
+            </div>
+            <p class="nvnews">Find more news and stories on <a href="#" title="Visit NVIDIA Blog">NVIDIA Blog</a></p>
+        </div>
+    </section>
+
+    <section class="theme_light padding">
+        <div class="wrapper">
+            <h2>Icon Font Light Theme</h2>
+            <p>Icon height: 24px &emsp;/&emsp; Auto width &emsp;/&emsp; Line-height: 1 &emsp;/&emsp; 15px gap </p>
+            <div class="cp_social">
+                <span class="follow">Follow NVIDIA</span>
+                <a href="#" title="Bilibili"><span class="fa-brands fa-bilibili"></span></a>
+                <a href="#" title="Discord"><span class="fa-brands fa-discord"></span></a>
+                <a href="#" title="Facebook"><span class="fa-brands fa-facebook-f"></span></a>
+                <a href="#" title="Github"><span class="fa-brands fa-github"></span></a>
+                <a href="#" title="Instagram"><span class="fa-brands fa-instagram"></span></a>
+                <a href="#" title="Linkedin"><span class="fa-brands fa-linkedin-in"></span></a>
+                <a href="#" title="Medium"><span class="fa-brands fa-medium"></span></a>
+                <a href="#" title="Threads"><span class="fa-brands fa-threads"></span></a>
+                <a href="#" title="Tiktok"><span class="fa-brands fa-tiktok"></span></a>
+                <a href="#" title="Twitch"><span class="fa-brands fa-twitch"></span></a>
+                <a href="#" title="Twitter"><span class="fa-brands fa-twitter"></span></a>
+                <a href="#" title="Weibo"><span class="fa-brands fa-weibo"></span></a>
+                <a href="#" title="Weixin"><span class="fa-brands fa-weixin"></span></a>
+                <a href="#" title="X"><span class="fa-brands fa-x-twitter"></span></a>
+                <a href="#" title="Youtube"><span class="fa-brands fa-youtube"></span></a>
+            </div>
+            <p class="nvnews">Find more news and stories on <a href="#" title="Visit NVIDIA Blog">NVIDIA Blog</a></p>
+            <div class="cp_social left">
+                <span class="follow">Follow NVIDIA</span>
+                <a href="#" title="Bilibili"><span class="fa-brands fa-bilibili"></span></a>
+                <a href="#" title="Discord"><span class="fa-brands fa-discord"></span></a>
+                <a href="#" title="Facebook"><span class="fa-brands fa-facebook-f"></span></a>
+                <a href="#" title="Github"><span class="fa-brands fa-github"></span></a>
+                <a href="#" title="Instagram"><span class="fa-brands fa-instagram"></span></a>
+                <a href="#" title="Linkedin"><span class="fa-brands fa-linkedin-in"></span></a>
+                <a href="#" title="Medium"><span class="fa-brands fa-medium"></span></a>
+                <a href="#" title="Threads"><span class="fa-brands fa-threads"></span></a>
+                <a href="#" title="Tiktok"><span class="fa-brands fa-tiktok"></span></a>
+                <a href="#" title="Twitch"><span class="fa-brands fa-twitch"></span></a>
+                <a href="#" title="Twitter"><span class="fa-brands fa-twitter"></span></a>
+                <a href="#" title="Weibo"><span class="fa-brands fa-weibo"></span></a>
+                <a href="#" title="Weixin"><span class="fa-brands fa-weixin"></span></a>
+                <a href="#" title="X"><span class="fa-brands fa-x-twitter"></span></a>
+                <a href="#" title="Youtube"><span class="fa-brands fa-youtube"></span></a>
+            </div>
+            <p class="nvnews">Find more news and stories on <a href="#" title="Visit NVIDIA Blog">NVIDIA Blog</a></p>
+            <div class="cp_social center">
+                <span class="follow">Follow NVIDIA</span>
+                <a href="#" title="Bilibili"><span class="fa-brands fa-bilibili"></span></a>
+                <a href="#" title="Discord"><span class="fa-brands fa-discord"></span></a>
+                <a href="#" title="Facebook"><span class="fa-brands fa-facebook-f"></span></a>
+                <a href="#" title="Github"><span class="fa-brands fa-github"></span></a>
+                <a href="#" title="Instagram"><span class="fa-brands fa-instagram"></span></a>
+                <a href="#" title="Linkedin"><span class="fa-brands fa-linkedin-in"></span></a>
+                <a href="#" title="Medium"><span class="fa-brands fa-medium"></span></a>
+                <a href="#" title="Threads"><span class="fa-brands fa-threads"></span></a>
+                <a href="#" title="Tiktok"><span class="fa-brands fa-tiktok"></span></a>
+                <a href="#" title="Twitch"><span class="fa-brands fa-twitch"></span></a>
+                <a href="#" title="Twitter"><span class="fa-brands fa-twitter"></span></a>
+                <a href="#" title="Weibo"><span class="fa-brands fa-weibo"></span></a>
+                <a href="#" title="Weixin"><span class="fa-brands fa-weixin"></span></a>
+                <a href="#" title="X"><span class="fa-brands fa-x-twitter"></span></a>
+                <a href="#" title="Youtube"><span class="fa-brands fa-youtube"></span></a>
+            </div>
+            <p class="nvnews">Find more news and stories on <a href="#" title="Visit NVIDIA Blog">NVIDIA Blog</a></p>
+        </div>
+    </section>
+
+
+
+    <!--
+    
+                    <span tabindex="0" class="fa-bilibili" title="Bilibili"></span>
+                <span tabindex="0" class="fa-discord" title="Discord"></span>
+                <span tabindex="0" class="fa-facebook-f" title="Facebook"></span>
+                <span tabindex="0" class="fa-github" title="Github"></span>
+                <span tabindex="0" class="fa-instagram" title="Instagram"></span>
+                <span tabindex="0" class="fa-linkedin-in" title="Linkedin"></span>
+                <span tabindex="0" class="fa-medium" title="Medium"></span>
+                <span tabindex="0" class="fa-threads" title="Threads"></span>
+                <span tabindex="0" class="fa-tiktok" title="Tiktok"></span>
+                <span tabindex="0" class="fa-twitch" title="Twitch"></span>
+                <span tabindex="0" class="fa-twitter" title="Twitter"></span>
+                <span tabindex="0" class="fa-weibo" title="Weibo"></span>
+                <span tabindex="0" class="fa-weixin" title="Weixin"></span>
+                <span tabindex="0" class="fa-x-twitter" title="X"></span>
+                <span tabindex="0" class="fa-youtube" title="Youtbe"></span>
+-->
+
+</body></html>
