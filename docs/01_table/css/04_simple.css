@@ -1,5 +1,6 @@
 :root {
     --cp_table_shadow: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+        --cp_table_shadow_right: linear-gradient(to left, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
 }
 
 @media screen and (min-width: 640px) {
@@ -37,6 +38,7 @@
 :root:has(#theme_dark:checked) {
  
          --cp_table_shadow: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    --cp_table_shadow_right: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
         
 
         --nv-dark-16: #ffffff;

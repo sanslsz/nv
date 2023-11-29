@@ -1,0 +1,362 @@
+<!docType html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Table Component Prototype</title>
+    <meta name="description" content="Table Component Prototype">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/00_table_general.css">
+    <link rel="stylesheet" href="css/04_simple.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+<!--    <meta name="color-scheme" content="light dark">-->
+    <style>
+        body {
+            background-color: var(--nv-15-ee);
+        }
+        h4 {
+            margin-bottom: var(--sp_px-xxxl);
+        }
+        .cp_disclaimer .theme_options {
+            display: flex;
+            gap: var(--sp_px-xl);
+            justify-content: center;
+            margin-top: var(--sp_em-xs);
+        }
+        .cp_disclaimer .material-icons {
+            vertical-align: text-bottom;
+            margin-left: var(--sp_em-xs);
+            margin-right: var(--sp_em-xs);
+        }
+        
+        
+/*        last column sticky */
+        
+@media screen and (max-width: 639px) {
+        
+        .md_table_sticky :is(tbody, thead) :is(th, td):last-child {
+        background-color: var(--nv-16);
+        position: sticky;
+        right: 0;
+        z-index: 1;
+    }
+    .md_table_sticky :is(tbody, thead) :is(th, td):last-child::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -6px;
+        width: 6px;
+        height: 100%;
+        background: var(--cp_table_shadow_right);
+    }
+            .md_table_sticky .cp_table_04_row col:nth-last-child(2) {
+        border-right: none;
+    }
+        .md_table_sticky .cp_table_04_row tbody tr:nth-child(odd) td:last-child {
+        background-color: var(--nv-15-5-f7);
+    }
+        }
+        
+        
+    </style>
+
+</head>
+
+<body>
+    <aside class="paddingsmall cp_disclaimer">
+        <div class="wrapper center">
+            This protoType is for design exploration, not meant for production use.
+            <div class="theme_options">
+            <label><input type="radio" id="theme_light" name="theme_option" checked><span class="material-icons">light_mode</span>Light theme</label>
+            <label><input type="radio" id="theme_dark" name="theme_option"><span class="material-icons">dark_mode</span>Dark theme</label>
+            </div>
+        </div>
+    </aside>
+    
+    <main>
+
+<!--
+        <section class="padding">
+            <div class="wrapper">
+                <h4>Simple table: 01_base (discard)</h4>
+                <div class="md_table_scroll cp_scrollbar">
+                    <table class="cp_table_simple cp_table_01_base">
+                        <caption>Table description text placeholder</caption>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <th></th>
+                            <th scope="col">GeForce RTX<br>4090</th>
+                            <th scope="col">GeForce RTX<br>4080</th>
+                            <th scope="col">GeForce RTX<br>4070 Ti</th>
+                            <th scope="col">GeForce RTX<br>4070</th>
+                            <th scope="col">GeForce RTX<br>4060 Ti</th>
+                            <th scope="col">GeForce RTX<br>4060</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">NVIDIA CUDA Cores</th>
+                                <td>16384</td>
+                                <td>9728</td>
+                                <td>7680</td>
+                                <td>5888</td>
+                                <td>4352</td>
+                                <td>3072</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Boost Clock (gHz)</th>
+                                <td>2.52</td>
+                                <td>2.51</td>
+                                <td>2.61</td>
+                                <td>2.48</td>
+                                <td>2.54</td>
+                                <td>2.46</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Memory Size (GB)</th>
+                                <td>24</td>
+                                <td>16</td>
+                                <td>12</td>
+                                <td>12</td>
+                                <td>16 or 8</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Memory Type</th>
+                                <td>GDDR6X</td>
+                                <td>GDDR6X</td>
+                                <td>GDDR6X</td>
+                                <td>GDDR6X</td>
+                                <td>GDDR6</td>
+                                <td>GDDR6</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+-->
+        
+        
+        
+        
+        
+        
+        
+        <section class="padding">
+            <div class="wrapper">
+                <h4>Clean with background</h4>
+                <table class="cp_table_simple cp_table_02_clean background md_table_list">
+                    <caption>Table description text placeholder</caption>
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th></th>
+                        <th scope="col">GeForce RTX<br>4090</th>
+                        <th scope="col">GeForce RTX<br>4080</th>
+                        <th scope="col">GeForce RTX<br>4070 Ti</th>
+                        <th scope="col">GeForce RTX<br>4070</th>
+                        <th scope="col">GeForce RTX<br>4060 Ti</th>
+                        <th scope="col">GeForce RTX<br>4060</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">NVIDIA CUDA Cores</th>
+                            <td>16384</td>
+                            <td>9728</td>
+                            <td>7680</td>
+                            <td>5888</td>
+                            <td>4352</td>
+                            <td>3072</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Boost Clock (gHz)</th>
+                            <td>2.52</td>
+                            <td>2.51</td>
+                            <td>2.61</td>
+                            <td>2.48</td>
+                            <td>2.54</td>
+                            <td>2.46</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Memory Size (GB)</th>
+                            <td>24</td>
+                            <td>16</td>
+                            <td>12</td>
+                            <td>12</td>
+                            <td>16 or 8</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Memory Type</th>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6</td>
+                            <td>GDDR6</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        <section class="padding">
+            <div class="wrapper">
+                <h4>Alternating column color</h4>
+                <div class="md_table_sticky cp_table_scrollbar">
+                <table class="cp_table_simple cp_table_03_col">
+                    <caption>Table description text placeholder</caption>
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th></th>
+                        <th scope="col">GeForce RTX<br>4090</th>
+                        <th scope="col">GeForce RTX<br>4080</th>
+                        <th scope="col">GeForce RTX<br>4070 Ti</th>
+                        <th scope="col">GeForce RTX<br>4070</th>
+                        <th scope="col">GeForce RTX<br>4060 Ti</th>
+                        <th scope="col">GeForce RTX<br>4060</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">NVIDIA CUDA Cores</th>
+                            <td>16384</td>
+                            <td>9728</td>
+                            <td>7680</td>
+                            <td>5888</td>
+                            <td>4352</td>
+                            <td>3072</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Boost Clock (gHz)</th>
+                            <td>2.52</td>
+                            <td>2.51</td>
+                            <td>2.61</td>
+                            <td>2.48</td>
+                            <td>2.54</td>
+                            <td>2.46</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Memory Size (GB)</th>
+                            <td>24</td>
+                            <td>16</td>
+                            <td>12</td>
+                            <td>12</td>
+                            <td>16 or 8</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Memory Type</th>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6</td>
+                            <td>GDDR6</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                    </div>
+            </div>
+        </section>
+        <section class="padding">
+            <div class="wrapper">
+                <h4>Alternating row color</h4>
+                <div class="md_table_sticky cp_table_scrollbar">
+                <table class="cp_table_simple cp_table_04_row">
+                    <caption>Table description text placeholder</caption>
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th></th>
+                        <th scope="col">GeForce RTX<br>4090</th>
+                        <th scope="col">GeForce RTX<br>4080</th>
+                        <th scope="col">GeForce RTX<br>4070 Ti</th>
+                        <th scope="col">GeForce RTX<br>4070</th>
+                        <th scope="col">GeForce RTX<br>4060 Ti</th>
+                        <th scope="col">GeForce RTX<br>4060</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">NVIDIA CUDA Cores</th>
+                            <td>16384</td>
+                            <td>9728</td>
+                            <td>7680</td>
+                            <td>5888</td>
+                            <td>4352</td>
+                            <td>3072</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Boost Clock (gHz)</th>
+                            <td>2.52</td>
+                            <td>2.51</td>
+                            <td>2.61</td>
+                            <td>2.48</td>
+                            <td>2.54</td>
+                            <td>2.46</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Memory Size (GB)</th>
+                            <td>24</td>
+                            <td>16</td>
+                            <td>12</td>
+                            <td>12</td>
+                            <td>16 or 8</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Memory Type</th>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6X</td>
+                            <td>GDDR6</td>
+                            <td>GDDR6</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body></html>
