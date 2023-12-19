@@ -3,33 +3,50 @@
     --box-bgcolor-light: rgba(255, 255, 255, 0.7);
     --box-padding: 15px;
     --box-heading: 16px;
+
+    --gtc-box-padding: 30px;
+    --casestudy-box-padding: 30px;
+
 }
 
 @media screen and (min-width: 480px) {
-    :root {
-
-    }
+    :root {}
 
 }
 
 
 @media screen and (min-width: 640px) {
     :root {
---box-width: 50%;
+        --box-width: 50%;
+
+        --gtc-box-padding: 40px;
+        --casestudy-box-padding: 30px;
+
+        --casestudy-height: 550px;
     }
 
 }
 
 @media screen and (min-width: 1024px) {
     :root {
---box-width: 40%;
+        --box-width: 40%;
+
+        --gtc-box-padding: 50px;
+        --casestudy-box-padding: 40px;
+
+        --casestudy-height: 660px;
     }
 
 }
 
 @media screen and (min-width: 1350px) {
     :root {
---box-width: 35%;
+        --box-width: 35%;
+
+        --gtc-box-padding: 60px;
+        --casestudy-box-padding: 45px;
+
+        --casestudy-height: 770px;
     }
 
 
@@ -45,93 +62,203 @@
 */
 
 
-/*================= success ========================*/
+/*================= banner ========================*/
 
-.sc_banner .box .boxpadding {
+.sc_banner .box {
     padding: var(--box-padding);
 }
-.sc_banner .box .boxpadding > *:not(:last-child) {
+
+.sc_banner .box > *:not(:last-child) {
     margin-bottom: calc(var(--box-padding) / 2);
 }
-.sc_banner .box h4 {
+
+.containeradjust h4 {
     font-size: var(--box-heading);
 }
 
 
 @media screen and (min-width: 640px) {
 
-.sc_banner {
-    position: relative;
-    padding: var(--padding-section);
-    background-color: transparent !important;
-}
-.sc_banner figure {
-    display: flex;
-    align-items: center;
-    min-height: calc(520px - var(--padding-tb)*2);
+    .sc_banner {
+        position: relative;
+        padding: var(--padding-section);
+        background-color: transparent !important;
+    }
+
+    .sc_banner figure {
+        display: flex;
+        align-items: center;
+        min-height: calc(520px - var(--padding-tb)*2);
+    }
+
+    .sc_banner figure :is(img, video) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    .containeradjust {
+
+        container-type: inline-size;
+        container-name: bannerbox;
+
+        resize: horizontal;
+        overflow: hidden;
+        width: var(--box-width);
+    }
+
+    .sc_banner .box {
+        position: relative;
+        color: var(--nv-16);
+        background-color: var(--box-bgcolor-dark);
+        backdrop-filter: blur(15px);
+    }
+
+    .sc_banner .box.light {
+        color: var(--nv-0);
+        background-color: var(--box-bgcolor-light);
+    }
+
+
+    @container bannerbox (min-width: 300px) {
+        .box {
+            --box-padding: 20px;
+        }
+    }
+
+    @container (min-width: 380px) {
+        .box {
+            --box-padding: 25px;
+            --box-heading: 18px;
+        }
+    }
+
+    @container (min-width: 460px) {
+        .box {
+            --box-padding: 30px;
+            --box-heading: 20px;
+        }
+    }
+
+    @container (min-width: 580px) {
+        .box {
+            --box-padding: 35px;
+            --box-heading: 22px;
+        }
+    }
+
+    @container (min-width: 700px) {
+        .box {
+            --box-padding: 40px;
+            --box-heading: 24px;
+        }
+    }
+
+    @container (min-width: 820px) {
+        .box {
+            --box-padding: 45px;
+            --box-heading: 26px;
+        }
+    }
+
 }
 
-.sc_banner figure img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+
+/*================= btc ========================*/
+
+.gtc h1 {
+    font-size: var(--tp_h-large);
+}
+
+.gtc .box {
+    padding: var(--gtc-box-padding);
+}
+
+.gtc .box > *:not(:last-child) {
+    margin-bottom: calc(var(--gtc-box-padding) / 2);
+}
+
+video {
+    max-width: 100%;
+    display: block;
     object-fit: cover;
-    z-index: -1;
-}
-.sc_banner .box {
-    position: relative;
-    color: var(--nv-16);
-    background-color: var(--box-bgcolor-dark);
-    backdrop-filter:blur(15px);
-    width: var(--box-width);
-    
-    container-type: inline-size;
-    container-name: bannerbox;
-    
-    resize: horizontal;
-    overflow: hidden;
-}
-.sc_banner .box.light {
-    color: var(--nv-0);
-    background-color: var(--box-bgcolor-light);
 }
 
-@container (min-width: 300px) {
-    .boxpadding {
-     --box-padding: 20px; 
+.cp_cta_prim {
+    color: var(--nv-0);
+    background-color: var(--nv-green);
+}
+
+@media screen and (max-width: 639px) {
+    .gtc video {
+        aspect-ratio: 16 / 9;
     }
 }
-@container (min-width: 380px) {
-    .boxpadding {
-     --box-padding: 25px; 
-    --box-heading: 18px;
+
+@media screen and (min-width: 640px) {
+    .gtc {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .gtc figure {
+        min-height: 580px;
+    }
+
+    .sc_banner .colconfig {
+        width: calc(((var(--wrapper) - 330px) / 12) * var(--tb-colspan) + 30px * var(--tb-colspan) - 30px);
     }
 }
-@container (min-width: 460px) {
-    .boxpadding {
-     --box-padding: 30px; 
-    --box-heading: 20px;
+
+@media screen and (min-width: 1024px) {
+    .sc_banner .colconfig {
+        width: calc(((var(--wrapper) - 330px) / 12) * var(--lp-colspan) + 30px * var(--lp-colspan) - 30px);
     }
 }
-@container (min-width: 580px) {
-    .boxpadding {
-     --box-padding: 35px; 
-    --box-heading: 22px;
+
+@media screen and (min-width: 1350px) {
+    .sc_banner .colconfig {
+        width: calc(((var(--wrapper) - 330px) / 12) * var(--dt-colspan) + 30px * var(--dt-colspan) - 30px);
     }
 }
-@container (min-width: 700px) {
-    .boxpadding {
-     --box-padding: 40px; 
-    --box-heading: 24px;
+
+
+
+/*================= case study ========================*/
+
+
+.casestudy h1 {
+    font-size: var(--tp_h-medium);
+}
+
+.casestudy .box {
+    padding: var(--casestudy-box-padding);
+}
+
+.casestudy .box > *:not(:first-child) {
+    margin-top: calc(var(--casestudy-box-padding) / 2);
+}
+
+.casestudy img {
+    object-position: center 100%;
+}
+
+@media screen and (max-width: 639px) {
+    .casestudy img {
+        aspect-ratio: 16 / 9;
     }
 }
-@container (min-width: 820px) {
-    .boxpadding {
-     --box-padding: 45px; 
-    --box-heading: 26px;
+
+@media screen and (min-width: 640px) {
+    .casestudy {
+        padding-top: 0;
+        padding-bottom: 0;
     }
-}
-    
+    .casestudy figure {
+        min-height: var(--casestudy-height);
+    }
 }

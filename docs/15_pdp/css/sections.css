@@ -4,6 +4,8 @@
     --tour-annotation-text-width: 300px;
 
     --cp_newscard-toppadding: 120px;
+    
+    --sc_arch-topimg: 40vw;
 
 
 }
@@ -38,6 +40,8 @@
         --cp_solutions_list-display: grid;
         --cp_solutions_list-col: 2fr 3fr;
         --cp_solutions_list-div: 2;
+        
+        --sc_arch-topimg: 240px;
 
     }
 
@@ -58,6 +62,8 @@
 
         --cp_solutions_list-col: 1fr 1fr 1fr;
         --cp_solutions_list-div: revert;
+        
+        --sc_arch-topimg: 380px;
     }
 
 }
@@ -67,6 +73,8 @@
         --success-box-width: 35%;
         --tour-annotation-height: 48px;
         --cp_newscard-toppadding: 200px;
+        
+        --sc_arch-topimg: 480px;
     }
 
 
@@ -95,11 +103,15 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.sc_success figcaption > *:not(:last-child) {
+    margin-bottom: calc(var(--sp_card-padding) / 2);
+}
+
 .sc_success figcaption > ul {
     display: grid;
     grid-template-columns: var(--success-performance-grid);
-    grid-gap: 1em;
-    margin: 1em 0;
+    grid-gap: calc(var(--sp_card-padding) / 2) var(--sp_card-padding);
+/*    margin: 1em 0;*/
 }
 
 .sc_success .performance {
@@ -151,7 +163,7 @@
     .sc_success figcaption {
         position: relative;
         width: var(--success-box-width);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(15px);
     }
 
 }
@@ -163,7 +175,7 @@
 /*======================= tour ======================*/
 
 /* visual */
-section#sc_tour {
+section:is(#sc_tour, #sc_tour_hover) {
     overflow: hidden;
     /*    prevent scrollbar when the box goes outside*/
 }
@@ -1026,5 +1038,57 @@ section#sc_tour {
 
     .cp_solutions.list > li > div:last-child {
         grid-column-start: var(--cp_solutions_list-div);
+    }
+}
+
+/*================ architecture =================*/
+
+.sc_architecture.sc_architecture {
+    padding-top: var(--sc_arch-topimg);
+    position: relative;
+    overflow: hidden;
+    color: var(--nv-0);
+    background-color: var(--nv-16);
+}
+.sc_architecture.dark{
+    color: var(--nv-16);
+    background-color: var(--nv-0);
+}
+.sc_architecture .wrapper > *:not(.art) {
+    z-index: 1;
+    position: relative;
+}
+    .sc_architecture .col li + li {
+        margin-top: var(--sp_px-xxl);
+    }
+.sc_architecture .art {
+    position: absolute;
+    top: calc(var(--sc_arch-topimg) * -0.07);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: unset;
+    -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0));
+}
+
+@media screen and (min-width: 640px) {
+    .sc_architecture .art {
+        width: calc(var(--wrapper) * 1.1);
+    }
+    .sc_architecture .col {
+        column-count: 2;
+        column-gap: var(--sp_px-xxxl);
+    }
+    .sc_architecture .col li {
+        break-inside: avoid;
+    }
+    .sc_architecture .col li + li {
+        margin-top: var(--sp_px-xxxxl);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .sc_architecture .col {
+        column-count: 3;
     }
 }

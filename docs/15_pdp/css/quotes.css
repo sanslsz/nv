@@ -1,0 +1,184 @@
+:root {
+    --section-w: 100%;
+    --sidebar-w: 100%;
+
+
+}
+
+@media screen and (min-width: 480px) {
+    :root {}
+
+}
+
+
+@media screen and (min-width: 640px) {
+    :root {}
+
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --section-w: 790px;
+        --sidebar-w: 298px;
+
+        --84flex: flex;
+        --84gap: 30px;
+
+    }
+
+}
+
+@media screen and (min-width: 1350px) {
+    :root {
+        --section-w: 850px;
+        --sidebar-w: 410px;
+
+        --84gap: 30px;
+
+    }
+
+
+}
+
+
+
+/*
+@media (prefers-color-scheme: dark) {
+
+   
+}
+*/
+
+
+
+
+
+/*================ default quotes =================*/
+
+blockquote {
+    margin: 0;
+}
+
+h4 {
+    margin-bottom: 2em;
+}
+
+.cp_quote {
+    margin-top: var(--sp_em-xxl);
+    margin-bottom: var(--sp_em-xxl);
+}
+
+.cp_quote::before,
+.cp_quote::after {
+    content: '\201c';
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 0;
+    position: relative;
+    top: 0.25em;
+    padding-right: 0.3em;
+    opacity: 0.5;
+}
+
+.cp_quote::after {
+    content: "\201d";
+    padding-left: 0.3em;
+    padding-right: 0;
+}
+
+
+.cp_quote ~ footer .name {
+    font-weight: bold;
+}
+
+
+/*================ section =================*/
+
+
+
+blockquote.section {
+    width: var(--section-w);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+blockquote.section footer > * {
+    display: inline;
+}
+
+blockquote.section footer :is(.name, .position)::after {
+    content: ',';
+    font-weight: normal;
+    margin-right: 0.15em;
+}
+
+
+
+/*================ sidebar =================*/
+
+
+
+blockquote.sidebar {
+    width: var(--sidebar-w);
+}
+
+blockquote.sidebar footer .name {
+    margin-bottom: var(--sp_em-xs);
+}
+
+blockquote.sidebar footer :is(.position)::after {
+    content: ',';
+    font-weight: normal;
+    margin-right: 0.15em;
+}
+
+blockquote.sidebar footer :is(.position, .organization) {
+    display: inline;
+}
+
+@media screen and (min-width: 1024px) {
+    blockquote.sidebar .cp_quote {
+        margin-top: 0;
+    }
+}
+
+
+/*================ hanging punctuation =================*/
+
+blockquote.hanging {
+    padding-left: 1.45em;
+}
+blockquote.hanging:has(.tp_p-l) {
+    padding-left: calc(var(--tp_p-l) * 1.45);
+}
+
+
+blockquote.hanging .cp_quote {
+    text-indent: -1.45em;
+}
+
+
+/*================ greenbar =================*/
+
+blockquote.greenbar {
+    border-left: 10px solid var(--nv-green);
+    padding-left: calc(1.45em + 10px);
+}
+blockquote.greenbar:has(.tp_p-l)  {
+    padding-left: calc(var(--tp_p-l) * 1.45 + 10px);
+}
+
+
+
+/*================ editorial layout =================*/
+.container714 {
+    display: var(--84flex, block);
+    column-gap: var(--84gap);
+    align-items: flex-start;
+}
+
+.container714 .sidebar {
+    flex: 0 0 auto;
+}
+
