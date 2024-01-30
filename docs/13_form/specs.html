@@ -1,0 +1,1942 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Form controls: individual elements</title>
+    <!--    <meta name="description" content="">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/specs.css" rel="stylesheet">
+    <!--    <meta name="theme-color" content="#fafafa">-->
+    <meta name="color-scheme" content="light">
+    <style>
+        /*        custom reset */
+        @import url(../css/00_fonts.css);
+        @import url(../css/01_type_color.css);
+        @import url(../css/02_base.css);
+        @import url(../css/03_component.css);
+        @import url(../css/04_module.css);
+        @import url(css/reset.css);
+        @import url(css/form.css);
+
+        body {
+            background-color: var(--nv-16);
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <aside class="paddingsmall cp_disclaimer">
+        <div class="wrapper center">
+            <p>
+                This prototype is for design exploration, not meant for production use.
+            </p>
+            <ul class="theme_select">
+                <li>
+                    <input id="theme_select_light" type="radio" id="theme_light" name="theme_select" checked>
+                    <label for="theme_select_light"><span class="material-icons">light_mode</span>Light theme</label>
+                </li>
+
+                <li>
+                    <input id="theme_select_dark" type="radio" id="theme_dark" name="theme_select">
+                    <label for="theme_select_dark"><span class="material-icons">dark_mode</span>Dark theme</label>
+                </li>
+            </ul>
+        </div>
+    </aside>
+<!--    text -->
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Text input</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <label for="f_i_text_a1" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_a1">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <label for="f_i_text_a2" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_a2" disabled>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Filled</p>
+                    <p class="spec_description">User entered value in the field</p>
+                    <div>
+                        <label for="f_i_text_a3" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_a3" value="John Smith pre-filled">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Valid</p>
+                    <p class="spec_description">Validation returns positive</p>
+                    <div class="valid">
+                        <label for="f_i_text_a4" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_a4" value="Data entered here is valid">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Invalid</p>
+                    <p class="spec_description">Validation returns negative. Error messages are mandatory.</p>
+                    <div class="invalid">
+                        <label for="f_i_text_a5" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_a5" value="Data entered here is invalid">
+                        <p class="cp_f_message error">Error message placeholder</p>
+                    </div>
+                </li>
+            </ul>
+            <h3>Features</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <div>
+                        <label for="f_i_text_b1" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_b1">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">No label</p>
+                    <p class="spec_description">Label is hidden</p>
+                    <div>
+                        <!--                        <label for="f_i_text_b2" class="cp_f_label_text">Text label</label>-->
+                        <input type="text" class="cp_f_i_text" id="f_i_text_b2">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Placeholder</p>
+                    <p class="spec_description">Temporary example text that disappears when in focus</p>
+                    <div>
+                        <label for="f_i_text_b3" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_b3" placeholder="John Smith pre-filled">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <div>
+                        <label for="f_i_text_b4" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_b4">
+                        <p class="cp_f_message">Message placeholder</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Prefilled value</p>
+                    <p class="spec_description">Pre-filled entry that loads with the page and can be cleared by the user</p>
+                    <div>
+                        <label for="f_i_text_b5" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_b5" value="John Smith pre-filled">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Suggested values</p>
+                    <p class="spec_description">A list of predefined values for quick entry</p>
+                    <div>
+                        <label for="f_i_text_b6" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_b6" list="text_datalist">
+                        <datalist id="text_datalist">
+                            <option>Value suggestion one</option>
+                            <option>Value suggestion two</option>
+                            <option>Value suggestion three</option>
+                            <option>Value suggestion four</option>
+                            <option>Value suggestion five</option>
+                        </datalist>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Read only</p>
+                    <p class="spec_description">Prevents users from changing the values, however it still can be highlighted and copied</p>
+                    <div>
+                        <label for="f_i_text_b7" class="cp_f_label_text">Text label</label>
+                        <input type="text" class="cp_f_i_text" id="f_i_text_b7" value="John Smith pre-filled" readonly>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    
+<!--    search -->
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Search input</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <label for="f_i_search_a1" class="cp_f_label_text">Search label</label>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_a1">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <label for="f_i_search_a2" class="cp_f_label_text">Search label</label>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_a2" disabled>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Filled</p>
+                    <p class="spec_description">User entered value in the field</p>
+                    <div>
+                        <label for="f_i_search_a3" class="cp_f_label_text">Search label</label>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_a3" value="Search keyword">
+                    </div>
+                </li>
+            </ul>
+            <h3>Features</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <div>
+                        <label for="f_i_search_b1" class="cp_f_label_text">Search label</label>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_b1">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">No label</p>
+                    <p class="spec_description">Label is hidden</p>
+                    <div>
+                        <!--                        <label for="f_i_search_b2" class="cp_f_label_text">Search label</label>-->
+                        <input type="search" class="cp_f_i_search" id="f_i_search_b2">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Placeholder</p>
+                    <p class="spec_description">Temporary example text that disappears when in focus</p>
+                    <div>
+                        <label for="f_i_search_b3" class="cp_f_label_text">Search label</label>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_b3" placeholder="Type in search keywords here">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <div>
+                        <label for="f_i_search_b4" class="cp_f_label_text">Search label</label>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_b4">
+                        <p class="cp_f_message">Message placeholder</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Prefilled value</p>
+                    <p class="spec_description">Pre-filled entry that loads with the page and can be cleared by the user</p>
+                    <div>
+                        <label for="f_i_search_b5" class="cp_f_label_text">Search label</label>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_b5" value="John Smith pre-filled">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Suggested values</p>
+                    <p class="spec_description">A list of predefined values for quick entry</p>
+                    <div>
+                        <label for="f_i_search_b6" class="cp_f_label_text">Search label</label>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_b6" list="text_datalist">
+                        <datalist id="text_datalist">
+                            <option>Value suggestion one</option>
+                            <option>Value suggestion two</option>
+                            <option>Value suggestion three</option>
+                            <option>Value suggestion four</option>
+                            <option>Value suggestion five</option>
+                        </datalist>
+                    </div>
+                </li>
+            </ul>
+            <h3>Pop-up widgets</h3>
+            <ul class="displaygrid col2">
+                <li>
+                    <p class="spec_title">Search within section</p>
+                    <p class="spec_description">Applies search criteria to the items within the section</p>
+                    <div>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_c1" value="v100">
+                        <p class="cp_f_i_search_intro">Found 30 out of the 126 items match the search keyword “ <span>V100</span>” </p>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Search suggestion</p>
+                    <p class="spec_description">Suggests popular topics or search history in the pop-up widget</p>
+                    <div>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_c2">
+                        <div class="cp_f_i_search_widget">
+                            <ul class="items trend">
+                                <li>Automotive</li>
+                                <li>Consumer Internet</li>
+                                <li>Cybersecurity</li>
+                                <li>Energy</li>
+                                <li>Artificial Intelligence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Global search</p>
+                    <p class="spec_description">Highlights keywords in the pop-up widget</p>
+                    <div>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_c3" value="Artificial Intelligence">
+                        <div class="cp_f_i_search_widget">
+                            <ul class="items">
+                                <li><span>Artificial Intelligence</span> and Deep Learning in Retail | NVIDIA</li>
+                                <li>Deep Learning at Scale at DFKI (German Research Centre for <span>Artificial Intelligence</span>)</li>
+                                <li>GTC Silicon Valley-2019: AI in Astrophysics: Applying <span>Artificial Intelligence</span> and Deep Learning to Astronomical Research</li>
+                                <li>Deep Learning & <span>AI</span> Use Cases and Customer Success Stories | NVIDIA</li>
+                                <li><span>Artificial Intelligence</span> System Comprehends Text Like Humans Do | NVIDIA Technical Blog</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Filter search</p>
+                    <p class="spec_description">Displays matches from the filter items</p>
+                    <div>
+                        <input type="search" class="cp_f_i_search" id="f_i_search_c4" value="30">
+                        <div class="cp_f_i_search_widget">
+                            <ul class="items">
+                                <li><span>Processor Type:</span> RTX3030</li>
+                                <li><span>NVIDIA GPU:</span> A30</li>
+                                <li><span>Validation Type:</span> NGC-330</li>
+                                <li><span>Max CPU Per Node:</span> 30</li>
+                                <li><span>Server Model:</span> IPC-7130</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="span2">
+                    <p class="spec_title">Complex search</p>
+                    <p class="spec_description">Displays matches, trending topics and featured videos</p>
+                    <div class="widget_complex_container">
+                        <input type="search" class="cp_f_i_search" id="f_i_search_c5" value="Artificial Intelligence" style="width: 100%">
+                        <div class="cp_f_i_search_widget complex" style="max-width: unset">
+                            <ul class="items">
+                                <li><span>Artificial Intelligence</span> and Deep Learning in Retail | NVIDIA</li>
+                                <li>Deep Learning at Scale at DFKI (German Research Centre for <span>Artificial Intelligence</span>)</li>
+                                <li>GTC Silicon Valley-2019: AI in Astrophysics: Applying <span>Artificial Intelligence</span> and Deep Learning to Astronomical Research</li>
+                                <li>Deep Learning & <span>AI</span> Use Cases and Customer Success Stories | NVIDIA</li>
+                                <li><span>Artificial Intelligence</span> System Comprehends Text Like Humans Do | NVIDIA Technical Blog</li>
+                            </ul>
+                            <div class="extra">
+                                <p class="grouptitle">Trending on NVIDIA.com</p>
+                                <ul class="items trend">
+                                    <li>Automotive</li>
+                                    <li>Consumer Internet</li>
+                                    <li>Cybersecurity</li>
+                                    <li>Energy</li>
+                                    <li>Artificial Intelligence</li>
+                                </ul>
+                                <p class="grouptitle">Featured Videos</p>
+                                <ul class="videos">
+                                    <li>
+                                        <div class="thumb"></div>
+                                        <p>Video description</p>
+                                    </li>
+                                    <li>
+                                        <div class="thumb"></div>
+                                        <p>Video description</p>
+                                    </li>
+                                    <li>
+                                        <div class="thumb"></div>
+                                        <p>Video description</p>
+                                    </li>
+                                    <li>
+                                        <div class="thumb"></div>
+                                        <p>Video description</p>
+                                    </li>
+                                    <li>
+                                        <div class="thumb"></div>
+                                        <p>Video description</p>
+                                    </li>
+                                    <li>
+                                        <div class="thumb"></div>
+                                        <p>Video description</p>
+                                    </li>
+
+
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+<!--  password  -->
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Password input</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password" disabled>
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Filled</p>
+                    <p class="spec_description">User entered value in the field</p>
+                    <div>
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password" value="myP4$$w0rd">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Valid</p>
+                    <p class="spec_description">Validation returns positive</p>
+                    <div class="valid">
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password" value="myP4$$w0rd">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Invalid</p>
+                    <p class="spec_description">Validation returns negative. Error messages are mandatory.</p>
+                    <div class="invalid">
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password" value="myP4$$w0rd">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                        <p class="cp_f_message error">The password need to be at least 10 characters and include one number, upppercase and lowercase character.</p>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+            <h3>Features</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <div>
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">No label</p>
+                    <p class="spec_description">Label is hidden</p>
+                    <div>
+<!--                        <label for="f_i_password" class="cp_f_label_text">Password</label>-->
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Placeholder</p>
+                    <p class="spec_description">Temporary example text that disappears when in focus</p>
+                    <div>
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password" placeholder="Enter your password here">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <div>
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                        <p class="cp_f_message">The password need to be at least 10 characters and include one number, upppercase and lowercase character.</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Reveal password</p>
+                    <p class="spec_description">Toggles between visible and redacted password</p>
+                    <div>
+                        <label for="f_i_password" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="text" class="cp_f_i_password" id="f_i_password" value="myP4$$w0rd">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility</span>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>    
+    
+<!-- textarea -->
+    
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Text input</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <label for="f_textarea_a_1" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_a_1" rows="5" autocomplete="on"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <label for="f_textarea_a_2" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_a_2" rows="5" autocomplete="on" disabled></textarea>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Filled</p>
+                    <p class="spec_description">User entered value in the field</p>
+                    <div>
+                        <label for="f_textarea_a_3" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_a_3" rows="5" autocomplete="on">Filled value text</textarea>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Valid</p>
+                    <p class="spec_description">Validation returns positive</p>
+                    <div class="valid">
+                        <label for="f_textarea_a_4" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_a_4" rows="5" autocomplete="on">Filled value</textarea>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Invalid</p>
+                    <p class="spec_description">Validation returns negative. Error messages are mandatory.</p>
+                    <div class="invalid">
+                        <label for="f_textarea_a_5" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_a_5" rows="5" autocomplete="on"></textarea>
+                        <p class="cp_f_message error">Error message placeholder</p>
+                    </div>
+                </li>
+            </ul>
+            <h3>Features</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <div>
+                        <label for="f_textarea_b_1" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_b_1" rows="5" autocomplete="on"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">No label</p>
+                    <p class="spec_description">Label is hidden</p>
+                    <div>
+<!--                        <label for="f_textarea_b_2" class="cp_f_label_text">Text box label</label>-->
+                        <textarea class="cp_f_textarea" id="f_textarea_b_2" rows="5" autocomplete="on"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Placeholder</p>
+                    <p class="spec_description">Temporary example text that disappears when in focus</p>
+                    <div>
+                        <label for="f_textarea_b_3" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_b_3" rows="5" autocomplete="on" placeholder="Placeholder text"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <div>
+                        <label for="f_textarea_b_4" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_b_4" rows="5" autocomplete="on"></textarea>
+                        <p class="cp_f_message">Message placeholder</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Prefilled value</p>
+                    <p class="spec_description">Pre-filled entry that loads with the page and can be cleared by the user</p>
+                    <div>
+                        <label for="f_textarea_b_5" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_b_5" rows="5" autocomplete="on">Prefilled value.&#13;Second line indicator.
+                        </textarea>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Read only</p>
+                    <p class="spec_description">Prevents users from changing the values, however it still can be highlighted and copied</p>
+                    <div>
+                        <label for="f_textarea_b_6" class="cp_f_label_text">Text box label</label>
+                        <textarea class="cp_f_textarea" id="f_textarea_b_6" rows="5" autocomplete="on" readonly>Read only text.</textarea>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+<!--  checkbox  -->
+
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Checkboxes</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>Single states</h3>
+            <ul class="displaygrid">
+                <li>
+                    
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div class="cp_f_checkbox_container">
+                        <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_1_1">
+                        <label for="f_i_checkbox_1_1" class="cp_f_label_checkbox">Checkbox label</label>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Checked</p>
+                    <p class="spec_description">Activated</p>
+                    <div class="cp_f_checkbox_container">
+                        <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_1_2" checked>
+                        <label for="f_i_checkbox_1_2" class="cp_f_label_checkbox">Checkbox label</label>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <div class="cp_f_checkbox_container">
+                        <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_1_3" disabled>
+                        <label for="f_i_checkbox_1_3" class="cp_f_label_checkbox">Checkbox label</label>
+                    </div>
+                    </div>
+                </li>
+                
+            </ul>
+            
+            <h3>Group states</h3>
+            <ul class="displaygrid col2">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <fieldset class="cp_f_fieldset">
+                        <legend>Checkbox group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2_1">
+                                <label for="f_i_checkbox_2_1" class="cp_f_label_checkbox">Checkbox option one</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2_2">
+                                <label for="f_i_checkbox_2_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2_3" checked>
+                                <label for="f_i_checkbox_2_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2_4" checked>
+                                <label for="f_i_checkbox_2_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+                
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <fieldset class="cp_f_fieldset" disabled>
+                        <legend>Checkbox group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3_1">
+                                <label for="f_i_checkbox_3_1" class="cp_f_label_checkbox">Checkbox option one</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3_2">
+                                <label for="f_i_checkbox_3_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3_3">
+                                <label for="f_i_checkbox_3_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3_4">
+                                <label for="f_i_checkbox_3_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+                
+                <li>
+                    <p class="spec_title">Invalid</p>
+                    <p class="spec_description">Validation returns negative. Error messages are mandatory.</p>
+                    <fieldset class="cp_f_fieldset invalid">
+                        <legend>Checkbox group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4_1">
+                                <label for="f_i_checkbox_4_1" class="cp_f_label_checkbox">Checkbox option one</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4_2">
+                                <label for="f_i_checkbox_4_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4_3">
+                                <label for="f_i_checkbox_4_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4_4">
+                                <label for="f_i_checkbox_4_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                        <p class="cp_f_message error">Error message placeholder</p>
+                    </fieldset>
+                </li>
+                
+                
+                
+            </ul>
+            <h3>Features</h3>
+            <ul class="displaygrid col2">
+
+                <li class="span2">
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <fieldset class="cp_f_fieldset">
+                        <legend>Checkbox group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_5_1">
+                                <label for="f_i_checkbox_5_1" class="cp_f_label_checkbox">Checkbox option one</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_5_2">
+                                <label for="f_i_checkbox_5_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_5_3" checked>
+                                <label for="f_i_checkbox_5_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_5_4" checked>
+                                <label for="f_i_checkbox_5_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                        <p class="cp_f_message">Please select one or more software(s)</p>
+                    </fieldset>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!--  radio  -->
+
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Radio buttons</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>Single states</h3>
+            <ul class="displaygrid">
+                <li>
+                    
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div class="cp_f_checkbox_container">
+                        <input type="radio" class="cp_f_i_radio" id="f_i_radio_1_1">
+                        <label for="f_i_radio_1_1" class="cp_f_label_checkbox">Checkbox label</label>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Checked</p>
+                    <p class="spec_description">Activated</p>
+                    <div class="cp_f_checkbox_container">
+                        <input type="radio" class="cp_f_i_radio" id="f_i_radio_1_2" checked>
+                        <label for="f_i_radio_1_2" class="cp_f_label_checkbox">Radio button label</label>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <div class="cp_f_checkbox_container">
+                        <input type="radio" class="cp_f_i_radio" id="f_i_radio_1_3" disabled>
+                        <label for="f_i_radio_1_3" class="cp_f_label_checkbox">Radio button label</label>
+                    </div>
+                    </div>
+                </li>
+                
+            </ul>
+            
+            <h3>Group states</h3>
+            <ul class="displaygrid col2">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <fieldset class="cp_f_fieldset">
+                        <legend>Radio button group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_2_1" name="f_i_radio_2">
+                                <label for="f_i_radio_2_1" class="cp_f_label_checkbox">Checkbox option one</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_2_2" name="f_i_radio_2">
+                                <label for="f_i_radio_2_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_2_3" name="f_i_radio_2" checked>
+                                <label for="f_i_radio_2_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_2_4" name="f_i_radio_2" checked>
+                                <label for="f_i_radio_2_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+                
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <fieldset class="cp_f_fieldset" disabled>
+                        <legend>Radio button group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_3_1" name="f_i_radio_3">
+                                <label for="f_i_radio_3_1" class="cp_f_label_checkbox">Checkbox option one</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_3_2" name="f_i_radio_3">
+                                <label for="f_i_radio_3_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_3_3" name="f_i_radio_3">
+                                <label for="f_i_radio_3_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_3_4" name="f_i_radio_3">
+                                <label for="f_i_radio_3_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+                
+                <li>
+                    <p class="spec_title">Invalid</p>
+                    <p class="spec_description">Validation returns negative. Error messages are mandatory.</p>
+                    <fieldset class="cp_f_fieldset invalid">
+                        <legend>Radio button group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_4_1" name="f_i_radio_4">
+                                <label for="f_i_radio_4_1" class="cp_f_label_checkbox">Checkbox option one</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_4_2" name="f_i_radio_4">
+                                <label for="f_i_radio_4_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_4_3" name="f_i_radio_4">
+                                <label for="f_i_radio_4_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_4_4" name="f_i_radio_4">
+                                <label for="f_i_radio_4_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                        <p class="cp_f_message error">Error message placeholder</p>
+                    </fieldset>
+                </li>
+                
+                
+                
+            </ul>
+            <h3>Features</h3>
+            <ul class="displaygrid col2">
+
+                <li class="span2">
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <fieldset class="cp_f_fieldset">
+                        <legend>Radio button group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_5_1" name="f_i_radio_5">
+                                <label for="f_i_radio_5_1" class="cp_f_label_checkbox">Checkbox option one</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_5_2" name="f_i_radio_5">
+                                <label for="f_i_radio_5_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_5_3" name="f_i_radio_5" checked>
+                                <label for="f_i_radio_5_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="cp_f_i_radio" id="f_i_radio_5_4" name="f_i_radio_5">
+                                <label for="f_i_radio_5_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                        <p class="cp_f_message">Please select one or more software(s)</p>
+                    </fieldset>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+<!-- select -->
+    
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Select</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <label for="f_select" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <label for="f_select_2" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select" id="f_select_2" disabled>
+                        <option>Please select</option>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Focus</p>
+                    <p class="spec_description">When it’s activated</p>
+                    <div>
+                        <label for="f_select" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Valid</p>
+                    <p class="spec_description">Validation returns positive</p>
+                    <div class="valid">
+                        <label for="f_select" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1" selected>Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Invalid</p>
+                    <p class="spec_description">Validation returns negative. Error messages are mandatory.</p>
+                    <div class="invalid">
+                       <label for="f_select_3" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select" id="f_select_3">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    <p class="cp_f_message error">A selection is required</p>
+                    </div>
+                </li>
+            </ul>
+            <h3>Variant</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Short</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <label for="f_select" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select short" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    <p class="cp_f_message">Only one selection can be made</p>
+                    </div>
+                </li>
+            </ul>
+            
+            
+            <h3>Features</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <div>
+<label for="f_select" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">No label</p>
+                    <p class="spec_description">Label is hidden</p>
+                    <div>
+<!--<label for="f_select" class="cp_f_label_select">Select label</label>-->
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <div>
+                        <label for="f_select" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    <p class="cp_f_message">Only one selection can be made</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Pre-selected value</p>
+                    <p class="spec_description">Pre-filled entry that loads with the page and can be cleared by the user</p>
+                    <div>
+                        <label for="f_select" class="cp_f_label_select">Select label</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1" selected>Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+            </ul>
+            
+            
+            <h3>Selection indicator</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">No selection</p>
+                    <p class="spec_description">Label provides context, first option invites users to select</p>
+                    <div>
+                        <label for="f_select" class="cp_f_label_select">Select software</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Select label</p>
+                    <p class="spec_description">Selected value displayed</p>
+                    <div>
+                        <label for="f_select" class="cp_f_label_select">Select software</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Please select</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1" selected>Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Multiple select</p>
+                    <p class="spec_description">Selected item number displayed</p>
+                    <div>
+                        <label for="f_select" class="cp_f_label_select">Select software</label>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>2 items selected</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">No selection no label</p>
+                    <p class="spec_description">First option provides context</p>
+                    <div>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Select software</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                        
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Single select no label</p>
+                    <p class="spec_description">Selected value displayed</p>
+                    <div>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Select software</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1" selected>Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Multiple select no label</p>
+                    <p class="spec_description">Context + Selected item number displayed</p>
+                    <div>
+                    <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Select software [2]</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </li>
+            </ul>
+            
+            <h3>Pop-up widget</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Single select</p>
+                    <p class="spec_description">Pop-up widget disappears after making selection</p>
+                    <div>
+<ul class="cp_f_select_widget">
+                        <li><label class="cp_f_label_checkbox">All [120]</label></li>
+                        <li><label class="cp_f_label_checkbox">Inventor 2019 [20]</label></li>
+                        <li><label class="cp_f_label_checkbox">3ds Max 2020 [5]</label></li>
+                        <li><label class="cp_f_label_checkbox">AutoCAD 2019 [12]</label></li>
+                        <li><label class="cp_f_label_checkbox">Maya 2022 [6]</label></li>
+                        <li><label class="cp_f_label_checkbox">Solid Edge 2021 [6]</label></li>
+                    </ul>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Multiple select</p>
+                    <p class="spec_description">Checkboxes for multi selection. Pop-up widget disappears after click outside or on the menu</p>
+                    <div>
+<!--<label for="f_select" class="cp_f_label_select">Select label</label>-->
+                    <div class="cp_f_select_widget">
+                        <fieldset class="cp_f_fieldset">
+                            <!--                <legend>Checkbox group label</legend>-->
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-1">
+                                    <label for="f_i_checkbox2-1" class="cp_f_label_checkbox">All [120]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-2">
+                                    <label for="f_i_checkbox2-2" class="cp_f_label_checkbox">Inventor 2019 [20]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-3" checked>
+                                    <label for="f_i_checkbox2-3" class="cp_f_label_checkbox">3ds Max 2020 [5]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-4">
+                                    <label for="f_i_checkbox2-4" class="cp_f_label_checkbox">AutoCAD 2019 [12]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-5" checked>
+                                    <label for="f_i_checkbox2-5" class="cp_f_label_checkbox">Maya 2022 [6]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-6">
+                                    <label for="f_i_checkbox2-6" class="cp_f_label_checkbox">Solid Edge 2021 [6]</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Multiple select enhanced</p>
+                    <p class="spec_description">Additional sorting feature</p>
+                    <div>
+                        <div class="cp_f_select_widget">
+                        <fieldset class="cp_f_fieldset">
+                            <legend>Sort</legend>
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="radio" name="f_i_radio3" class="cp_f_i_radio" id="f_i_radio3-1" checked>
+                                    <label for="f_i_radio3-1" class="cp_f_label_checkbox">A &ndash; Z</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="f_i_radio3" class="cp_f_i_radio" id="f_i_radio3-2">
+                                    <label for="f_i_radio3-2" class="cp_f_label_checkbox">Z &ndash; A</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset class="cp_f_fieldset">
+                            <legend>Checkbox group label</legend>
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-1">
+                                    <label for="f_i_checkbox3-1" class="cp_f_label_checkbox">All [120]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-2" checked>
+                                    <label for="f_i_checkbox3-2" class="cp_f_label_checkbox">Inventor 2019 [20]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-3">
+                                    <label for="f_i_checkbox3-3" class="cp_f_label_checkbox">3ds Max 2020 [5]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-4" checked>
+                                    <label for="f_i_checkbox3-4" class="cp_f_label_checkbox">AutoCAD 2019 [12]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-5">
+                                    <label for="f_i_checkbox3-5" class="cp_f_label_checkbox">Maya 2022 [6]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-6" checked>
+                                    <label for="f_i_checkbox3-6" class="cp_f_label_checkbox">Solid Edge 2021 [6]</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Multiple select advanced</p>
+                    <p class="spec_description">Additional search + sorting feature</p>
+                    <div>
+                        <div class="cp_f_select_widget" style="width: 260px">
+
+                        <input type="search" class="cp_f_i_search smallpadding" id="f_i_search" placeholder="Type in the product code, name or release region">
+                        <fieldset class="cp_f_fieldset">
+                            <legend>Sort</legend>
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="radio" name="f_i_radio4" class="cp_f_i_radio" id="f_i_radio4-1">
+                                    <label for="f_i_radio4-1" class="cp_f_label_checkbox">A &ndash; Z</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="f_i_radio4" class="cp_f_i_radio" id="f_i_radio4-2" checked>
+                                    <label for="f_i_radio4-2" class="cp_f_label_checkbox">Z &ndash; A</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset class="cp_f_fieldset">
+                            <legend>Checkbox group label</legend>
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-1" checked>
+                                    <label for="f_i_checkbox4-1" class="cp_f_label_checkbox">All [120]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-2">
+                                    <label for="f_i_checkbox4-2" class="cp_f_label_checkbox">Inventor 2019 [20]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-3">
+                                    <label for="f_i_checkbox4-3" class="cp_f_label_checkbox">3ds Max 2020 [5]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-4">
+                                    <label for="f_i_checkbox4-4" class="cp_f_label_checkbox">AutoCAD 2019 [12]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-5">
+                                    <label for="f_i_checkbox4-5" class="cp_f_label_checkbox">Maya 2022 [6]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-6">
+                                    <label for="f_i_checkbox4-6" class="cp_f_label_checkbox">Solid Edge 2021 [6]</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </section>
+    
+<!-- date picker --> 
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Date Picker</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <label for="f_i_date_a1" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_a1">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <label for="f_i_date_a2" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_a2" disabled>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Filled</p>
+                    <p class="spec_description">User entered value in the field</p>
+                    <div>
+                        <label for="f_i_date_a3" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_a3" value="2023-10-24">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Valid</p>
+                    <p class="spec_description">Validation returns positive</p>
+                    <div class="valid">
+                        <label for="f_i_date_a4" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_a4"  value="2023-10-24">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Invalid</p>
+                    <p class="spec_description">Validation returns negative. Error messages are mandatory.</p>
+                    <div class="invalid">
+                        <label for="f_i_date_a5" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_a5" value="Data entered here is invalid">
+                        <p class="cp_f_message error">Error message placeholder</p>
+                    </div>
+                </li>
+            </ul>
+            <h3>Features</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <div>
+                        <label for="f_i_date_b1" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_b1">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">No label</p>
+                    <p class="spec_description">Label is hidden</p>
+                    <div>
+                        <!--                        <label for="f_i_date_b2" class="cp_f_label_text">Text label</label>-->
+                        <input type="date" class="cp_f_i_date" id="f_i_date_b2">
+                    </div>
+                </li>
+               
+                <li>
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <div>
+                        <label for="f_i_date_b4" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_b4">
+                        <p class="cp_f_message">Message placeholder</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Prefilled value</p>
+                    <p class="spec_description">Pre-filled entry that loads with the page and can be cleared by the user</p>
+                    <div>
+                        <label for="f_i_date_b5" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_b5"  value="2023-10-24">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Suggested values</p>
+                    <p class="spec_description">A list of predefined values for quick entry</p>
+                    <div>
+                        <label for="f_i_date_b6" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_b6" list="date_datalist">
+                        <datalist id="date_datalist">
+                            <option value="2023-10-24"></option>
+                            <option value="2023-11-02"></option>
+                            <option value="2023-11-16"></option>
+                            <option value="2023-12-03"></option>
+                            <option value="2023-12-09"></option>
+                        </datalist>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Read only</p>
+                    <p class="spec_description">Prevents users from changing the values, however it still can be highlighted and copied</p>
+                    <div>
+                        <label for="f_i_date_b7" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_b7" value="2023-10-24" readonly>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Max / Min / Step</p>
+                    <p class="spec_description">Maximum, minimum and interval values for numeric input</p>
+                    <div>
+                        <label for="f_i_date_b8" class="cp_f_label_text">Text label</label>
+                        <input type="date" class="cp_f_i_date" id="f_i_date_b8" min="2023-09-24" max="2023-11-20" step="2">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- date picker --> 
+    <section class="padding">
+        <div class="wrapper">
+            <h2>File Picker</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <label for="f_i_file_a1" class="cp_f_label_text">Text label</label>
+                        <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file_a1">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <label for="f_i_file_a2" class="cp_f_label_text">Text label</label>
+                        <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file_a2" disabled>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">File chosen</p>
+                    <p class="spec_description">User entered value in the field</p>
+                    <div>
+                        <label for="f_i_file_a3" class="cp_f_label_text">Text label</label>
+                        <input type="file" accept="image/*, video/*" value="file/example.jpg" multiple class="cp_f_i_file" id="f_i_file_a3">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Valid</p>
+                    <p class="spec_description">Validation returns positive</p>
+                    <div class="valid">
+                        <label for="f_i_file_a4" class="cp_f_label_text">Text label</label>
+                        <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file_a4">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Invalid</p>
+                    <p class="spec_description">Validation returns negative. Error messages are mandatory.</p>
+                    <div class="invalid">
+                        <label for="f_i_file_a5" class="cp_f_label_text">Text label</label>
+                        <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file_a5">
+                        <p class="cp_f_message error">The attachments' combined size can't exceed 30MB</p>
+                    </div>
+                </li>
+            </ul>
+            <h3>Features</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Basic</p>
+                    <p class="spec_description">Default base appearance, paired with a label</p>
+                    <div>
+                        <label for="f_i_file_b1" class="cp_f_label_text">Text label</label>
+                        <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file_b1">
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">No label</p>
+                    <p class="spec_description">Label is hidden</p>
+                    <div>
+                        <!--                        <label for="f_i_file_b2" class="cp_f_label_text">Text label</label>-->
+                        <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file_b2">
+                    </div>
+                </li>
+               
+                <li>
+                    <p class="spec_title">Message</p>
+                    <p class="spec_description">Helpful information regarding the input</p>
+                    <div>
+                        <label for="f_i_file_b3" class="cp_f_label_text">Text label</label>
+                        <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file_b3">
+                        <p class="cp_f_message">Up to 5 files can be selected. Combined size can't exceed 30MB</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!--    text -->
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Button</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>Primary States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <button class="cp_f_button_submit" type="submit">Submit</button>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Hover or focus</p>
+                    <p class="spec_description">With pointer device or tabbing</p>
+                    <div>
+                        <button class="cp_f_button_submit" type="submit" style="background-color: var(--cp_f_button-bg-hover)">Submit</button>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <button class="cp_f_button_submit" type="submit" disabled>Submit</button>
+                    </div>
+                </li>
+            </ul>
+            <h3>Secondary States</h3>
+             <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div>
+                        <button class="cp_f_button_submit alt" type="submit">Submit</button>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Hover or focus</p>
+                    <p class="spec_description">With pointer device or tabbing</p>
+                    <div>
+                        <button class="cp_f_button_submit alt" type="submit" style="border-color: var(--cp_f_button-color);">Submit</button>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div>
+                        <button class="cp_f_button_submit alt" type="submit" disabled>Submit</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+     <!--    Swtich  -->
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Switch</h2>
+            <p>Single line text based input form field</p>
+
+            <h3>Primary States</h3>
+            <ul class="displaygrid">
+                <li>
+                    <p class="spec_title">Normal</p>
+                    <p class="spec_description">Default start point when the page loads</p>
+                    <div class="cp_f_swtich_container">
+                    <input type="checkbox" class="cp_f_switch" id="cp_f_switch_1"> 
+                    <label for="cp_f_switch_1" class="cp_f_label_checkbox">On / Off Switch</label>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Checked</p>
+                    <p class="spec_description">On</p>
+                    <div class="cp_f_swtich_container">
+                    <input type="checkbox" class="cp_f_switch" id="cp_f_switch_2" checked> 
+                    <label for="cp_f_switch_2" class="cp_f_label_checkbox">On / Off Switch</label>
+                    </div>
+                </li>
+                <li>
+                    <p class="spec_title">Disabled</p>
+                    <p class="spec_description">Unavailable due to configuration</p>
+                    <div class="cp_f_swtich_container">
+                    <input type="checkbox" class="cp_f_switch" id="cp_f_switch_3" disabled> 
+                    <label for="cp_f_switch_3" class="cp_f_label_checkbox">On / Off Switch</label>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </section>
+    
+    
+    <!--
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Text data</h2>
+            <ul>
+            </ul>
+        </div>
+    </section>
+-->
+
+</body></html>

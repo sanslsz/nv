@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--    <meta name="theme-color" content="#fafafa">-->
-        <meta name="color-scheme" content="light dark">
+            <meta name="color-scheme" content="light">
     <style>
+        /*        custom reset */
         @import url(../css/00_fonts.css);
         @import url(../css/01_type_color.css);
         @import url(../css/02_base.css);
@@ -18,43 +19,51 @@
         @import url(css/reset.css);
         @import url(css/form.css);
 
+
+
         body {
             background-color: var(--page-bg);
+            margin: 0;
         }
 
-        h2+ul>li+li {
-            margin-top: var(--sp_px-m);
+        h2+ul>li+li, h2 ~ * + * {
+            margin-top: 30px;
         }
 
-        h2~ul:nth-of-type(2)>li+li {
+        ul:has(.labelasplace)>li+li {
             margin-top: var(--sp_px-xl);
         }
-        @media (prefers-color-scheme: dark) { 
-        
-            html {
-                color: var(--nv-15-ee);
-            }
-        }
-        
     </style>
 
 </head>
 
 <body>
+    <aside class="paddingsmall cp_disclaimer">
+        <div class="wrapper center">
+            <p>
+                This prototype is for design exploration, not meant for production use.
+            </p>
+            <ul class="theme_select">
+                <li>
+                    <input id="theme_select_light" type="radio" id="theme_light" name="theme_select" checked>
+                    <label for="theme_select_light"><span class="material-icons">light_mode</span>Light theme</label>
+                </li>
+
+                <li>
+                    <input id="theme_select_dark" type="radio" id="theme_dark" name="theme_select">
+                    <label for="theme_select_dark"><span class="material-icons">dark_mode</span>Dark theme</label>
+                </li>
+            </ul>
+        </div>
+    </aside>
     <section class="padding">
         <div class="wrapper">
-            <h2>Text data</h2>
+            <h2>Text input</h2>
             <ul>
                 <li>
                     <label for="f_i_text" class="cp_f_label_text">Text</label>
                     <input type="text" class="cp_f_i_text" id="f_i_text" value="John Smith pre-filled">
                 </li>
-                <!--
-                <li class="labelasplace">
-                    <label for="f_i_text2" class="cp_f_label_text">Label as placeholder</label>
-                    <input type="text" minlength="10000" class="cp_f_i_text" id="f_i_text2">
-                </li>
--->
                 <li>
                     <label for="f_i_email" class="cp_f_label_text">Email</label>
                     <input type="email" class="cp_f_i_email" id="f_i_email" placeholder="account@example.com">
@@ -81,7 +90,35 @@
                 </li>
                 <li>
                     <label for="f_i_password" class="cp_f_label_text">Password</label>
-                    <input type="password" class="cp_f_i_password" id="f_i_password">
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    <p class="cp_f_message">The password need to be at least 10 characters and include one number, upppercase and lowercase character.</p>
+                </li>
+                <li>
+                    <label for="f_i_password2" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="text" class="cp_f_i_password" id="f_i_password2" value="myP4$$w0rd">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility</span>
+                    </div>
+                    <p class="cp_f_message">The password need to be at least 10 characters and include one number, upppercase and lowercase character.</p>
+                </li>
+                <li class="valid">
+                    <label for="f_i_password3" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password3" value="myP4$$w0rd">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    <p class="cp_f_message">The password need to be at least 10 characters and include one number, upppercase and lowercase character.</p>
+                </li>
+                <li class="invalid">
+                    <label for="f_i_password4" class="cp_f_label_text">Password</label>
+                    <div class="password_toggle">
+                        <input type="password" class="cp_f_i_password" id="f_i_password4">
+                        <span class="material-icons switch" title="Toggle password visiblity">visibility_off</span>
+                    </div>
+                    <p class="cp_f_message error">The password need to be at least 10 characters and include one number, upppercase and lowercase character.</p>
                 </li>
                 <li>
                     <label for="f_i_search" class="cp_f_label_text">Search</label>
@@ -95,55 +132,149 @@
                     <label for="f_i_text_disabled" class="cp_f_label_text">Label(disabled state)</label>
                     <input type="text" disabled class="cp_f_i_text" id="f_i_text_disabled" placeholder="Placeholder text(disabled state)">
                 </li>
-            </ul>
-
-
-            <ul style="margin-top: var(--sp_px-xxxxl);">
-                <li class="labelasplace">
-                    <input type="text" minlength="10000" class="cp_f_i_text" id="f_i_text2">
-                    <label for="f_i_text2" class="cp_f_label_text">Label as placeholder text</label> 
+                <li>
+                    <input type="search" class="cp_f_i_search" id="f_i_search">
+                    <div class="cp_f_i_search_widget">
+                    <ul class="items trend">
+                        <li>Automotive</li>
+                        <li>Consumer Internet</li>
+                        <li>Cybersecurity</li>
+                        <li>Energy</li>
+                        <li>Artificial Intelligence</li>
+                    </ul>
+                    </div>
                 </li>
-                <li class="labelasplace">
-                    <input type="text" minlength="10000" class="cp_f_i_text" id="f_i_text_2" value="John Smith pre-filled" pattern="[0-9]{10000}">
-                    <label for="f_i_text_2" class="cp_f_label_text">Text</label>
+                <li>
+                    <input type="search" class="cp_f_i_search" id="f_i_search" value="Artificial Intelligence">
+                    <div class="cp_f_i_search_widget">
+                    <ul class="items">
+                        <li><span>Artificial Intelligence</span> and Deep Learning in Retail | NVIDIA</li>
+                        <li>Deep Learning at Scale at DFKI (German Research Centre for <span>Artificial Intelligence</span>)</li>
+                        <li>GTC Silicon Valley-2019: AI in Astrophysics: Applying <span>Artificial Intelligence</span> and Deep Learning to Astronomical Research</li>
+                        <li>Deep Learning & <span>AI</span> Use Cases and Customer Success Stories | NVIDIA</li>
+                        <li><span>Artificial Intelligence</span> System Comprehends Text Like Humans Do | NVIDIA Technical Blog</li>
+                    </ul>
+                    </div>
                 </li>
-                <li class="labelasplace">
-                    <input type="email" minlength="10000" class="cp_f_i_email" id="f_i_email_2">
-                    <label for="f_i_email_2" class="cp_f_label_text">Email</label>
+                <li>
+                    <input type="search" class="cp_f_i_search" id="f_i_search" value="30">
+                    <div class="cp_f_i_search_widget">
+                    <ul class="items">
+                        <li><span>Processor Type:</span> RTX3030</li>
+                        <li><span>NVIDIA GPU:</span> A30</li>
+                        <li><span>Validation Type:</span> NGC-330</li>
+                        <li><span>Max CPU Per Node:</span> 30</li>
+                        <li><span>Server Model:</span> IPC-7130</li>
+                    </ul>
+                    </div>
                 </li>
-                <li class="labelasplace">
-                    <input type="tel" pattern="[0-9]{10000}" class="cp_f_i_tel" id="f_i_tel_2" list="tel-data">
-                    <label for="f_i_tel_2" class="cp_f_label_text">Tel</label>
-                    <datalist id="tel-data">
-                        <option value="2067089999"></option>
-                        <option value="4244413256"></option>
-                        <option value="5469856324"></option>
-                        <option value="7546235984"></option>
-                    </datalist>
+                <li class="widget_complex_container">
+                    <input type="search" class="cp_f_i_search" id="f_i_search" value="Artificial Intelligence" style="width: 100%">
+                    <div class="cp_f_i_search_widget complex" style="max-width: unset">
+                    <ul class="items">
+                        <li><span>Artificial Intelligence</span> and Deep Learning in Retail | NVIDIA</li>
+                        <li>Deep Learning at Scale at DFKI (German Research Centre for <span>Artificial Intelligence</span>)</li>
+                        <li>GTC Silicon Valley-2019: AI in Astrophysics: Applying <span>Artificial Intelligence</span> and Deep Learning to Astronomical Research</li>
+                        <li>Deep Learning & <span>AI</span> Use Cases and Customer Success Stories | NVIDIA</li>
+                        <li><span>Artificial Intelligence</span> System Comprehends Text Like Humans Do | NVIDIA Technical Blog</li>
+                    </ul>
+                        <div class="extra">
+                        <p class="grouptitle">Trending on NVIDIA.com</p>
+                        <ul class="items trend">
+                        <li>Automotive</li>
+                        <li>Consumer Internet</li>
+                        <li>Cybersecurity</li>
+                        <li>Energy</li>
+                        <li>Artificial Intelligence</li>
+                    </ul>
+                        <p class="grouptitle">Featured Videos</p>
+                            <ul class="videos">
+                                <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                 <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                 <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                 <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                
+                                
+                                
+                            </ul>
+                            
+                        </div>
+                    </div>
                 </li>
-                <li class="labelasplace">
-                    <input type="number" required class="cp_f_i_num" id="f_i_num_2" list="number-data">
-                    <label for="f_i_tel_2" class="cp_f_label_text">Number</label>
-                </li>
-                <li class="labelasplace">
-                    <input type="password" minlength="10000" class="cp_f_i_password" id="f_i_password_2">
-                    <label for="f_i_password_2" class="cp_f_label_text">Password</label>
-                </li>
-                <li class="labelasplace">
-                    <input type="search" minlength="10000" class="cp_f_i_search" id="f_i_search_2" placeholder="Type in the product code, name or release region">
-                    <label for="f_i_search_2" class="cp_f_label_text">Search</label>
-                </li>
-                <li class="labelasplace">
-                    <textarea class="cp_f_textarea" minlength="10000" id="f_textarea_2" rows="5" cols="50" autocomplete="on" placeholder="Write about your dreams. Max 250 characters."></textarea>
-                    <label for="f_textarea_2" class="cp_f_label_text">Textarea</label>
-                </li>
-                <li class="labelasplace">
-                    <input type="text" disabled class="cp_f_i_text" id="f_i_text_disabled_2">
-                    <label for="f_i_text_disabled_2" class="cp_f_label_text">Label as placeholder text(disabled state)</label>
-                </li>
-                <li class="labelasplace">
-                    <input type="text" disabled class="cp_f_i_text" id="f_i_text_disabled_3" placeholder="Placeholder text(disabled state)">
-                    <label for="f_i_text_disabled_3" class="cp_f_label_text">Label(disabled state)</label>
+                <li class="widget_complex_container integrated">
+                    <input type="search" class="cp_f_i_search" id="f_i_search" value="Artificial Intelligence" style="width: 100%">
+                    <div class="integratedcontainer expanded">
+                    <div class="cp_f_i_search_widget complex" style="max-width: unset">
+                    <ul class="items">
+                        <li><span>Artificial Intelligence</span> and Deep Learning in Retail | NVIDIA</li>
+                        <li>Deep Learning at Scale at DFKI (German Research Centre for <span>Artificial Intelligence</span>)</li>
+                        <li>GTC Silicon Valley-2019: AI in Astrophysics: Applying <span>Artificial Intelligence</span> and Deep Learning to Astronomical Research</li>
+                        <li>Deep Learning & <span>AI</span> Use Cases and Customer Success Stories | NVIDIA</li>
+                        <li><span>Artificial Intelligence</span> System Comprehends Text Like Humans Do | NVIDIA Technical Blog</li>
+                    </ul>
+                        <div class="extra">
+                        <p class="grouptitle">Trending on NVIDIA.com</p>
+                        <ul class="items trend">
+                        <li>Automotive</li>
+                        <li>Consumer Internet</li>
+                        <li>Cybersecurity</li>
+                        <li>Energy</li>
+                        <li>Artificial Intelligence</li>
+                    </ul>
+                        <p class="grouptitle">Featured Videos</p>
+                            <ul class="videos">
+                                <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                 <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                 <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                 <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                <li>
+                                <div class="thumb"></div>
+                                <p>Video description</p>
+                                </li>
+                                
+                                
+                                
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -152,28 +283,206 @@
     <section class="padding">
         <div class="wrapper">
             <h2>Selection</h2>
+
+
             <ul>
                 <li>
-                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox1">
-                    <label for="f_i_checkbox1" class="cp_f_label_checkbox">Checkbox one</label> &emsp;
-                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2">
-                    <label for="f_i_checkbox2" class="cp_f_label_checkbox">Checkbox two</label> &emsp;
-                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3">
-                    <label for="f_i_checkbox3" class="cp_f_label_checkbox">Checkbox three</label>
+                    <fieldset class="cp_f_fieldset">
+                        <legend>Checkbox group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_1">
+                                <label for="f_i_checkbox_1" class="cp_f_label_checkbox">Checkbox option one - additional text to show line wrap</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2">
+                                <label for="f_i_checkbox_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3" checked>
+                                <label for="f_i_checkbox_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4" disabled>
+                                <label for="f_i_checkbox_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                    </fieldset>
                 </li>
-                <li>
-                    <!--
-                    <input type="radio" class="cp_f_i_radio" id="f_i_radio1">
-                    <label>Radio one</label>
--->
-                    <label class="cp_f_label_checkbox"><input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio1"> Radio one</label> &emsp;
-                    <label class="cp_f_label_checkbox"><input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio2"> Radio two</label> &emsp;
-                    <label class="cp_f_label_checkbox"><input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio3"> Radio three</label>
 
+                
+                <li>
+                    <fieldset class="cp_f_fieldset">
+                        <legend>Checkbox group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2_1">
+                                <label for="f_i_checkbox_2_1" class="cp_f_label_checkbox">Checkbox option one - additional text to show line wrap</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2_2">
+                                <label for="f_i_checkbox_2_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2_3" checked>
+                                <label for="f_i_checkbox_2_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_2_4" checked>
+                                <label for="f_i_checkbox_2_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                        <p class="cp_f_message">Please select one or more options</p>
+                    </fieldset>
                 </li>
+                
+                <li>
+                    <fieldset class="cp_f_fieldset invalid">
+                        <legend>Checkbox group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3_1">
+                                <label for="f_i_checkbox_3_1" class="cp_f_label_checkbox">Checkbox option one - additional text to show line wrap</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3_2">
+                                <label for="f_i_checkbox_3_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3_3">
+                                <label for="f_i_checkbox_3_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_3_4">
+                                <label for="f_i_checkbox_3_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                        <p class="cp_f_message error">Please select one or more options</p>
+                    </fieldset>
+                </li>
+                
+                <li>
+                    <fieldset class="cp_f_fieldset" disabled>
+                        <legend>Checkbox group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4_1">
+                                <label for="f_i_checkbox_4_1" class="cp_f_label_checkbox">Checkbox option one - additional text to show line wrap</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4_2">
+                                <label for="f_i_checkbox_4_2" class="cp_f_label_checkbox">Checkbox option two</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4_3">
+                                <label for="f_i_checkbox_4_3" class="cp_f_label_checkbox">Checkbox option three</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox_4_4">
+                                <label for="f_i_checkbox_4_4" class="cp_f_label_checkbox">Checkbox option four</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+                
+                <li>
+                    <fieldset class="cp_f_fieldset">
+                        <legend>Radio group label</legend>
+                        <ul class="cp_f_fieldset_container hor">
+                            <li>
+                                <input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio1" checked>
+                                <label for="f_i_radio1" class="cp_f_label_checkbox">Radio button one - additional text to show line wrap</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio2">
+                                <label for="f_i_radio2" class="cp_f_label_checkbox">Radio button two</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio3">
+                                <label for="f_i_radio3" class="cp_f_label_checkbox">Radio button three</label>
+                            </li>
+                                                        <li>
+                                <input type="radio" name="f_i_radio" class="cp_f_i_radio" id="f_i_radio4" disabled>
+                                <label for="f_i_radio4" class="cp_f_label_checkbox">Radio button four</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+                
+
                 <li>
                     <label for="f_select" class="cp_f_label_select">Single select</label>
                     <select name="f_select" class="cp_f_select" id="f_select">
+                        <option>Make selection</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    <p class="cp_f_message">Only one selection can be made</p>
+
+                </li>
+                <li>
+                    <label for="f_select_2" class="cp_f_label_select">Single select</label>
+                    <select name="f_select" class="cp_f_select" id="f_select_2" disabled>
+                        <option>Make selection</option>
+                    </select>
+                </li>
+                <li class="invalid">
+                    <label for="f_select_3" class="cp_f_label_select">Single select</label>
+                    <select name="f_select" class="cp_f_select" id="f_select_3">
+                        <option>Make selection</option>
+                        <option value="placeholder1">Option one</option>
+                        <option value="placeholder1">Option two</option>
+                        <option value="placeholder1">Option three</option>
+                        <optgroup label="Group one" disabled>
+                            <option value="placeholder1">Option four</option>
+                            <option value="placeholder1">Option five</option>
+                            <option value="placeholder1">Option six</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group two">
+                            <option value="placeholder1">Option eight</option>
+                            <option value="placeholder1">Option nine</option>
+                            <option value="placeholder1">Option ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                    <p class="cp_f_message">A selection is required</p>
+
+                </li>
+                <li>
+                    <label for="f_select_4" class="cp_f_label_select">Single select short</label>
+                    <select name="f_select" class="cp_f_select short" id="f_select_4">
                         <option>Make selection</option>
                         <option value="placeholder1">Option one</option>
                         <option value="placeholder1">Option two</option>
@@ -230,6 +539,201 @@
                         </optgroup>
                     </select>
                 </li>
+                <li>
+                    <label for="f_select_multi_2" class="cp_f_label_select">Multi select</label>
+                    <select name="f_select_multi" class="cp_f_select_multi cp_scrollbar" id="f_select_multi_2" size="10" multiple disabled>
+                        <optgroup label="Group one">
+                            <option value="placeholder">Item one</option>
+                            <option value="placeholder">Item two</option>
+                            <option value="placeholder">Item three</option>
+                            <option value="placeholder">Item four</option>
+                            <option value="placeholder">Item five</option>
+                        </optgroup>
+                        <optgroup label="Group two" disabled>
+                            <option value="placeholder">Item six</option>
+                            <option value="placeholder">Item seven</option>
+                            <option value="placeholder">Item eight</option>
+                            <option value="placeholder">Item nine</option>
+                            <option value="placeholder">Item ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                </li>
+                                <li class="invalid">
+                    <label for="f_select_multi_3" class="cp_f_label_select">Multi select</label>
+                    <select name="f_select_multi" class="cp_f_select_multi cp_scrollbar" id="f_select_multi_3" size="10" multiple>
+                        <optgroup label="Group one">
+                            <option value="placeholder">Item one</option>
+                            <option value="placeholder">Item two</option>
+                            <option value="placeholder">Item three</option>
+                            <option value="placeholder">Item four</option>
+                            <option value="placeholder">Item five</option>
+                        </optgroup>
+                        <optgroup label="Group two" disabled>
+                            <option value="placeholder">Item six</option>
+                            <option value="placeholder">Item seven</option>
+                            <option value="placeholder">Item eight</option>
+                            <option value="placeholder">Item nine</option>
+                            <option value="placeholder">Item ten</option>
+                        </optgroup>
+                        <option value="placeholder">Option surprise</option>
+                        <option value="placeholder">Option surprise 2</option>
+                        <optgroup label="Group three">
+                            <option value="placeholder">Item eleven</option>
+                            <option value="placeholder">Item twelve</option>
+                            <option value="placeholder">Item thirteen</option>
+                            <option value="placeholder">Item fourteen</option>
+                            <option value="placeholder">Item fifteen</option>
+                        </optgroup>
+                    </select>
+                                    <p class="cp_f_message">Please select 3 or more items</p>
+                </li>
+                <li style="display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-start;">
+                    <ul class="cp_f_select_widget">
+                        <li><label class="cp_f_label_checkbox">All [120]</label></li>
+                        <li><label class="cp_f_label_checkbox">Inventor 2019 [20]</label></li>
+                        <li><label class="cp_f_label_checkbox">3ds Max 2020 [5]</label></li>
+                        <li><label class="cp_f_label_checkbox">AutoCAD 2019 [12]</label></li>
+                        <li><label class="cp_f_label_checkbox">Maya 2022 [6]</label></li>
+                        <li><label class="cp_f_label_checkbox">Solid Edge 2021 [6]</label></li>
+                    </ul>
+
+                    <div class="cp_f_select_widget">
+                        <fieldset class="cp_f_fieldset">
+                            <!--                <legend>Checkbox group label</legend>-->
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-1">
+                                    <label for="f_i_checkbox2-1" class="cp_f_label_checkbox">All [120]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-2">
+                                    <label for="f_i_checkbox2-2" class="cp_f_label_checkbox">Inventor 2019 [20]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-3">
+                                    <label for="f_i_checkbox2-3" class="cp_f_label_checkbox">3ds Max 2020 [5]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-4">
+                                    <label for="f_i_checkbox2-4" class="cp_f_label_checkbox">AutoCAD 2019 [12]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-5">
+                                    <label for="f_i_checkbox2-5" class="cp_f_label_checkbox">Maya 2022 [6]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox2-6">
+                                    <label for="f_i_checkbox2-6" class="cp_f_label_checkbox">Solid Edge 2021 [6]</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+
+                    <div class="cp_f_select_widget">
+                        <fieldset class="cp_f_fieldset">
+                            <legend>Sort</legend>
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="radio" name="f_i_radio3" class="cp_f_i_radio" id="f_i_radio3-1" checked>
+                                    <label for="f_i_radio3-1" class="cp_f_label_checkbox">A &ndash; Z</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="f_i_radio3" class="cp_f_i_radio" id="f_i_radio3-2">
+                                    <label for="f_i_radio3-2" class="cp_f_label_checkbox">Z &ndash; A</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset class="cp_f_fieldset">
+                            <legend>Checkbox group label</legend>
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-1">
+                                    <label for="f_i_checkbox3-1" class="cp_f_label_checkbox">All [120]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-2">
+                                    <label for="f_i_checkbox3-2" class="cp_f_label_checkbox">Inventor 2019 [20]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-3">
+                                    <label for="f_i_checkbox3-3" class="cp_f_label_checkbox">3ds Max 2020 [5]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-4">
+                                    <label for="f_i_checkbox3-4" class="cp_f_label_checkbox">AutoCAD 2019 [12]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-5">
+                                    <label for="f_i_checkbox3-5" class="cp_f_label_checkbox">Maya 2022 [6]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox3-6">
+                                    <label for="f_i_checkbox3-6" class="cp_f_label_checkbox">Solid Edge 2021 [6]</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+
+                    <div class="cp_f_select_widget" style="width: 260px">
+
+                        <input type="search" class="cp_f_i_search smallpadding" id="f_i_search" placeholder="Type in the product code, name or release region">
+                        <fieldset class="cp_f_fieldset">
+                            <legend>Sort</legend>
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="radio" name="f_i_radio4" class="cp_f_i_radio" id="f_i_radio4-1" checked>
+                                    <label for="f_i_radio4-1" class="cp_f_label_checkbox">A &ndash; Z</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="f_i_radio4" class="cp_f_i_radio" id="f_i_radio4-2">
+                                    <label for="f_i_radio4-2" class="cp_f_label_checkbox">Z &ndash; A</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset class="cp_f_fieldset">
+                            <legend>Checkbox group label</legend>
+                            <ul class="cp_f_fieldset_container">
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-1">
+                                    <label for="f_i_checkbox4-1" class="cp_f_label_checkbox">All [120]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-2">
+                                    <label for="f_i_checkbox4-2" class="cp_f_label_checkbox">Inventor 2019 [20]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-3">
+                                    <label for="f_i_checkbox4-3" class="cp_f_label_checkbox">3ds Max 2020 [5]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-4">
+                                    <label for="f_i_checkbox4-4" class="cp_f_label_checkbox">AutoCAD 2019 [12]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-5">
+                                    <label for="f_i_checkbox4-5" class="cp_f_label_checkbox">Maya 2022 [6]</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="cp_f_i_checkbox" id="f_i_checkbox4-6">
+                                    <label for="f_i_checkbox4-6" class="cp_f_label_checkbox">Solid Edge 2021 [6]</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+
+
+
+
+                </li>
             </ul>
         </div>
     </section>
@@ -240,12 +744,33 @@
                 <li>
                     <label for="f_i_date" class="cp_f_label_text">Date</label>
                     <input type="date" min="2022-06-01" max="2024-05-31" class="cp_f_i_date" id="f_i_date">
+                    <p class="cp_f_message">Optional message placeholder</p>
+
+                </li>
+                <li>
+                    <label for="f_i_date" class="cp_f_label_text">Date</label>
+                    <input type="date" min="2022-06-01" max="2024-05-31" class="cp_f_i_date" id="f_i_date" disabled>
+
+                </li>
+                <li class="invalid">
+                    <label for="f_i_date" class="cp_f_label_text">Date</label>
+                    <input type="date" value="2023-07-21" min="2022-06-01" max="2024-05-31" class="cp_f_i_date" id="f_i_date">
+                    <p class="cp_f_message">Error message placeholder</p>
 
                 </li>
                 <li>
                     <label for="f_i_file" class="cp_f_label_text">File</label>
                     <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file">
-
+                    <p class="cp_f_message">Up to 5 files can be selected. Combined size can't exceed 30MB</p>
+                </li>
+                <li>
+                    <label for="f_i_file" class="cp_f_label_text">File</label>
+                    <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file" disabled>
+                </li>
+                <li class="invalid">
+                    <label for="f_i_file" class="cp_f_label_text">File</label>
+                    <input type="file" accept="image/*, video/*" multiple class="cp_f_i_file" id="f_i_file">
+                    <p class="cp_f_message">The attachments' combined size can't exceed 30MB</p>
                 </li>
             </ul>
         </div>
@@ -256,11 +781,13 @@
             <ul>
                 <li><button class="cp_f_button_submit" type="submit">Submit</button></li>
                 <li><button class="cp_f_button_submit" type="reset">Reset</button></li>
-                <li><button class="cp_f_button_submit" type="button">Sign in</button></li>
+                <li><button class="cp_f_button_submit" type="button" disabled>Sign in</button></li>
+                <li><button class="cp_f_button_submit alt" type="submit">Submit</button></li>
+                <li><button class="cp_f_button_submit alt" type="submit" disabled>Submit</button></li>
                 <li>
                     <button class="cp_f_button_search" type="button">
-                        <span class="material-icons" style="vertical-align: -25%;">search</span>
-                        Search
+                        <span class="material-icons">search</span>
+                        <span>Search</span>
                     </button>
                 </li>
 
@@ -271,7 +798,12 @@
         <div class="wrapper">
             <h2>UI controls</h2>
             <ul>
-                <li><input type="checkbox" class="cp_f_switch" id="cp_f_switch">&emsp; <label for="cp_f_switch"  class="cp_f_label_checkbox">On / Off Switch</label></li>
+                <li class="cp_f_swtich_container">
+                    <input type="checkbox" class="cp_f_switch" id="cp_f_switch"> 
+                    <label for="cp_f_switch" class="cp_f_label_checkbox">On / Off Switch</label>  </li>
+                <li class="cp_f_swtich_container">
+                    <input type="checkbox" class="cp_f_switch" id="cp_f_switch2" disabled> 
+                    <label for="cp_f_switch2" class="cp_f_label_checkbox">On / Off Switch</label>  </li>
                 <li>
                     <div>Filter Chips / Pills</div>
                     <div style="display: flex; flex-wrap: wrap; gap: var(--sp_px-s); align-items: center;">
@@ -322,6 +854,59 @@
 
                 </li>
 
+            </ul>
+        </div>
+    </section>
+    <section class="padding">
+        <div class="wrapper">
+            <h2>Text input</h2>
+            <ul style="margin-top: var(--sp_px-xxxxl);">
+                <li class="labelasplace">
+                    <input type="text" minlength="10000" class="cp_f_i_text" id="f_i_text2">
+                    <label for="f_i_text2" class="cp_f_label_text">Label as placeholder text</label>
+                </li>
+                <li class="labelasplace">
+                    <input type="text" minlength="10000" class="cp_f_i_text" id="f_i_text_2" value="John Smith pre-filled" pattern="[0-9]{10000}">
+                    <label for="f_i_text_2" class="cp_f_label_text">Text</label>
+                </li>
+                <li class="labelasplace">
+                    <input type="email" minlength="10000" class="cp_f_i_email" id="f_i_email_2">
+                    <label for="f_i_email_2" class="cp_f_label_text">Email</label>
+                </li>
+                <li class="labelasplace">
+                    <input type="tel" pattern="[0-9]{10000}" class="cp_f_i_tel" id="f_i_tel_2" list="tel-data">
+                    <label for="f_i_tel_2" class="cp_f_label_text">Tel</label>
+                    <datalist id="tel-data">
+                        <option value="2067089999"></option>
+                        <option value="4244413256"></option>
+                        <option value="5469856324"></option>
+                        <option value="7546235984"></option>
+                    </datalist>
+                </li>
+                <li class="labelasplace">
+                    <input type="number" required class="cp_f_i_num" id="f_i_num_2" list="number-data">
+                    <label for="f_i_tel_2" class="cp_f_label_text">Number</label>
+                </li>
+                <li class="labelasplace">
+                    <input type="password" minlength="10000" class="cp_f_i_password" id="f_i_password_2">
+                    <label for="f_i_password_2" class="cp_f_label_text">Password</label>
+                </li>
+                <li class="labelasplace">
+                    <input type="search" minlength="10000" class="cp_f_i_search" id="f_i_search_2" placeholder="Type in the product code, name or release region">
+                    <label for="f_i_search_2" class="cp_f_label_text">Search</label>
+                </li>
+                <li class="labelasplace">
+                    <textarea class="cp_f_textarea" minlength="10000" id="f_textarea_2" rows="5" cols="50" autocomplete="on" placeholder="Write about your dreams. Max 250 characters."></textarea>
+                    <label for="f_textarea_2" class="cp_f_label_text">Textarea</label>
+                </li>
+                <li class="labelasplace">
+                    <input type="text" disabled class="cp_f_i_text" id="f_i_text_disabled_2">
+                    <label for="f_i_text_disabled_2" class="cp_f_label_text">Label as placeholder text(disabled state)</label>
+                </li>
+                <li class="labelasplace">
+                    <input type="text" disabled class="cp_f_i_text" id="f_i_text_disabled_3" placeholder="Placeholder text(disabled state)">
+                    <label for="f_i_text_disabled_3" class="cp_f_label_text">Label(disabled state)</label>
+                </li>
             </ul>
         </div>
     </section>
