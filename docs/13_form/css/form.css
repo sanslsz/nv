@@ -26,9 +26,13 @@
     --cp_f_button-bg-disabled: var(--nv-12-5-cc);
     --cp_f_crt_swtich_bg-color-on: #bfd6b0;
     --cp_f_ctr_switch_circle-color: var(--nv-15-5-f7);
-    --cp_f_ctr_arrow: var(--nv-6-5-66);
-    --cp_f_ctr_arrow-hover: var(--nv-1-5-1a);
+    --cp_f_ctr_icon: var(--nv-6-5-66);
+    --cp_f_ctr_icon-hover: var(--nv-1-5-1a);
+    --cp_f_ctr_icon_box: var(--nv-15-5-f7);
+    --cp_f_ctr_icon_box_bg_hover: #659f00;
     --cp_f_transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    
+    
     
     --cp_f_widget_shadow: rgba(0,0,0,0.15) 0px 3px 6px;
     --cp_f_widget_highlight: var(--nv-15-ee);
@@ -75,8 +79,9 @@
     --cp_f_button-bg-hover: #85d000;
     --cp_f_crt_swtich_bg-color-on: #3e552e;
     --cp_f_ctr_switch_circle-color: var(--nv-6-5-66);
-    --cp_f_ctr_arrow: var(--nv-9-5-99);
-    --cp_f_ctr_arrow-hover: var(--nv-15-ee); 
+    --cp_f_ctr_icon: var(--nv-9-5-99);
+    --cp_f_ctr_icon-hover: var(--nv-15-ee); 
+    --cp_f_ctr_icon_box: var(--nv-1-5-1a);
         
 /*    --page-bg: var(--nv-2-22);*/
     --page-bg: var(--nv-1-11);
@@ -911,23 +916,23 @@ option:disabled {
     cursor: pointer;
 }*/
 
-.cp_f_ctr_arrow {
-    color: var(--cp_f_ctr_arrow);
+.cp_f_ctr_icon {
+    color: var(--cp_f_ctr_icon);
     transition: color 0.3s ease-in-out;
     cursor: pointer;
 }
-.cp_f_ctr_arrow:is(:hover, :focus) {
-    color: var(--cp_f_ctr_arrow-hover);
+.cp_f_ctr_icon:is(:hover, :focus) {
+    color: var(--cp_f_ctr_icon-hover);
 }
-.cp_f_ctr_btn {
+.cp_f_ctr_icon_box {
     padding: 4px;
-    color: var(--cp_f_button-color);
+    color: var(--cp_f_ctr_icon_box);
     background-color: var(--nv-green);
     transition: var(--cp_f_transition);
     cursor: pointer;
 }
-.cp_f_ctr_btn:is(:hover, :focus) {
-    background-color: var(--cp_f_button-bg-hover);
+.cp_f_ctr_icon_box:is(:hover, :focus) {
+    background-color: var(--cp_f_ctr_icon_box_bg_hover);
 }
 
 /*================= Text data complex ========================*/

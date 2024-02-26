@@ -306,6 +306,26 @@ the compromised solution is to hit extra 2 arrow keys
     color: var(--nv-6-5-66);
     background-color: var(--nv-14-dd);
 }
+.cp_disclaimer p {
+    margin-bottom: var(--sp_px-xs);
+}
+.theme_select {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp_px-xs) var(--sp_px-xxxxl);
+    justify-content: center;
+        }
+.theme_select > li {
+    cursor: pointer;
+    white-space: nowrap;
+}
+.theme_select > li :is(input, label) {
+    cursor: pointer;
+}
+.theme_select .material-icons {
+    vertical-align: -20%;
+    margin-right: var(--sp_px-xs);
+        }
 
 /* ========================= links ========================*/
 .cp_link {

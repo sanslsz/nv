@@ -1,0 +1,443 @@
+<!docType html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Product Detail Pages Improvement</title>
+    <meta name="description" content="Table Component Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/documentation.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+    <!--    <meta name="color-scheme" content="light dark">-->
+    <style>
+        body {
+            background-color: var(--nv-15-5-f7);
+        }
+
+        body>section:nth-child(even) {
+            background-color: var(--nv-15-ee);
+        }
+
+        #md_05_spec table {
+            /*            width: 100%;*/
+        }
+
+        table p {
+            line-height: inherit;
+        }
+
+        .cp_spec_table p:first-child {
+            margin-top: 0;
+        }
+        h4 ~ img + img {
+            margin-top: var(--sp_px-xs);
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="md_01_banner">
+        <img src="docs/coverart@2x.jpg" alt="cover artwork">
+    </section>
+    <section id="md_02_title" class="padding">
+        <div class="wrapper">
+            <h1>Product Detail Pages Improvement</h1>
+            <p>PDP template is an initiative to improve the quality of the product pages on nvidia.com with design audits and new section components.</p>
+            <p>Multiple partner teams and business units were involved:</p>
+            <ol class="cp_ana_list margin">
+                <li>Content Strategist</li>
+                <li>Copy writers</li>
+                <li>Design system designer</li>
+                <li>Campaign team designers</li>
+                <li>Business unit stakeholders</li>
+            </ol>
+            <p><a href="https://preview.nvidia.com/sg-ce/style-guide/components/frame-gallery/" class="cp_link_cta" target="_blank" rel="noreferrer">View documentation</a></p>
+            <p style="margin-top: 4em;">Table of contents</p>
+            <ol class="cp_toc">
+                <li>Overview
+                    <ol>
+                        <li><a href="#toc_anatomy">Importance</a></li>
+                        <li><a href="#toc_fitting">Problems</a></li>
+                        <li><a href="#toc_layout">Goals</a></li>
+                    </ol>
+                </li>
+                <li>Required sections
+                    <ol>
+                        <li><a href="#toc_">Purchase hero</a></li>
+                        <li><a href="#toc_">Introduction</a></li>
+                        <li><a href="#toc_">Highlight</a></li>
+                        <li><a href="#toc_">Features</a></li>
+                        <li><a href="#toc_">Benefits</a></li>
+                        <li><a href="#toc_">Performance chart</a></li>
+                        <li><a href="#toc_">Specs</a></li>
+                        <li><a href="#toc_">Get started</a></li>
+                    </ol>
+                </li>
+                <li>Optional sections
+                    <ol>
+                        <li><a href="#toc_">Utilization</a></li>
+                        <li><a href="#toc_">Platform</a></li>
+                        <li><a href="#toc_">Architecture</a></li>
+                        <li><a href="#toc_">Software</a></li>
+                        <li><a href="#toc_">Product tour</a></li>
+                        <li><a href="#toc_">Solution overview</a></li>
+                        <li><a href="#toc_">Success stories</a></li>
+                        <li><a href="#toc_">News &amp; Events</a></li>
+                        <li><a href="#toc_">Quotes</a></li>
+                    </ol>
+                </li>
+                <li>Links
+                    <ol>
+                        <li><a href="#toc_prototypes">Prototype</a></li>
+                        <li><a href="#toc_documentations">Documentation</a></li>
+                        <li><a href="#toc_usecases">Use case</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section id="md_04_anatomy" class="padding">
+        <div class="wrapper">
+            <h2>Overview</h2>
+            <h4>Importance</h4>
+            <ol class="cp_ana_list margin">
+                <li>The product detail pages represent 10% of the entire enterprise pages</li>
+                <li>They have large impact on driving sales and search hits</li>
+            </ol>
+
+            <h4>Problems</h4>
+            <ol class="cp_ana_list margin">
+                <li>Poor UX: the pages’ inconsistencies make it more challenge to browse, increase the cognitive load for the users</li>
+                <li>Effectiveness, performance and metrics can be improved</li>
+                <li>Inefficiencies: large amount of resource goes into building the pages</li>
+            </ol>
+
+            <h4>Goals</h4>
+            <ol class="cp_ana_list margin">
+                <li>Better UX: consistent design, content, narrative/communication /storytelling, forming a predictable pattern so that it’s easy & quick to browse and identify information. </li>
+                <li>Content & communication approach: clear, fast, easy read</li>
+                <li>Drive more sales for non-OEM products: making the CTAs more prominent</li>
+                <li>Efficiency: quick & easy to build with new Figma components & templates, pre-built specimen pages on the AEM platform</li>
+                <li>Maintenance: capabilities, features, and design stay up to date with periodic reviews </li>
+            </ol>
+
+            <h4>Strategy</h4>
+            <div class="md_table_scroll cp_table_scrollbar" style="max-width: unset;">
+                <table class="cp_spec_table">
+
+                    <colgroup>
+                        <col style="width: 10%">
+                        <col style="width: 10%">
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Problem</th>
+                            <th>Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <th rowspan="7">Visual design</th>
+                            <th>Alignment</th>
+                            <td>Centered aligned text & icons.</td>
+                            <td>Align to left whenever possible</td>
+                        </tr>
+
+                        <tr>
+                            <th>Text line width</th>
+                            <td>Full width is not the best reading experience, hard to track lines</td>
+                            <td>Cap body text’s max text line width at 75 characters to assist reading. </td>
+
+                        </tr>
+                        <tr>
+                            <th>Spacing</th>
+                            <td>
+                                <p>Inconsistent spacing among items</p>
+                                <p>Lack Separation / grouping</p>
+                            </td>
+                            <td>
+                                <p>Use space tokens(xs-xxl)</p>
+                                <p>New responsive grid in the future</p>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>Heading font-size</th>
+                            <td>
+                                <p>Large text size, appear crowded and bloated</p>
+                                <p>&lt;h2&gt; is h-medium, &lt;h3&gt; is h-smaller</p>
+                            </td>
+                            <td>
+                                <p>Smaller heading size</p>
+                                <p>&lt;h2&gt;: h-small, &lt;h3&gt;: h-smallest</p>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <th>Color</th>
+                            <td>Green color for regular text not meeting WCAG 2 AA requirement</td>
+                            <td>Avoid using NV green for text</td>
+
+
+                        </tr>
+                        <tr>
+                            <th>Graphic</th>
+                            <td>Images / icons are generic and don’t serve a purpose, creating visual noise and clutter</td>
+                            <td>
+                                <p>Icons / images that are generic can be omitted. Only use icons that serve functional purpose:</p>
+                                <ol class="cp_ana_list margin">
+                                    <li>Visually separate the content, assist reading / scanning</li>
+                                    <li>Meaningful images that’s specific to the product or topic, enhancing the messaging & communication</li>
+                                </ol>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>Content length management</th>
+                            <td>Too much text & content</td>
+                            <td>Use accordion, slides, tabs to manage hide & show low priority and repetitive content</td>
+                        </tr>
+
+                        <tr>
+                            <th rowspan="2">Copywriting</th>
+                            <th>Clutter</th>
+                            <td>Content is wordy, resulting in a bloated look. Audience may lose interest and focus while reading</td>
+                            <td>Word count or reading time est. (entire page takes max 5 mins to read)</td>
+                        </tr>
+                        <th>Clarity</th>
+                        <td>Sections lack clear labels for its content, making it difficult to quickly scan the page</td>
+                        <td>Add a preheader to clarify the content within the section. Headings can be optional.</td>
+
+
+
+
+                        <tr>
+                            <th rowspan="3">Content & structure</th>
+                            <th>Order</th>
+                            <td>Inconsistent content order</td>
+                            <td>Follow the PDP template’s section order for all product pages</td>
+                        </tr>
+                        <tr>
+                            <th>Repeated content</th>
+                            <td>Purchase hero, intro sections may have content that’s repeated in other sections</td>
+                            <td>May repeat CTA links but not heading and copy text</td>
+
+                        </tr>
+                        <tr>
+                            <th>Repeated sections</th>
+                            <td>Repeated use of the same component, layout and composition in adjacent & unrelated sections, creating unwanted tie and visual fatigue that may result in the users scroll past the section without knowing the content</td>
+                            <td>
+                                <p>Designers and authors try their best to avoid unwanted repetitions.</p>
+                                <p> Have diverse layout and component options to choose from.</p>
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+    <section id="md_05_spec" class="padding">
+        <div class="wrapper">
+            <h2>Required section</h2>
+
+            <h3 id="toc_theme">Purchase hero</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/required_01_purchasehero.jpg" alt="">
+
+            <h3 id="toc_theme">Introduction</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/required_03_introduction.png11" alt="">
+
+
+            <h3>Highlights</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/required_04_highlight.png" alt="">
+
+            <h3>Features</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/required_05_features.png" alt="">
+
+            <h3>Benefits</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/required_06_benefits.png" alt="">
+
+            <h3>Performance chart</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/required_07_performance%20chart.png" alt="">
+
+            <h3>Specs</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/required_08_specs.png" alt="">
+
+
+            <h3>Get started</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/required_10_getting%20started.png" alt="">
+
+
+
+
+
+
+
+
+
+
+            <h4>Overflow scroll:</h4>
+            <p>In the expanded state, when there’s not enough vertical space to accommodate the content, the description text becomes scrollable. A scrollbar appears to indicate text overflow. The top and bottom fading effects help the text blend in, and suggest scrolling directions. Heading, subhead and CTAs do not scroll.</p>
+            <video src="docs/scroll.mp4" controls>
+                <p>
+                    Your browser doesn't support HTML video. Here is a
+                    <a href="docs/scroll.mp4" target="_blank">link to the video</a> instead.
+                </p>
+            </video>
+        </div>
+    </section>
+
+    <section id="md_06_guide" class="padding">
+        <div class="wrapper">
+            <h2>Optional sections</h2>
+            
+            <h3 id="toc_theme">Utilization</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_01_utilization.png" alt="">
+            
+            <h3 id="toc_theme">Platform</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_02_platform.png" alt="">
+            
+            <h3 id="toc_theme">Architecture</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_03_architecture_1.png" alt="">
+            <img src="assets/optional_03_architecture_2.png" alt="">
+            <img src="assets/optional_03_architecture_3.png" alt="">
+            
+            <h3 id="toc_theme">Software</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_04_software.png" alt="">
+            <img src="assets/optional_04_software-1.png" alt="">
+            
+            <h3 id="toc_theme">Product tour</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_05_Product-tour-1.png" alt="">
+            <img src="assets/optional_05_Product-tour.png" alt="">
+            
+            <h3 id="toc_theme">Solution overview</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_08_solutions.png" alt="">
+            <img src="assets/optional_08_solutions-1.png" alt="">
+            <img src="assets/optional_08_solutions-2.png" alt="">
+            
+            <h3 id="toc_theme">Success stories</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_09_Success-stories_1.png" alt="">
+            <img src="assets/optional_09_Success-stories_2.png" alt="">
+            <img src="assets/optional_09_Success-stories_3.png" alt="">
+            
+            <h3 id="toc_theme">News &amp; Events</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_10_news-&-events---3-items.png" alt="">
+            <img src="assets/optional_10_news-&-events---4-items.png" alt="">
+            <img src="assets/optional_10_news-&-events---5-items.png" alt="">
+            <img src="assets/optional_10_news-&-events---6-items.png" alt="">
+            
+            <h3 id="toc_theme">Quotes</h3>
+            <p>There are 3 color theme options:</p>
+            <h4>Before</h4>
+            <img src="assets" alt="">
+            <h4>After</h4>
+            <img src="assets/optional_15_quotes.png" alt="">
+            <img src="assets/optional_15_quotes_2.png" alt="">
+            
+        </div>
+    </section>
+    <section class="md_06_links padding">
+        <div class="wrapper">
+            <h2 id="toc_links">Links</h2>
+            <ul class="cp_links">
+                <li>
+                    <h3 id="toc_prototypes">Prototype</h3>
+                    <a href="https://embersl.github.io/nv/12_gallery/framegallery.html" target="_blank">Frame gallery and theme options</a>
+                    <a href="https://embersl.github.io/nv/12_gallery/theater.html" target="_blank">Frame gallery upgrade - video capability</a>
+                </li>
+                <li>
+                    <h3 id="toc_documentations">Documentation</h3>
+                    <a href="https://brand.nvidia.com/d/UKVz9aA18m6Q/components#/frame-gallery" target="_blank" rel="noreferrer">Component guide on brand.nvidia.com/web</a>
+                    <a href="https://preview.nvidia.com/sg-ce/style-guide/components/frame-gallery/" target="_blank" rel="noreferrer">AEM specimen page</a>
+                </li>
+                <li>
+                    <h3 id="toc_usecases">Use case</h3>
+                    <a href="https://www.nvidia.com/en-us/ai-data-science/#solutions" target="_blank" rel="noreferrer">Advanced AI Platform for Enterprise | NVIDIA AI</a>
+                    <a href="https://www.nvidia.com/en-us/industries/media-and-entertainment/#use-cases" target="_blank" rel="noreferrer">Solutions for the Media and Entertainment Industry | NVIDIA</a>
+                    <a href="https://www.nvidia.com/en-us/data-center/l40s/#workloads" target="_blank" rel="noreferrer">L40S GPU for AI and Graphics Performance | NVIDIA</a>
+                    <a href="https://www.nvidia.com/en-us/design-visualization/rtx-4000/#workloads" target="_blank" rel="noreferrer">RTX 4000 Ada Generation Graphics Card | NVIDIA</a>
+                </li>
+            </ul>
+
+
+        </div>
+    </section>
+
+</body></html>

@@ -216,7 +216,7 @@ img {
     padding: var(--padding-section);
 }
 .paddingsmall {
-    padding: var(--space-s) var(--padding-lr);
+    padding: var(--sp_px-s) var(--padding-lr);
 }
 .wrapper {
     max-width: var(--wrapper);

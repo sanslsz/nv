@@ -163,10 +163,10 @@ blockquote.hanging .cp_quote {
 
 blockquote.greenbar {
     border-left: 10px solid var(--nv-green);
-    padding-left: calc(1.45em + 10px);
+    padding-left: calc(1.45em + 15px);
 }
 blockquote.greenbar:has(.tp_p-l)  {
-    padding-left: calc(var(--tp_p-l) * 1.45 + 10px);
+    padding-left: calc(var(--tp_p-l) * 1.45 + 15px);
 }
 
 

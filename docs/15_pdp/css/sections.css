@@ -180,10 +180,8 @@ section:is(#sc_tour, #sc_tour_hover) {
     /*    prevent scrollbar when the box goes outside*/
 }
 
-
 #autoplay + label {
-    display: inline-block;
-    width: 6em;
+    width: 7em;
     cursor: pointer;
 }
 
@@ -271,7 +269,7 @@ section:is(#sc_tour, #sc_tour_hover) {
     gap: var(--sp_em-m);
 }
 
-.cp_f_ctr_btn {
+.cp_f_ctr_icon_box {
     padding: 0;
     transition: opacity 0.3s ease-in-out;
 }
@@ -328,7 +326,7 @@ section:is(#sc_tour, #sc_tour_hover) {
     animation-timing-function: ease-in-out;
 }
 
-.wrapper:has(#autoplay:checked) .sc_tour + div .cp_f_ctr_btn {
+.wrapper:has(#autoplay:checked) .sc_tour + div .cp_f_ctr_icon_box {
     opacity: 0;
     visibility: hidden;
 }
